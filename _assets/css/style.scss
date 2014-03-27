@@ -1,0 +1,22 @@
+@import 'bourbon'; // For Codekit to use Bourbon
+
+// RESET
+@import 'lib/reset.scss';
+
+// GRID
+@import 'lib/grid.scss';
+
+// VARIABLES AND MIXINS
+@import 'lib/variables.scss';
+@import 'lib/mixins.scss';
+@import 'lib/fonts.scss';
+
+// VIEWS
+@import 'views/main.scss';
+
+@import 'views/login.scss';
+@import 'views/register.scss';
+
+@import 'views/profile.scss';
+@import 'views/wishlist.scss';
+@import 'views/item.scss';
