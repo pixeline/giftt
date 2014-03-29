@@ -3,6 +3,10 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 require $root . '/functions.php';
 
+if(isset($_SESSION['user'])){
+	$user = $_SESSION['user'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -12,23 +16,25 @@ require $root . '/functions.php';
 	<title>Index</title>
 	<?php require($root . '/_include/head.php'); ?>
 </head>
-<body id="register">
+<body id="register_login">
 
 	<div class="container">
 
 		<div class="row">
-			<div class="col-sm-12">
-				<h1>Register</h1>
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-sm-12">
+			<?php 
+
+			if(!isset($user)){
+
+			?>
+
+			<div class="col-sm-6 register">
+				<h1>Register</h1>
 				<form action="<?php $root ?>/_include/register.php" method="POST">
 					<label for="username">Username</label>
 					<input type="text" name="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="" />
-					<label for="password1">Password</label>
-					<input type="password" name="password1" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="final" />
+					<label for="password">Password</label>
+					<input type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="final" />
 					<label for="password2">Password again</label>
 					<input type="password" name="password2" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="final" />
 					<label for="firstname">First name</label>
@@ -41,6 +47,39 @@ require $root . '/functions.php';
 					<input type="submit" name="register" value="Submit" />
 				</form>
 			</div>
+
+			<div class="col-sm-6 login">
+				<h1>Login</h1>
+				<form action="<?php $root ?>/_include/login.php" method="POST">
+					<label for="username">Username</label>
+					<input type="text" name="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="pierrestoffe" />
+					<label for="password">Password</label>
+					<input type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="final" />
+
+					<input type="submit" name="login" value="Submit" />
+				</form>
+			</div>
+
+			<?php
+
+			}else{
+
+			?>
+
+			<div class="col-sm-12 logout">
+				<h1>Logout</h1>
+				<form action="<?php $root ?>/_include/logout.php" method="POST">
+					<label>Are you sure?</label>
+					<input type="submit" name="logout" value="Yes, I'm sure" />
+				</form>
+			</div>
+
+			<?php
+
+			}
+
+			?>
+
 		</div>
 	</div>
 

@@ -10,7 +10,7 @@ $message = "Form not sent";
 if(isset($_POST['register'])){
 
 	$username = htmlspecialchars($_POST['username']);
-	$password1 = htmlspecialchars($_POST['password1']);
+	$password1 = htmlspecialchars($_POST['password']);
 	$password2 = htmlspecialchars($_POST['password2']);
 	$firstname = htmlspecialchars($_POST['firstname']);
 	$lastname = htmlspecialchars($_POST['lastname']);
@@ -26,6 +26,8 @@ if(isset($_POST['register'])){
 	}else{
 		$user_exists = 0;
 	}
+	
+	$error = 0;
 
 	if($password1 != $password2 || $password1 == ""){
 		$error = 1;
@@ -34,7 +36,6 @@ if(isset($_POST['register'])){
 		$error = 1;
 		$message = "This usename already exists";
 	}else{
-		$error = 0;
 		$letters = "/^[a-zA-Z'àâéèêôëôùûçÀÂÉÈËÔÙÛÇ()\- ]+$/";
 
 		if(!preg_match($letters, $username) || $username == ""){
@@ -43,7 +44,6 @@ if(isset($_POST['register'])){
 		}
 
 		if(!$error){
-			$message = "Should be all right";
 			$query = $db->prepare("INSERT INTO users(username, password, firstname, lastname, email) VALUES(:username, :password, :firstname, :lastname, :email)");
 			$query->execute(array(
 				'username' => $username,
@@ -52,7 +52,7 @@ if(isset($_POST['register'])){
 				'lastname' => $lastname,
 				'email' => $email
 			));
-			$message = "All right!";
+			$message = "You're registered!";
 		}
 	}
 }
@@ -63,9 +63,8 @@ if(isset($_POST['register'])){
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>STOFFE-Pierre-3TiD2</title>
-	<link rel="stylesheet" href="_assets/css/reset.min.css">
-	<link rel="stylesheet" href="_assets/css/style.css">
+	<title>Index</title>
+	<?php require($root . '/_include/head.php'); ?>
 </head>
 <body class="home">
 	<div class="container">
