@@ -1,14 +1,3 @@
-<?php
-
-$root = $_SERVER['DOCUMENT_ROOT'];
-require $root . '/functions.php';
-
-if(isset($_SESSION['user'])){
-	$user = $_SESSION['user'];
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +10,6 @@ if(isset($_SESSION['user'])){
 	<div class="container">
 
 		<div class="row">
-
-			<?php 
-
-			if(!isset($user)){
-
-			?>
 
 			<div class="col-sm-6 register">
 				<h1>Register</h1>
@@ -59,31 +42,6 @@ if(isset($_SESSION['user'])){
 					<input type="submit" name="login" value="Submit" />
 				</form>
 			</div>
-
-			<?php
-
-			}else{
-
-			?>
-
-			<div class="col-sm-6 logged">
-				<h1>Enter your profile</h1>
-				<a class="button" href="/profile/">This way</a>
-			</div>
-
-			<div class="col-sm-6 logout">
-				<h1>Logout</h1>
-				<form action="<?php $root ?>/_include/logout.php" method="POST">
-					<label>Are you sure?</label>
-					<input type="submit" name="logout" value="Yes, I'm sure" />
-				</form>
-			</div>
-
-			<?php
-
-			}
-
-			?>
 
 		</div>
 	</div>

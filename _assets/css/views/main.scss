@@ -16,3 +16,18 @@ body{
 h1{
 	margin-bottom: 40px;
 }
+
+a{
+	display: inline-block;
+}
+
+.button{
+	@include button;
+}
+
+.follow{
+
+	&.following{
+		background: green;	
+	}
+}

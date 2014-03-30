@@ -1,6 +1,6 @@
 #register_login{
 	
-	.register, .login, .logout{
+	.register, .login, .logged, .logout{
 
 		h1{
 			margin-top: 60px;
@@ -24,12 +24,6 @@
 				margin-top: 20px;
 				@include button;
 			}
-		}
-	}
-
-	.logout{
-		input{
-			width: 30%;
 		}
 	}
 }

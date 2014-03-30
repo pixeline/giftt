@@ -29,7 +29,7 @@ if(isset($_POST['login'])){
 	}else{
 		if($password == $results['password']){
 			$_SESSION['user'] = array('id' => $results['id'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname']);
-			header('Location:/index.php');
+			header('Location:/');
 		}else{
 			$message = "The password seems to be wrong";
 		}
