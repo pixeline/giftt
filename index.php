@@ -7,26 +7,22 @@ if(isset($_SESSION['user'])){
 	$user = $_SESSION['user'];
 }
 
+if(!isset($user)){
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Index</title>
-	<?php require($root . '/_include/head.php'); ?>
+	<title>Register</title>
+	<?php require $root . '/_include/head.php'; ?>
 </head>
 <body id="register_login">
 
 	<div class="container">
 
 		<div class="row">
-
-			<?php 
-
-			if(!isset($user)){
-
-			?>
 
 			<div class="col-sm-6 register">
 				<h1>Register</h1>
@@ -60,11 +56,31 @@ if(isset($_SESSION['user'])){
 				</form>
 			</div>
 
-			<?php
+		</div>
+	</div>
 
-			}else{
+	<?php require $root . '/_include/foot.php'; ?>
+</body>
+</html>
 
-			?>
+<?php
+
+}else{
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Logged in</title>
+	<?php require $root . '/_include/head.php'; ?>
+</head>
+<body id="register_login">
+
+	<div class="container">
+
+		<div class="row">
 
 			<div class="col-sm-6 logged">
 				<h1>Enter your profile</h1>
@@ -79,15 +95,15 @@ if(isset($_SESSION['user'])){
 				</form>
 			</div>
 
-			<?php
-
-			}
-
-			?>
-
 		</div>
 	</div>
 
-	<?php require($root . '/_include/foot.php'); ?>
+	<?php require $root . '/_include/foot.php'; ?>
 </body>
 </html>
+
+<?php
+
+}
+
+?>
