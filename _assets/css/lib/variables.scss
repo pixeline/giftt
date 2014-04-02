@@ -1,8 +1,25 @@
 // COLORS
-$black: #222;
+
 $white: white;
+$grey5: mix(black, white, 5%);
+$grey12: mix(black, white, 12%);
+$grey20: mix(black, white, 20%);
+$grey30: mix(black, white, 30%);
+$black: #2C2C2C;
+$green: #7FBA00;
+
+$gray5: $grey5;
+$gray12: $grey12;
+$gray20: $grey20;
+$gray30: $grey30;
+
 
 // TYPOGRAPHY
 
-$lh: 20px;
+$ff: "proxima-nova", sans-serif;
+$regular: 400;
+$medium: 600;
+$semibold: 700;
+
 $fs: 16px;
+$lh: 20px;

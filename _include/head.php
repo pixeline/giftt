@@ -7,8 +7,8 @@
 <link rel="icon" href="/_assets/images/favicon.png" />
 <link rel="image_src" href="/_assets/images/app.png" />
 <link rel="stylesheet" href="/_assets/css/style.css">
-<!--<script type="text/javascript" src="//use.typekit.net/ags8hdg.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
+<script type="text/javascript" src="//use.typekit.net/jmx3imb.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <!--[if lt IE 9]>
 	<script src="/_assets/js/html5shiv.min.js"></script>
 <![endif]-->

@@ -1,10 +1,12 @@
 (function(){
 
+	// FOLLOW
+
 	$('.follow').on('click', function(){
 		button = $(this);
 		who2 = button.data('who2');
 		follow(who2, button);
-		/*followAfter(button)*/
+		return false;
 	})
 
 	function follow(who2, button){
@@ -20,7 +22,7 @@
 			},
 			complete: function(){
 				content = button.text();
-				button.toggleClass('following');
+				button.toggleClass('active');
 				if(content == 'Following'){
 					button.text('Follow');
 				}else{
@@ -29,5 +31,47 @@
 			}
 		});
 	}
+
+
+	// LOGOUT
+
+	$('#tools .disconnect').on('click', function(){
+		logout();
+		return false;
+	})
+
+	function logout(){
+
+		$.ajax({
+			url: '/_include/logout.php',
+			type: 'POST',
+			data: 'logout=yes',
+			success: function(){
+				window.location = '/';
+			},
+			error: function(){
+				return false;
+			}
+		});
+	}
+
+
+	// COVER
+
+	$('.cover').each(function(){
+		img = $(this).data('img');
+		if(img){
+			$(this).css({'background-image': 'url('+img+')'});
+		}
+	})
+
+
+	// THUMBNAILS
+
+	$('.wishlist > a').hover(function(){
+		$(this).siblings('h4').css({'text-decoration': 'underline'});
+	}, function(){
+		$(this).siblings('h4').css({'text-decoration': 'none'});
+	})
 
 })();

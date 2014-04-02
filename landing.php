@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Index</title>
+	<title>Register</title>
 	<?php require $root . '/_include/head.php'; ?>
 </head>
 <body id="register_login">
