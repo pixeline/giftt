@@ -1,0 +1,79 @@
+#add_wishlist, #edit_wishlist, #add_item, #edit_item{
+
+	form{
+
+		label{
+			line-height: $lh + 10;
+		}
+
+		input[type=text], textarea{
+			width: 100%;
+			max-width: 100%;
+			font-family: $ff;
+			line-height: $lh;
+			font-size: $fs;
+			padding: 5px;
+			background: none;
+			border: 2px solid $gray12;
+			border-radius: 2px;
+			margin-bottom: 20px;
+		}
+
+		textarea{
+			min-height: 150px;
+		}
+
+		.button{
+			overflow: hidden;
+			letter-spacing: 1px;
+
+			input{
+				width: 100%;
+				text-transform: uppercase;
+				border-radius: 2px;
+				font-weight: $medium;
+				line-height: $lh;
+				font-size: em(14);
+				color: $black;
+				background: $white;
+				cursor: pointer;
+				border: 2px solid $black;
+				padding: 9px 15px 7px;
+				@include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+
+				&:hover{
+					background: mix($black, $white, 25%);
+				}
+
+				&.ready:active, .ready.active{
+					background: $black;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+#add_wishlist{
+
+
+
+}
+
+#edit_wishlist{
+
+
+
+}
+
+#add_item{
+
+
+
+}
+
+#edit_item{
+
+
+
+}

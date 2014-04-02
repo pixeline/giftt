@@ -1895,18 +1895,6 @@ strong {
   overflow: hidden;
   letter-spacing: 1px; }
   .button a {
-    color: white;
-    background: #7fba00;
-    border: 2px solid white; }
-    .button a:hover {
-      background: #9fcb3f; }
-    .button a:active, .button a .active {
-      background: white;
-      color: #7fba00; }
-  .button span.number {
-    color: #7fba00;
-    background: white; }
-  .button a {
     text-transform: uppercase;
     border-radius: 2px;
     font-weight: 600;
@@ -1941,6 +1929,18 @@ strong {
 
 body > header {
   background: #7fba00; }
+  body > header .button a {
+    color: white;
+    background: #7fba00;
+    border: 2px solid white; }
+    body > header .button a:hover {
+      background: #9fcb3f; }
+    body > header .button a:active, body > header .button a .active {
+      background: white;
+      color: #7fba00; }
+  body > header .button span.number {
+    color: #7fba00;
+    background: white; }
   body > header nav, body > header #tools, body > header #logo {
     margin: 55px 0; }
   body > header nav {
@@ -1987,6 +1987,18 @@ body > header {
       float: left; }
     .subheader .heading a {
       font-weight: 600; }
+    .subheader .heading .tags {
+      float: left; }
+      .subheader .heading .tags li {
+        float: left; }
+        .subheader .heading .tags li:before {
+          content: ', '; }
+        .subheader .heading .tags li:last-child {
+          margin-left: 0; }
+          .subheader .heading .tags li:last-child:before {
+            content: '\00a0&\00a0'; }
+        .subheader .heading .tags li:first-child:before {
+          content: '\00a0'; }
   .subheader .actions {
     float: right; }
     .subheader .actions .button {
@@ -2034,18 +2046,6 @@ body > header {
       color: black;
       background: white; }
 
-#profile .subheader .heading .tags {
-  float: left; }
-  #profile .subheader .heading .tags li {
-    float: left; }
-    #profile .subheader .heading .tags li:before {
-      content: ', '; }
-    #profile .subheader .heading .tags li:last-child {
-      margin-left: 0; }
-      #profile .subheader .heading .tags li:last-child:before {
-        content: '\00a0&\00a0'; }
-    #profile .subheader .heading .tags li:first-child:before {
-      content: '\00a0'; }
 #profile .content {
   padding-bottom: 30px; }
 #profile .wishlist {
@@ -2127,3 +2127,42 @@ body > header {
     background: #f2f2f2; }
     #profile .private .add:hover {
       background: white; }
+
+#add_wishlist form label, #edit_wishlist form label, #add_item form label, #edit_item form label {
+  line-height: 30px; }
+#add_wishlist form input[type=text], #add_wishlist form textarea, #edit_wishlist form input[type=text], #edit_wishlist form textarea, #add_item form input[type=text], #add_item form textarea, #edit_item form input[type=text], #edit_item form textarea {
+  width: 100%;
+  max-width: 100%;
+  font-family: "proxima-nova", sans-serif;
+  line-height: 20px;
+  font-size: 16px;
+  padding: 5px;
+  background: none;
+  border: 2px solid #e0e0e0;
+  border-radius: 2px;
+  margin-bottom: 20px; }
+#add_wishlist form textarea, #edit_wishlist form textarea, #add_item form textarea, #edit_item form textarea {
+  min-height: 150px; }
+#add_wishlist form .button, #edit_wishlist form .button, #add_item form .button, #edit_item form .button {
+  overflow: hidden;
+  letter-spacing: 1px; }
+  #add_wishlist form .button input, #edit_wishlist form .button input, #add_item form .button input, #edit_item form .button input {
+    width: 100%;
+    text-transform: uppercase;
+    border-radius: 2px;
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 0.875em;
+    color: #2c2c2c;
+    background: white;
+    cursor: pointer;
+    border: 2px solid #2c2c2c;
+    padding: 9px 15px 7px;
+    -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out; }
+    #add_wishlist form .button input:hover, #edit_wishlist form .button input:hover, #add_item form .button input:hover, #edit_item form .button input:hover {
+      background: #cacaca; }
+    #add_wishlist form .button input.ready:active, #add_wishlist form .button input .ready.active, #edit_wishlist form .button input.ready:active, #edit_wishlist form .button input .ready.active, #add_item form .button input.ready:active, #add_item form .button input .ready.active, #edit_item form .button input.ready:active, #edit_item form .button input .ready.active {
+      background: #2c2c2c;
+      color: white; }

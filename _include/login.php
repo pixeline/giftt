@@ -28,7 +28,7 @@ if(isset($_POST['login'])){
 		$message = "This usename doesn't exist";
 	}else{
 		if($password == $results['password']){
-			$_SESSION['user'] = array('id' => $results['id'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname']);
+			$_SESSION['user'] = array('id' => $results['id'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'likes' => $results['likes']);
 			header('Location:/');
 		}else{
 			$message = "The password seems to be wrong";

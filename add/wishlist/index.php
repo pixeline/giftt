@@ -9,11 +9,11 @@ if(isset($_SESSION['user'])){
 
 if(!isset($user)){
 
-require $root . '/landing.php';
+header("Location:/");
 
 }else{
 
-require $root . '/profile/profile.php';
+require 'add.php';
 
 }
 

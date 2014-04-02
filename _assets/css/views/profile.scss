@@ -1,38 +1,5 @@
 #profile{
 
-	.subheader{
-
-		.heading{
-
-			.tags{
-				float: left;
-
-				li{
-					float: left;
-
-					&:before{
-						content: ', ';
-					}
-
-					&:last-child{
-						margin-left: 0;
-
-						&:before{
-							content: '\00a0&\00a0';
-						}
-					}
-
-					&:first-child{
-						
-						&:before{
-							content: '\00a0';
-						}
-					}
-				}
-			}
-		}
-	}
-
 	.content{
 		padding-bottom: 30px;
 	}

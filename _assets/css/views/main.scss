@@ -46,7 +46,6 @@ strong{
 .button{
 	overflow: hidden;
 	letter-spacing: 1px;
-	@include button($white, $green);
 
 	a{
 		text-transform: uppercase;
@@ -99,6 +98,10 @@ strong{
 
 body > header{
 	background: $green;
+
+	.button{
+		@include button($white, $green);
+	}
 
 	nav, #tools, #logo{
 		margin: 55px 0;
@@ -173,6 +176,33 @@ body > header{
 
 		a{
 			font-weight: $medium;
+		}
+
+		.tags{
+			float: left;
+
+			li{
+				float: left;
+
+				&:before{
+					content: ', ';
+				}
+
+				&:last-child{
+					margin-left: 0;
+
+					&:before{
+						content: '\00a0&\00a0';
+					}
+				}
+
+				&:first-child{
+					
+					&:before{
+						content: '\00a0';
+					}
+				}
+			}
 		}
 	}
 
