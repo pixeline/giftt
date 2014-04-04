@@ -76,7 +76,7 @@
 
 	// FOLLOW
 
-	$('.follow').on('click', function(){
+	$('.follow a').on('click', function(){
 		button = $(this);
 		who2 = button.data('who2');
 		follow(who2, button);
@@ -95,12 +95,12 @@
 				return false;
 			},
 			complete: function(){
-				content = button.text();
+				content = button.find('.title');
 				button.toggleClass('active');
-				if(content == 'Following'){
-					button.text('Follow');
+				if(content.text() == 'Following'){
+					content.text('Follow');
 				}else{
-					button.text('Following');
+					content.text('Following');
 				}
 			}
 		});
@@ -109,7 +109,7 @@
 
 	// LOGOUT
 
-	$('#tools .disconnect').on('click', function(){
+	$('#search').on('click', function(){
 		logout();
 		return false;
 	})
@@ -128,5 +128,23 @@
 			}
 		});
 	}
+
+
+	// MENU
+
+	$('.menu li').on('click', function(){
+		if($(this).hasClass('active')){
+			return false;
+		}
+		id = $(this).attr('id');
+		$(this).siblings('li').removeClass('active');
+		$(this).addClass('active');
+		wishlists = $('.wishlists');
+		wishlistsAll = wishlists.find('.public, .private');
+		wishlistsAll.fadeOut(200);
+		setTimeout(function(){
+			wishlists.find('li.'+id).fadeIn(200);
+		}, 200);
+	})
 
 })();

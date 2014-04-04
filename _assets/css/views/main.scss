@@ -1,25 +1,32 @@
 body{
-	font-family: $ff;
-	font-weight: $regular;
+	font-family: $body;
+	font-weight: 400;
 	font-size: $fs;
 	line-height: $lh;
 }
 
+h1, h2, h3, h4{
+	font-family: $title;
+}
+
 h2{
-	font-size: em(35);
-	line-height: $lh * 1.8;
-	font-weight: $medium;
+	@include h2;
 }
 
 h3{
-	font-size: em(25);
-	line-height: $lh * 1.25;
-	margin-bottom: 32px;
+	@include h3;
+}
+
+p{
+	margin: 0 auto $lh * 1.2;
+	font-size: em(16);
+	line-height: $lh * 1.2;
 }
 
 a{
 	display: inline-block;
 	color: $black;
+	font-weight: 600;
 	text-decoration: none;
 
 	&:hover{
@@ -28,7 +35,11 @@ a{
 }
 
 strong{
-	font-weight: $semibold;
+	font-weight: 600;
+}
+
+.mute{
+	opacity: 0.5;
 }
 
 .clearfix{
@@ -46,17 +57,19 @@ strong{
 .button{
 	overflow: hidden;
 	letter-spacing: 1px;
+	font-family: $freight;
 
 	a{
 		text-transform: uppercase;
 		border-radius: 2px;
-		font-weight: $medium;
-		font-size: em(14);
+		border: 2px solid transparent;
+		font-weight: 600;
+		font-size: em(15);
 		@include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
 	}
 
 	span{
-		padding: 9px 15px 7px;
+		padding: 8px 13px 6px;
 
 		&.title{
 			float: left;
@@ -64,11 +77,12 @@ strong{
 
 		&.number{
 			float: right;
+			text-align: center;
 		}
 	}
 
 	& > .entypo{
-		font-weight: $regular;
+		font-weight: 400;
 
 		span{
 			padding-left: 12px;
@@ -97,17 +111,17 @@ strong{
 // HEADER
 
 body > header{
-	background: $green;
+	background: $black;
 
 	.button{
-		@include button($white, $green);
+		@include button($white, $black);
 	}
 
-	nav, #tools, #logo{
-		margin: 55px 0;
+	#search, nav, #logo{
+		margin: 35px 0;
 	}
 
-	nav{
+	#search{
 		float: left;
 		position: absolute;
 		top: 0;
@@ -115,7 +129,7 @@ body > header{
 		overflow: hidden;
 	}
 
-	#tools{
+	nav{
 		position: absolute;
 		top: 0;
 		right: 15px;
@@ -123,7 +137,7 @@ body > header{
 
 		li{
 			display: inline-block;
-			margin-left: 10px;
+			margin-left: 12px;
 
 			&:first-child{
 				margin-left: 0
@@ -133,12 +147,13 @@ body > header{
 
 	#logo{
 		text-align: center;
-		margin: 40px auto;
+		margin: 25px auto;
 		overflow: hidden;
+		height: 60px;
 
 		span{
-			display: inline-block;
-			height: 70px;
+			display: block;
+			height: 60px;
 			width: 250px;
 			background: white;
 		}
@@ -150,74 +165,67 @@ body > header{
 
 .subheader{
 	background: $gray5;
-	padding: 40px 0;
+	padding: 50px 0;
+	text-align: center;
 
-	.heading{
-		float: left;
-
-		img{
-			float: left;
-			border-radius: 2px;
-		}
-
-		.infos{
-			float: left;
-			margin-top: 9px;
-			margin-left: 30px;
-		}
-
-		h2{
-			margin-bottom: 5px;
-		}
-
-		p{
-			float: left;
-		}
-
-		a{
-			font-weight: $medium;
-		}
-
-		.tags{
-			float: left;
-
-			li{
-				float: left;
-
-				&:before{
-					content: ', ';
-				}
-
-				&:last-child{
-					margin-left: 0;
-
-					&:before{
-						content: '\00a0&\00a0';
-					}
-				}
-
-				&:first-child{
-					
-					&:before{
-						content: '\00a0';
-					}
-				}
-			}
-		}
+	img{
+		border-radius: 100px;
+		height: 75px;
+		width: auto;
+		margin-bottom: 20px;
 	}
 
-	.actions{
-		float: right;
+	p{
+		max-width: 450px;
+	}
 
-		.button{
-			@include button($black, $white);
-			margin-top: 20px;
-			float: left;
-			margin-left: 10px;
+	.button{
+		@include button($black, $white);
+		clear: both;
 
-			&:first-of-type{
-				margin-left: 0;
+		&.edit{
+			position: absolute;
+			top: 0;
+			right: 15px;
+		}
+	}
+}
+
+
+// CONTENT
+
+.menu{
+	text-align: center;
+	margin-bottom: 40px;
+
+	ul{
+		display: inline-block;
+		border-top: 2px solid $gray20;
+	}
+
+	li{
+		float: left;
+		padding: 10px 20px 0;
+		border-top: 2px solid transparent;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: em(14);
+		margin-top: -2px;
+		color: $gray30;
+		cursor: pointer;
+		@include transition(color 0.4s ease-in-out, border 0.4s ease-in-out);
+
+		&.active{
+			border-color: $black;
+			color: $black;
+
+			&:hover{
+				color: $black;
 			}
+		}
+
+		&:hover{
+			color: $black;
 		}
 	}
 }

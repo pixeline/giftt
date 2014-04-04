@@ -1857,25 +1857,45 @@ body {
   font-size: 16px;
   line-height: 20px; }
 
+h1, h2, h3, h4 {
+  font-family: "ff-tisa-sans-web-pro", sans-serif; }
+
 h2 {
-  font-size: 2.1875em;
+  font-size: 1.875em;
   line-height: 36px;
-  font-weight: 600; }
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-align: center; }
 
 h3 {
-  font-size: 1.5625em;
-  line-height: 25px;
-  margin-bottom: 32px; }
+  font-size: 1.25em;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+  text-align: center; }
+
+p {
+  margin: 0 auto 24px;
+  font-size: 1em;
+  line-height: 24px; }
 
 a {
   display: inline-block;
   color: #2c2c2c;
+  font-weight: 600;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
 
 strong {
-  font-weight: 700; }
+  font-weight: 600; }
+
+.mute {
+  opacity: 0.5; }
 
 .clearfix {
   *zoom: 1; }
@@ -1893,21 +1913,24 @@ strong {
 
 .button {
   overflow: hidden;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  font-family: "freight-sans-pro", sans-serif; }
   .button a {
     text-transform: uppercase;
     border-radius: 2px;
+    border: 2px solid transparent;
     font-weight: 600;
-    font-size: 0.875em;
+    font-size: 0.9375em;
     -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
     -moz-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
     transition: background 0.2s ease-in-out, color 0.2s ease-in-out; }
   .button span {
-    padding: 9px 15px 7px; }
+    padding: 8px 13px 6px; }
     .button span.title {
       float: left; }
     .button span.number {
-      float: right; }
+      float: right;
+      text-align: center; }
   .button > .entypo {
     font-weight: 400; }
     .button > .entypo span {
@@ -1928,97 +1951,104 @@ strong {
     left: -9999px; }
 
 body > header {
-  background: #7fba00; }
+  background: #2c2c2c; }
   body > header .button a {
     color: white;
-    background: #7fba00;
-    border: 2px solid white; }
+    background: #2c2c2c;
+    border-color: white; }
     body > header .button a:hover {
-      background: #9fcb3f; }
+      background: #606060; }
     body > header .button a:active, body > header .button a .active {
       background: white;
-      color: #7fba00; }
+      color: #2c2c2c; }
   body > header .button span.number {
-    color: #7fba00;
+    color: #2c2c2c;
     background: white; }
-  body > header nav, body > header #tools, body > header #logo {
-    margin: 55px 0; }
-  body > header nav {
+  body > header #search, body > header nav, body > header #logo {
+    margin: 35px 0; }
+  body > header #search {
     float: left;
     position: absolute;
     top: 0;
     left: 15px;
     overflow: hidden; }
-  body > header #tools {
+  body > header nav {
     position: absolute;
     top: 0;
     right: 15px;
     overflow: hidden; }
-    body > header #tools li {
+    body > header nav li {
       display: inline-block;
-      margin-left: 10px; }
-      body > header #tools li:first-child {
+      margin-left: 12px; }
+      body > header nav li:first-child {
         margin-left: 0; }
   body > header #logo {
     text-align: center;
-    margin: 40px auto;
-    overflow: hidden; }
+    margin: 25px auto;
+    overflow: hidden;
+    height: 60px; }
     body > header #logo span {
-      display: inline-block;
-      height: 70px;
+      display: block;
+      height: 60px;
       width: 250px;
       background: white; }
 
 .subheader {
   background: #f2f2f2;
-  padding: 40px 0; }
-  .subheader .heading {
-    float: left; }
-    .subheader .heading img {
-      float: left;
-      border-radius: 2px; }
-    .subheader .heading .infos {
-      float: left;
-      margin-top: 9px;
-      margin-left: 30px; }
-    .subheader .heading h2 {
-      margin-bottom: 5px; }
-    .subheader .heading p {
-      float: left; }
-    .subheader .heading a {
-      font-weight: 600; }
-    .subheader .heading .tags {
-      float: left; }
-      .subheader .heading .tags li {
-        float: left; }
-        .subheader .heading .tags li:before {
-          content: ', '; }
-        .subheader .heading .tags li:last-child {
-          margin-left: 0; }
-          .subheader .heading .tags li:last-child:before {
-            content: '\00a0&\00a0'; }
-        .subheader .heading .tags li:first-child:before {
-          content: '\00a0'; }
-  .subheader .actions {
-    float: right; }
-    .subheader .actions .button {
-      margin-top: 20px;
-      float: left;
-      margin-left: 10px; }
-      .subheader .actions .button a {
-        color: #2c2c2c;
-        background: white;
-        border: 2px solid #2c2c2c; }
-        .subheader .actions .button a:hover {
-          background: #cacaca; }
-        .subheader .actions .button a:active, .subheader .actions .button a .active {
-          background: #2c2c2c;
-          color: white; }
-      .subheader .actions .button span.number {
-        color: white;
-        background: #2c2c2c; }
-      .subheader .actions .button:first-of-type {
-        margin-left: 0; }
+  padding: 50px 0;
+  text-align: center; }
+  .subheader img {
+    border-radius: 100px;
+    height: 75px;
+    width: auto;
+    margin-bottom: 20px; }
+  .subheader p {
+    max-width: 450px; }
+  .subheader .button {
+    clear: both; }
+    .subheader .button a {
+      color: #2c2c2c;
+      background: white;
+      border-color: #2c2c2c; }
+      .subheader .button a:hover {
+        background: #cacaca; }
+      .subheader .button a:active, .subheader .button a .active {
+        background: #2c2c2c;
+        color: white; }
+    .subheader .button span.number {
+      color: white;
+      background: #2c2c2c; }
+    .subheader .button.edit {
+      position: absolute;
+      top: 0;
+      right: 15px; }
+
+.menu {
+  text-align: center;
+  margin-bottom: 40px; }
+  .menu ul {
+    display: inline-block;
+    border-top: 2px solid #cccccc; }
+  .menu li {
+    float: left;
+    padding: 10px 20px 0;
+    border-top: 2px solid transparent;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.875em;
+    margin-top: -2px;
+    color: #b2b2b2;
+    cursor: pointer;
+    -webkit-transition: color 0.4s ease-in-out, border 0.4s ease-in-out;
+    -moz-transition: color 0.4s ease-in-out, border 0.4s ease-in-out;
+    transition: color 0.4s ease-in-out, border 0.4s ease-in-out; }
+    .menu li.active {
+      border-color: #2c2c2c;
+      color: #2c2c2c; }
+      .menu li.active:hover {
+        color: #2c2c2c; }
+    .menu li:hover {
+      color: #2c2c2c; }
 
 #register_login .register h1, #register_login .login h1, #register_login .logged h1, #register_login .logout h1 {
   margin-top: 60px; }
@@ -2036,7 +2066,7 @@ body > header {
     #register_login .register input[type=submit] a, #register_login .login input[type=submit] a, #register_login .logged input[type=submit] a, #register_login .logout input[type=submit] a {
       color: white;
       background: black;
-      border: 2px solid white; }
+      border-color: white; }
       #register_login .register input[type=submit] a:hover, #register_login .login input[type=submit] a:hover, #register_login .logged input[type=submit] a:hover, #register_login .logout input[type=submit] a:hover {
         background: #3f3f3f; }
       #register_login .register input[type=submit] a:active, #register_login .register input[type=submit] a .active, #register_login .login input[type=submit] a:active, #register_login .login input[type=submit] a .active, #register_login .logged input[type=submit] a:active, #register_login .logged input[type=submit] a .active, #register_login .logout input[type=submit] a:active, #register_login .logout input[type=submit] a .active {
@@ -2048,7 +2078,9 @@ body > header {
 
 #profile .content {
   padding-bottom: 30px; }
-#profile .wishlist {
+#profile .wishlists li.private {
+  display: none; }
+#profile .wishlist, #profile .add {
   display: block;
   height: 100%;
   width: 100%;
@@ -2058,23 +2090,23 @@ body > header {
   text-align: center;
   margin-bottom: 30px;
   position: relative; }
-  #profile .wishlist .cover {
+  #profile .wishlist .cover, #profile .add .cover {
     display: block;
     height: 250px;
     background-size: cover;
     background-position: center center; }
-  #profile .wishlist h4 {
+  #profile .wishlist h4, #profile .add h4 {
     font-size: 1.0625em;
     line-height: 49px;
     height: 48px;
     overflow: hidden; }
-  #profile .wishlist > a {
+  #profile .wishlist > a, #profile .add > a {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  #profile .wishlist .button {
+  #profile .wishlist .button, #profile .add .button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -2083,50 +2115,47 @@ body > header {
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out; }
-    #profile .wishlist .button a {
+    #profile .wishlist .button a, #profile .add .button a {
       color: #2c2c2c;
       background: white;
-      border: 2px solid #2c2c2c; }
-      #profile .wishlist .button a:hover {
+      border-color: #2c2c2c; }
+      #profile .wishlist .button a:hover, #profile .add .button a:hover {
         background: #cacaca; }
-      #profile .wishlist .button a:active, #profile .wishlist .button a .active {
+      #profile .wishlist .button a:active, #profile .wishlist .button a .active, #profile .add .button a:active, #profile .add .button a .active {
         background: #2c2c2c;
         color: white; }
-    #profile .wishlist .button span.number {
+    #profile .wishlist .button span.number, #profile .add .button span.number {
       color: white;
       background: #2c2c2c; }
-  #profile .wishlist:hover .button {
+  #profile .wishlist:hover .button, #profile .add:hover .button {
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out; }
-  #profile .wishlist.add {
-    border-style: dashed;
-    border-color: #e0e0e0;
-    cursor: pointer;
-    -webkit-transition: background 0.2s ease-in-out;
-    -moz-transition: background 0.2s ease-in-out;
-    transition: background 0.2s ease-in-out; }
-    #profile .wishlist.add .cover {
-      height: 298px; }
-    #profile .wishlist.add .icon {
-      font-size: 6.25em;
-      line-height: 300px;
-      color: #cccccc; }
-    #profile .wishlist.add:hover {
-      background: #f2f2f2; }
-#profile .private {
-  background: #f2f2f2; }
-  #profile .private .lock {
+  #profile .wishlist .lock, #profile .add .lock {
     position: absolute;
     top: 20px;
     left: 20px;
     font-size: 0.875em;
     opacity: 0.5; }
-  #profile .private .add {
+#profile .add {
+  border-style: dashed;
+  border-color: #e0e0e0;
+  cursor: pointer;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out; }
+  #profile .add .cover {
+    height: 298px; }
+  #profile .add .icon {
+    font-size: 6.25em;
+    line-height: 300px;
+    color: #b2b2b2; }
+  #profile .add:hover {
     background: #f2f2f2; }
-    #profile .private .add:hover {
-      background: white; }
+
+#wishlist h2 {
+  font-size: 2.1875em; }
 
 #add_wishlist form label, #edit_wishlist form label, #add_item form label, #edit_item form label {
   line-height: 30px; }
@@ -2150,7 +2179,7 @@ body > header {
     width: 100%;
     text-transform: uppercase;
     border-radius: 2px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 20px;
     font-size: 0.875em;
     color: #2c2c2c;

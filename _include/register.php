@@ -9,7 +9,7 @@ $message = "Form not sent";
 
 if(isset($_POST['register'])){
 
-	$username = htmlspecialchars($_POST['username']);
+	$username = strtolower(htmlspecialchars($_POST['username']));
 	$password1 = htmlspecialchars($_POST['password']);
 	$password2 = htmlspecialchars($_POST['password2']);
 	$firstname = htmlspecialchars($_POST['firstname']);

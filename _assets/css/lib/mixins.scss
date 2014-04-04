@@ -3,7 +3,7 @@
 	a{
 		color: $color1;
 		background: $color2;
-		border: 2px solid $color1;
+		border-color: $color1;
 
 		&:hover{
 			background: mix($color1, $color2, 25%);
@@ -22,6 +22,26 @@
 			background: $color1;
 		}
 	}
+}
+
+@mixin h2(){
+	font-size: em(30);
+	line-height: $lh * 1.8;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+@mixin h3(){
+	font-size: em(20);
+	line-height: $lh;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 32px;
+	text-align: center;
 }
 
 /* // BORDER RADIUS

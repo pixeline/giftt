@@ -9,7 +9,7 @@
 		input[type=text], textarea{
 			width: 100%;
 			max-width: 100%;
-			font-family: $ff;
+			font-family: $body;
 			line-height: $lh;
 			font-size: $fs;
 			padding: 5px;
@@ -31,7 +31,7 @@
 				width: 100%;
 				text-transform: uppercase;
 				border-radius: 2px;
-				font-weight: $medium;
+				font-weight: 500;
 				line-height: $lh;
 				font-size: em(14);
 				color: $black;

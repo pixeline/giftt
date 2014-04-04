@@ -4,7 +4,17 @@
 		padding-bottom: 30px;
 	}
 
-	.wishlist{
+	.wishlists{
+
+		li{
+
+			&.private{
+				display: none;
+			}
+		}
+	}
+
+	.wishlist, .add{
 		display: block;
 		height: 100%;
 		width: 100%;
@@ -55,31 +65,6 @@
 			}
 		}
 
-		&.add{
-			border-style: dashed;
-			border-color: $gray12;
-			cursor: pointer;
-			@include transition(background 0.2s ease-in-out);
-
-			.cover{
-				height: 298px;
-			}
-
-			.icon{
-				font-size: em(100);
-				line-height: $lh * 15;
-				color: $gray20;
-			}
-
-			&:hover{
-				background: $gray5;
-			}
-		}
-	}
-
-	.private{
-		background: $gray5;
-
 		.lock{
 			position: absolute;
 			top: 20px;
@@ -87,14 +72,26 @@
 			font-size: em(14);
 			opacity: 0.5;
 		}
-
-		.add{
-			background: $gray5;
-
-			&:hover{
-				background: $white;
-			}
-		}
 	}
 
+	.add{
+		border-style: dashed;
+		border-color: $gray12;
+		cursor: pointer;
+		@include transition(background 0.2s ease-in-out);
+
+		.cover{
+			height: 298px;
+		}
+
+		.icon{
+			font-size: em(100);
+			line-height: $lh * 15;
+			color: $gray30;
+		}
+
+		&:hover{
+			background: $gray5;
+		}
+	}
 }

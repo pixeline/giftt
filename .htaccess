@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z1-9]+)/([a-z1-9]+)/edit$ edit/wishlist/index.php?user=$1&slug=$2 [L]
+RewriteRule ^([a-zA-Z1-9]+)/([a-z1-9]+)$ wishlist/index.php?user=$1&slug=$2 [L]
+RewriteRule ^([a-zA-Z1-9]+)/([^a-z1-9]+)$ 404.php [L]
+RewriteRule ^([a-zA-Z1-9]+)/([a-z1-9]+)/([a-z1-9]+)/edit$ edit/wish/index.php?user=$1&id=$2 [L]
+RewriteRule ^([a-zA-Z1-9]+)/([a-z1-9]+)/([a-z1-9]+)/$ wish/index.php?user=$1&id=$2 [L]
+RewriteRule ^([a-zA-Z1-9]+)/([a-z1-9]+)/([^a-z1-9]+)$ 404.php [L]
+RewriteRule ^([a-zA-Z1-9]+)/edit$ edit/profile/index.php?user=$1 [L]
+RewriteRule ^([a-zA-Z1-9]{2,})$ profile/index.php?user=$1 [L]

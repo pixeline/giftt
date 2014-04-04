@@ -16,10 +16,11 @@ $gray30: $grey30;
 
 // TYPOGRAPHY
 
-$ff: "proxima-nova", sans-serif;
-$regular: 400;
-$medium: 600;
-$semibold: 700;
+$freight: "freight-sans-pro", sans-serif;
+$tisa: "ff-tisa-sans-web-pro", sans-serif;
+$proxima: "proxima-nova", sans-serif;
+$title: $tisa;
+$body: $proxima;
 
 $fs: 16px;
 $lh: 20px;
