@@ -1,6 +1,21 @@
 (function(){
 
 	/////////////////////////////////////
+	// DEFAULTS /////////////////////////
+	/////////////////////////////////////
+
+	body = $('body');
+
+
+
+
+
+
+
+
+
+
+	/////////////////////////////////////
 	// AESTHETICS ///////////////////////
 	/////////////////////////////////////
 
@@ -8,11 +23,23 @@
 
 	function init(){
 
-		// init
+		initMasonry();
 
 	}
 
 	init();
+
+	function initMasonry(){
+		if(body.hasClass('wishlist') && body.hasClass('view')){
+			setTimeout(function(){
+				masContainer = $('.wishes');
+				masContainer.masonry({
+					columnWidth: '.wishes li:nth-child(2)',
+					itemSelector: '.wishes li'
+				});
+			}, 50);
+		}
+	}
 
 
 

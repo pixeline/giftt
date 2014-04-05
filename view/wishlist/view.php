@@ -17,7 +17,7 @@
 
 				<div class="intro">
 					<h2><?php echo $wishlist_name ?></h2>
-					<p class="mute"><?php echo date('jS F, Y', $wishlist_date); ?></p>
+					<p class="mute">Created on <?php echo date('F jS, Y', $wishlist_date); ?></p>
 					<!--<?php if(!empty($wishlist_description)) echo "<p>" . $wishlist_description . "</p>"; ?>-->
 					<div class="button edit">
 						<a href="#">
@@ -26,7 +26,7 @@
 					</div>
 				</div>
 
-				<ul class="row">
+				<ul class="row wishes">
 
 					<?php
 
@@ -40,7 +40,7 @@
 					?>
 
 					<li class="col-xs-6 col-sm-4 col-md-3">
-						<div class="wishlist add">
+						<div class="wish add">
 							<div class="cover entypo plus">
 								<span class="icon"></span>
 							</div>
@@ -58,6 +58,7 @@
 							$wish_name = $wish['name'];
 							$wish_price = $wish['price'];
 							$wish_origin = $wish['origin'];
+							$wish_cover = $wish['cover'];
 							$wish_id = $wish['id'];
 
 							if(!empty($wish_origin)){
@@ -68,8 +69,8 @@
 					?>
 
 					<li class="col-xs-6 col-sm-4 col-md-3">
-						<div class="wishlist">
-							<div class="cover" style="background-image: url(/_assets/images/birthday.jpg);"></div>
+						<div class="wish">
+							<img src="/<?php echo $wish_cover; ?>" />
 							<div class="infos">
 								<div class="top">
 									<h4><?php echo $wish_name; ?></h4>
@@ -127,5 +128,6 @@
 	</aside>
 
 	<?php require $root . '/_include/foot.php'; ?>
+	<script src="/_assets/js/masonry.min.js"></script>
 </body>
 </html>

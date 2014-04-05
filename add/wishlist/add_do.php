@@ -30,8 +30,9 @@ if(isset($_POST['add_wishlist'])){
 			'description' => $description
 		));
 		$message = "The wishlist has been created";
-		header("Location:/");
 	}
+}else{
+	header('Location:/');
 }
 
 ?>

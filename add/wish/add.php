@@ -2,6 +2,8 @@
 
 require $root . '/_include/wishlist_info.php';
 
+require $root . '/add/wish/add_do.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -26,13 +28,13 @@ require $root . '/_include/wishlist_info.php';
 					<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 
 						<h3><strong>Add</strong> a wish</h3>
-						<form action="/add/wish/add_do.php" method="POST">
+						<form action="#" method="POST" enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-sm-12">
 									<label for="name"><strong>Name</strong> (required)</label>
 								</div>
 								<div class="col-sm-12">
-									<input type="text" name="name" value="" />
+									<input type="text" name="name" value="Test" />
 								</div>
 								<div class="col-sm-6">
 									<div class="row">
@@ -40,7 +42,7 @@ require $root . '/_include/wishlist_info.php';
 											<label for="origin"><strong>Origin</strong></lable>
 										</div>
 										<div class="col-sm-12">
-											<input type="url" name="origin" value="http://" />
+											<input type="url" name="origin" placeholder="http://" />
 										</div>
 									</div>
 								</div>
@@ -54,52 +56,66 @@ require $root . '/_include/wishlist_info.php';
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-12">
-									<label for="wishlist"><strong>Wishlist</strong> (required)</label>
+								<div class="col-sm-4">
+									<div class="row">
+										<div class="col-sm-12">
+											<label for="image"><strong>Image</strong></label>
+										</div>
+										<div class="col-sm-12">
+											<input type="file" name="image" />
+										</div>
+									</div>
 								</div>
-								<div class="col-sm-12">
-									<select name="wishlist">
-										
-										<?php
+								<div class="col-sm-8">
+									<div class="row">
+										<div class="col-sm-12">
+											<label for="wishlist"><strong>Wishlist</strong> (required)</label>
+										</div>
+										<div class="col-sm-12">
+											<select name="wishlist">
+												
+												<?php
 
-										$query = $db->prepare("SELECT * FROM wishlists WHERE author = :author");
-										$query->execute(array(
-											':author' => $user['id']
-										));
+												$query = $db->prepare("SELECT * FROM wishlists WHERE author = :author");
+												$query->execute(array(
+													':author' => $user['id']
+												));
 
-										while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
-											$wishlists[] = $wishlist;
-										}
+												while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
+													$wishlists[] = $wishlist;
+												}
 
-										foreach($wishlists as $wishlist){
-											$name = $wishlist['name'];
-											$id = $wishlist['id'];
+												foreach($wishlists as $wishlist){
+													$name = $wishlist['name'];
+													$id = $wishlist['id'];
 
-										?>
+												?>
 
-										<option value="<?php echo $id; ?>" <?php if($name == $wishlist_name) echo "selected"; ?>><?php echo $name; ?></option>
+												<option value="<?php echo $id; ?>" <?php if($name == $wishlist_name) echo "selected"; ?>><?php echo $name; ?></option>
 
-										<?php
+												<?php
 
-											}
+													}
 
-										?>
+												?>
 
-									</select>
+											</select>
+										</div>
+										<div class="col-sm-12">
+											<label for="description"><strong>Description</strong></label>
+										</div>
+										<div class="col-sm-12">
+											<textarea name="description">Test</textarea>
+										</div>
+										<div class="col-sm-12">
+											<label for="notes"><strong>Notes</strong></label>
+										</div>
+										<div class="col-sm-12">
+											<textarea name="notes"></textarea>
+										</div>
+									</div>
 								</div>
-								<div class="col-sm-12">
-									<label for="description"><strong>Description</strong></label>
-								</div>
-								<div class="col-sm-12">
-									<textarea name="description"></textarea>
-								</div>
-								<div class="col-sm-12">
-									<label for="notes"><strong>Notes</strong></label>
-								</div>
-								<div class="col-sm-12">
-									<textarea name="notes"></textarea>
-								</div>
-								<div class="col-sm-12">
+								<div class="col-sm-8 col-sm-offset-4">
 									<input class="text" type="submit" name="add_wish" value="Add the wish" />
 								</div>
 							</div>
