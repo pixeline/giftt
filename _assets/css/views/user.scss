@@ -1,4 +1,12 @@
-#profile{
+.user.view, .wishlist.add{
+
+	header{
+		padding-bottom: 45px;
+
+		a{
+			margin-bottom: 20px;
+		}
+	}
 
 	.content{
 		padding-bottom: 30px;
@@ -91,7 +99,7 @@
 		}
 
 		&:hover{
-			background: $gray5;
+			background: $gray4;
 		}
 	}
 }

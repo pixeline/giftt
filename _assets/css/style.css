@@ -1855,9 +1855,10 @@ body {
   font-family: "proxima-nova", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 20px; }
+  line-height: 20px;
+  background: white; }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: "ff-tisa-sans-web-pro", sans-serif; }
 
 h2 {
@@ -1866,7 +1867,7 @@ h2 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center; }
 
 h3 {
@@ -1908,13 +1909,11 @@ strong {
 .container {
   position: relative; }
 
-.content {
-  padding: 60px 0; }
-
 .button {
   overflow: hidden;
   letter-spacing: 1px;
-  font-family: "freight-sans-pro", sans-serif; }
+  font-family: "freight-sans-pro", sans-serif;
+  display: inline-block; }
   .button a {
     text-transform: uppercase;
     border-radius: 2px;
@@ -1950,78 +1949,145 @@ strong {
     top: -9999px;
     left: -9999px; }
 
-body > header {
-  background: #2c2c2c; }
-  body > header .button a {
-    color: white;
-    background: #2c2c2c;
-    border-color: white; }
-    body > header .button a:hover {
-      background: #606060; }
-    body > header .button a:active, body > header .button a .active {
-      background: white;
-      color: #2c2c2c; }
-  body > header .button span.number {
-    color: #2c2c2c;
-    background: white; }
-  body > header #search, body > header nav, body > header #logo {
-    margin: 35px 0; }
-  body > header #search {
-    float: left;
-    position: absolute;
-    top: 0;
-    left: 15px;
-    overflow: hidden; }
-  body > header nav {
-    position: absolute;
-    top: 0;
-    right: 15px;
-    overflow: hidden; }
-    body > header nav li {
-      display: inline-block;
-      margin-left: 12px; }
-      body > header nav li:first-child {
-        margin-left: 0; }
-  body > header #logo {
-    text-align: center;
-    margin: 25px auto;
-    overflow: hidden;
-    height: 60px; }
-    body > header #logo span {
-      display: block;
-      height: 60px;
-      width: 250px;
-      background: white; }
+/* .search{
+	width: 100%;
+	background: $white;
+	border-bottom: 1px solid white;
 
-.subheader {
-  background: #f2f2f2;
-  padding: 50px 0;
-  text-align: center; }
-  .subheader img {
+	p{
+		line-height: 40px;
+		margin-bottom: 0;
+	}
+} */
+header {
+  background: #f4f4f4;
+  padding: 50px 0 45px;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #e0e0e0; }
+  header img {
     border-radius: 100px;
     height: 75px;
-    width: auto;
-    margin-bottom: 20px; }
-  .subheader p {
+    width: auto; }
+  header p {
     max-width: 450px; }
-  .subheader .button {
-    clear: both; }
-    .subheader .button a {
+  header .button {
+    clear: both;
+    margin: 0 5px;
+    /* &.edit{
+    	position: absolute;
+    	top: 0;
+    	right: 15px;
+    } */ }
+    header .button a {
       color: #2c2c2c;
       background: white;
       border-color: #2c2c2c; }
-      .subheader .button a:hover {
+      header .button a:hover {
         background: #cacaca; }
-      .subheader .button a:active, .subheader .button a .active {
+      header .button a:active, header .button a .active {
         background: #2c2c2c;
         color: white; }
-    .subheader .button span.number {
+    header .button span.number {
       color: white;
       background: #2c2c2c; }
-    .subheader .button.edit {
-      position: absolute;
-      top: 0;
-      right: 15px; }
+
+/* body > header{
+	background: $black;
+
+	.button{
+		@include button($white, $black);
+	}
+
+	#search, nav, #logo{
+		margin: 35px 0;
+	}
+
+	#search{
+		float: left;
+		position: absolute;
+		top: 0;
+		left: 15px;
+		overflow: hidden;
+	}
+
+	nav{
+		position: absolute;
+		top: 0;
+		right: 15px;
+		overflow: hidden;
+
+		li{
+			display: inline-block;
+			margin-left: 12px;
+
+			&:first-child{
+				margin-left: 0
+			}
+		}
+	}
+
+	#logo{
+		text-align: center;
+		margin: 25px auto;
+		overflow: hidden;
+		height: 60px;
+
+		span{
+			display: block;
+			height: 60px;
+			width: 250px;
+			background: white;
+		}
+	}
+} */
+aside {
+  width: 15%;
+  width: calc(200px);
+  float: right;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -200px;
+  overflow: scroll;
+  background: #2c2c2c;
+  -webkit-transition: right 0.2s ease-in-out;
+  -moz-transition: right 0.2s ease-in-out;
+  transition: right 0.2s ease-in-out; }
+  aside div {
+    height: 200vh;
+    width: 100%;
+    opacity: 0;
+    color: white;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; }
+  aside.show {
+    right: 0; }
+    aside.show div {
+      opacity: 1;
+      -webkit-transition: opacity 0.2s ease-in-out 0.4s;
+      -moz-transition: opacity 0.2s ease-in-out 0.4s;
+      transition: opacity 0.2s ease-in-out 0.4s; }
+
+.main {
+  border-top: 3px solid #7fba00;
+  width: 100%;
+  float: left;
+  background: white;
+  -webkit-transition: width 0.2s ease-in-out;
+  -moz-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out; }
+  .main.withAside {
+    left: -200px;
+    width: 85%;
+    width: calc(100% - 200px);
+    -webkit-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out; }
+
+.content {
+  padding: 60px 0; }
 
 .menu {
   text-align: center;
@@ -2039,13 +2105,14 @@ body > header {
     margin-top: -2px;
     color: #b2b2b2;
     cursor: pointer;
-    -webkit-transition: color 0.4s ease-in-out, border 0.4s ease-in-out;
-    -moz-transition: color 0.4s ease-in-out, border 0.4s ease-in-out;
-    transition: color 0.4s ease-in-out, border 0.4s ease-in-out; }
+    -webkit-transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, border 0.2s ease-in-out; }
     .menu li.active {
-      border-color: #2c2c2c;
+      border-color: #7fba00;
       color: #2c2c2c; }
       .menu li.active:hover {
+        border-color: #7fba00;
         color: #2c2c2c; }
     .menu li:hover {
       color: #2c2c2c; }
@@ -2076,11 +2143,15 @@ body > header {
       color: black;
       background: white; }
 
-#profile .content {
+.user.view header, .wishlist.add header {
+  padding-bottom: 45px; }
+  .user.view header a, .wishlist.add header a {
+    margin-bottom: 20px; }
+.user.view .content, .wishlist.add .content {
   padding-bottom: 30px; }
-#profile .wishlists li.private {
+.user.view .wishlists li.private, .wishlist.add .wishlists li.private {
   display: none; }
-#profile .wishlist, #profile .add {
+.user.view .wishlist, .user.view .add, .wishlist.add .wishlist, .wishlist.add .add {
   display: block;
   height: 100%;
   width: 100%;
@@ -2090,23 +2161,23 @@ body > header {
   text-align: center;
   margin-bottom: 30px;
   position: relative; }
-  #profile .wishlist .cover, #profile .add .cover {
+  .user.view .wishlist .cover, .user.view .add .cover, .wishlist.add .wishlist .cover, .wishlist.add .add .cover {
     display: block;
     height: 250px;
     background-size: cover;
     background-position: center center; }
-  #profile .wishlist h4, #profile .add h4 {
+  .user.view .wishlist h4, .user.view .add h4, .wishlist.add .wishlist h4, .wishlist.add .add h4 {
     font-size: 1.0625em;
     line-height: 49px;
     height: 48px;
     overflow: hidden; }
-  #profile .wishlist > a, #profile .add > a {
+  .user.view .wishlist > a, .user.view .add > a, .wishlist.add .wishlist > a, .wishlist.add .add > a {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  #profile .wishlist .button, #profile .add .button {
+  .user.view .wishlist .button, .user.view .add .button, .wishlist.add .wishlist .button, .wishlist.add .add .button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -2115,51 +2186,143 @@ body > header {
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out; }
-    #profile .wishlist .button a, #profile .add .button a {
+    .user.view .wishlist .button a, .user.view .add .button a, .wishlist.add .wishlist .button a, .wishlist.add .add .button a {
       color: #2c2c2c;
       background: white;
       border-color: #2c2c2c; }
-      #profile .wishlist .button a:hover, #profile .add .button a:hover {
+      .user.view .wishlist .button a:hover, .user.view .add .button a:hover, .wishlist.add .wishlist .button a:hover, .wishlist.add .add .button a:hover {
         background: #cacaca; }
-      #profile .wishlist .button a:active, #profile .wishlist .button a .active, #profile .add .button a:active, #profile .add .button a .active {
+      .user.view .wishlist .button a:active, .user.view .wishlist .button a .active, .user.view .add .button a:active, .user.view .add .button a .active, .wishlist.add .wishlist .button a:active, .wishlist.add .wishlist .button a .active, .wishlist.add .add .button a:active, .wishlist.add .add .button a .active {
         background: #2c2c2c;
         color: white; }
-    #profile .wishlist .button span.number, #profile .add .button span.number {
+    .user.view .wishlist .button span.number, .user.view .add .button span.number, .wishlist.add .wishlist .button span.number, .wishlist.add .add .button span.number {
       color: white;
       background: #2c2c2c; }
-  #profile .wishlist:hover .button, #profile .add:hover .button {
+  .user.view .wishlist:hover .button, .user.view .add:hover .button, .wishlist.add .wishlist:hover .button, .wishlist.add .add:hover .button {
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out; }
-  #profile .wishlist .lock, #profile .add .lock {
+  .user.view .wishlist .lock, .user.view .add .lock, .wishlist.add .wishlist .lock, .wishlist.add .add .lock {
     position: absolute;
     top: 20px;
     left: 20px;
     font-size: 0.875em;
     opacity: 0.5; }
-#profile .add {
+.user.view .add, .wishlist.add .add {
   border-style: dashed;
   border-color: #e0e0e0;
   cursor: pointer;
   -webkit-transition: background 0.2s ease-in-out;
   -moz-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out; }
-  #profile .add .cover {
+  .user.view .add .cover, .wishlist.add .add .cover {
     height: 298px; }
-  #profile .add .icon {
+  .user.view .add .icon, .wishlist.add .add .icon {
     font-size: 6.25em;
     line-height: 300px;
     color: #b2b2b2; }
-  #profile .add:hover {
-    background: #f2f2f2; }
+  .user.view .add:hover, .wishlist.add .add:hover {
+    background: #f4f4f4; }
 
-#wishlist h2 {
-  font-size: 2.1875em; }
+.wishlist.view .intro, .wish.add .intro {
+  margin-bottom: 60px; }
+  .wishlist.view .intro h2 + p, .wish.add .intro h2 + p {
+    text-align: center;
+    max-width: 450px; }
+.wishlist.view .button.edit, .wish.add .button.edit {
+  position: absolute;
+  top: 0;
+  right: 15px; }
+  .wishlist.view .button.edit a, .wish.add .button.edit a {
+    color: #2c2c2c;
+    background: white;
+    border-color: #2c2c2c; }
+    .wishlist.view .button.edit a:hover, .wish.add .button.edit a:hover {
+      background: #cacaca; }
+    .wishlist.view .button.edit a:active, .wishlist.view .button.edit a .active, .wish.add .button.edit a:active, .wish.add .button.edit a .active {
+      background: #2c2c2c;
+      color: white; }
+  .wishlist.view .button.edit span.number, .wish.add .button.edit span.number {
+    color: white;
+    background: #2c2c2c; }
+.wishlist.view .wishlist, .wishlist.view .add, .wish.add .wishlist, .wish.add .add {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative; }
+  .wishlist.view .wishlist .cover, .wishlist.view .add .cover, .wish.add .wishlist .cover, .wish.add .add .cover {
+    display: block;
+    height: 250px;
+    background-size: cover;
+    background-position: center center; }
+  .wishlist.view .wishlist h4, .wishlist.view .add h4, .wish.add .wishlist h4, .wish.add .add h4 {
+    font-size: 1.0625em;
+    line-height: 49px;
+    height: 48px;
+    overflow: hidden; }
+  .wishlist.view .wishlist > a, .wishlist.view .add > a, .wish.add .wishlist > a, .wish.add .add > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .wishlist.view .wishlist .button, .wishlist.view .add .button, .wish.add .wishlist .button, .wish.add .add .button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; }
+    .wishlist.view .wishlist .button a, .wishlist.view .add .button a, .wish.add .wishlist .button a, .wish.add .add .button a {
+      color: #2c2c2c;
+      background: white;
+      border-color: #2c2c2c; }
+      .wishlist.view .wishlist .button a:hover, .wishlist.view .add .button a:hover, .wish.add .wishlist .button a:hover, .wish.add .add .button a:hover {
+        background: #cacaca; }
+      .wishlist.view .wishlist .button a:active, .wishlist.view .wishlist .button a .active, .wishlist.view .add .button a:active, .wishlist.view .add .button a .active, .wish.add .wishlist .button a:active, .wish.add .wishlist .button a .active, .wish.add .add .button a:active, .wish.add .add .button a .active {
+        background: #2c2c2c;
+        color: white; }
+    .wishlist.view .wishlist .button span.number, .wishlist.view .add .button span.number, .wish.add .wishlist .button span.number, .wish.add .add .button span.number {
+      color: white;
+      background: #2c2c2c; }
+  .wishlist.view .wishlist:hover .button, .wishlist.view .add:hover .button, .wish.add .wishlist:hover .button, .wish.add .add:hover .button {
+    opacity: 1;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; }
+  .wishlist.view .wishlist .lock, .wishlist.view .add .lock, .wish.add .wishlist .lock, .wish.add .add .lock {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 0.875em;
+    opacity: 0.5; }
+.wishlist.view .add, .wish.add .add {
+  border-style: dashed;
+  border-color: #e0e0e0;
+  cursor: pointer;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out; }
+  .wishlist.view .add .cover, .wish.add .add .cover {
+    height: 298px; }
+  .wishlist.view .add .icon, .wish.add .add .icon {
+    font-size: 6.25em;
+    line-height: 300px;
+    color: #b2b2b2; }
+  .wishlist.view .add:hover, .wish.add .add:hover {
+    background: #f4f4f4; }
 
-#add_wishlist form label, #edit_wishlist form label, #add_item form label, #edit_item form label {
+.add form label, .edit form label {
   line-height: 30px; }
-#add_wishlist form input[type=text], #add_wishlist form textarea, #edit_wishlist form input[type=text], #edit_wishlist form textarea, #add_item form input[type=text], #add_item form textarea, #edit_item form input[type=text], #edit_item form textarea {
+.add form input[type=text], .add form input[type=url], .add form textarea, .add form select, .edit form input[type=text], .edit form input[type=url], .edit form textarea, .edit form select {
   width: 100%;
   max-width: 100%;
   font-family: "proxima-nova", sans-serif;
@@ -2170,28 +2333,5 @@ body > header {
   border: 2px solid #e0e0e0;
   border-radius: 2px;
   margin-bottom: 20px; }
-#add_wishlist form textarea, #edit_wishlist form textarea, #add_item form textarea, #edit_item form textarea {
+.add form textarea, .edit form textarea {
   min-height: 150px; }
-#add_wishlist form .button, #edit_wishlist form .button, #add_item form .button, #edit_item form .button {
-  overflow: hidden;
-  letter-spacing: 1px; }
-  #add_wishlist form .button input, #edit_wishlist form .button input, #add_item form .button input, #edit_item form .button input {
-    width: 100%;
-    text-transform: uppercase;
-    border-radius: 2px;
-    font-weight: 500;
-    line-height: 20px;
-    font-size: 0.875em;
-    color: #2c2c2c;
-    background: white;
-    cursor: pointer;
-    border: 2px solid #2c2c2c;
-    padding: 9px 15px 7px;
-    -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-    -moz-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-    transition: background 0.2s ease-in-out, color 0.2s ease-in-out; }
-    #add_wishlist form .button input:hover, #edit_wishlist form .button input:hover, #add_item form .button input:hover, #edit_item form .button input:hover {
-      background: #cacaca; }
-    #add_wishlist form .button input.ready:active, #add_wishlist form .button input .ready.active, #edit_wishlist form .button input.ready:active, #edit_wishlist form .button input .ready.active, #add_item form .button input.ready:active, #add_item form .button input .ready.active, #edit_item form .button input.ready:active, #edit_item form .button input .ready.active {
-      background: #2c2c2c;
-      color: white; }

@@ -1,11 +1,19 @@
 RewriteEngine On
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-zA-Z1-9]+)/([a-z1-9]+)/edit$ edit/wishlist/index.php?user=$1&slug=$2 [L]
-RewriteRule ^([a-zA-Z1-9]+)/([a-z1-9]+)$ wishlist/index.php?user=$1&slug=$2 [L]
-RewriteRule ^([a-zA-Z1-9]+)/([^a-z1-9]+)$ 404.php [L]
-RewriteRule ^([a-zA-Z1-9]+)/([a-z1-9]+)/([a-z1-9]+)/edit$ edit/wish/index.php?user=$1&id=$2 [L]
-RewriteRule ^([a-zA-Z1-9]+)/([a-z1-9]+)/([a-z1-9]+)/$ wish/index.php?user=$1&id=$2 [L]
-RewriteRule ^([a-zA-Z1-9]+)/([a-z1-9]+)/([^a-z1-9]+)$ 404.php [L]
-RewriteRule ^([a-zA-Z1-9]+)/edit$ edit/profile/index.php?user=$1 [L]
-RewriteRule ^([a-zA-Z1-9]{2,})$ profile/index.php?user=$1 [L]
+
+# USERS
+RewriteRule ^register$ add/user/index.php [L]
+RewriteRule ^([a-z0-9-_]+)/edit$ edit/user/index.php?user=$1 [L]
+RewriteRule ^([a-z0-9-_]+)$ view/user/index.php?user=$1 [L]
+
+# WISHLISTS
+RewriteRule ^([a-z0-9-_]+)/wishlist/add$ add/wishlist/index.php?user=$1 [L]
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/edit$ edit/wishlist/index.php?user=$1&wishlist=$2 [L]
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)$ view/wishlist/index.php?user=$1&wishlist=$2 [L]
+
+# WISHES
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/add$ add/wish/index.php?user=$1&wishlist=$2 [L]
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/([0-9]+)/edit$ edit/wish/index.php?user=$1&wishlist=$2&wish=$3 [L]
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/([0-9]+)$ view/wish/index.php?user=$1&wishlist=$2&wish=$3 [L]

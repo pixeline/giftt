@@ -5,11 +5,12 @@ require $root . '/functions.php';
 
 if(!isset($user)){
 
-header("Location:/");
+	header("Location:/");
 
 }else{
 
-require 'add.php';
+	$page_user_username = $_GET['user'];
+	require 'view.php';
 
 }
 

@@ -3,17 +3,15 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 require $root . '/functions.php';
 
-if(isset($_SESSION['user'])){
-	$user = $_SESSION['user'];
-}
-
 if(!isset($user)){
 
-require $root . '/landing.php';
+	require $root . '/landing.php';
 
 }else{
 
-require $root . '/profile/profile.php';
+	require $root . '/_include/user_info.php';
+	$page_user_username = $username;
+	require $root . '/view/user/view.php';
 
 }
 

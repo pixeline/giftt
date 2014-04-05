@@ -3,18 +3,31 @@ body{
 	font-weight: 400;
 	font-size: $fs;
 	line-height: $lh;
+	background: $white;
 }
 
-h1, h2, h3, h4{
+h1, h2, h3{
 	font-family: $title;
 }
 
 h2{
-	@include h2;
+	font-size: em(30);
+	line-height: $lh * 1.8;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	text-align: center;
 }
 
 h3{
-	@include h3;
+	font-size: em(20);
+	line-height: $lh;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 32px;
+	text-align: center;
 }
 
 p{
@@ -50,14 +63,11 @@ strong{
 	position: relative;
 }
 
-.content{
-	padding: 60px 0;
-}
-
 .button{
 	overflow: hidden;
 	letter-spacing: 1px;
 	font-family: $freight;
+	display: inline-block;
 
 	a{
 		text-transform: uppercase;
@@ -108,9 +118,53 @@ strong{
 }
 
 
+// SEARCH
+
+/* .search{
+	width: 100%;
+	background: $white;
+	border-bottom: 1px solid white;
+
+	p{
+		line-height: 40px;
+		margin-bottom: 0;
+	}
+} */
+
+
 // HEADER
 
-body > header{
+header{
+	background: $gray4;
+	padding: 50px 0 45px;
+	text-align: center;
+	position: relative;
+	border-bottom: 1px solid $gray12;
+
+	img{
+		border-radius: 100px;
+		height: 75px;
+		width: auto;
+	}
+
+	p{
+		max-width: 450px;
+	}
+
+	.button{
+		@include button($black, $white);
+		clear: both;
+		margin: 0 5px;
+
+		/* &.edit{
+			position: absolute;
+			top: 0;
+			right: 15px;
+		} */
+	}
+}
+
+/* body > header{
 	background: $black;
 
 	.button{
@@ -158,41 +212,59 @@ body > header{
 			background: white;
 		}
 	}
-}
+} */
 
 
-// SUBHEADER
+// CONTENT
 
-.subheader{
-	background: $gray5;
-	padding: 50px 0;
-	text-align: center;
+aside{
+	width: 15%;
+	width: calc(200px);
+	float: right;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: -200px;
+	overflow: scroll;
+	background: $black;
+	@include transition(right 0.2s ease-in-out);
 
-	img{
-		border-radius: 100px;
-		height: 75px;
-		width: auto;
-		margin-bottom: 20px;
+	div{
+		height: 200vh;
+		width: 100%;
+		opacity: 0;
+		color: $white;
+		@include transition(opacity 0.2s ease-in-out);
 	}
 
-	p{
-		max-width: 450px;
-	}
+	&.show{
+		right: 0;
 
-	.button{
-		@include button($black, $white);
-		clear: both;
-
-		&.edit{
-			position: absolute;
-			top: 0;
-			right: 15px;
+		div{
+			opacity: 1;
+			@include transition(opacity 0.2s ease-in-out 0.4s);
 		}
 	}
 }
 
+.main{
+	border-top: 3px solid $green;
+	width: 100%;
+	float: left;
+	background: $white;
+	@include transition(width 0.2s ease-in-out);
 
-// CONTENT
+	&.withAside{
+		left: -200px;
+		width: 85%;
+		width: calc(100% - 200px);
+		@include transition(width 0.2s ease-in-out);
+	}
+}
+
+.content{
+	padding: 60px 0;
+}
 
 .menu{
 	text-align: center;
@@ -213,13 +285,14 @@ body > header{
 		margin-top: -2px;
 		color: $gray30;
 		cursor: pointer;
-		@include transition(color 0.4s ease-in-out, border 0.4s ease-in-out);
+		@include transition(color 0.2s ease-in-out, border 0.2s ease-in-out);
 
 		&.active{
-			border-color: $black;
+			border-color: $green;
 			color: $black;
 
 			&:hover{
+				border-color: $green;
 				color: $black;
 			}
 		}

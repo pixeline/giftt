@@ -109,7 +109,7 @@
 
 	// LOGOUT
 
-	$('#search').on('click', function(){
+	$('#logout').on('click', function(){
 		logout();
 		return false;
 	})
@@ -133,18 +133,55 @@
 	// MENU
 
 	$('.menu li').on('click', function(){
-		if($(this).hasClass('active')){
+		menu($(this));
+	})
+
+	function menu(el){
+		if(el.hasClass('active')){
 			return false;
 		}
-		id = $(this).attr('id');
-		$(this).siblings('li').removeClass('active');
-		$(this).addClass('active');
+		id = el.attr('id');
+		el.siblings('li').removeClass('active');
+		el.addClass('active');
 		wishlists = $('.wishlists');
 		wishlistsAll = wishlists.find('.public, .private');
 		wishlistsAll.fadeOut(200);
 		setTimeout(function(){
 			wishlists.find('li.'+id).fadeIn(200);
 		}, 200);
+	}
+
+
+	// SHOW ASIDE
+
+	$('#showAside').on('click', function(){
+		showAside();
+		return false;
 	})
 
+	function showAside(){
+		aside = $('aside');
+		main = $('.main');
+		aside.toggleClass('show');
+		main.toggleClass('withAside');
+	}
+
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

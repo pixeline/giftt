@@ -24,26 +24,6 @@
 	}
 }
 
-@mixin h2(){
-	font-size: em(30);
-	line-height: $lh * 1.8;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	margin-bottom: 20px;
-	text-align: center;
-}
-
-@mixin h3(){
-	font-size: em(20);
-	line-height: $lh;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	margin-bottom: 32px;
-	text-align: center;
-}
-
 /* // BORDER RADIUS
 
 @mixin rounded($radius: 0.5em){

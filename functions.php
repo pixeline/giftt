@@ -3,8 +3,10 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include $root . '/_include/conn.php';
+require $root . '/_include/conn.php';
 
 session_start();
+
+require $root . '/_include/user_info.php';
 
 ?>
