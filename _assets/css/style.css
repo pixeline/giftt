@@ -2049,6 +2049,7 @@ aside {
   float: right;
   position: fixed;
   top: 0;
+  padding: 10px;
   bottom: 0;
   right: -200px;
   overflow: scroll;

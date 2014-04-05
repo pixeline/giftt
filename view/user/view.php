@@ -15,7 +15,13 @@
 
 			<div class="container">
 
-				<h3><?php if($me_username == $user_username){ ?>Your<?php }else{ echo $user_firstname . "'s"; }?> wishlists</h3>
+				<h3>
+					<?php if($me_username == $user_username){ ?>
+						Your wishlists
+					<?php }else{ ?>
+						<?php echo $user_firstname ?>'s wishlists
+					<?php } ?>
+				</h3>
 
 				<?php if($me_username == $user_username){ ?>
 				<div class="menu">
@@ -132,11 +138,7 @@
 
 	</section>
 
-	<aside>
-		
-		<div>qsdf</div>
-
-	</aside>
+	<?php include $root . '/_include/feed.php'; ?>
 
 	<?php require $root . '/_include/foot.php'; ?>
 </body>

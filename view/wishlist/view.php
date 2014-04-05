@@ -130,11 +130,7 @@
 
 	</section>
 
-	<aside>
-		
-		<div>qsdf</div>
-
-	</aside>
+	<?php include $root . '/_include/feed.php'; ?>
 
 	<?php require $root . '/_include/foot.php'; ?>
 	<script src="/_assets/js/masonry.min.js"></script>

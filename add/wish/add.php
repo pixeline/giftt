@@ -140,11 +140,7 @@ require $root . '/add/wish/add_do.php';
 
 	</section>
 
-	<aside>
-		
-		<div>qsdf</div>
-
-	</aside>
+	<?php include $root . '/_include/feed.php'; ?>
 
 	<?php require $root . '/_include/foot.php'; ?>
 </body>

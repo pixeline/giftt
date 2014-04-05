@@ -9,7 +9,7 @@ if(!isset($me)){
 
 }else{
 
-	require $root . '/_include/wishlist_info.php';
+	require $root . '/_include/user_info.php';
 	require 'add.php';
 
 }
