@@ -17,7 +17,8 @@
 
 				<div class="intro">
 					<h2><?php echo $wishlist_name ?></h2>
-					<?php if(!empty($wishlist_description)) echo "<p>" . $wishlist_description . "</p>"; ?>
+					<p class="mute"><?php echo date('jS F, Y', $wishlist_date); ?></p>
+					<!--<?php if(!empty($wishlist_description)) echo "<p>" . $wishlist_description . "</p>"; ?>-->
 					<div class="button edit">
 						<a href="#">
 							<span class="title">Edit</span>
@@ -49,20 +50,47 @@
 
 					<?php
 
-						while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
-							$wishlists[] = $wishlist;
+						while($wish = $query->fetch(PDO::FETCH_ASSOC)){
+							$wishes[] = $wish;
 						}
 
-						foreach($wishlists as $wishlist){
-							$name = $wishlist['name'];
-							$id = $wishlist['id'];
+						foreach($wishes as $wish){
+							$wish_name = $wish['name'];
+							$wish_price = $wish['price'];
+							$wish_origin = $wish['origin'];
+							$wish_id = $wish['id'];
+
+							if(!empty($wish_origin)){
+								$wish_origin_min = str_replace('http://', '', $wish_origin);
+								$wish_origin_min = explode('/', $wish_origin_min);
+							}
 
 					?>
 
 					<li class="col-xs-6 col-sm-4 col-md-3">
 						<div class="wishlist">
-							<div class="cover" data-img="/_assets/images/birthday.jpg"></div>
-							<a href="/<?php echo $page_user_username ?>/<?php echo $wishlist_slug; ?>/<?php echo strtolower($id) ?>"></a>
+							<div class="cover" style="background-image: url(/_assets/images/birthday.jpg);"></div>
+							<div class="infos">
+								<div class="top">
+									<h4><?php echo $wish_name; ?></h4>
+									<?php
+										if(!empty($wish_price)){
+									?>
+
+									<p class="price"><?php echo $wish_price; ?></p>
+									<?php
+										}
+									?>
+								</div>
+								<?php
+									if(!empty($wish_origin)){
+								?>
+								<p class="origin">from <?php echo $wish_origin_min[0]; ?></p>
+								<?php
+									}
+								?>
+							</div>
+							<a href="/<?php echo $page_user_username ?>/<?php echo $wishlist_slug; ?>/<?php echo strtolower($wish_id) ?>"></a>
 						</div>
 					</li>
 

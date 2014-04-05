@@ -4,29 +4,72 @@
 	// AESTHETICS ///////////////////////
 	/////////////////////////////////////
 
+	// INIT
+
 	function init(){
 
-		// COVER
-
-		$('.cover').each(function(){
-			img = $(this).data('img');
-			if(img){
-				$(this).css({'background-image': 'url('+img+')'});
-			}
-		})
-
-
-		// THUMBNAILS
-
-		$('.wishlist > a').hover(function(){
-			$(this).siblings('h4').css({'text-decoration': 'underline'});
-		}, function(){
-			$(this).siblings('h4').css({'text-decoration': 'none'});
-		})
+		// init
 
 	}
 
 	init();
+
+
+
+
+
+
+
+
+
+
+	/////////////////////////////////////
+	// NAVIGATION ///////////////////////
+	/////////////////////////////////////
+
+	// MENU
+
+	$('.menu li').on('click', function(){
+		menu($(this));
+	})
+
+	function menu(el){
+		if(el.hasClass('active')){
+			return false;
+		}
+		id = el.attr('id');
+		el.siblings('li').removeClass('active');
+		el.addClass('active');
+		wishlists = $('.wishlists');
+		wishlistsAll = wishlists.find('.public, .private');
+		wishlistsAll.fadeOut(200);
+		setTimeout(function(){
+			wishlists.find('li.'+id).fadeIn(200);
+		}, 200);
+	}
+
+
+	// SHOW ASIDE
+
+	$('#showAside').on('click', function(){
+		showAside();
+		return false;
+	})
+
+	function showAside(){
+		aside = $('aside');
+		main = $('.main');
+		aside.toggleClass('show');
+		main.toggleClass('withAside');
+	}
+
+
+
+
+
+
+
+
 
 
 	/////////////////////////////////////
@@ -129,59 +172,4 @@
 		});
 	}
 
-
-	// MENU
-
-	$('.menu li').on('click', function(){
-		menu($(this));
-	})
-
-	function menu(el){
-		if(el.hasClass('active')){
-			return false;
-		}
-		id = el.attr('id');
-		el.siblings('li').removeClass('active');
-		el.addClass('active');
-		wishlists = $('.wishlists');
-		wishlistsAll = wishlists.find('.public, .private');
-		wishlistsAll.fadeOut(200);
-		setTimeout(function(){
-			wishlists.find('li.'+id).fadeIn(200);
-		}, 200);
-	}
-
-
-	// SHOW ASIDE
-
-	$('#showAside').on('click', function(){
-		showAside();
-		return false;
-	})
-
-	function showAside(){
-		aside = $('aside');
-		main = $('.main');
-		aside.toggleClass('show');
-		main.toggleClass('withAside');
-	}
-
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

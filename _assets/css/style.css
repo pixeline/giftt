@@ -1856,7 +1856,8 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  background: white; }
+  background: white;
+  color: #2c2c2c; }
 
 h1, h2, h3 {
   font-family: "ff-tisa-sans-web-pro", sans-serif; }
@@ -2147,11 +2148,12 @@ aside {
   padding-bottom: 45px; }
   .user.view header a, .wishlist.add header a {
     margin-bottom: 20px; }
-.user.view .content, .wishlist.add .content {
+
+.user.view .content {
   padding-bottom: 30px; }
-.user.view .wishlists li.private, .wishlist.add .wishlists li.private {
+.user.view .wishlists li.private {
   display: none; }
-.user.view .wishlist, .user.view .add, .wishlist.add .wishlist, .wishlist.add .add {
+.user.view .wishlist, .user.view .add {
   display: block;
   height: 100%;
   width: 100%;
@@ -2161,23 +2163,23 @@ aside {
   text-align: center;
   margin-bottom: 30px;
   position: relative; }
-  .user.view .wishlist .cover, .user.view .add .cover, .wishlist.add .wishlist .cover, .wishlist.add .add .cover {
+  .user.view .wishlist .cover, .user.view .add .cover {
     display: block;
     height: 250px;
     background-size: cover;
     background-position: center center; }
-  .user.view .wishlist h4, .user.view .add h4, .wishlist.add .wishlist h4, .wishlist.add .add h4 {
+  .user.view .wishlist h4, .user.view .add h4 {
     font-size: 1.0625em;
     line-height: 49px;
     height: 48px;
     overflow: hidden; }
-  .user.view .wishlist > a, .user.view .add > a, .wishlist.add .wishlist > a, .wishlist.add .add > a {
+  .user.view .wishlist > a, .user.view .add > a {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  .user.view .wishlist .button, .user.view .add .button, .wishlist.add .wishlist .button, .wishlist.add .add .button {
+  .user.view .wishlist .button, .user.view .add .button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -2186,67 +2188,69 @@ aside {
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out; }
-    .user.view .wishlist .button a, .user.view .add .button a, .wishlist.add .wishlist .button a, .wishlist.add .add .button a {
+    .user.view .wishlist .button a, .user.view .add .button a {
       color: #2c2c2c;
       background: white;
       border-color: #2c2c2c; }
-      .user.view .wishlist .button a:hover, .user.view .add .button a:hover, .wishlist.add .wishlist .button a:hover, .wishlist.add .add .button a:hover {
+      .user.view .wishlist .button a:hover, .user.view .add .button a:hover {
         background: #cacaca; }
-      .user.view .wishlist .button a:active, .user.view .wishlist .button a .active, .user.view .add .button a:active, .user.view .add .button a .active, .wishlist.add .wishlist .button a:active, .wishlist.add .wishlist .button a .active, .wishlist.add .add .button a:active, .wishlist.add .add .button a .active {
+      .user.view .wishlist .button a:active, .user.view .wishlist .button a .active, .user.view .add .button a:active, .user.view .add .button a .active {
         background: #2c2c2c;
         color: white; }
-    .user.view .wishlist .button span.number, .user.view .add .button span.number, .wishlist.add .wishlist .button span.number, .wishlist.add .add .button span.number {
+    .user.view .wishlist .button span.number, .user.view .add .button span.number {
       color: white;
       background: #2c2c2c; }
-  .user.view .wishlist:hover .button, .user.view .add:hover .button, .wishlist.add .wishlist:hover .button, .wishlist.add .add:hover .button {
+  .user.view .wishlist:hover .button, .user.view .add:hover .button {
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out; }
-  .user.view .wishlist .lock, .user.view .add .lock, .wishlist.add .wishlist .lock, .wishlist.add .add .lock {
+  .user.view .wishlist:hover h4, .user.view .add:hover h4 {
+    text-decoration: underline; }
+  .user.view .wishlist .lock, .user.view .add .lock {
     position: absolute;
     top: 20px;
     left: 20px;
     font-size: 0.875em;
     opacity: 0.5; }
-.user.view .add, .wishlist.add .add {
+.user.view .add {
   border-style: dashed;
   border-color: #e0e0e0;
   cursor: pointer;
   -webkit-transition: background 0.2s ease-in-out;
   -moz-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out; }
-  .user.view .add .cover, .wishlist.add .add .cover {
+  .user.view .add .cover {
     height: 298px; }
-  .user.view .add .icon, .wishlist.add .add .icon {
+  .user.view .add .icon {
     font-size: 6.25em;
     line-height: 300px;
     color: #b2b2b2; }
-  .user.view .add:hover, .wishlist.add .add:hover {
+  .user.view .add:hover {
     background: #f4f4f4; }
 
-.wishlist.view .intro, .wish.add .intro {
+.wishlist.view .intro {
   margin-bottom: 60px; }
-  .wishlist.view .intro h2 + p, .wish.add .intro h2 + p {
+  .wishlist.view .intro h2 + p {
     text-align: center;
     max-width: 450px; }
-.wishlist.view .button.edit, .wish.add .button.edit {
+.wishlist.view .button.edit {
   position: absolute;
   top: 0;
   right: 15px; }
-  .wishlist.view .button.edit a, .wish.add .button.edit a {
+  .wishlist.view .button.edit a {
     color: #2c2c2c;
     background: white;
     border-color: #2c2c2c; }
-    .wishlist.view .button.edit a:hover, .wish.add .button.edit a:hover {
+    .wishlist.view .button.edit a:hover {
       background: #cacaca; }
-    .wishlist.view .button.edit a:active, .wishlist.view .button.edit a .active, .wish.add .button.edit a:active, .wish.add .button.edit a .active {
+    .wishlist.view .button.edit a:active, .wishlist.view .button.edit a .active {
       background: #2c2c2c;
       color: white; }
-  .wishlist.view .button.edit span.number, .wish.add .button.edit span.number {
+  .wishlist.view .button.edit span.number {
     color: white;
     background: #2c2c2c; }
-.wishlist.view .wishlist, .wishlist.view .add, .wish.add .wishlist, .wish.add .add {
+.wishlist.view .wishlist, .wishlist.view .add {
   display: block;
   height: 100%;
   width: 100%;
@@ -2256,68 +2260,73 @@ aside {
   text-align: center;
   margin-bottom: 30px;
   position: relative; }
-  .wishlist.view .wishlist .cover, .wishlist.view .add .cover, .wish.add .wishlist .cover, .wish.add .add .cover {
+  .wishlist.view .wishlist .cover, .wishlist.view .add .cover {
     display: block;
     height: 250px;
     background-size: cover;
     background-position: center center; }
-  .wishlist.view .wishlist h4, .wishlist.view .add h4, .wish.add .wishlist h4, .wish.add .add h4 {
-    font-size: 1.0625em;
-    line-height: 49px;
-    height: 48px;
-    overflow: hidden; }
-  .wishlist.view .wishlist > a, .wishlist.view .add > a, .wish.add .wishlist > a, .wish.add .add > a {
+  .wishlist.view .wishlist .infos, .wishlist.view .add .infos {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; }
+  .wishlist.view .wishlist .top, .wishlist.view .add .top {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px; }
+  .wishlist.view .wishlist h4, .wishlist.view .add h4 {
+    font-size: 1.125em;
+    line-height: 24px;
+    text-align: left;
+    font-weight: 600; }
+  .wishlist.view .wishlist p, .wishlist.view .add p {
+    margin-bottom: 0;
+    text-align: left;
+    font-weight: 500; }
+    .wishlist.view .wishlist p.price, .wishlist.view .add p.price {
+      color: #7fba00; }
+    .wishlist.view .wishlist p.origin, .wishlist.view .add p.origin {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 12px;
+      color: #b2b2b2;
+      font-size: 0.875em; }
+  .wishlist.view .wishlist > a, .wishlist.view .add > a {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  .wishlist.view .wishlist .button, .wishlist.view .add .button, .wish.add .wishlist .button, .wish.add .add .button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 10;
-    opacity: 0;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out; }
-    .wishlist.view .wishlist .button a, .wishlist.view .add .button a, .wish.add .wishlist .button a, .wish.add .add .button a {
-      color: #2c2c2c;
-      background: white;
-      border-color: #2c2c2c; }
-      .wishlist.view .wishlist .button a:hover, .wishlist.view .add .button a:hover, .wish.add .wishlist .button a:hover, .wish.add .add .button a:hover {
-        background: #cacaca; }
-      .wishlist.view .wishlist .button a:active, .wishlist.view .wishlist .button a .active, .wishlist.view .add .button a:active, .wishlist.view .add .button a .active, .wish.add .wishlist .button a:active, .wish.add .wishlist .button a .active, .wish.add .add .button a:active, .wish.add .add .button a .active {
-        background: #2c2c2c;
-        color: white; }
-    .wishlist.view .wishlist .button span.number, .wishlist.view .add .button span.number, .wish.add .wishlist .button span.number, .wish.add .add .button span.number {
-      color: white;
-      background: #2c2c2c; }
-  .wishlist.view .wishlist:hover .button, .wishlist.view .add:hover .button, .wish.add .wishlist:hover .button, .wish.add .add:hover .button {
-    opacity: 1;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out; }
-  .wishlist.view .wishlist .lock, .wishlist.view .add .lock, .wish.add .wishlist .lock, .wish.add .add .lock {
+  .wishlist.view .wishlist:hover .infos, .wishlist.view .add:hover .infos {
+    opacity: 1; }
+  .wishlist.view .wishlist .lock, .wishlist.view .add .lock {
     position: absolute;
     top: 20px;
     left: 20px;
     font-size: 0.875em;
     opacity: 0.5; }
-.wishlist.view .add, .wish.add .add {
+.wishlist.view .add {
   border-style: dashed;
   border-color: #e0e0e0;
   cursor: pointer;
   -webkit-transition: background 0.2s ease-in-out;
   -moz-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out; }
-  .wishlist.view .add .cover, .wish.add .add .cover {
+  .wishlist.view .add .cover {
     height: 298px; }
-  .wishlist.view .add .icon, .wish.add .add .icon {
+  .wishlist.view .add .icon {
     font-size: 6.25em;
     line-height: 300px;
     color: #b2b2b2; }
-  .wishlist.view .add:hover, .wish.add .add:hover {
+  .wishlist.view .add:hover {
     background: #f4f4f4; }
 
 .add form label, .edit form label {

@@ -68,7 +68,7 @@
 
 					<li class="col-xs-6 col-sm-4 col-md-3 <?php echo $is_private; ?>">
 						<div class="wishlist">
-							<div class="cover" data-img="/_assets/images/birthday.jpg"></div>
+							<div class="cover" style="background-image: url(/_assets/images/birthday.jpg);"></div>
 							<h4><?php echo $name ?></h4>
 							<a href="/<?php echo $page_user_username ?>/<?php echo strtolower($slug) ?>"></a>
 							<div class="button">

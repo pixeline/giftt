@@ -7,6 +7,9 @@
 			margin-bottom: 20px;
 		}
 	}
+}
+
+.user.view{
 
 	.content{
 		padding-bottom: 30px;
@@ -70,6 +73,10 @@
 			.button{
 				opacity: 1;
 				@include transition(opacity 0.2s ease-in-out);
+			}
+
+			h4{
+				text-decoration: underline;
 			}
 		}
 
