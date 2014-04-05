@@ -9,7 +9,7 @@ $message = "Form not sent";
 
 if(isset($_POST['add_wishlist'])){
 
-	$id = $_SESSION['user']['id'];
+	$id = $_SESSION['me']['id'];
 	$name = htmlspecialchars($_POST['name']);
 	$description = htmlspecialchars($_POST['description']);
 	

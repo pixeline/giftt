@@ -4,7 +4,7 @@
 
 	<div class="container">
 		
-		<a href="/<?php echo $username; ?>"><img src="/_assets/images/profile.jpg" alt="John Smith" /></a>
+		<a href="/<?php echo $user_username; ?>"><img src="/_assets/images/profile.jpg" alt="John Smith" /></a>
 
 	</div>
 

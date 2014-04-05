@@ -1,22 +1,21 @@
 <?php
 
-$wishlist_user = $_GET['user'];
+require $root . '/_include/user_info.php';
+
+// GET WISHLIST INFOS
+
 $wishlist_slug = $_GET['wishlist'];
 
-if(!empty($wishlist_slug)){
+$query = $db->prepare("SELECT * FROM wishlists WHERE slug = :slug AND author = :author");
+$query->execute(array(
+	':slug' => $wishlist_slug,
+	':author' => $user_id
+));
 
-	$query = $db->prepare("SELECT * FROM wishlists WHERE slug = :slug");
-	$query->execute(array(
-		':slug' => $wishlist_slug
-	));
-
-	if($query->rowCount() > 1){
-		echo "ERROR: MORE THAN ONE WISHLIST";
-		return false;
-	}
-
+if($query->rowCount() == 0){
+	header("Location:/404.php");
+}else{
 	$wishlist = $query->fetch();
-
 	$wishlist_id = $wishlist['id'];
 	$wishlist_author = $wishlist['author'];
 	$wishlist_name = $wishlist['name'];
@@ -24,27 +23,11 @@ if(!empty($wishlist_slug)){
 	$wishlist_private = $wishlist['private'];
 	$wishlist_date = strtotime($wishlist['date']);
 
-	$query = $db->prepare("SELECT * FROM users WHERE id = :id");
-	$query->execute(array(
-		':id' => $wishlist['author']
-	));
-
-	if($query->rowCount() == 0){
-		echo "ERROR: NO AUTHOR FOUND";
-	}elseif($query->rowCount() > 1){
-		echo "ERROR: MORE THAN ONE AUTHOR";
-		return false;
+	if($wishlist_private){
+		if($wishlist_author != $me_id){
+			$wishlist_access = 0;
+		}
 	}
-
-	$wishlist_author = $query->fetch();
-
-	$wishlist_author_id = $wishlist_author['id'];
-	$wishlist_author_username = $wishlist_author['username'];
-	$wishlist_author_firstname = $wishlist_author['firstname'];
-	$wishlist_author_lastname = $wishlist_author['lastname'];
-
-	$wishlist_author_name = $wishlist_author_firstname . ' ' . $wishlist_author_lastname;
-
 }
 
 ?>

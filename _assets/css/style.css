@@ -1930,7 +1930,8 @@ strong {
       float: left; }
     .button span.number {
       float: right;
-      text-align: center; }
+      text-align: center;
+      font-weight: 500; }
   .button > .entypo {
     font-weight: 400; }
     .button > .entypo span {
@@ -2092,7 +2093,7 @@ aside {
 
 .menu {
   text-align: center;
-  margin-bottom: 40px; }
+  margin-bottom: 20px; }
   .menu ul {
     display: inline-block;
     border-top: 2px solid #cccccc; }
@@ -2151,8 +2152,12 @@ aside {
 
 .user.view .content {
   padding-bottom: 30px; }
-.user.view .wishlists li.private {
-  display: none; }
+.user.view .menu + .wishlists {
+  margin-top: 40px; }
+.user.view .wishlists {
+  margin-top: 50px; }
+  .user.view .wishlists li.private {
+    display: none; }
 .user.view .wishlist, .user.view .add {
   display: block;
   height: 100%;
@@ -2330,6 +2335,20 @@ aside {
   .wishlist.view .add:hover {
     background: #f4f4f4; }
 
+.add form .error, .edit form .error {
+  border-color: #2c2c2c !important;
+  text: white !important; }
+.add form .error_block, .edit form .error_block {
+  background: #2c2c2c;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px; }
+  .add form .error_block p, .edit form .error_block p {
+    margin-bottom: 10px; }
+  .add form .error_block li, .edit form .error_block li {
+    list-style: disc;
+    margin-left: 20px;
+    line-height: 24px; }
 .add form label, .edit form label {
   line-height: 30px; }
 .add form input[type=text], .add form input[type=url], .add form input[type=file], .add form textarea, .add form select, .edit form input[type=text], .edit form input[type=url], .edit form input[type=file], .edit form textarea, .edit form select {
@@ -2338,13 +2357,32 @@ aside {
   line-height: 20px;
   font-size: 16px;
   background: none;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
 .add form input[type=text], .add form input[type=url], .add form textarea, .add form select, .edit form input[type=text], .edit form input[type=url], .edit form textarea, .edit form select {
   padding: 5px;
   border: 2px solid #e0e0e0;
   border-radius: 2px; }
-.add form input[type=file], .edit form input[type=file] {
-  height: 200px; }
+.add form .file_cont, .edit form .file_cont {
+  height: 200px;
+  border: 2px solid #e0e0e0;
+  border-radius: 2px;
+  position: relative;
+  text-align: center; }
+  .add form .file_cont span, .edit form .file_cont span {
+    font-size: 6.25em;
+    line-height: 200px;
+    color: #b2b2b2; }
+  .add form .file_cont input, .edit form .file_cont input {
+    opacity: 0;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: black; }
 .add form textarea, .edit form textarea {
   min-height: 150px;
   max-width: 100%; }

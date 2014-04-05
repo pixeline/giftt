@@ -3,13 +3,18 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 require $root . '/functions.php';
 
-if(!isset($user)){
+if(!isset($me)){
 
-header("Location:/");
+	header("Location:/");
 
 }else{
 
-require 'add.php';
+	require $root . '/_include/wishlist_info.php';
+
+	if($wishlist_author != $me_id){
+		header("Location:/" . $user_username . "/" . $wishlist_slug);
+	}
+	require 'add.php';
 
 }
 

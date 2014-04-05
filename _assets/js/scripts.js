@@ -1,7 +1,7 @@
 (function(){
 
 	/////////////////////////////////////
-	// DEFAULTS /////////////////////////
+	// VARIABLES ////////////////////////
 	/////////////////////////////////////
 
 	body = $('body');
@@ -103,6 +103,12 @@
 	// FORMS ////////////////////////////
 	/////////////////////////////////////
 
+	// ADD SIZE METHOD TO VALIDATION PLUGIN
+
+	/*$.validator.addMethod('filesize', function(value, element, param){
+		return this.optional(element) || (element.files[0].size <= param);
+	});*/
+
 	// ADD WISHLIST
 
 	/*form = $('#add_wishlist form');
@@ -131,6 +137,29 @@
 		return false;
 	})*/
 
+	// ADD WISH
+
+	/*$('#add_wish').validate({
+		rules: {
+			image: {
+				extension: "jpg,png,jpeg,gif",
+				filesize: 1048576,
+			}
+		},
+		errorPlacement: function(error, element){
+			//nowhere
+		},
+		highlight: function(element, errorClass){
+			id = element.id;
+			$("#" + id).addClass(errorClass);
+		},
+		unhighlight: function(element, errorClass){
+			id = element.id;
+			$("#" + id).removeClass(errorClass);
+		},
+		errorClass: "error"
+	});*/
+
 
 
 
@@ -141,7 +170,7 @@
 
 
 	/////////////////////////////////////
-	// REQUETES AJAX ////////////////////
+	// AJAX REQUESTS ////////////////////
 	/////////////////////////////////////
 
 	// FOLLOW
@@ -154,7 +183,7 @@
 	})
 
 	function follow(who2, button){
-		var followData = {'who2': who2};
+		followData = {'who2': who2};
 
 		$.ajax({
 			url: '/_include/follow.php',

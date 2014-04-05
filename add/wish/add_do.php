@@ -1,6 +1,6 @@
 <?php
 
-$message = "Form not sent";
+$form = 1; // to load appropriate js
 
 if(isset($_POST['add_wish'])){
 	
@@ -19,13 +19,13 @@ if(isset($_POST['add_wish'])){
 
 	foreach($required_fields as $field){
 		if((isset($_POST[$field]) && empty($_POST[$field])) || (isset($_FILES[$field]) && empty($_FILES[$field]['name']))){
-			$errors[$field] = "is required";
+			$errors[$field] = "You must provide a " . $field;
 		}
 	}
 
 	// FILES VALIDATION
 	if(isset($image) && !empty($_FILES['image']['name'])){
-		if($image['size'] <= 1000000){
+		if($image['size'] <= 1048576){
 			$file_path = pathinfo($image['name']);
 			$file_type = $file_path['extension'];
 			$file_type_valid = array('jpg', 'jpeg', 'gif', 'png');
@@ -35,13 +35,13 @@ if(isset($_POST['add_wish'])){
 				$cover = '_assets/images/wishes/' . basename($image_rename);
 				move_uploaded_file($image['tmp_name'], $root . '/' . $cover);
 			}else{
-				$errors['image'] = "is not a valid image";
+				$errors['image'] = "The photo should be a .jpg, .png or .gif file";
 			}
 		}else{
-			$errors['image'] = "is too big";
+			$errors['image'] = "The photo is too big";
 		}
 	}else{
-		$errors['image'] = "is required";
+		$errors['image'] = "You must choose a photo";
 	}
 
 	if(!count($errors)){
@@ -65,18 +65,17 @@ if(isset($_POST['add_wish'])){
 		$cur_wishlist = $query->fetch();
 		$wishlist_slug = $cur_wishlist['slug'];
 
-		header("Location:/" . $username . '/' . $wishlist_slug);	
-	}
-	
-	$message = '<p>There was a problem with the following fields :</p>';
-	$message .= '<ul>';
-	foreach($errors as $field => $error){
-		if($error){
-			$message .= "<li><strong>".$field."</strong> $error<li>";
+		/*header("Location:/" . $username . '/' . $wishlist_slug);*/
+	}else{
+		$message = '<p>You must correct the following fields :</p>';
+		$message .= '<ul>';
+		foreach($errors as $field => $error){
+			if($error){
+				$message .= "<li>" . $error . "</li>";
+			}
 		}
+		$message .= '</ul>';
 	}
-	$message .= '</ul>';
-	echo $message;
 }
 
 ?>

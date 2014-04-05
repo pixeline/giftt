@@ -1,7 +1,5 @@
 <?php
 
-require $root . '/_include/wishlist_info.php';
-
 require $root . '/add/wish/add_do.php';
 
 ?>
@@ -28,21 +26,29 @@ require $root . '/add/wish/add_do.php';
 					<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 
 						<h3><strong>Add</strong> a wish</h3>
-						<form action="#" method="POST" enctype="multipart/form-data">
+
+						<form id="add_wish" action="<?php '/' . $me_username . '/' . $wishlist_slug . '/add'; ?>" method="POST" enctype="multipart/form-data">
+							
+							<?php if(isset($message)){ ?>
+								<div class="error_block">
+									<?php  echo $message; ?>
+								</div>
+							<?php } ?>
+							
 							<div class="row">
 								<div class="col-sm-12">
 									<label for="name"><strong>Name</strong> (required)</label>
 								</div>
 								<div class="col-sm-12">
-									<input type="text" name="name" value="Test" />
+									<input id="name" type="text" name="name" value="Test" required />
 								</div>
 								<div class="col-sm-6">
 									<div class="row">
 										<div class="col-sm-12">
-											<label for="origin"><strong>Origin</strong></lable>
+											<label for="origin"><strong>Origin</strong></label>
 										</div>
 										<div class="col-sm-12">
-											<input type="url" name="origin" placeholder="http://" />
+											<input id="origin" type="url" name="origin" placeholder="http://" />
 										</div>
 									</div>
 								</div>
@@ -52,17 +58,20 @@ require $root . '/add/wish/add_do.php';
 											<label for="price"><strong>Price</strong></label>
 										</div>
 										<div class="col-sm-12">
-											<input type="text" name="price" value="" />
+											<input id="price" type="text" name="price" value="" />
 										</div>
 									</div>
 								</div>
 								<div class="col-sm-4">
 									<div class="row">
 										<div class="col-sm-12">
-											<label for="image"><strong>Image</strong></label>
+											<label for="image"><strong>Photo</strong></label>
 										</div>
 										<div class="col-sm-12">
-											<input type="file" name="image" />
+											<div class="file_cont entypo picture">
+												<span class="icon"></span>
+												<input id="image" type="file" name="image" required />
+											</div>
 										</div>
 									</div>
 								</div>
@@ -72,13 +81,13 @@ require $root . '/add/wish/add_do.php';
 											<label for="wishlist"><strong>Wishlist</strong> (required)</label>
 										</div>
 										<div class="col-sm-12">
-											<select name="wishlist">
+											<select id="wishlist" name="wishlist" required>
 												
 												<?php
 
 												$query = $db->prepare("SELECT * FROM wishlists WHERE author = :author");
 												$query->execute(array(
-													':author' => $user['id']
+													':author' => $me['id']
 												));
 
 												while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
@@ -105,13 +114,13 @@ require $root . '/add/wish/add_do.php';
 											<label for="description"><strong>Description</strong></label>
 										</div>
 										<div class="col-sm-12">
-											<textarea name="description">Test</textarea>
+											<textarea id="description" name="description" required>Test</textarea>
 										</div>
 										<div class="col-sm-12">
 											<label for="notes"><strong>Notes</strong></label>
 										</div>
 										<div class="col-sm-12">
-											<textarea name="notes"></textarea>
+											<textarea id="notes" name="notes"></textarea>
 										</div>
 									</div>
 								</div>

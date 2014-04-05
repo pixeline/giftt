@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title><?php echo $name ?></title>
+	<title><?php echo $user_name ?></title>
 	<?php require $root . '/_include/head.php'; ?>
 </head>
 <body class="user view">
@@ -15,25 +15,36 @@
 
 			<div class="container">
 
-				<h3>Your wishlists</h3>
+				<h3><?php if($me_username == $user_username){ ?>Your<?php }else{ echo $user_firstname . "'s"; }?> wishlists</h3>
 
+				<?php if($me_username == $user_username){ ?>
 				<div class="menu">
 					<ul>
 						<li id="public" class="active">Public wishlists</li>
 						<li id="private">Private wishlists</li>
 					</ul>
 				</div>
+				<?php } ?>
 
 				<ul class="row wishlists">
 
 					<?php
 
-					$query = $db->prepare("SELECT * FROM wishlists WHERE author = :id");
-					$query->execute(array(
-						':id' => $id
-					));
+					if($user_id == $me_id){
+						$query = $db->prepare("SELECT * FROM wishlists WHERE author = :id");
+						$query->execute(array(
+							':id' => $user_id
+						));
+					}else{
+						$query = $db->prepare("SELECT * FROM wishlists WHERE author = :id AND private = 0");
+						$query->execute(array(
+							':id' => $user_id
+						));
+					}
 
 					if($query->rowCount() > 0){
+
+						if($me_username == $user_username){
 
 					?>
 
@@ -42,61 +53,58 @@
 							<div class="cover entypo plus">
 								<span class="icon"></span>
 							</div>
-							<a href="/<?php echo $username; ?>/wishlist/add"></a>
+							<a href="/<?php echo $user_username; ?>/wishlist/add"></a>
 						</div>
 					</li>
 
 					<?php
+
+						}
 
 						while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
 							$wishlists[] = $wishlist;
 						}
 
 						foreach($wishlists as $wishlist){
-							$name = $wishlist['name'];
-							$slug = $wishlist['slug'];
-							$id = $wishlist['id'];
-							$private = $wishlist['private'];
+							$wishlist_name = $wishlist['name'];
+							$wishlist_slug = $wishlist['slug'];
+							$wishlist_id = $wishlist['id'];
+							$wishlist_private = $wishlist['private'];
 
-							if($private){
-								$is_private = 'private';
+							$query = $db->prepare("SELECT cover FROM wishes WHERE wishlist = :id ORDER BY id ASC LIMIT 1");
+							$query->execute(array(
+								':id' => $wishlist_id
+							));
+							$wish_cover = $query->fetch();
+
+							if($wishlist_private){
+								$is_private = 1;
 							}else{
-								$is_private = 'public';
+								$is_private = 0;
 							}
 
 					?>
 
-					<li class="col-xs-6 col-sm-4 col-md-3 <?php echo $is_private; ?>">
+					<li class="col-xs-6 col-sm-4 col-md-3 <?php if($is_private){ echo 'private'; }else{ echo 'public'; } ?>">
 						<div class="wishlist">
-							<div class="cover" style="background-image: url(/_assets/images/birthday.jpg);"></div>
-							<h4><?php echo $name ?></h4>
-							<a href="/<?php echo $page_user_username ?>/<?php echo strtolower($slug) ?>"></a>
-							<div class="button">
-								<a href="/<?php echo $page_user_username ?>/<?php echo strtolower($slug) ?>/edit">
-									<span class="title">Edit</span>
-								</a>
-							</div>
-						</div>
-					</li>
-
-
-					<!-- <li class="col-xs-6 col-sm-4 col-md-3 private">
-						<div class="wishlist">
-							<div class="cover" data-img="/_assets/images/clothes.jpg"></div>
-							<h4>Birthday 2014</h4>
+							<div class="cover" style="background-image: url(/<?php echo $wish_cover['cover']; ?>);"></div>
+							<h4><?php echo $wishlist_name ?></h4>
+							<a href="/<?php echo $user_username ?>/<?php echo strtolower($wishlist_slug) ?>"></a>
+							<?php if($is_private){ ?>
 							<div class="entypo lock">
 								<span class="icon"></span>
 								<span class="title">Private</span>
 							</div>
-
-							<a href="#"></a>
+							<?php } ?>
+							<?php if($me_username == $user_username){ ?>
 							<div class="button">
-								<a href="#">
+								<a href="/<?php echo $user_username ?>/<?php echo strtolower($wishlist_slug) ?>/edit">
 									<span class="title">Edit</span>
 								</a>
 							</div>
+							<?php } ?>
 						</div>
-					</li> -->
+					</li>
 
 					<?php
 

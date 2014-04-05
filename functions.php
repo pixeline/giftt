@@ -7,6 +7,6 @@ require $root . '/_include/conn.php';
 
 session_start();
 
-require $root . '/_include/user_info.php';
+require $root . '/_include/me_info.php';
 
 ?>

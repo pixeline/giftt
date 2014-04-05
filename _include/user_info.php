@@ -1,19 +1,30 @@
 <?php
 
-if(isset($_SESSION['user'])){
+// GET USER INFOS
 
-	// ME
 
-	$user = $_SESSION['user'];
 
-	$id = $user['id'];
-	$username = $user['username'];
-	$firstname = $user['firstname'];
-	$lastname = $user['lastname'];
-	$description = $user['description'];
+if(isset($_GET['user'])){
+	$user = $_GET['user'];
+}else{
+	$user = $me_username;
+}
 
-	$name = $firstname . ' ' . $lastname;
+$query = $db->prepare("SELECT * FROM users WHERE username = :username");
+$query->execute(array(
+	':username' => $user,
+));
 
+if($query->rowCount() == 0){
+	header("Location:/404.php");
+}else{
+	$user = $query->fetch();
+	$user_id = $user['id'];
+	$user_username = $user['username'];
+	$user_firstname = $user['firstname'];
+	$user_lastname = $user['lastname'];
+	$user_description = $user['description'];
+	$user_name = $user_firstname . ' ' . $user_lastname;
 }
 
 ?>

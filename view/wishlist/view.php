@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title><?php echo $wishlist['name'] . " | " . $wishlist_author_name ?></title>
+	<title><?php echo $wishlist['name'] . " | " . $user_name ?></title>
 	<?php require $root . '/_include/head.php'; ?>
 </head>
 <body class="wishlist view">
@@ -18,13 +18,24 @@
 				<div class="intro">
 					<h2><?php echo $wishlist_name ?></h2>
 					<p class="mute">Created on <?php echo date('F jS, Y', $wishlist_date); ?></p>
-					<!--<?php if(!empty($wishlist_description)) echo "<p>" . $wishlist_description . "</p>"; ?>-->
+					<?php if($me_username == $user_username){ ?>
 					<div class="button edit">
 						<a href="#">
 							<span class="title">Edit</span>
 						</a>
 					</div>
+					<?php } ?>
 				</div>
+
+				<?php 
+
+				if(isset($wishlist_access) && $wishlist_access == 0){
+
+					echo "private";
+
+				}else{
+
+				?>
 
 				<ul class="row wishes">
 
@@ -32,10 +43,12 @@
 
 					$query = $db->prepare("SELECT * FROM wishes WHERE wishlist = :id");
 					$query->execute(array(
-						':id' => $wishlist['id']
+						':id' => $wishlist_id
 					));
 
 					if($query->rowCount() > 0){
+
+						if($me_username == $user_username){
 
 					?>
 
@@ -44,11 +57,13 @@
 							<div class="cover entypo plus">
 								<span class="icon"></span>
 							</div>
-							<a href="/<?php echo $username; ?>/<?php echo $wishlist_slug; ?>/add"></a>
+							<a href="/<?php echo $me_username; ?>/<?php echo $wishlist_slug; ?>/add"></a>
 						</div>
 					</li>
 
 					<?php
+
+						}
 
 						while($wish = $query->fetch(PDO::FETCH_ASSOC)){
 							$wishes[] = $wish;
@@ -79,19 +94,15 @@
 									?>
 
 									<p class="price"><?php echo $wish_price; ?></p>
-									<?php
-										}
-									?>
+									<?php } ?>
 								</div>
 								<?php
 									if(!empty($wish_origin)){
 								?>
 								<p class="origin">from <?php echo $wish_origin_min[0]; ?></p>
-								<?php
-									}
-								?>
+								<?php } ?>
 							</div>
-							<a href="/<?php echo $page_user_username ?>/<?php echo $wishlist_slug; ?>/<?php echo strtolower($wish_id) ?>"></a>
+							<a href="/<?php echo $user_username ?>/<?php echo $wishlist_slug; ?>/<?php echo strtolower($wish_id) ?>"></a>
 						</div>
 					</li>
 
@@ -107,13 +118,11 @@
 						Nothin'
 					</div>
 
-					<?php
-
-					}
-
-					?>
+					<?php } ?>
 
 				</ul>
+
+				<?php } ?>
 
 			</div>
 
