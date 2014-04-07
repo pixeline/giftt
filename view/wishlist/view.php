@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title><?php echo $wishlist['name'] . " | " . $user_name ?></title>
+	<title><?php echo $wishlist_name . " | " . $user_name ?></title>
 	<?php require $root . '/_include/head.php'; ?>
 </head>
 <body class="wishlist view">
@@ -41,7 +41,7 @@
 
 					<?php
 
-					$query = $db->prepare("SELECT * FROM wishes WHERE wishlist = :id");
+					$query = $db->prepare("SELECT * FROM wishes WHERE wishlist = :id ORDER BY id DESC");
 					$query->execute(array(
 						':id' => $wishlist_id
 					));
@@ -70,15 +70,17 @@
 						}
 
 						foreach($wishes as $wish){
+							$wish_id = $wish['id'];
 							$wish_name = $wish['name'];
+							$wish_cover = $wish['cover'];
 							$wish_price = $wish['price'];
 							$wish_origin = $wish['origin'];
-							$wish_cover = $wish['cover'];
-							$wish_id = $wish['id'];
+							$wish_url = $user_username . "/" . $wishlist_slug . "/" . $wish_id;
 
 							if(!empty($wish_origin)){
-								$wish_origin_min = str_replace('http://', '', $wish_origin);
-								$wish_origin_min = explode('/', $wish_origin_min);
+								$wish_origin = str_replace('http://', '', $wish_origin);
+								$wish_origin = str_replace('www.', '', $wish_origin);
+								$wish_origin = explode('/', $wish_origin);
 							}
 
 					?>
@@ -99,10 +101,10 @@
 								<?php
 									if(!empty($wish_origin)){
 								?>
-								<p class="origin">from <?php echo $wish_origin_min[0]; ?></p>
+								<p class="origin">from <?php echo $wish_origin[0]; ?></p>
 								<?php } ?>
 							</div>
-							<a href="/<?php echo $user_username ?>/<?php echo $wishlist_slug; ?>/<?php echo strtolower($wish_id) ?>"></a>
+							<a href="/<?php echo $wish_url ?>"></a>
 						</div>
 					</li>
 

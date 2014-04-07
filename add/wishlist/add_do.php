@@ -1,56 +1,59 @@
 <?php
 
-$root = $_SERVER['DOCUMENT_ROOT'];
-include $root . '/functions.php';
+$form = 1; // to load appropriate js
 
-// REGISTER
-
-$message = "Form not sent";
+// SLUGIFY A TEXT
+function slugify($text){ // from http://stackoverflow.com/questions/2955251/php-function-to-make-slug-url-string
+	$text = preg_replace('~[^\\pL\d]+~u', '-', $text);
+	$text = trim($text, '-');
+	$text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+	$text = strtolower($text);
+	$text = preg_replace('~[^-\w]+~', '', $text);
+	if(empty($text)){
+		return 'n-a';
+	}
+	return $text;
+}
 
 if(isset($_POST['add_wishlist'])){
 
-	$id = $_SESSION['me']['id'];
-	$name = htmlspecialchars($_POST['name']);
-	$description = htmlspecialchars($_POST['description']);
-	
-	$error = 0;
+	$wishlist_author = $me_id;
+	$wishlist_name = htmlspecialchars($_POST['name']);
+	$wishlist_slug = slugify($wishlist_name);
+	$wishlist_description = htmlspecialchars($_POST['description']);
+	/*$wishlist_private = htmlspecialchars($_POST['private']);*/
+	$wishlist_private = 0;
 
-	$letters = "/^[a-zA-Z0-9'àâéèêôëôùûçÀÂÉÈËÔÙÛÇ()\- ]+$/";
+	// REQUIRED INPUTS (EXCEPT FILES)
+	$required_fields = array('name', 'description');
+	$errors = array();
 
-	if(!preg_match($letters, $name) || $name == ""){
-		$error = 1;
-		$message= "Please enter a valid name";
+	foreach($required_fields as $field){
+		if(isset($_POST[$field]) && empty($_POST[$field])){
+			$errors[$field] = "You must provide a " . $field;
+		}
 	}
 
-	if(!$error){
-		$query = $db->prepare("INSERT INTO wishlists(author, name, description) VALUES(:id, :name, :description)");
+	if(!count($errors)){
+		$query = $db->prepare("INSERT INTO wishlists(author, name, slug, description, private) VALUES(:author, :name, :slug, :description, :private)");
 		$query->execute(array(
-			'id' => $id,
-			'name' => $name,
-			'description' => $description
+			'author' => $wishlist_author,
+			'name' => $wishlist_name,
+			'slug' => $wishlist_slug,
+			'description' => $wishlist_description,
+			'private' => $wishlist_private
 		));
-		$message = "The wishlist has been created";
+		header("Location:/" . $me_username . '/' . $wishlist_slug);
+	}else{
+		$message = '<p>You must correct the following fields :</p>';
+		$message .= '<ul>';
+		foreach($errors as $field => $error){
+			if($error){
+				$message .= "<li>" . $error . "</li>";
+			}
+		}
+		$message .= '</ul>';
 	}
-}else{
-	header('Location:/');
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8"/>
-	<title>Index</title>
-	<?php require $root . '/_include/head.php'; ?>
-</head>
-<body class="home">
-	<div class="container">
-		<?php 
-
-		echo $message;
-
-		?>
-	</div>
-</body>
-</html>

@@ -64,75 +64,6 @@ strong{
 	position: relative;
 }
 
-.button{
-	overflow: hidden;
-	letter-spacing: 1px;
-	font-family: $freight;
-	display: inline-block;
-
-	a{
-		text-transform: uppercase;
-		border-radius: 2px;
-		border: 2px solid transparent;
-		font-weight: 600;
-		font-size: em(15);
-		@include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
-	}
-
-	span{
-		padding: 8px 13px 6px;
-
-		&.title{
-			float: left;
-		}
-
-		&.number{
-			float: right;
-			text-align: center;
-			font-weight: 500;
-		}
-	}
-
-	& > .entypo{
-		font-weight: 400;
-
-		span{
-			padding-left: 12px;
-			padding-right: 12px;
-		}
-	}
-}
-
-.icon{
-	font-family: "Entypo";
-	font-size: em(42);
-	speak: none;
-	text-transform: none;
-	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-	& + .title{
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-}
-
-
-// SEARCH
-
-/* .search{
-	width: 100%;
-	background: $white;
-	border-bottom: 1px solid white;
-
-	p{
-		line-height: 40px;
-		margin-bottom: 0;
-	}
-} */
-
 
 // HEADER
 
@@ -166,89 +97,8 @@ header{
 	}
 }
 
-/* body > header{
-	background: $black;
 
-	.button{
-		@include button($white, $black);
-	}
-
-	#search, nav, #logo{
-		margin: 35px 0;
-	}
-
-	#search{
-		float: left;
-		position: absolute;
-		top: 0;
-		left: 15px;
-		overflow: hidden;
-	}
-
-	nav{
-		position: absolute;
-		top: 0;
-		right: 15px;
-		overflow: hidden;
-
-		li{
-			display: inline-block;
-			margin-left: 12px;
-
-			&:first-child{
-				margin-left: 0
-			}
-		}
-	}
-
-	#logo{
-		text-align: center;
-		margin: 25px auto;
-		overflow: hidden;
-		height: 60px;
-
-		span{
-			display: block;
-			height: 60px;
-			width: 250px;
-			background: white;
-		}
-	}
-} */
-
-
-// CONTENT
-
-aside{
-	width: 15%;
-	width: calc(200px);
-	float: right;
-	position: fixed;
-	top: 0;
-	padding: 10px;
-	bottom: 0;
-	right: -200px;
-	overflow: scroll;
-	background: $black;
-	@include transition(right 0.2s ease-in-out);
-
-	div{
-		height: 200vh;
-		width: 100%;
-		opacity: 0;
-		color: $white;
-		@include transition(opacity 0.2s ease-in-out);
-	}
-
-	&.show{
-		right: 0;
-
-		div{
-			opacity: 1;
-			@include transition(opacity 0.2s ease-in-out 0.4s);
-		}
-	}
-}
+// MAIN
 
 .main{
 	border-top: 3px solid $green;
@@ -302,6 +152,60 @@ aside{
 
 		&:hover{
 			color: $black;
+		}
+	}
+}
+
+.intro{
+	margin-bottom: 60px;
+
+	h2{
+		margin-bottom: 4px;
+	}
+
+	h2 + p{
+		text-align: center;
+		max-width: 450px;
+	}
+
+	.button{
+		@include button($black, $white);
+		position: absolute;
+		top: 0;
+		right: 15px;
+	}
+}
+
+
+// ASIDE
+
+aside{
+	width: 15%;
+	width: calc(200px);
+	float: right;
+	position: fixed;
+	top: 0;
+	padding: 10px;
+	bottom: 0;
+	right: -200px;
+	overflow: scroll;
+	background: $black;
+	@include transition(right 0.2s ease-in-out);
+
+	div{
+		height: 200vh;
+		width: 100%;
+		opacity: 0;
+		color: $white;
+		@include transition(opacity 0.2s ease-in-out);
+	}
+
+	&.show{
+		right: 0;
+
+		div{
+			opacity: 1;
+			@include transition(opacity 0.2s ease-in-out 0.4s);
 		}
 	}
 }

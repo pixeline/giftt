@@ -25,6 +25,7 @@ if($query->rowCount() == 0){
 	$user_lastname = $user['lastname'];
 	$user_description = $user['description'];
 	$user_name = $user_firstname . ' ' . $user_lastname;
+	$user_url = $user_username;
 }
 
 ?>

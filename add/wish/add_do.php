@@ -4,36 +4,36 @@ $form = 1; // to load appropriate js
 
 if(isset($_POST['add_wish'])){
 	
-	$author = $_SESSION['user']['id'];
-	$name = htmlspecialchars($_POST['name']);
-	$origin = htmlspecialchars($_POST['origin']);
-	$price = htmlspecialchars($_POST['price']);
-	$image = $_FILES['image'];
-	$wishlist = htmlspecialchars($_POST['wishlist']);
-	$description = htmlspecialchars($_POST['description']);
-	$notes = htmlspecialchars($_POST['notes']);
+	$wish_author = $me_id;
+	$wish_name = htmlspecialchars($_POST['name']);
+	$wish_origin = htmlspecialchars($_POST['origin']);
+	$wish_price = htmlspecialchars($_POST['price']);
+	$wish_image = $_FILES['image'];
+	$wish_wishlist = htmlspecialchars($_POST['wishlist']);
+	$wish_description = htmlspecialchars($_POST['description']);
+	$wish_notes = htmlspecialchars($_POST['notes']);
 
 	// REQUIRED INPUTS (EXCEPT FILES)
 	$required_fields = array('name', 'wishlist', 'description');
 	$errors = array();
 
 	foreach($required_fields as $field){
-		if((isset($_POST[$field]) && empty($_POST[$field])) || (isset($_FILES[$field]) && empty($_FILES[$field]['name']))){
+		if(isset($_POST[$field]) && empty($_POST[$field])){
 			$errors[$field] = "You must provide a " . $field;
 		}
 	}
 
 	// FILES VALIDATION
-	if(isset($image) && !empty($_FILES['image']['name'])){
-		if($image['size'] <= 1048576){
-			$file_path = pathinfo($image['name']);
+	if(isset($wish_image) && !empty($_FILES['image']['name'])){
+		if($wish_image['size'] <= 1048576){
+			$file_path = pathinfo($wish_image['name']);
 			$file_type = $file_path['extension'];
 			$file_type_valid = array('jpg', 'jpeg', 'gif', 'png');
 
 			if(in_array($file_type, $file_type_valid)){
-				$image_rename = $author . '_' . $wishlist . '_' . rand() . '.' . $file_type;
-				$cover = '_assets/images/wishes/' . basename($image_rename);
-				move_uploaded_file($image['tmp_name'], $root . '/' . $cover);
+				$image_rename = $wish_author . '_' . $wish_wishlist . '_' . rand() . '.' . $file_type;
+				$wish_cover = '_assets/images/wishes/' . basename($image_rename);
+				move_uploaded_file($wish_image['tmp_name'], $root . '/' . $wish_cover);
 			}else{
 				$errors['image'] = "The photo should be a .jpg, .png or .gif file";
 			}
@@ -47,25 +47,26 @@ if(isset($_POST['add_wish'])){
 	if(!count($errors)){
 		$query = $db->prepare("INSERT INTO wishes(author, wishlist, name, cover, description, notes, price, origin) VALUES(:author, :wishlist, :name, :cover, :description, :notes, :price, :origin)");
 		$query->execute(array(
-			'author' => $author,
-			'wishlist' => $wishlist,
-			'name' => $name,
-			'cover' => $cover,
-			'description' => $description,
-			'notes' => $notes,
-			'price' => $price,
-			'origin' => $origin,
+			'author' => $wish_author,
+			'wishlist' => $wish_wishlist,
+			'name' => $wish_name,
+			'cover' => $wish_cover,
+			'description' => $wish_description,
+			'notes' => $wish_notes,
+			'price' => $wish_price,
+			'origin' => $wish_origin,
 		));
 
-		// GET CURRENT WISHLIST NAME
-		$query = $db->prepare("SELECT slug FROM wishlists WHERE id = :id");
+		// GET CURRENT WiSH ID
+		$query = $db->prepare("SELECT id FROM wishes WHERE name = :name AND wishlist = :wishlist");
 		$query->execute(array(
-			':id' => $wishlist
+			':name' => $wish_name,
+			':wishlist' => $wish_wishlist
 		));
-		$cur_wishlist = $query->fetch();
-		$wishlist_slug = $cur_wishlist['slug'];
+		$cur_wish = $query->fetch();
+		$wish_id = $cur_wish['id'];
 
-		/*header("Location:/" . $username . '/' . $wishlist_slug);*/
+		header("Location:/" . $me_username . '/' . $wishlist_slug . '/' . $wish_id);
 	}else{
 		$message = '<p>You must correct the following fields :</p>';
 		$message .= '<ul>';

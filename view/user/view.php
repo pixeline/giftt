@@ -59,7 +59,7 @@
 							<div class="cover entypo plus">
 								<span class="icon"></span>
 							</div>
-							<a href="/<?php echo $user_username; ?>/wishlist/add"></a>
+							<a href="/<?php echo $user_url; ?>/wishlist/add"></a>
 						</div>
 					</li>
 
@@ -76,6 +76,7 @@
 							$wishlist_slug = $wishlist['slug'];
 							$wishlist_id = $wishlist['id'];
 							$wishlist_private = $wishlist['private'];
+							$wishlist_url = $user_username . "/" . $wishlist_slug;
 
 							$query = $db->prepare("SELECT cover FROM wishes WHERE wishlist = :id ORDER BY id ASC LIMIT 1");
 							$query->execute(array(
@@ -94,8 +95,8 @@
 					<li class="col-xs-6 col-sm-4 col-md-3 <?php if($is_private){ echo 'private'; }else{ echo 'public'; } ?>">
 						<div class="wishlist">
 							<div class="cover" style="background-image: url(/<?php echo $wish_cover['cover']; ?>);"></div>
-							<h4><?php echo $wishlist_name ?></h4>
-							<a href="/<?php echo $user_username ?>/<?php echo strtolower($wishlist_slug) ?>"></a>
+							<h4><?php echo $wishlist_name; ?></h4>
+							<a href="/<?php echo $wishlist_url; ?>"></a>
 							<?php if($is_private){ ?>
 							<div class="entypo lock">
 								<span class="icon"></span>
@@ -104,7 +105,7 @@
 							<?php } ?>
 							<?php if($me_username == $user_username){ ?>
 							<div class="button">
-								<a href="/<?php echo $user_username ?>/<?php echo strtolower($wishlist_slug) ?>/edit">
+								<a href="/<?php echo $wishlist_url; ?>/edit">
 									<span class="title">Edit</span>
 								</a>
 							</div>

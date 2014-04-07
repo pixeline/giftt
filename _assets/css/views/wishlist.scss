@@ -1,25 +1,5 @@
 .wishlist.view{
 
-	.intro{
-		margin-bottom: 60px;
-
-		h2{
-			margin-bottom: 4px;
-		}
-
-		h2 + p{
-			text-align: center;
-			max-width: 450px;
-		}
-	}
-
-	.button.edit{
-		@include button($black, $white);
-		position: absolute;
-		top: 0;
-		right: 15px;
-	}
-
 	.wish, .add{
 		display: block;
 		overflow: hidden;

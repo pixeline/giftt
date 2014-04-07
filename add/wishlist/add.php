@@ -1,3 +1,9 @@
+<?php
+
+require $root . '/add/wishlist/add_do.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,19 +26,27 @@
 					<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 
 						<h3><strong>Add</strong> a wishlist</h3>
-						<form action="add_do.php" method="POST">
+
+						<form id="add_wishlist" action="<?php '/' . $me_username . '/wishlist/add'; ?>" method="POST">
+
+							<?php if(isset($message)){ ?>
+								<div class="error_block">
+									<?php  echo $message; ?>
+								</div>
+							<?php } ?>
+
 							<div class="row">
 								<div class="col-sm-12">
 									<label for="name"><strong>Name</strong> (required)</label>
 								</div>
 								<div class="col-sm-12">
-									<input type="text" name="name" value="" />
+									<input type="text" name="name" value="<?php if(isset($wishlist_name)) echo $wishlist_name ?>" required />
 								</div>
 								<div class="col-sm-12">
 									<label for="description"><strong>Description</strong></label>
 								</div>
 								<div class="col-sm-12">
-									<textarea name="description"></textarea>
+									<textarea name="description" required><?php if(isset($wishlist_description)) echo $wishlist_description ?></textarea>
 								</div>
 								<div class="col-sm-12">
 									<div class="button">
