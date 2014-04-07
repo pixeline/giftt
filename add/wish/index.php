@@ -1,7 +1,7 @@
 <?php
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-require $root . '/functions.php';
+require_once$root . '/functions.php';
 
 if(!isset($me)){
 
@@ -9,12 +9,12 @@ if(!isset($me)){
 
 }else{
 
-	require $root . '/_include/wishlist_info.php';
+	require_once$root . '/_include/wishlist_info.php';
 
 	if($wishlist_author != $me_id){
 		header("Location:/" . $user_username . "/" . $wishlist_slug);
 	}
-	require 'add.php';
+	require_once'add.php';
 
 }
 

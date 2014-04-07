@@ -1,7 +1,7 @@
 <?php
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-require $root . '/functions.php';
+require_once$root . '/functions.php';
 
 if(!isset($me)){
 
@@ -9,8 +9,8 @@ if(!isset($me)){
 
 }else{
 
-	require $root . '/_include/wish_info.php';
-	require 'view.php';
+	require_once$root . '/_include/wish_info.php';
+	require_once'view.php';
 
 }
 

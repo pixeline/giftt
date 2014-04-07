@@ -1,6 +1,6 @@
 <header>
 
-	<?php require $root . '/_include/menu.php'; ?>
+	<?php require_once$root . '/_include/menu.php'; ?>
 
 	<div class="container">
 		

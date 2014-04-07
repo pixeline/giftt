@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>Register</title>
-	<?php require $root . '/_include/head.php'; ?>
+	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 <body id="register_login">
 
@@ -46,6 +46,6 @@
 		</div>
 	</div>
 
-	<?php require $root . '/_include/foot.php'; ?>
+	<?php require_once $root . '/_include/foot.php'; ?>
 </body>
 </html>

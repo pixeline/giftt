@@ -19,6 +19,7 @@ h2{
 	letter-spacing: 1px;
 	margin-bottom: 10px;
 	text-align: center;
+	padding: 0 100px;
 }
 
 h3{
@@ -88,12 +89,6 @@ header{
 		@include button($black, $white);
 		clear: both;
 		margin: 0 5px;
-
-		/* &.edit{
-			position: absolute;
-			top: 0;
-			right: 15px;
-		} */
 	}
 }
 

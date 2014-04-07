@@ -1,6 +1,6 @@
 <?php
 
-require $root . '/_include/user_info.php';
+require_once$root . '/_include/user_info.php';
 
 // GET WISHLIST INFOS
 

@@ -1,6 +1,6 @@
 <?php
 
-require $root . '/add/wish/add_do.php';
+require_once$root . '/add/wish/add_do.php';
 
 ?>
 
@@ -9,13 +9,13 @@ require $root . '/add/wish/add_do.php';
 <head>
 	<meta charset="utf-8"/>
 	<title>Add a wishlist</title>
-	<?php require $root . '/_include/head.php'; ?>
+	<?php require_once$root . '/_include/head.php'; ?>
 </head>
 <body class="wish add">
 
 	<section class="main">
 
-		<?php require $root . '/_include/wishlist_header.php'; ?>
+		<?php require_once$root . '/_include/wishlist_header.php'; ?>
 
 		<section class="content form">
 
@@ -142,6 +142,6 @@ require $root . '/add/wish/add_do.php';
 
 	<?php include $root . '/_include/feed.php'; ?>
 
-	<?php require $root . '/_include/foot.php'; ?>
+	<?php require_once$root . '/_include/foot.php'; ?>
 </body>
 </html>

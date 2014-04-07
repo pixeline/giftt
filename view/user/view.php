@@ -3,13 +3,13 @@
 <head>
 	<meta charset="utf-8"/>
 	<title><?php echo $user_name ?></title>
-	<?php require $root . '/_include/head.php'; ?>
+	<?php require_once$root . '/_include/head.php'; ?>
 </head>
 <body class="user view">
 
 	<section class="main">
 
-		<?php require $root . '/_include/user_header.php'; ?>
+		<?php require_once$root . '/_include/user_header.php'; ?>
 
 		<section class="content">
 
@@ -141,6 +141,6 @@
 
 	<?php include $root . '/_include/feed.php'; ?>
 
-	<?php require $root . '/_include/foot.php'; ?>
+	<?php require_once$root . '/_include/foot.php'; ?>
 </body>
 </html>

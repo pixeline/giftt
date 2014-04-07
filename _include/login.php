@@ -43,7 +43,7 @@ if(isset($_POST['login'])){
 <head>
 	<meta charset="utf-8"/>
 	<title>Index</title>
-	<?php require $root . '/_include/head.php'; ?>
+	<?php require_once$root . '/_include/head.php'; ?>
 </head>
 <body class="home">
 	<div class="container">

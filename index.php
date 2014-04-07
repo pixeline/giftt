@@ -1,16 +1,16 @@
 <?php
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-require $root . '/functions.php';
+require_once $root . '/functions.php';
 
 if(!isset($me)){
 
-	require $root . '/landing.php';
+	require_once $root . '/landing.php';
 
 }else{
 
-	require $root . '/_include/user_info.php';
-	require $root . '/view/user/view.php';
+	require_once $root . '/_include/user_info.php';
+	require_once $root . '/view/user/view.php';
 
 }
 
