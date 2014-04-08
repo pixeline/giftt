@@ -1,6 +1,6 @@
 <?php
 
-require_once $root . '/add/wish/add_do.php';
+require_once $root . '/edit/wish/edit_do.php';
 
 ?>
 
@@ -8,10 +8,10 @@ require_once $root . '/add/wish/add_do.php';
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Add a wishlist</title>
+	<title>Edit <?php echo $wish_name; ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body class="wish add">
+<body class="wish edit">
 
 	<section class="main">
 
@@ -25,9 +25,9 @@ require_once $root . '/add/wish/add_do.php';
 
 					<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 
-						<h3>Add a wish</h3>
+						<h3>Edit <?php echo $wish_name; ?></h3>
 
-						<form id="add_wish" action="/<?php echo $wishlist_url; ?>/add" method="POST" enctype="multipart/form-data">
+						<form id="edit_wish" action="/<?php echo $wish_url; ?>/edit" method="POST" enctype="multipart/form-data">
 							
 							<?php if(isset($message)){ ?>
 								<div class="error_block">
@@ -125,7 +125,7 @@ require_once $root . '/add/wish/add_do.php';
 									</div>
 								</div>
 								<div class="col-sm-8 col-sm-offset-4">
-									<input class="text" type="submit" name="add_wish" value="Add the wish" />
+									<input class="text" type="submit" name="edit_wish" value="Edit the wish" />
 								</div>
 							</div>
 						</form>

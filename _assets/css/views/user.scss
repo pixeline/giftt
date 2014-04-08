@@ -1,13 +1,10 @@
-.user.view, .wishlist.add{
+.user.view, .wishlist.add, .wishlist.edit{
 
 	header{
 		padding-bottom: 45px;
 
-		a{
-
-			img{
-				margin-bottom: 20px;
-			}
+		a.user{
+			margin-bottom: 20px;
 		}
 	}
 }

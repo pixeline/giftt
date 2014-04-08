@@ -10,7 +10,11 @@ if(!isset($me)){
 }else{
 
 	require_once $root . '/_include/wish_info.php';
-	require_once'view.php';
+
+	if($wishlist_author != $me_id){
+		header("Location:/" . $user_username . "/" . $wishlist_slug);
+	}
+	require_once'edit.php';
 
 }
 

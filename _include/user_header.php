@@ -1,10 +1,10 @@
 <header>
 
-	<?php require_once$root . '/_include/menu.php'; ?>
+	<?php require_once $root . '/_include/menu.php'; ?>
 
 	<div class="container">
 		
-		<a href="/<?php echo $user_url; ?>"><img src="/_assets/images/profile.jpg" alt="<?php echo $user_name; ?>" /></a>
+		<a class="user" href="/<?php echo $user_url; ?>"><img src="/_assets/images/profile.jpg" alt="<?php echo $user_name; ?>" /></a>
 		<h2><?php echo $user_name; ?></h2>
 		<p><?php echo $user_description; ?></p>
 		<?php if($me_username == $user_username){ ?>
@@ -23,7 +23,7 @@
 		<?php } ?>
 		<?php if($me_username == $user_username){ ?>
 		<div class="button edit">
-			<a href="#">
+			<a href="/<?php echo $me_url; ?>/edit">
 				<span class="title">Edit</span>
 			</a>
 		</div>

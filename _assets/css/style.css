@@ -724,7 +724,6 @@ blockquote, q {
     margin-left: 0%; } }
 @-ms-viewport {
   width: device-width; }
-
 .visible-xs,
 tr.visible-xs,
 th.visible-xs,
@@ -1130,13 +1129,197 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
+/* // BORDER RADIUS
+
+@mixin rounded($radius: 0.5em){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin border-top-radius($radius){
+	-webkit-border-top-right-radius: $radius;
+	-moz-border-top-right-radius: $radius;
+	border-top-right-radius: $radius;
+	-webkit-border-top-left-radius: $radius;
+	-moz-border-top-left-radius: $radius;
+	border-top-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius){
+	-webkit-border-bottom-right-radius: $radius;
+	-moz-border-bottom-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+	-webkit-border-top-right-radius: $radius;
+	-moz-border-top-right-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius){
+	-webkit-border-bottom-right-radius: $radius;
+	-moz-border-bottom-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+	-webkit-border-bottom-left-radius: $radius;
+	-moz-border-bottom-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius){
+	-webkit-border-bottom-left-radius: $radius;
+	-moz-border-bottom-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+	-webkit-border-top-left-radius: $radius;
+	-moz-border-top-left-radius: $radius;
+	border-top-left-radius: $radius;
+}
+
+
+// BOX SHADOW
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false){
+	@if $inset{
+		-webkit-box-shadow:inset $top $left $blur $color;
+		-moz-box-shadow:inset $top $left $blur $color;
+		box-shadow:inset $top $left $blur $color;
+	}@else{
+		-webkit-box-shadow: $top $left $blur $color;
+		-moz-box-shadow: $top $left $blur $color;
+		box-shadow: $top $left $blur $color;
+	}
+}
+
+
+// TRANSITION
+
+@mixin transition($transition){
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+
+// TRANSFORMATION
+
+@mixin rotate($degrees){
+	-webkit-transform: rotate($degrees);
+	-moz-transform: rotate($degrees);
+	-ms-transform: rotate($degrees);
+	-o-transform: rotate($degrees);
+	transform: rotate($degrees);
+}
+
+@mixin scale($ratio){
+	-webkit-transform: scale($ratio);
+	-moz-transform: scale($ratio);
+	-ms-transform: scale($ratio);
+	-o-transform: scale($ratio);
+	transform: scale($ratio);
+}
+
+@mixin translate($x, $y){
+	-webkit-transform: translate($x, $y);
+	-moz-transform: translate($x, $y);
+	-ms-transform: translate($x, $y);
+	-o-transform: translate($x, $y);
+	transform: translate($x, $y);
+}
+
+@mixin skew($x, $y){
+	-webkit-transform: skew($x, $y);
+	-moz-transform: skew($x, $y);
+	-ms-transform: skewX($x) skewY($y);
+	-o-transform: skew($x, $y);
+	transform: skew($x, $y);
+	-webkit-backface-visibility: hidden;
+}
+
+@mixin translate3d($x, $y, $z){
+	-webkit-transform: translate3d($x, $y, $z);
+	-moz-transform: translate3d($x, $y, $z);
+	-o-transform: translate3d($x, $y, $z);
+	transform: translate3d($x, $y, $z);
+}
+
+
+// OPACITY
+
+@mixin opacity($opacity){
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$opacity-ie+"})";
+	filter: "alpha(opacity="+$opacity-ie+"})";
+}
+
+
+// CLEARFIX
+
+@mixin clearfix(){
+	&:before, &:after{
+		content: " ";
+		display: table;
+	}
+
+	&:after{
+		clear: both;
+	}
+}
+
+
+// HORIZONTAL CENTERING
+
+@mixin center-block(){
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+// RETINA
+
+@mixin retina-image($file-1x, $file-2x){
+	background-image: url('"'+$file-1x'"');
+
+	@media only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min--moz-device-pixel-ratio: 2),
+	only screen and (-o-min-device-pixel-ratio: 2/1),
+	only screen and (min-device-pixel-ratio: 2),
+	only screen and (min-resolution: 192dpi),
+	only screen and (min-resolution: 2dppx){
+		background-image: url('"'+$file-2x'"');
+	}
+}
+
+
+// PLACEHOLDER
+
+@mixin placeholder($background: white, $color: black){
+	
+	&:-moz-placeholder{
+		background: $background;
+		color: $color;
+	}
+	
+	&::-moz-placeholder{
+		background: $background;
+		color: $color;
+	}
+	
+	&:-ms-input-placeholder{
+		background: $background;
+		color: $color;
+	}
+	
+	&::-webkit-input-placeholder{
+		background: $background;
+		color: $color;
+	}
+} */
 @font-face {
   font-family: Entypo;
   font-weight: normal;
   font-style: normal;
   src: url("/_assets/fonts/entypo.eot");
   src: url("/_assets/fonts/entypo.eot?#iefix") format("embedded-opentype"), url("/_assets/fonts/entypo.woff") format("woff"), url("/_assets/fonts/entypo.ttf") format("truetype"), url("/_assets/fonts/entypo.svg#Entypo") format("svg"); }
-
 .entypo.phone .icon:before {
   content: '\1F4DE'; }
 
@@ -1900,13 +2083,10 @@ strong {
 .mute {
   opacity: 0.5; }
 
-.clearfix {
-  *zoom: 1; }
-  .clearfix:before, .clearfix:after {
-    content: " ";
-    display: table; }
-  .clearfix:after {
-    clear: both; }
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 .container {
   position: relative; }
@@ -2107,9 +2287,9 @@ aside {
       color: black;
       background: white; }
 
-.user.view header, .wishlist.add header {
+.user.view header, .wishlist.add header, .wishlist.edit header {
   padding-bottom: 45px; }
-  .user.view header a img, .wishlist.add header a img {
+  .user.view header a.user, .wishlist.add header a.user, .wishlist.edit header a.user {
     margin-bottom: 20px; }
 
 .user.view .content {
@@ -2269,7 +2449,7 @@ aside {
   .wishlist.view .add:hover {
     background: #f4f4f4; }
 
-.wish.view header a img {
+.wish.view header a.user {
   margin-bottom: 20px; }
 .wish.view header h3 {
   margin-bottom: 0; }

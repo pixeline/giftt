@@ -3,23 +3,23 @@
 <head>
 	<meta charset="utf-8"/>
 	<title><?php echo $wish_name . " | " . $user_name ?></title>
-	<?php require_once$root . '/_include/head.php'; ?>
+	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 <body class="wish view">
 
 	<section class="main">
 
-		<?php require_once$root . '/_include/wish_header.php'; ?>
+		<?php require_once $root . '/_include/wish_header.php'; ?>
 
 		<section class="content">
 
 			<div class="container">
 				<div class="intro">
 					<h2><?php echo $wish_name ?></h2>
-					<p class="mute">Created on <?php echo date('F jS, Y', $wish_date); ?></p>
+					<p class="mute">Added on <?php echo date('F jS, Y', $wish_date); ?></p>
 					<?php if($me_username == $user_username){ ?>
 					<div class="button">
-						<a href="#">
+						<a href="/<?php echo $wish_url; ?>/edit">
 							<span class="title">Edit</span>
 						</a>
 					</div>
@@ -140,7 +140,7 @@
 
 	<?php include $root . '/_include/feed.php'; ?>
 
-	<?php require_once$root . '/_include/foot.php'; ?>
+	<?php require_once $root . '/_include/foot.php'; ?>
 	<script src="/_assets/js/masonry.min.js"></script>
 </body>
 </html>

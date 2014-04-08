@@ -1,7 +1,7 @@
 <?php
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-require_once$root . '/functions.php';
+require_once $root . '/functions.php';
 
 if(!isset($me)){
 
@@ -9,7 +9,7 @@ if(!isset($me)){
 
 }else{
 
-	require_once$root . '/_include/user_info.php';
+	require_once $root . '/_include/user_info.php';
 	require_once'view.php';
 
 }
