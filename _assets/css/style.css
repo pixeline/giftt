@@ -2306,7 +2306,7 @@ aside {
 .user.view .wishlists {
   margin-top: 50px; }
   .user.view .wishlists li.private {
-    display: none; }
+    /* display: none; */ }
 .user.view .wishlist, .user.view .add {
   display: block;
   height: 100%;
