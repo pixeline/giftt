@@ -36,17 +36,17 @@
 
 					<?php
 
-					/*if($user_id == $me_id){*/
+					if($user_id == $me_id){
 						$query = $db->prepare("SELECT * FROM wishlists WHERE author = :id");
 						$query->execute(array(
 							':id' => $user_id
 						));
-					/*}else{
+					}else{
 						$query = $db->prepare("SELECT * FROM wishlists WHERE author = :id AND private = 0");
 						$query->execute(array(
 							':id' => $user_id
 						));
-					}*/
+					}
 
 					if($query->rowCount() > 0){
 
