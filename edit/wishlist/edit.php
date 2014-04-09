@@ -11,7 +11,7 @@ require_once $root . '/edit/wishlist/edit_do.php';
 	<title>Edit <?php echo $wishlist_name; ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body class="wishlist edit">
+<body class="wishlist edit nojs">
 
 	<section class="main">
 
@@ -66,7 +66,7 @@ require_once $root . '/edit/wishlist/edit_do.php';
 
 	</section>
 
-	<?php include $root . '/_include/feed.php'; ?>
+	<?php require_once $root . '/_include/feed.php'; ?>
 
 	<?php require_once $root . '/_include/foot.php'; ?>
 </body>

@@ -11,7 +11,7 @@ require_once $root . '/add/wish/add_do.php';
 	<title>Add a wishlist</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body class="wish add">
+<body class="wish add nojs">
 
 	<section class="main">
 
@@ -140,7 +140,7 @@ require_once $root . '/add/wish/add_do.php';
 
 	</section>
 
-	<?php include $root . '/_include/feed.php'; ?>
+	<?php require_once $root . '/_include/feed.php'; ?>
 
 	<?php require_once $root . '/_include/foot.php'; ?>
 </body>

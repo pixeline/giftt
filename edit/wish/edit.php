@@ -11,7 +11,7 @@ require_once $root . '/edit/wish/edit_do.php';
 	<title>Edit <?php echo $wish_name; ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body class="wish edit">
+<body class="wish edit nojs">
 
 	<section class="main">
 
@@ -69,7 +69,11 @@ require_once $root . '/edit/wish/edit_do.php';
 										</div>
 										<div class="col-sm-12">
 											<div class="file_cont entypo picture">
-												<span class="icon"></span>
+												<?php if(isset($wish_cover)){ ?>
+													<img src="/<?php echo $wish_cover; ?>" alt="<?php echo $wish_name; ?>" />
+												<?php }else{ ?>
+													<span class="icon"></span>
+												<?php } ?>
 												<input id="image" type="file" name="image" required />
 											</div>
 										</div>
@@ -125,7 +129,7 @@ require_once $root . '/edit/wish/edit_do.php';
 									</div>
 								</div>
 								<div class="col-sm-8 col-sm-offset-4">
-									<input class="text" type="submit" name="edit_wish" value="Edit the wish" />
+									<input type="submit" name="edit_wish" value="Edit the wish" />
 								</div>
 							</div>
 						</form>
@@ -140,7 +144,7 @@ require_once $root . '/edit/wish/edit_do.php';
 
 	</section>
 
-	<?php include $root . '/_include/feed.php'; ?>
+	<?php require_once $root . '/_include/feed.php'; ?>
 
 	<?php require_once $root . '/_include/foot.php'; ?>
 </body>

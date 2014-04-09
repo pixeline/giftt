@@ -5,7 +5,7 @@
 	<title><?php echo $wish_name . " | " . $user_name ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body class="wish view">
+<body class="wish view nojs">
 
 	<section class="main">
 
@@ -18,7 +18,7 @@
 					<h2><?php echo $wish_name ?></h2>
 					<p class="mute">Added on <?php echo date('F jS, Y', $wish_date); ?></p>
 					<?php if($me_username == $user_username){ ?>
-					<div class="button">
+					<div class="button edit" data-target="editWish">
 						<a href="/<?php echo $wish_url; ?>/edit">
 							<span class="title">Edit</span>
 						</a>
@@ -58,7 +58,7 @@
 
 			<?php
 
-			$query = $db->prepare("SELECT * FROM wishes WHERE wishlist = :id ORDER BY id DESC LIMIT 4");
+			$query = $db->prepare("SELECT * FROM wishes WHERE wishlist = :id ORDER BY RAND() DESC LIMIT 4");
 			$query->execute(array(
 				':id' => $wishlist_id
 			));
@@ -77,7 +77,7 @@
 						<div class="col-md-10 col-md-offset-1">
 							<div class="row">
 								<div class="col-sm-12">
-									<h4>Also in <?php echo $user_firstname; ?>'s <a href="/<?php echo $wishlist_url; ?>"><?php echo $wishlist_name; ?></a> wishlist</h4>
+									<h4><?php echo $user_firstname; ?>'s <a href="/<?php echo $wishlist_url; ?>"><?php echo $wishlist_name; ?></a> wishlist</h4>
 								</div>
 							</div>
 
@@ -138,7 +138,9 @@
 
 	</section>
 
-	<?php include $root . '/_include/feed.php'; ?>
+	<?php require_once $root . '/_include/modal_edit_wish.php'; ?>
+
+	<?php require_once $root . '/_include/feed.php'; ?>
 
 	<?php require_once $root . '/_include/foot.php'; ?>
 	<script src="/_assets/js/masonry.min.js"></script>

@@ -5,7 +5,7 @@
 	<title><?php echo $wishlist_name . " | " . $user_name ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body class="wishlist view">
+<body class="wishlist view nojs">
 
 	<section class="main">
 
@@ -19,7 +19,7 @@
 					<h2><?php echo $wishlist_name ?></h2>
 					<p class="mute">Created on <?php echo date('F jS, Y', $wishlist_date); ?></p>
 					<?php if($me_username == $user_username){ ?>
-					<div class="button edit">
+					<div class="button edit" data-target="editWishlist">
 						<a href="/<?php echo $wishlist_url; ?>/edit">
 							<span class="title">Edit</span>
 						</a>
@@ -132,7 +132,9 @@
 
 	</section>
 
-	<?php include $root . '/_include/feed.php'; ?>
+	<?php require_once $root . '/_include/modal_edit_wishlist.php'; ?>
+
+	<?php require_once $root . '/_include/feed.php'; ?>
 
 	<?php require_once $root . '/_include/foot.php'; ?>
 	<script src="/_assets/js/masonry.min.js"></script>

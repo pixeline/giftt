@@ -11,7 +11,7 @@ require_once $root . '/add/wishlist/add_do.php';
 	<title>Add a wishlist</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body class="wishlist add">
+<body class="wishlist add nojs">
 
 	<section class="main">
 
@@ -26,8 +26,7 @@ require_once $root . '/add/wishlist/add_do.php';
 					<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 
 						<h3>Add a wishlist</h3>
-
-						<form id="add_wishlist" action="/<?php $me_username; ?>/wishlist/add" method="POST">
+						<form id="add_wishlist" action="/<?php echo $me_username; ?>/wishlist/add" method="POST">
 
 							<?php if(isset($message)){ ?>
 								<div class="error_block">
@@ -66,7 +65,7 @@ require_once $root . '/add/wishlist/add_do.php';
 
 	</section>
 
-	<?php include $root . '/_include/feed.php'; ?>
+	<?php require_once $root . '/_include/feed.php'; ?>
 
 	<?php require_once $root . '/_include/foot.php'; ?>
 </body>

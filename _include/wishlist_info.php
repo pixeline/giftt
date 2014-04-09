@@ -20,7 +20,6 @@ if($query->rowCount() == 0){
 	$wishlist_author = $wishlist['author'];
 	$wishlist_name = $wishlist['name'];
 	$wishlist_slug = $wishlist['slug'];
-	$wishlist_description = $wishlist['description'];
 	$wishlist_private = $wishlist['private'];
 	$wishlist_date = strtotime($wishlist['date']);
 	$wishlist_url = $user_username . "/" . $wishlist_slug;

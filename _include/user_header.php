@@ -8,14 +8,14 @@
 		<h2><?php echo $user_name; ?></h2>
 		<p><?php echo $user_description; ?></p>
 		<?php if($me_username == $user_username){ ?>
-		<div class="button">
+		<div class="button follow">
 			<a href="#">
 				<span class="title">25 followers</span>
 			</a>
 		</div>
 		<?php }else{ ?>	
-		<div class="button">
-			<a href="#">
+		<div class="button follow">
+			<a href="#" data-who2="1">
 				<span class="title">Follow</span>
 				<span class="number">25</span>
 			</a>

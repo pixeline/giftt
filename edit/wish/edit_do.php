@@ -7,7 +7,9 @@ if(isset($_POST['edit_wish'])){
 	$wish_name = htmlspecialchars($_POST['name']);
 	$wish_origin = htmlspecialchars($_POST['origin']);
 	$wish_price = htmlspecialchars($_POST['price']);
-	$wish_image = $_FILES['image'];
+	if(isset($_FILES['image'])){
+		$wish_image = $_FILES['image'];
+	}
 	$wish_wishlist = htmlspecialchars($_POST['wishlist']);
 	$wish_description = htmlspecialchars($_POST['description']);
 	$wish_notes = htmlspecialchars($_POST['notes']);
@@ -23,7 +25,7 @@ if(isset($_POST['edit_wish'])){
 	}
 
 	// FILES VALIDATION
-	if(!empty($_FILES['image']['name'])){
+	if(isset($wish_image) && !empty($_FILES['image']['name'])){
 		if($wish_image['size'] <= 1048576){
 			$file_path = pathinfo($wish_image['name']);
 			$file_type = $file_path['extension'];
@@ -66,6 +68,14 @@ if(isset($_POST['edit_wish'])){
 				'id' => $wish_id
 			));
 		}
+
+		$query = $db->prepare("SELECT slug FROM wishlists WHERE id=:id");
+		$query->execute(array(
+			'id' => $wish_wishlist
+		));
+
+		$results = $query->fetch();
+		$wishlist_slug = $results['slug'];
 
 		header("Location:/" . $me_username . '/' . $wishlist_slug . '/' . $wish_id);
 	}else{

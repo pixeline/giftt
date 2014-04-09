@@ -5,7 +5,7 @@
 	<title><?php echo $user_name ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body class="user view">
+<body class="user view nojs">
 
 	<section class="main">
 
@@ -104,11 +104,11 @@
 							</div>
 							<?php } ?>
 							<?php if($me_username == $user_username){ ?>
-							<div class="button">
+							<!-- <div class="button edit" data-target="editWishlist">
 								<a href="/<?php echo $wishlist_url; ?>/edit">
 									<span class="title">Edit</span>
 								</a>
-							</div>
+							</div> -->
 							<?php } ?>
 						</div>
 					</li>
@@ -139,7 +139,9 @@
 
 	</section>
 
-	<?php include $root . '/_include/feed.php'; ?>
+	<?php require_once $root . '/_include/modal_edit_wishlist.php'; ?>
+
+	<?php require_once $root . '/_include/feed.php'; ?>
 
 	<?php require_once $root . '/_include/foot.php'; ?>
 </body>

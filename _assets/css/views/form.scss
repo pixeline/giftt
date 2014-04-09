@@ -1,99 +1,331 @@
-.add, .edit{
+// FORM
 
-	form{
+.modal{
+	position: fixed;
+	z-index: 20;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba($black, 0.80);
+	height: 100%;
+	width: 100%;
+	display: none;
 
-		.error{
-			border-color: $black !important;
-			text: $white !important;
+	&.show{
+
+		.container{
+			@include transform(scale(1));
+		}
+	}
+
+	.container{
+		background: white;
+		border-radius: 2px;
+		box-shadow: 0 0 5px 0 rgba($black, 0.15);
+		width: 740px;
+		@include transform(scale(0));
+		@include transition(-webkit-transform 0.2s cubic-bezier(.42,1.57,.86,.92));
+		overflow: scroll;
+	}
+
+	button.hidden{
+		opacity: 0;
+		@include transform(scale(0));
+		height: 0;
+		width: 0;
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	header{
+		text-align: right;
+		padding-top: 20px;
+		padding-bottom: 20px !important;
+
+		.title{
+			padding-left: 30px;
 		}
 
-		.error_block{
-			background: $black;
-			color: $white;
-			padding: 20px;
-			margin-bottom: 20px;
-
-			p{
-				margin-bottom: 10px;
-			}
-
-			li{
-				list-style: disc;
-				margin-left: 20px;
-				line-height: $lh * 1.2;
-			}
+		.actions{
+			padding-right: 30px;
 		}
 
-		label{
-			line-height: $lh + 10;
+		h3{
+			text-align: left;
+			line-height: 40px;
+			height: 35px;
+			margin-bottom: 0;
 		}
 
-		input[type=text], input[type=url], input[type=file], textarea, select{
-			width: 100%;
-			font-family: $body;
-			line-height: $lh;
-			font-size: $fs;
+		button{
+			text-transform: uppercase;
+			line-height: 35px;
 			background: none;
-			margin-bottom: 20px;
-			@include transition(all 0.2s ease-in-out);
+			border: 0;
+			cursor: pointer;
+			margin-left: 10px;
+			font-family: $tisa;
+			font-size: 14px;
+			font-weight: 600;
+			padding: 0;
+
+			&.remove{
+				color: $gray40;
+			}
+
+			&.close{
+				color: $gray20;
+			}
+
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.wrapper{
+		padding: 30px 15px; // 30 - 15 (container)
+	}
+
+	label, input, select, textarea{
+		clear: both;
+		width: 100%;
+	}
+
+	input, select, textarea, button{
+		border: 1px solid $gray12;
+		border-radius: 2px;
+		font-size: 16px;
+		font-family: $proxima;
+	}
+
+	input, select, textarea{
+		margin-top: 8px;
+		margin-bottom: 22px;
+
+		&.error{
+			border-color: $red;
+		}
+	}
+
+	label{
+		font-weight: 700;
+
+		span{
+			font-size: 14px;
+			color: $gray40;
+			font-weight: 600;
 		}
 
-		input[type=text], input[type=url], textarea, select{
-			padding: 5px;
-			border: 2px solid $gray12;
-			border-radius: 2px;
+		&.error{
+			color: $red;
+		}
+	}
+
+	input{
+		line-height: 33px;
+		padding: 0 6px;
+	}
+
+	select{
+		height: 30px;
+		font-size: em(14);
+		background: none;
+		vertical-align:top;
+
+		option{
+			line-height: 30px;
+		}
+	}
+
+	textarea{
+		padding: 6px;
+		line-height: $lh * 1.2;
+		max-width: 100%;
+		resize: none;
+
+		&#description{
+			height: 110px;
+			max-height: 110px;
 		}
 
-		.file_cont{
-			height: 200px;
-			border: 2px solid $gray12;
-			border-radius: 2px;
-			position: relative;
+		&#notes{
+			height: 60px;
+			max-height: 60px;
+			margin-bottom: 0;
+		}
+	}
+
+	.wrapper{
+
+		button{
+			float: right;
+			width: auto;
+			border: 2px solid $green;
+			padding: 8px 13px 6px;
+			background: none;
+			color: $green;
+			font-family: $freight;
+			font-weight: 600;
+			text-transform: uppercase;
+			cursor: pointer;
+			margin-top: 20px;
+			margin-bottom: 0;
+			@include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+
+			&:hover{
+				background: $green;
+				color: $white
+			}
+		}
+	}
+
+	.file_cont{
+		margin-top: 8px;
+		position: relative;
+
+		.icon{
+			line-height: 150px;
+			width: 100%;
 			text-align: center;
-
-			span{
-				font-size: em(100);
-				line-height: $lh * 10;
-				color: $gray30;
-			}
-
-			input{
-				opacity: 0;
-				height: 200px;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				background: black;
-				cursor: pointer;
-			}
+			font-size: 60px;
+			color: $gray50;
 		}
 
-		textarea{
-			min-height: 150px;
-			max-width: 100%;
+		span.message{
+			display: none;
+			color: $red;
+			font-size: em(14);
+			line-height: $lh * 0.9;
+			padding: 5px;
+		}
+	}
+
+	img{
+		width: 100%;
+		display: block;
+		border: 1px solid $gray12;
+		border-radius: 2px;
+	}
+
+	.icon{
+		border: 1px solid $gray12;
+		border-radius: 2px;
+	}
+
+	input[type=file]{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		cursor: pointer;
+		margin-top: 0;
+
+		&.error + span{
+			display: inline-block;
+		}
+	}
+
+	input[type=checkbox]{
+		height: 35px;
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	&.editWishlist{
+
+		.container{
+			width: 600px;
 		}
 	}
 }
 
-.add{
 
-	&.wishlist{
 
+// NOJS
+
+.nojs.add, .nojs.edit{
+
+	.error{
+		border-color: $black !important;
+		text: $white !important;
 	}
 
-	&.wish{
+	.error_block{
+		background: $black;
+		color: $white;
+		padding: 20px;
+		margin-bottom: 20px;
 
+		p{
+			margin-bottom: 10px;
+		}
+
+		li{
+			list-style: disc;
+			margin-left: 20px;
+			line-height: $lh * 1.2;
+		}
 	}
-}
 
-.edit{
-
-	&.wishlist{
-
+	label{
+		line-height: $lh + 10;
 	}
 
-	&.wish{
-		
+	input[type=text], input[type=url], input[type=file], textarea, select{
+		width: 100%;
+		font-family: $body;
+		line-height: $lh;
+		font-size: $fs;
+		background: none;
+		margin-bottom: 20px;
+		@include transition(all 0.2s ease-in-out);
+	}
+
+	input[type=text], input[type=url], textarea, select{
+		padding: 5px;
+		border: 2px solid $gray12;
+		border-radius: 2px;
+	}
+
+	.file_cont{
+		border: 2px solid $gray12;
+		border-radius: 2px;
+		position: relative;
+		text-align: center;
+
+		span{
+			font-size: em(100);
+			line-height: $lh * 10;
+			color: $gray30;
+		}
+
+		img{
+			width: 100%;
+			display: block;
+		}
+
+		input{
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: black;
+			cursor: pointer;
+			min-height: 200px;
+		}
+	}
+
+	textarea{
+		min-height: 150px;
+		max-width: 100%;
 	}
 }

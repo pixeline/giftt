@@ -16,15 +16,17 @@ function slugify($text){ // from http://stackoverflow.com/questions/2955251/php-
 }
 
 if(isset($_POST['edit_wishlist'])){
-
 	$wishlist_name = htmlspecialchars($_POST['name']);
 	$wishlist_slug = slugify($wishlist_name);
-	$wishlist_description = htmlspecialchars($_POST['description']);
-	/*$wishlist_private = htmlspecialchars($_POST['private']);*/
-	$wishlist_private = 0;
+
+	if(!isset($_POST['private'])){
+		$wishlist_private = 0;
+	}else{
+		$wishlist_private = $_POST['private'];
+	}
 
 	// REQUIRED INPUTS (EXCEPT FILES)
-	$required_fields = array('name', 'description');
+	$required_fields = array('name');
 	$errors = array();
 
 	foreach($required_fields as $field){
@@ -34,11 +36,10 @@ if(isset($_POST['edit_wishlist'])){
 	}
 
 	if(!count($errors)){
-		$query = $db->prepare("UPDATE wishlists SET name=:name, slug=:slug, description=:description, private=:private WHERE id = :id");
+		$query = $db->prepare("UPDATE wishlists SET name=:name, slug=:slug, private=:private WHERE id = :id");
 		$query->execute(array(
 			'name' => $wishlist_name,
 			'slug' => $wishlist_slug,
-			'description' => $wishlist_description,
 			'private' => $wishlist_private,
 			'id' => $wishlist_id
 		));
