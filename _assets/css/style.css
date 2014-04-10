@@ -1665,7 +1665,7 @@ td.visible-print {
 .entypo.area-graph .icon:before {
   content: '\1F53E'; }
 
-.entypo.lock .icon:before {
+.entypo.lock .icon:before, .icon.entypo.lock:before {
   content: '\1F512'; }
 
 .entypo.lock-open .icon:before {
@@ -2383,6 +2383,10 @@ aside {
   .user.view .add:hover {
     background: #f4f4f4; }
 
+.wishlist.view h2 span.icon {
+  font-size: 1.3em;
+  color: rgba(0, 0, 0, 0.3);
+  margin-left: 10px; }
 .wishlist.view .wish, .wishlist.view .add {
   display: block;
   overflow: hidden;

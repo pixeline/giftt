@@ -1,7 +1,5 @@
 <?php
 
-$form = 1; // to load appropriate js
-
 if(isset($_POST['add_wish'])){
 	
 	$wish_author = $me_id;

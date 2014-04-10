@@ -16,10 +16,10 @@
 			<div class="container">
 
 				<div class="intro">
-					<h2><?php echo $wishlist_name ?></h2>
+					<h2><?php echo $wishlist_name ?><?php if($is_private) echo "<span class='icon entypo lock'></span>"; ?></h2>
 					<p class="mute">Created on <?php echo date('F jS, Y', $wishlist_date); ?></p>
 					<?php if($me_username == $user_username){ ?>
-					<div class="button edit" data-target="editWishlist">
+					<div class="button modal_trigger" data-target="editWishlist">
 						<a href="/<?php echo $wishlist_url; ?>/edit">
 							<span class="title">Edit</span>
 						</a>
@@ -57,7 +57,7 @@
 							<div class="cover entypo plus">
 								<span class="icon"></span>
 							</div>
-							<a href="/<?php echo $me_username; ?>/<?php echo $wishlist_slug; ?>/add"></a>
+							<a href="/<?php echo $me_username; ?>/<?php echo $wishlist_slug; ?>/add" class="modal_trigger" data-target="addWish"></a>
 						</div>
 					</li>
 
@@ -131,6 +131,8 @@
 		</section>
 
 	</section>
+
+	<?php require_once $root . '/_include/modal_add_wish.php'; ?>
 
 	<?php require_once $root . '/_include/modal_edit_wishlist.php'; ?>
 

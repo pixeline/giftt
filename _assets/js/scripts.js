@@ -112,15 +112,16 @@
 
 	form = $('form');
 	form.submit(function(){
+		thisForm = $(this);
 		fields = $(this).find('input, textarea, select, radio');
 		errors = {};
-		form.find('label, input, select, textarea').removeClass('error');
+		thisForm.find('label, input, select, textarea').removeClass('error');
 		fields.each(function(){
 			validate($(this));
 		})
 		$.each(errors, function(key, value){
-			form.find('label[for='+key+']').addClass('error');
-			form.find(value+'[id='+key+']').addClass('error');
+			thisForm.find('label[for='+key+']').addClass('error');
+			thisForm.find(value+'[id='+key+']').addClass('error');
 		})
 		if(!$.isEmptyObject(errors)){
 			return false;
@@ -147,7 +148,7 @@
 		if(!!el.attr('required')){
 			if(tag == "input"){
 				if(type == "file"){
-					if(!el.val().length && !el.siblings('img').length){
+					if(!el.val().length && el.siblings('img').attr('src') == '/'){
 						name = el.attr('id');
 						errors[name] = tag;
 					}
@@ -198,7 +199,7 @@
 	var target;
 	var modal = false;
 
-	$('.button.edit').on('click', function(){
+	$('.modal_trigger').on('click', function(){
 		target = $(this).data('target');
 		openModal(target);
 		return false;
@@ -207,10 +208,22 @@
 	function openModal(type){
 		$('.modal.'+type).fadeIn(200).addClass('show');
 		modal = true;
+		init_img = $('.modal.'+target).find('img').attr('src');
 	}
 
-	$('button.close').on('click', function(){
-		closeModal(target);
+	$('button.close').on('click', function(){	
+		$('.modal.'+target).fadeOut(200, function(){
+			$(this).removeClass('show');
+			$(this).find('label, input, select, textarea, radio').removeClass('error');
+			imgCont = $(this).find('.file_cont');
+			if(target.indexOf('add') >= 0){
+				imgCont.find('img').attr('src', '/').hide();
+				imgCont.find('span.icon').show();
+			}else if(target.indexOf('edit') >= 0){
+				imgCont.find('img').attr('src', init_img);
+			}
+		});
+		modal = false;
 	});
 
 	$('.modal .container').on('click', function(e){
@@ -218,24 +231,20 @@
 	});
 
 	$('.modal').on('click', function(){
-		closeModal(target);
+		closeModal();
 	});
 
 	$(document).keydown(function(e){
 		if(e.keyCode == 27){
 			if(modal){
-				closeModal(target);
+				closeModal();
 				e.preventDefault();
 			}
 		}
 	});
 
-	function closeModal(type){
-		$('.modal.'+type).fadeOut(200, function(){
-			$(this).removeClass('show');
-			$(this).find('label, input, select, textarea, radio').removeClass('error');
-		});
-		modal = false;
+	function closeModal(){
+		$('.modal.'+target).find('button.close').click();
 	}
 
 
@@ -249,7 +258,8 @@
 		if(input.files && input.files[0]){
 			var reader = new FileReader();
 			reader.onload = function(e){
-				$('form .file_cont img').attr('src', e.target.result);
+				$('form .file_cont img').attr('src', e.target.result).css({'display': 'block'});
+				$('form .file_cont span').hide();
 			}
 			reader.readAsDataURL(input.files[0]);
 		}

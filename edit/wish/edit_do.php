@@ -1,15 +1,13 @@
 <?php
 
-$form = 1; // to load appropriate js
-
 if(isset($_POST['edit_wish'])){
 	
 	$wish_name = htmlspecialchars($_POST['name']);
 	$wish_origin = htmlspecialchars($_POST['origin']);
 	$wish_price = htmlspecialchars($_POST['price']);
-	if(isset($_FILES['image'])){
+	/*if(isset($_FILES['image'])){*/
 		$wish_image = $_FILES['image'];
-	}
+	/*}*/
 	$wish_wishlist = htmlspecialchars($_POST['wishlist']);
 	$wish_description = htmlspecialchars($_POST['description']);
 	$wish_notes = htmlspecialchars($_POST['notes']);

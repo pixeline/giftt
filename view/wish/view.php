@@ -18,7 +18,7 @@
 					<h2><?php echo $wish_name ?></h2>
 					<p class="mute">Added on <?php echo date('F jS, Y', $wish_date); ?></p>
 					<?php if($me_username == $user_username){ ?>
-					<div class="button edit" data-target="editWish">
+					<div class="button modal_trigger" data-target="editWish">
 						<a href="/<?php echo $wish_url; ?>/edit">
 							<span class="title">Edit</span>
 						</a>

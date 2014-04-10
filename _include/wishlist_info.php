@@ -25,9 +25,12 @@ if($query->rowCount() == 0){
 	$wishlist_url = $user_username . "/" . $wishlist_slug;
 
 	if($wishlist_private){
+		$is_private = 1;
 		if($wishlist_author != $me_id){
 			$wishlist_access = 0;
 		}
+	}else{
+		$is_private = 0;
 	}
 }
 

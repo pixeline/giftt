@@ -1,6 +1,6 @@
 <section class="modal editWishlist">
 	<div class="v_align">
-		<form class="container" id="edit_wishlist" action="/<?php echo $wishlist_url; ?>/edit" method="POST">
+		<form class="container" id="edit_wishlist" action="/<?php echo $wishlist_url; ?>/edit" method="POST" enctype="multipart/form-data">
 			<button type="submit" name="edit_wishlist" class="hidden"></button>
 			<header class="row">
 				<div class="col-sm-6 title">

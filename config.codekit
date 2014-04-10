@@ -310,6 +310,16 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/1_7_1570030068.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 38307,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1570030068.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1570030068.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wishes\/1_7_1823721358.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -317,6 +327,16 @@
 		"initialSize": 52147,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1823721358.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1823721358.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_1951507875.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21001,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1951507875.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1951507875.jpg",
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -340,6 +360,16 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/1_7_40838009.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14202,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_40838009.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_40838009.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wishes\/1_7_632037117.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -357,6 +387,16 @@
 		"initialSize": 52147,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_735972925.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_735972925.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_959849963.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 52147,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_959849963.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_959849963.jpg",
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -507,6 +547,14 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/menu.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/_include\/modal_add_wish.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_include\/modal_add_wish.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},

@@ -1,7 +1,5 @@
 <?php
 
-$form = 1; // to load appropriate js
-
 // SLUGIFY A TEXT
 function slugify($text){ // from http://stackoverflow.com/questions/2955251/php-function-to-make-slug-url-string
 	$text = preg_replace('~[^\\pL\d]+~u', '-', $text);
