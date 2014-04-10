@@ -1,7 +1,7 @@
 <?php
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-require_once $root . '/functions.php';
+require_once $root . '/_include/functions.php';
 
 if(!isset($me)){
 
