@@ -23,8 +23,8 @@
 		<?php } ?>
 		<?php if($me_username == $user_username){ ?>
 		<div class="button edit">
-			<a href="/<?php echo $me_url; ?>/edit">
-				<span class="title">Edit</span>
+			<a href="/<?php echo $me_url; ?>/settings">
+				<span class="title">Settings</span>
 			</a>
 		</div>
 		<?php } ?>

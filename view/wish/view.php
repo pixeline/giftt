@@ -77,7 +77,7 @@
 						<div class="col-md-10 col-md-offset-1">
 							<div class="row">
 								<div class="col-sm-12">
-									<h4><?php echo $user_firstname; ?>'s <a href="/<?php echo $wishlist_url; ?>"><?php echo $wishlist_name; ?></a> wishlist</h4>
+									<h4>Also in <?php echo $user_firstname; ?>'s <a href="/<?php echo $wishlist_url; ?>"><?php echo $wishlist_name; ?></a> wishlist</h4>
 								</div>
 							</div>
 
