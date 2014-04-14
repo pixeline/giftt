@@ -53,6 +53,15 @@ strong{
 	font-weight: 600;
 }
 
+hr{
+	margin-top: 40px;
+	background-color: $gray4;
+	border: 1px solid $gray4;
+	max-width: 25%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .mute{
 	opacity: 0.5;
 }

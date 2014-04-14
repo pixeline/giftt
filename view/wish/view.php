@@ -23,6 +23,12 @@
 							<span class="title">Edit</span>
 						</a>
 					</div>
+					<?php }else{ ?>
+					<div class="button modal_trigger" data-target="addWish">
+						<a href="#">
+							<span class="title">I want it too</span>
+						</a>
+					</div>
 					<?php } ?>
 				</div>
 
@@ -43,12 +49,22 @@
 									<h5>Description</h5>
 									<p><?php echo $wish_description; ?></p>
 								</div>
+								<?php if(!empty($wish_notes)){ ?>
 								<div class="notes">
 									<h5><?php echo $user_firstname; ?> also wants you to know...</h5>
 									<p><?php echo $wish_notes; ?></p>
 								</div>
+								<?php } ?>
 								<div class="share">
-									// Share
+									<div class="facebook">
+										<div class="fb-share-button" data-href="<?php echo $wish_url; ?>" data-type="button"></div>
+									</div>
+									<div class="twitter">
+										<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-dnt="true">Tweet</a>
+									</div>
+									<div class="google">
+										<div class="g-plusone" data-size="medium" data-annotation="none"></div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -137,6 +153,8 @@
 		</section>
 
 	</section>
+
+	<?php require_once $root . '/_include/modal_add_wish.php'; ?>
 
 	<?php require_once $root . '/_include/modal_edit_wish.php'; ?>
 

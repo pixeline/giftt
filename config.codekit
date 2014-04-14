@@ -260,6 +260,46 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/1_11_2137415154.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14202,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_11_2137415154.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_11_2137415154.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_12_1596110458.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14202,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_12_1596110458.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_12_1596110458.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_25_394570251.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14202,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_25_394570251.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_25_394570251.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_28_827138111.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14202,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_28_827138111.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_28_827138111.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wishes\/1_7_111165768.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -317,6 +357,16 @@
 		"initialSize": 38307,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1570030068.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1570030068.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_1744724674.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14202,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1744724674.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1744724674.jpg",
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -502,6 +552,14 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
+	"\/_include\/functions.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_include\/functions.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
 	"\/_include\/head.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -555,6 +613,14 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/modal_add_wish.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/_include\/modal_add_wishlist.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_include\/modal_add_wishlist.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
@@ -734,14 +800,6 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
-	"\/functions.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/functions.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
 	"\/index.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -755,6 +813,38 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/landing.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/remove\/wish\/index.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/remove\/wish\/index.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/remove\/wish\/remove_do.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/remove\/wish\/remove_do.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/remove\/wishlist\/index.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/remove\/wishlist\/index.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/remove\/wishlist\/remove_do.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/remove\/wishlist\/remove_do.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},

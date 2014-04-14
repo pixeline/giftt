@@ -35,7 +35,7 @@
 	}
 
 	function initMasonry(){
-		if(body.hasClass('wishlist') && body.hasClass('view')){
+		if((body.hasClass('wishlist') && body.hasClass('view')) || (body.hasClass('user') && body.hasClass('view'))){
 			setTimeout(function(){
 				masContainer = $('.wishes');
 				masContainer.masonry({

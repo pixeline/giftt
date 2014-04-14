@@ -6,10 +6,11 @@ require_once $root . '/_include/user_info.php';
 
 $wishlist_slug = $_GET['wishlist'];
 
-$query = $db->prepare("SELECT * FROM wishlists WHERE slug = :slug AND author = :author");
+$query = $db->prepare("SELECT * FROM wishlists WHERE slug = :slug AND author = :author AND removed = :removed");
 $query->execute(array(
 	':slug' => $wishlist_slug,
-	':author' => $user_id
+	':author' => $user_id,
+	':removed' => 0
 ));
 
 if($query->rowCount() == 0){

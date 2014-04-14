@@ -7,10 +7,11 @@ require_once $root . '/_include/wishlist_info.php';
 
 $wish_id = $_GET['wish'];
 
-$query = $db->prepare("SELECT * FROM wishes WHERE id = :id AND wishlist = :wishlist");
+$query = $db->prepare("SELECT * FROM wishes WHERE id = :id AND wishlist = :wishlist AND removed = :removed");
 $query->execute(array(
 	':id' => $wish_id,
-	':wishlist' => $wishlist_id
+	':wishlist' => $wishlist_id,
+	":removed" => 0
 ));
 
 if($query->rowCount() == 0){

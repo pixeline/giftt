@@ -14,16 +14,18 @@ function slugify($text){ // from http://stackoverflow.com/questions/2955251/php-
 }
 
 if(isset($_POST['add_wishlist'])){
-
 	$wishlist_author = $me_id;
 	$wishlist_name = htmlspecialchars($_POST['name']);
 	$wishlist_slug = slugify($wishlist_name);
-	$wishlist_description = htmlspecialchars($_POST['description']);
-	/*$wishlist_private = htmlspecialchars($_POST['private']);*/
-	$wishlist_private = 0;
+
+	if(!isset($_POST['private'])){
+		$wishlist_private = 0;
+	}else{
+		$wishlist_private = $_POST['private'];
+	}
 
 	// REQUIRED INPUTS (EXCEPT FILES)
-	$required_fields = array('name', 'description');
+	$required_fields = array('name');
 	$errors = array();
 
 	foreach($required_fields as $field){
@@ -33,12 +35,11 @@ if(isset($_POST['add_wishlist'])){
 	}
 
 	if(!count($errors)){
-		$query = $db->prepare("INSERT INTO wishlists(author, name, slug, description, private) VALUES(:author, :name, :slug, :description, :private)");
+		$query = $db->prepare("INSERT INTO wishlists(author, name, slug, private) VALUES(:author, :name, :slug, :private)");
 		$query->execute(array(
 			'author' => $wishlist_author,
 			'name' => $wishlist_name,
 			'slug' => $wishlist_slug,
-			'description' => $wishlist_description,
 			'private' => $wishlist_private
 		));
 		header("Location:/" . $me_username . '/' . $wishlist_slug);

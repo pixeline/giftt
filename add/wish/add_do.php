@@ -12,7 +12,7 @@ if(isset($_POST['add_wish'])){
 	$wish_notes = htmlspecialchars($_POST['notes']);
 
 	// REQUIRED INPUTS (EXCEPT FILES)
-	$required_fields = array('name', 'wishlist', 'description');
+	$required_fields = array('name', 'wishlist', 'origin', 'description');
 	$errors = array();
 
 	foreach($required_fields as $field){
@@ -55,6 +55,14 @@ if(isset($_POST['add_wish'])){
 			'origin' => $wish_origin,
 		));
 
+		// GET SELECTED WiSHLIST SLUG
+		$query = $db->prepare("SELECT slug FROM wishlists WHERE id = :id");
+		$query->execute(array(
+			':id' => $wish_wishlist,
+		));
+		$sel_wishlist = $query->fetch();
+		$wishlist_slug = $sel_wishlist['slug'];
+
 		// GET CURRENT WiSH ID
 		$query = $db->prepare("SELECT id FROM wishes WHERE name = :name AND wishlist = :wishlist");
 		$query->execute(array(
@@ -63,6 +71,10 @@ if(isset($_POST['add_wish'])){
 		));
 		$cur_wish = $query->fetch();
 		$wish_id = $cur_wish['id'];
+
+		echo $wish_author;
+		echo $wish_wishlist;
+		echo $wishlist_slug;
 
 		header("Location:/" . $me_username . '/' . $wishlist_slug . '/' . $wish_id);
 	}else{

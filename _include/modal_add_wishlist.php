@@ -1,13 +1,12 @@
-<section class="modal editWishlist">
+<section class="modal addWishlist">
 	<div class="v_align">
-		<form class="container" id="edit_wishlist" action="/<?php echo $wishlist_url; ?>/edit" method="POST" enctype="multipart/form-data">
-			<button type="submit" name="edit_wishlist" class="hidden"></button>
+		<form class="container" id="add_wishlist" action="/<?php echo $user_url; ?>/wishlist/add" method="POST" enctype="multipart/form-data">
+			<button type="submit" name="add_wishlist" class="hidden"></button>
 			<header class="row">
 				<div class="col-sm-6 title">
-					<h3>Edit your wishlist</h3>
+					<h3>Add a wishlist</h3>
 				</div>
 				<div class="col-sm-6 actions">
-					<button type="submit" formaction="/<?php echo $wishlist_url; ?>/remove" formmethod="post" name="remove" class="remove">Remove</button>
 					<button type="reset" class="close">Close</button>
 				</div>
 			</header>
@@ -25,18 +24,18 @@
 						<div class="row">
 							<div class="col-sm-10">
 								<label for="name">Name <span>(required)</span></label>
-								<input id="name" type="text" name="name" value="<?php if(isset($wishlist_name)) echo $wishlist_name ?>" required />
+								<input id="name" type="text" name="name" value="" required />
 							</div>
 							<div class="col-sm-2">
 								<label for="private">Private</label>
-								<input id="private" type="checkbox" name="private" value="1" <?php if(isset($wishlist_private) && $wishlist_private == 1) echo "checked"; ?>/>
+								<input id="private" type="checkbox" name="private" value="1" />
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<button type="submit" name="edit_wishlist">Save changes</button>
+						<button type="submit" name="add_wishlist">Create wishlist</button>
 					</div>
 				</div>
 			</div>

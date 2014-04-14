@@ -2080,6 +2080,14 @@ a {
 strong {
   font-weight: 600; }
 
+hr {
+  margin-top: 40px;
+  background-color: #f4f4f4;
+  border: 1px solid #f4f4f4;
+  max-width: 25%;
+  margin-left: auto;
+  margin-right: auto; }
+
 .mute {
   opacity: 0.5; }
 
@@ -2268,6 +2276,157 @@ aside {
     top: -9999px;
     left: -9999px; }
 
+ul .wishlist, ul .wishlist.add {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative; }
+  ul .wishlist .cover, ul .wishlist.add .cover {
+    display: block;
+    height: 250px;
+    background-size: cover;
+    background-position: center center; }
+  ul .wishlist h4, ul .wishlist.add h4 {
+    font-size: 1.0625em;
+    line-height: 49px;
+    height: 48px;
+    overflow: hidden; }
+  ul .wishlist > a, ul .wishlist.add > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  ul .wishlist .button, ul .wishlist.add .button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; }
+    ul .wishlist .button a, ul .wishlist.add .button a {
+      color: #2c2c2c;
+      background: white;
+      border-color: #2c2c2c; }
+      ul .wishlist .button a:hover, ul .wishlist.add .button a:hover {
+        background: #cacaca; }
+      ul .wishlist .button a:active, ul .wishlist .button a .active, ul .wishlist.add .button a:active, ul .wishlist.add .button a .active {
+        background: #2c2c2c;
+        color: white; }
+    ul .wishlist .button span.number, ul .wishlist.add .button span.number {
+      color: white;
+      background: #2c2c2c; }
+  ul .wishlist:hover .button, ul .wishlist.add:hover .button {
+    opacity: 1;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; }
+  ul .wishlist:hover h4, ul .wishlist.add:hover h4 {
+    text-decoration: underline; }
+  ul .wishlist .lock, ul .wishlist.add .lock {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 0.875em;
+    opacity: 0.5; }
+
+ul .wishlist.add {
+  border-style: dashed;
+  border-color: #e0e0e0;
+  cursor: pointer;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out; }
+  ul .wishlist.add .cover {
+    height: 298px; }
+  ul .wishlist.add .icon {
+    font-size: 6.25em;
+    line-height: 300px;
+    color: #b2b2b2; }
+  ul .wishlist.add:hover {
+    background: #f4f4f4; }
+
+ul .wish, ul .wish.add {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative; }
+  ul .wish img, ul .wish.add img {
+    width: 100%;
+    height: auto;
+    display: block; }
+  ul .wish .infos, ul .wish.add .infos {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; }
+  ul .wish .top, ul .wish.add .top {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px; }
+  ul .wish h4, ul .wish.add h4 {
+    font-size: 1.125em;
+    line-height: 20px;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 5px; }
+  ul .wish p, ul .wish.add p {
+    margin-bottom: 0;
+    text-align: left;
+    font-weight: 500; }
+    ul .wish p.price, ul .wish.add p.price {
+      color: #7fba00; }
+    ul .wish p.origin, ul .wish.add p.origin {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 12px;
+      color: #b2b2b2;
+      font-size: 0.875em; }
+  ul .wish > a, ul .wish.add > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  ul .wish:hover .infos, ul .wish.add:hover .infos {
+    opacity: 1; }
+
+ul .wish.add {
+  border-style: dashed;
+  border-color: #e0e0e0;
+  cursor: pointer;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out; }
+  ul .wish.add .cover {
+    height: 298px; }
+  ul .wish.add .icon {
+    font-size: 6.25em;
+    line-height: 300px;
+    color: #b2b2b2; }
+  ul .wish.add:hover {
+    background: #f4f4f4; }
+
 #register_login .register h1, #register_login .login h1, #register_login .logged h1, #register_login .logout h1 {
   margin-top: 60px; }
 #register_login .register label, #register_login .login label, #register_login .logged label, #register_login .logout label {
@@ -2303,167 +2462,27 @@ aside {
   padding-bottom: 30px; }
 .user.view .menu + .wishlists {
   margin-top: 40px; }
-.user.view .wishlists {
+.user.view .wishlists, .user.view .wishes {
   margin-top: 50px; }
-  .user.view .wishlists li.private {
+  .user.view .wishlists li.private, .user.view .wishes li.private {
     /* display: none; */ }
-.user.view .wishlist, .user.view .add {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
-  text-align: center;
-  margin-bottom: 30px;
-  position: relative; }
-  .user.view .wishlist .cover, .user.view .add .cover {
-    display: block;
-    height: 250px;
-    background-size: cover;
-    background-position: center center; }
-  .user.view .wishlist h4, .user.view .add h4 {
-    font-size: 1.0625em;
-    line-height: 49px;
-    height: 48px;
-    overflow: hidden; }
-  .user.view .wishlist > a, .user.view .add > a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
-  .user.view .wishlist .button, .user.view .add .button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 10;
-    opacity: 0;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out; }
-    .user.view .wishlist .button a, .user.view .add .button a {
-      color: #2c2c2c;
-      background: white;
-      border-color: #2c2c2c; }
-      .user.view .wishlist .button a:hover, .user.view .add .button a:hover {
-        background: #cacaca; }
-      .user.view .wishlist .button a:active, .user.view .wishlist .button a .active, .user.view .add .button a:active, .user.view .add .button a .active {
-        background: #2c2c2c;
-        color: white; }
-    .user.view .wishlist .button span.number, .user.view .add .button span.number {
-      color: white;
-      background: #2c2c2c; }
-  .user.view .wishlist:hover .button, .user.view .add:hover .button {
-    opacity: 1;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out; }
-  .user.view .wishlist:hover h4, .user.view .add:hover h4 {
-    text-decoration: underline; }
-  .user.view .wishlist .lock, .user.view .add .lock {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 0.875em;
-    opacity: 0.5; }
-.user.view .add {
-  border-style: dashed;
-  border-color: #e0e0e0;
-  cursor: pointer;
-  -webkit-transition: background 0.2s ease-in-out;
-  -moz-transition: background 0.2s ease-in-out;
-  transition: background 0.2s ease-in-out; }
-  .user.view .add .cover {
-    height: 298px; }
-  .user.view .add .icon {
-    font-size: 6.25em;
-    line-height: 300px;
-    color: #b2b2b2; }
-  .user.view .add:hover {
-    background: #f4f4f4; }
+.user.view h3:nth-of-type(2) {
+  margin-top: 60px; }
 
 .wishlist.view h2 span.icon {
   font-size: 1.3em;
   color: rgba(0, 0, 0, 0.3);
   margin-left: 10px; }
-.wishlist.view .wish, .wishlist.view .add {
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
-  text-align: center;
-  margin-bottom: 30px;
-  position: relative; }
-  .wishlist.view .wish img, .wishlist.view .add img {
-    width: 100%;
-    height: auto;
-    display: block; }
-  .wishlist.view .wish .infos, .wishlist.view .add .infos {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out; }
-  .wishlist.view .wish .top, .wishlist.view .add .top {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px; }
-  .wishlist.view .wish h4, .wishlist.view .add h4 {
-    font-size: 1.125em;
-    line-height: 20px;
-    text-align: left;
-    font-weight: 600;
-    margin-bottom: 5px; }
-  .wishlist.view .wish p, .wishlist.view .add p {
-    margin-bottom: 0;
-    text-align: left;
-    font-weight: 500; }
-    .wishlist.view .wish p.price, .wishlist.view .add p.price {
-      color: #7fba00; }
-    .wishlist.view .wish p.origin, .wishlist.view .add p.origin {
-      position: absolute;
-      left: 20px;
-      right: 20px;
-      bottom: 12px;
-      color: #b2b2b2;
-      font-size: 0.875em; }
-  .wishlist.view .wish > a, .wishlist.view .add > a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
-  .wishlist.view .wish:hover .infos, .wishlist.view .add:hover .infos {
-    opacity: 1; }
-.wishlist.view .add {
-  border-style: dashed;
-  border-color: #e0e0e0;
-  cursor: pointer;
-  -webkit-transition: background 0.2s ease-in-out;
-  -moz-transition: background 0.2s ease-in-out;
-  transition: background 0.2s ease-in-out; }
-  .wishlist.view .add .cover {
-    height: 298px; }
-  .wishlist.view .add .icon {
-    font-size: 6.25em;
-    line-height: 300px;
-    color: #b2b2b2; }
-  .wishlist.view .add:hover {
-    background: #f4f4f4; }
 
 .wish.view header a.user {
   margin-bottom: 20px; }
 .wish.view header h3 {
   margin-bottom: 0; }
+.wish.view .share > div {
+  height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px; }
 .wish.view .details .photo {
   position: relative;
   display: block;
@@ -2735,7 +2754,7 @@ aside {
     height: 35px;
     margin-left: 0;
     padding-left: 0; }
-  .modal.editWishlist .container {
+  .modal.editWishlist .container, .modal.addWishlist .container {
     width: 600px; }
 
 .nojs.add .error, .nojs.edit .error {

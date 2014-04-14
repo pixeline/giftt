@@ -7,7 +7,7 @@
 					<h3>Edit your wish</h3>
 				</div>
 				<div class="col-sm-6 actions">
-					<button type="submit" formaction="/<?php echo $wish_url; ?>/remove" class="remove">Remove</button>
+					<button type="submit" formaction="/<?php echo $wish_url; ?>/remove" formmethod="post" name="remove" class="remove">Remove</button>
 					<button type="reset" class="close">Close</button>
 				</div>
 			</header>
@@ -25,7 +25,7 @@
 						<div class="row">
 							<div class="col-sm-8">
 								<label for="name">Name <span>(required)</span></label>
-								<input id="name" type="text" name="name" value="<?php if(isset($wish_name)) echo $wish_name ?>" required />
+								<input id="name" type="text" name="name" value="<?php if(isset($wish_name)) echo $wish_name; ?>" required />
 							</div>
 							<div class="col-sm-4">
 								<label for="wishlist">Wishlist <span>(required)</span></label>
@@ -63,23 +63,23 @@
 						<div class="row">
 							<div class="col-sm-8">
 								<label for="origin">Origin</label>
-								<input id="origin" type="url" name="origin" value="<?php if(isset($wish_origin)) echo $wish_origin ?>" placeholder="http://" />
+								<input id="origin" type="url" name="origin" value="<?php if(isset($wish_origin)) echo $wish_origin; ?>" placeholder="http://" required />
 							</div>
 							<div class="col-sm-4">
 								<label for="price">Price</label>
-								<input id="price" type="text" name="price" value="<?php if(isset($wish_price)) echo $wish_price ?>" />
+								<input id="price" type="text" name="price" value="<?php if(isset($wish_price)) echo $wish_price; ?>" />
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-								<label for="description">Description <span>(required)</span></label>
-								<textarea id="description" name="description" required><?php if(isset($wish_description)) echo $wish_description ?></textarea>
+								<label for="description">Description from the website <span>(required)</span></label>
+								<textarea id="description" name="description" required><?php if(isset($wish_description)) echo $wish_description; ?></textarea>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-								<label for="notes">Notes</label>
-								<textarea id="notes" name="notes"><?php if(isset($wish_notes)) echo $wish_notes ?></textarea>
+								<label for="notes">Additional notes</label>
+								<textarea id="notes" name="notes"><?php if(isset($wish_notes)) echo $wish_notes; ?></textarea>
 							</div>
 						</div>
 					</div>
