@@ -74,9 +74,10 @@
 
 			<?php
 
-			$query = $db->prepare("SELECT * FROM wishes WHERE wishlist = :id ORDER BY RAND() DESC LIMIT 4");
+			$query = $db->prepare("SELECT * FROM wishes WHERE wishlist = :id AND removed = :removed ORDER BY RAND() DESC LIMIT 4");
 			$query->execute(array(
-				':id' => $wishlist_id
+				':id' => $wishlist_id,
+				':removed' => 0
 			));
 
 			while($sibling = $query->fetch(PDO::FETCH_ASSOC)){
