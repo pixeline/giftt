@@ -9,7 +9,7 @@
 			':id' => $me_id
 		));
 
-		$following = [];
+		$following = array();
 		while($follow = $query->fetch(PDO::FETCH_ASSOC)){
 			$following[] = $follow['who2'];
 		}
