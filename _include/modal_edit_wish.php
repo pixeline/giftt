@@ -40,7 +40,7 @@
 										':removed' => 0
 									));
 
-									$wishlists = [];
+									$wishlists = array();
 									while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
 										$wishlists[] = $wishlist;
 									}
