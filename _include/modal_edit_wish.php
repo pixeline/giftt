@@ -34,11 +34,13 @@
 											
 									<?php
 
-									$query = $db->prepare("SELECT * FROM wishlists WHERE author = :author");
+									$query = $db->prepare("SELECT * FROM wishlists WHERE author = :author AND removed = :removed");
 									$query->execute(array(
-										':author' => $me['id']
+										':author' => $me['id'],
+										':removed' => 0
 									));
 
+									$wishlists = [];
 									while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
 										$wishlists[] = $wishlist;
 									}

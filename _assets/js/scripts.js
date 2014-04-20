@@ -1,4 +1,10 @@
-(function(){
+/*!
+ * Giftt.me 1.0 beta
+ * Pierre Stoffe
+ * @PierreStoffe
+ */
+
+ (function(){
 
 	/////////////////////////////////////
 	// VARIABLES ////////////////////////
@@ -38,10 +44,14 @@
 		if((body.hasClass('wishlist') && body.hasClass('view')) || (body.hasClass('user') && body.hasClass('view'))){
 			setTimeout(function(){
 				masContainer = $('.wishes');
-				masContainer.masonry({
-					columnWidth: '.wishes li:nth-child(2)',
-					itemSelector: '.wishes li'
-				});
+				if(masContainer.find('.wish').not('.add').length > 0){
+					masContainer.imagesLoaded(function(){
+						masContainer.masonry({
+							columnWidth: '.wishes li:nth-child(2)',
+							itemSelector: '.wishes li'
+						})
+					})
+				}
 			}, 50);
 		}
 	}
@@ -84,7 +94,8 @@
 	// SHOW ASIDE
 
 	$('#showAside').on('click', function(){
-		showAside();
+		alert('You cannot use the "Feed" yet.');
+		/*showAside();*/
 		return false;
 	})
 
@@ -280,7 +291,7 @@
 
 	// FOLLOW
 
-	$('.follow a').on('click', function(){
+	$('.button.canfollow a').on('click', function(){
 		button = $(this);
 		who2 = button.data('who2');
 		follow(who2, button);
@@ -288,27 +299,29 @@
 	})
 
 	function follow(who2, button){
-		button.find('.title').text('Following');
 		followData = {'who2': who2};
 
-		/*$.ajax({
+		$.ajax({
 			url: '/_include/follow.php',
 			type: 'POST',
 			data: {data:followData},
-			dataType: 'json',
+			dataType: 'text',
 			error: function(){
 				return false;
 			},
 			success: function(){
-				content = button.find('.title');
-				button.toggleClass('active');
-				if(content.text() == 'Following'){
-					content.text('Follow');
+				title = button.find('.title');
+				number = button.find('.number');
+				button.parents('.follow').toggleClass('following');
+				if(title.text() == 'Following'){
+					title.text('Follow');
+					number.text(parseInt(number.text())-1);
 				}else{
-					content.text('Following');
+					title.text('Following');
+					number.text(parseInt(number.text())+1);
 				}
 			}
-		});*/
+		});
 	}
 
 
@@ -327,9 +340,6 @@
 			data: 'logout=yes',
 			success: function(){
 				window.location = '/';
-			},
-			error: function(){
-				return false;
 			}
 		});
 	}

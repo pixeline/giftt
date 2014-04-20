@@ -2235,6 +2235,47 @@ aside {
       -moz-transition: opacity 0.2s ease-in-out 0.4s;
       transition: opacity 0.2s ease-in-out 0.4s; }
 
+footer {
+  text-align: center;
+  color: #b2b2b2;
+  font-size: 0.875em;
+  overflow: hidden; }
+
+nav a {
+  height: 45px;
+  min-width: 50px;
+  display: block; }
+nav div {
+  position: absolute;
+  top: 20px;
+  z-index: 10; }
+nav #logo {
+  left: 20px;
+  background: #7FBA00; }
+  nav #logo a {
+    width: 85px;
+    background-image: url(../images/logo.png);
+    background-size: 46px, 20px;
+    background-position: center center;
+    background-repeat: no-repeat; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+      nav #logo a {
+        background-image: url(../images/logo@2x.png); } }
+nav #logout {
+  right: 85px;
+  background: white; }
+nav #showAside {
+  right: 20px;
+  background: #7FBA00; }
+  nav #showAside a {
+    background-image: url(../images/menu.png);
+    background-size: 21px, 18px;
+    background-position: center center;
+    background-repeat: no-repeat; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+      nav #showAside a {
+        background-image: url(../images/menu@2x.png); } }
+
 .button {
   overflow: hidden;
   letter-spacing: 1px;
@@ -2262,6 +2303,12 @@ aside {
     .button > .entypo span {
       padding-left: 12px;
       padding-right: 12px; }
+  .button.following .title {
+    background-color: #2c2c2c;
+    color: white; }
+  .button.following .number {
+    background-color: white;
+    color: #2c2c2c; }
 
 .icon {
   font-family: "Entypo";
@@ -2650,8 +2697,6 @@ ul .wish.add {
         color: #cccccc; }
       .modal header button:hover {
         text-decoration: underline; }
-  .modal .wrapper {
-    padding: 30px 15px; }
   .modal label, .modal input, .modal select, .modal textarea {
     clear: both;
     width: 100%; }
@@ -2693,27 +2738,27 @@ ul .wish.add {
       max-height: 110px; }
     .modal textarea#notes {
       height: 60px;
-      max-height: 60px;
-      margin-bottom: 0; }
-  .modal .wrapper button {
-    float: right;
-    width: auto;
-    border: 2px solid #7fba00;
-    padding: 8px 13px 6px;
-    background: none;
-    color: #7fba00;
-    font-family: "freight-sans-pro", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-bottom: 0;
-    -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-    -moz-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-    transition: background 0.2s ease-in-out, color 0.2s ease-in-out; }
-    .modal .wrapper button:hover {
-      background: #7fba00;
-      color: white; }
+      max-height: 60px; }
+  .modal .wrapper {
+    padding: 30px 15px; }
+    .modal .wrapper button {
+      float: right;
+      width: auto;
+      border: 2px solid #7fba00;
+      padding: 8px 13px 6px;
+      background: none;
+      color: #7fba00;
+      font-family: "freight-sans-pro", sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-bottom: 0;
+      -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+      -moz-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+      transition: background 0.2s ease-in-out, color 0.2s ease-in-out; }
+      .modal .wrapper button:hover {
+        background: #7fba00;
+        color: white; }
   .modal .file_cont {
     margin-top: 8px;
     position: relative; }

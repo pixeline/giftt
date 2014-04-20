@@ -139,6 +139,8 @@
 
 		</section>
 
+		<?php require_once $root . '/_include/footer.php'; ?>
+
 	</section>
 
 	<?php require_once $root . '/_include/modal_add_wish.php'; ?>
@@ -146,8 +148,10 @@
 	<?php require_once $root . '/_include/modal_edit_wishlist.php'; ?>
 
 	<?php require_once $root . '/_include/feed.php'; ?>
-
+	
 	<?php require_once $root . '/_include/foot.php'; ?>
 	<script src="/_assets/js/masonry.min.js"></script>
+	<script src="/_assets/js/imagesloaded.min.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,13 @@
+@include if-min-resolution(1.5){
+
+	nav{
+
+		#logo{
+
+			a{
+				background: url(../images/logo@2x.png);
+			}
+		}
+	}
+	
+}
