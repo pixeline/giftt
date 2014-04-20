@@ -84,6 +84,7 @@
 				$siblings[] = $sibling;
 			}
 
+			var_dump($siblings[0]);
 			if(count($siblings) > 0){
 
 			?>
