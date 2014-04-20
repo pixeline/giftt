@@ -72,10 +72,6 @@ if(isset($_POST['add_wish'])){
 		$cur_wish = $query->fetch();
 		$wish_id = $cur_wish['id'];
 
-		echo $wish_author;
-		echo $wish_wishlist;
-		echo $wishlist_slug;
-
 		header("Location:/" . $me_username . '/' . $wishlist_slug . '/' . $wish_id);
 	}else{
 		$message = '<p>You must correct the following fields :</p>';
