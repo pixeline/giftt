@@ -84,8 +84,7 @@
 				$siblings[] = $sibling;
 			}
 
-			var_dump($siblings[0]);
-			if(count($siblings) > 0){
+			if(count($siblings) > 1){ // 1 = the currently viewed one
 
 			?>
 
