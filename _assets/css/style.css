@@ -2276,6 +2276,13 @@ nav #showAside {
       nav #showAside a {
         background-image: url(../images/menu@2x.png); } }
 
+.beta {
+  text-align: center;
+  width: 100%; }
+  .beta p {
+    margin: 10px 0;
+    line-height: 24px; }
+
 .button {
   overflow: hidden;
   letter-spacing: 1px;

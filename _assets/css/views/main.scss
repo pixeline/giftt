@@ -285,3 +285,16 @@ nav{
 		}
 	}
 }
+
+
+// DEV
+
+.beta{
+	text-align: center;
+	width: 100%;
+
+	p{
+		margin: 10px 0;
+		line-height: $lh * 1.2;
+	}
+}
