@@ -43,14 +43,18 @@ if(isset($_POST['register'])){
 			$message= "Please enter a valid username";
 		}
 
+		$salt = bin2hex(openssl_random_pseudo_bytes(22));
+		$hash = crypt($password1, '$2x$12$' . $salt);
+
 		if(!$error){
-			$query = $db->prepare("INSERT INTO users(username, password, firstname, lastname, email) VALUES(:username, :password, :firstname, :lastname, :email)");
+			$query = $db->prepare("INSERT INTO users(username, password, firstname, lastname, email, salt) VALUES(:username, :password, :firstname, :lastname, :email, :salt)");
 			$query->execute(array(
 				'username' => $username,
-				'password' => $password1,
+				'password' => $hash,
 				'firstname' => $firstname,
 				'lastname' => $lastname,
-				'email' => $email
+				'email' => $email,
+				'salt' => $salt
 			));
 			$message = "You're registered!";
 		}

@@ -27,7 +27,8 @@ if(isset($_POST['login'])){
 	if(!$user_exists){
 		$message = "This usename doesn't exist";
 	}else{
-		if($password == $results['password']){
+		$hash = crypt($password, '$2x$12$' . $results['salt']);
+		if($hash == $results['password']){
 			$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description']);
 			header('Location:/');
 		}else{
