@@ -207,7 +207,7 @@
 
 	// MODALS
 
-	var target;
+	/*var target;
 	var modal = false;
 
 	$('.modal_trigger').on('click', function(){
@@ -256,7 +256,24 @@
 
 	function closeModal(){
 		$('.modal.'+target).find('button.close').click();
-	}
+	}*/
+
+
+	// INLINE FORM
+
+	$('.wish.view').find('.button .hide_edit').on('click', function(){
+		$('.hide_edit').hide();
+		$('.show_edit').show();
+		edit = 1;
+		return false;
+	})
+
+	$('#link').on('click', function(){
+		if(edit == 1){
+			$('input#image').click();
+			return false;
+		}
+	})
 
 
 	// SHOW UPLOADED IMAGE

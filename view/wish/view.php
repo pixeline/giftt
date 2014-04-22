@@ -13,64 +13,110 @@
 
 		<section class="content">
 
-			<div class="container">
-				<div class="intro">
-					<h2><?php echo $wish_name ?></h2>
-					<p class="mute">Added on <?php echo date('F jS, Y', $wish_date); ?></p>
-					<?php if($me_username == $user_username){ ?>
-					<div class="button modal_trigger" data-target="editWish">
-						<a href="/<?php echo $wish_url; ?>/edit">
-							<span class="title">Edit</span>
-						</a>
-					</div>
-					<?php }else{ ?>
-					<div class="button modal_trigger" data-target="addWish">
-						<a href="#">
-							<span class="title">I want it too</span>
-						</a>
-					</div>
-					<?php } ?>
-				</div>
+			<form class="container" id="edit_wish" action="/<?php echo $wish_url; ?>/edit" method="POST" enctype="multipart/form-data">
 
-				<div class="row details">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="row">
-							<div class="col-sm-4">
-								<div class="photo">
-									<a href="<?php echo $wish_origin; ?>" target="_blank">
-										<img src="/<?php echo $wish_cover; ?>" />
-									</a>
-									<a href="<?php echo $wish_origin; ?>" target="_blank" class="price"><?php echo $wish_price; ?></a>
-								</div>
-							</div>
+				<div class="container">
+					<div class="intro">
+						<h2 class="hide_edit"><?php echo $wish_name ?></h2>
+						<input id="name" class="show_edit" type="text" name="name" value="<?php if(isset($wish_name)) echo $wish_name; ?>" required />
+						<p class="mute">Added 
+							<span class="hide_edit"> on <?php echo date('F jS, Y', $wish_date); ?></span>
+							<span class="show_edit"> in 
+								<select id="wishlist" name="wishlist" required>
+									<option>Choose a wishlist</option>
+											
+									<?php
 
-							<div class="col-sm-8">
-								<div class="description">
-									<h5>Description</h5>
-									<p><?php echo $wish_description; ?></p>
-								</div>
-								<?php if(!empty($wish_notes)){ ?>
-								<div class="notes">
-									<h5><?php echo $user_firstname; ?> also wants you to know...</h5>
-									<p><?php echo $wish_notes; ?></p>
-								</div>
-								<?php } ?>
-								<div class="share">
-									<div class="facebook">
-										<div class="fb-share-button" data-href="<?php echo $wish_url; ?>" data-type="button"></div>
+									$query = $db->prepare("SELECT * FROM wishlists WHERE author = :author AND removed = :removed");
+									$query->execute(array(
+										':author' => $me['id'],
+										':removed' => 0
+									));
+
+									$wishlists = array();
+									while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
+										$wishlists[] = $wishlist;
+									}
+
+									foreach($wishlists as $wishlist){
+										$name = $wishlist['name'];
+										$id = $wishlist['id'];
+
+									?>
+
+									<option value="<?php echo $id; ?>" <?php if($name == $wishlist_name) echo "selected"; ?>><?php echo $name; ?></option>
+
+									<?php
+
+										}
+
+									?>
+
+								</select>
+							</span>
+						</p>
+						<?php if($me_username == $user_username){ ?>
+						<div class="button modal_trigger" data-target="editWish">
+							<a class="hide_edit" href="/<?php echo $wish_url; ?>/edit">
+								<span class="title">Edit</span>
+							</a>
+							<button class="show_edit" type="submit" name="edit_wish">Save</button>
+						</div>
+						<?php }else{ ?>
+						<div class="button modal_trigger" data-target="addWish">
+							<a href="#">
+								<span class="title">I want it too</span>
+							</a>
+						</div>
+						<?php } ?>
+					</div>
+
+					<div class="row details">
+						<div class="col-md-10 col-md-offset-1">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="photo">
+										<a id="link" class="file_cont" href="<?php echo $wish_origin; ?>" target="_blank">
+											<img src="/<?php echo $wish_cover; ?>" />
+										</a>
+										<a href="<?php echo $wish_origin; ?>" target="_blank" class="price hide_edit"><?php echo $wish_price; ?></a>
+										<input id="price" class="show_edit" type="text" name="price" value="<?php if(isset($wish_price)) echo $wish_price; ?>" />
+										<input id="image" class="hidden" type="file" name="image" required />
 									</div>
-									<div class="twitter">
-										<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-dnt="true">Tweet</a>
+									<input id="origin" class="show_edit" type="url" name="origin" value="<?php if(isset($wish_origin)) echo $wish_origin; ?>" placeholder="http://" required />
+								</div>
+
+								<div class="col-sm-8">
+									<div class="description">
+										<h5>Description</h5>
+										<p class="hide_edit"><?php echo $wish_description; ?></p>
+										<textarea id="description" class="show_edit" name="description" required><?php if(isset($wish_description)) echo $wish_description; ?></textarea>
 									</div>
-									<div class="google">
-										<div class="g-plusone" data-size="medium" data-annotation="none"></div>
+									<?php if(!empty($wish_notes)){ ?>
+									<div class="notes">
+										<h5><?php echo $user_firstname; ?> also wants you to know...</h5>
+										<p class="hide_edit"><?php echo $wish_notes; ?></p>
+										<textarea id="notes" class="show_edit" name="notes"><?php if(isset($wish_notes)) echo $wish_notes; ?></textarea>
+									</div>
+									<?php } ?>
+									<div class="share hide_edit">
+										<div class="facebook">
+											<div class="fb-share-button" data-href="<?php echo $wish_url; ?>" data-type="button"></div>
+										</div>
+										<div class="twitter">
+											<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-dnt="true">Tweet</a>
+										</div>
+										<div class="google">
+											<div class="g-plusone" data-size="medium" data-annotation="none"></div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+
+			</form>
 
 			<?php
 

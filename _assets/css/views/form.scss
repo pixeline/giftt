@@ -242,6 +242,113 @@
 }
 
 
+// INLINE
+
+.show_edit{
+	display: none;
+}
+
+/* .hide_edit{
+	display: none !important;
+} */
+
+
+// WISH
+
+.wish.view{
+
+	input, textarea{
+		font-family: $proxima;
+		background: $gray4;
+		border: 1px solid $gray12;
+		border-radius: 2px;
+		padding: 5px;
+	}
+
+	input{
+
+		&[name=name]{
+			font-family: $tisa;
+			font-size: em(30);
+			line-height: $lh * 1.8;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-top: -7px;
+			margin-bottom: 10px;
+			text-align: center;
+			padding: 0 10px;
+			width: 50%;
+		}
+
+		&[name=price]{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background: $green;
+			color: $white;
+			border: 0;
+			border-radius: 2px;
+			padding: 8px 13px 6px;
+			font-weight: 400;
+			font-size: em(15);
+			width: 25%;
+		}
+
+		&[name=origin]{
+			margin-top: 14px;
+			line-height: 20px;
+			width: 100%;
+			font-size: em(15);
+		}
+	}
+
+	textarea{
+		font-size: em(16);
+		line-height: $lh * 1.2;
+		margin: 0 auto $lh * 1.2;
+		width: 100%;
+		max-width: 100%;
+		min-height: 100px;
+
+		&[name=description]{
+			font-size: em(18);
+			line-height: $lh * 1.4;
+			min-height: 176px;
+		}
+	}
+
+	select{
+		background: $gray4;
+		border: 1px solid $gray12;
+		height: 24px;
+	}
+
+	button.show_edit{
+		font-family: $proxima;
+		text-transform: uppercase;
+		color: $green;
+		background: $white;
+		border-radius: 2px;
+		border: 2px solid $green;
+		font-weight: 600;
+		font-size: em(15);
+		padding: 9px 13px 6px;
+		margin: 0;
+		cursor: pointer;
+		@include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+		
+		&:hover{
+			background: rgba($green, 0.25);
+		}
+
+		&:active{
+			background: $green;
+			color: $white;
+		}
+	}
+}
+
 
 // NOJS
 
