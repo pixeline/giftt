@@ -29,7 +29,7 @@ if(isset($_POST['register'])){
 	
 	$error = 0;
 
-	$reserved = ['register', 'login'];
+	$reserved = array('register', 'login');
 
 	if($password1 != $password2 || $password1 == ""){
 		$error = 1;
