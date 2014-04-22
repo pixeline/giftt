@@ -13,7 +13,7 @@
 
 		<section class="content">
 
-			<form class="container" id="edit_wish" action="/<?php echo $wish_url; ?>/edit" method="POST" enctype="multipart/form-data">
+			<form id="edit_wish" action="/<?php echo $wish_url; ?>/edit" method="POST" enctype="multipart/form-data">
 
 				<div class="container">
 					<div class="intro">
