@@ -56,7 +56,7 @@
 							</span>
 						</p>
 						<?php if($me_username == $user_username){ ?>
-						<div class="button modal_trigger" data-target="editWish">
+						<div class="button">
 							<a class="hide_edit" href="/<?php echo $wish_url; ?>/edit">
 								<span class="title">Edit</span>
 							</a>
@@ -92,13 +92,11 @@
 										<p class="hide_edit"><?php echo $wish_description; ?></p>
 										<textarea id="description" class="show_edit" name="description" required><?php if(isset($wish_description)) echo $wish_description; ?></textarea>
 									</div>
-									<?php if(!empty($wish_notes)){ ?>
-									<div class="notes">
+									<div class="notes show_edit" <?php if(!empty($wish_notes)){ ?>style="display: none;"<?php } ?>>
 										<h5><?php echo $user_firstname; ?> also wants you to know...</h5>
 										<p class="hide_edit"><?php echo $wish_notes; ?></p>
 										<textarea id="notes" class="show_edit" name="notes"><?php if(isset($wish_notes)) echo $wish_notes; ?></textarea>
 									</div>
-									<?php } ?>
 									<div class="share hide_edit">
 										<div class="facebook">
 											<div class="fb-share-button" data-href="<?php echo $wish_url; ?>" data-type="button"></div>
@@ -204,8 +202,6 @@
 	</section>
 
 	<?php require_once $root . '/_include/modal_add_wish.php'; ?>
-
-	<?php require_once $root . '/_include/modal_edit_wish.php'; ?>
 
 	<?php require_once $root . '/_include/feed.php'; ?>
 

@@ -207,7 +207,7 @@
 
 	// MODALS
 
-	/*var target;
+	var target;
 	var modal = false;
 
 	$('.modal_trigger').on('click', function(){
@@ -256,7 +256,7 @@
 
 	function closeModal(){
 		$('.modal.'+target).find('button.close').click();
-	}*/
+	}
 
 
 	// INLINE FORM
