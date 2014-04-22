@@ -5,10 +5,8 @@ require_once $root . '/_include/functions.php';
 
 // LOG OUT
 
-if(isset($_POST['logout'])){
+session_destroy();
 
-	session_destroy();
-
-}
+header("Location:/");
 
 ?>

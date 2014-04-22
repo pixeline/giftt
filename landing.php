@@ -13,7 +13,7 @@
 
 			<div class="col-sm-6 register">
 				<h1>Register</h1>
-				<form action="<?php $root ?>/_include/register.php" method="POST">
+				<form action="<?php $root ?>/register" method="POST">
 					<label for="username">Username</label>
 					<input type="text" name="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="" />
 					<label for="password">Password</label>
@@ -33,7 +33,7 @@
 
 			<div class="col-sm-6 login">
 				<h1>Login</h1>
-				<form action="<?php $root ?>/_include/login.php" method="POST">
+				<form action="<?php $root ?>/login" method="POST">
 					<label for="username">Username</label>
 					<input type="text" name="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="" />
 					<label for="password">Password</label>

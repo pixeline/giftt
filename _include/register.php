@@ -29,10 +29,12 @@ if(isset($_POST['register'])){
 	
 	$error = 0;
 
+	$reserved = ['register', 'login'];
+
 	if($password1 != $password2 || $password1 == ""){
 		$error = 1;
 		$message = "Password doesn't match";
-	}elseif($user_exists){
+	}elseif($user_exists || in_array($username, $reserved)){
 		$error = 1;
 		$message = "This usename already exists";
 	}else{
@@ -56,7 +58,14 @@ if(isset($_POST['register'])){
 				'email' => $email,
 				'salt' => $salt
 			));
-			$message = "You're registered!";
+			$query = $db->prepare("SELECT * FROM users WHERE username = :username");
+			$query->execute(array(
+				'username' => $username
+			));
+			$results = $query->fetch();
+
+			$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description']);
+			header("Location:/");
 		}
 	}
 }

@@ -4,7 +4,8 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # USERS
-RewriteRule ^register/?$ add/user/index.php [L]
+RewriteRule ^register/?$ _include/register.php [L]
+RewriteRule ^login/?$ _include/login.php [L]
 RewriteRule ^([a-z0-9-_]+)/settings/?$ edit/user/index.php?user=$1 [L]
 RewriteRule ^([a-z0-9-_]+)/?$ view/user/index.php?user=$1 [L]
 
