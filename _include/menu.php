@@ -6,7 +6,7 @@
 	</div>
 
 	<div id="logout">
-		<a href="#">
+		<a href="/logout">
 
 		</a>
 	</div>

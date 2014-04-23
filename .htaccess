@@ -6,6 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # USERS
 RewriteRule ^register/?$ _include/register.php [L]
 RewriteRule ^login/?$ _include/login.php [L]
+RewriteRule ^logout/?$ _include/logout.php [L]
 RewriteRule ^([a-z0-9-_]+)/settings/?$ edit/user/index.php?user=$1 [L]
 RewriteRule ^([a-z0-9-_]+)/?$ view/user/index.php?user=$1 [L]
 

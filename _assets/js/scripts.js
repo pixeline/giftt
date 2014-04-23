@@ -343,7 +343,7 @@
 
 	// LOGOUT
 
-	$('#logout').on('click', function(){
+	/*$('#logout').on('click', function(){
 		logout();
 		return false;
 	})
@@ -358,7 +358,7 @@
 				window.location = '/';
 			}
 		});
-	}
+	}*/
 
 
 
