@@ -36,6 +36,7 @@
 	function resizeStuff(){
 		wh = $(window).innerHeight();
 		$('.main').height(wh);
+		$('aside').find('.wrapper').height(wh-80);
 	}
 
 
@@ -119,7 +120,6 @@
 		setTimeout(function(){
 			masContainer.masonry();
 		}, 250);
-		$('aside').find('.wrapper').height(wh-80);
 	}
 
 

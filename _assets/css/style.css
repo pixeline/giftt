@@ -2040,8 +2040,7 @@ body {
   font-size: 16px;
   line-height: 20px;
   background: white;
-  color: #2c2c2c;
-  overflow: hidden; }
+  color: #2c2c2c; }
 
 h1, h2, h3 {
   font-family: "ff-tisa-sans-web-pro", sans-serif; }
@@ -2260,7 +2259,10 @@ aside {
     color: white;
     display: block;
     overflow: hidden;
-    padding: 12px 15px; }
+    padding: 12px 15px;
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out; }
     aside .item .user {
       float: left;
       width: 40px;
@@ -2314,7 +2316,7 @@ nav #logo {
       nav #logo a {
         background-image: url(../images/logo@2x.png); } }
 nav #logout {
-  right: 75px;
+  right: 70px;
   background: white; }
 nav #showAside {
   right: 10px;
