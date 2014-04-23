@@ -92,7 +92,7 @@
 										<p class="hide_edit"><?php echo $wish_description; ?></p>
 										<textarea id="description" class="show_edit" name="description" required><?php if(isset($wish_description)) echo $wish_description; ?></textarea>
 									</div>
-									<div class="notes show_edit" <?php if(!empty($wish_notes)){ ?>style="display: none;"<?php } ?>>
+									<div class="notes show_edit" <?php if(!empty($wish_notes)){ ?>style="display: block !important;"<?php } ?>>
 										<h5><?php echo $user_firstname; ?> also wants you to know...</h5>
 										<p class="hide_edit"><?php echo $wish_notes; ?></p>
 										<textarea id="notes" class="show_edit" name="notes"><?php if(isset($wish_notes)) echo $wish_notes; ?></textarea>

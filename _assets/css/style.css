@@ -2817,9 +2817,6 @@ ul .wish.add {
 .show_edit {
   display: none; }
 
-/* .hide_edit{
-	display: none !important;
-} */
 .wish.view input, .wish.view textarea {
   font-family: "proxima-nova", sans-serif;
   background: #f4f4f4;
@@ -2849,7 +2846,8 @@ ul .wish.add {
   padding: 8px 13px 6px;
   font-weight: 400;
   font-size: 0.9375em;
-  width: 25%; }
+  width: 25%;
+  text-align: center; }
 .wish.view input[name=origin] {
   margin-top: 14px;
   line-height: 20px;

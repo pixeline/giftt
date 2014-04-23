@@ -248,10 +248,6 @@
 	display: none;
 }
 
-/* .hide_edit{
-	display: none !important;
-} */
-
 
 // WISH
 
@@ -293,6 +289,7 @@
 			font-weight: 400;
 			font-size: em(15);
 			width: 25%;
+			text-align: center;
 		}
 
 		&[name=origin]{
