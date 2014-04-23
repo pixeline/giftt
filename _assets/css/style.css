@@ -2040,7 +2040,8 @@ body {
   font-size: 16px;
   line-height: 20px;
   background: white;
-  color: #2c2c2c; }
+  color: #2c2c2c;
+  overflow: hidden; }
 
 h1, h2, h3 {
   font-family: "ff-tisa-sans-web-pro", sans-serif; }
@@ -2145,16 +2146,10 @@ header {
   width: 100%;
   float: left;
   background: white;
+  overflow: auto;
   -webkit-transition: width 0.2s ease-in-out;
   -moz-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out; }
-  .main.withAside {
-    position: relative;
-    width: 85%;
-    width: calc(100% - 200px);
-    -webkit-transition: width 0.2s ease-in-out;
-    -moz-transition: width 0.2s ease-in-out;
-    transition: width 0.2s ease-in-out; }
 
 .content {
   padding: 60px 0; }
@@ -2212,35 +2207,85 @@ header {
       color: white;
       background: #2c2c2c; }
 
+body.withAside .main {
+  position: relative;
+  width: 85%;
+  width: calc(100% - 250px);
+  -webkit-transition: width 0.2s ease-in-out;
+  -moz-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out; }
+body.withAside aside {
+  right: 0; }
+  body.withAside aside .wrapper {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out; }
+
 aside {
   width: 15%;
-  width: calc(200px);
+  width: calc(250px);
   float: right;
   position: fixed;
   top: 0;
-  padding: 10px;
+  padding: 0;
   bottom: 0;
-  right: -200px;
-  overflow: scroll;
+  right: -250px;
   background: #2c2c2c;
+  overflow: hidden;
   -webkit-transition: right 0.2s ease-in-out;
   -moz-transition: right 0.2s ease-in-out;
   transition: right 0.2s ease-in-out; }
-  aside div {
-    height: 200vh;
+  aside .container {
+    width: 100%;
+    position: relative;
+    color: white;
+    padding: 0; }
+  aside .title {
+    line-height: 24px;
+    font-family: "freight-sans-pro", sans-serif;
+    font-size: 1.0625em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    padding: 28px 15px 28px 55px; }
+  aside .wrapper {
     width: 100%;
     opacity: 0;
+    overflow: auto;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out; }
+  aside .item {
     color: white;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out; }
-  aside.show {
-    right: 0; }
-    aside.show div {
-      opacity: 1;
-      -webkit-transition: opacity 0.2s ease-in-out 0.4s;
-      -moz-transition: opacity 0.2s ease-in-out 0.4s;
-      transition: opacity 0.2s ease-in-out 0.4s; }
+    display: block;
+    overflow: hidden;
+    padding: 12px 15px; }
+    aside .item .user {
+      float: left;
+      width: 40px;
+      padding-right: 12px; }
+      aside .item .user img {
+        height: 28px;
+        width: 28px;
+        border-radius: 28px;
+        margin-top: 4px; }
+    aside .item .content {
+      padding: 0 !important;
+      float: left;
+      width: 180px;
+      font-smoothing: antialiased; }
+      aside .item .content p {
+        margin: 0; }
+      aside .item .content strong {
+        font-weight: 600; }
+      aside .item .content img {
+        height: auto;
+        width: 100%;
+        border-radius: 2px;
+        margin-top: 12px; }
+    aside .item:hover {
+      background: #3f3f3f; }
 
 footer {
   text-align: center;
@@ -2254,10 +2299,10 @@ nav a {
   display: block; }
 nav div {
   position: absolute;
-  top: 20px;
+  top: 10px;
   z-index: 10; }
 nav #logo {
-  left: 20px;
+  left: 10px;
   background: #7FBA00; }
   nav #logo a {
     width: 85px;
@@ -2269,10 +2314,10 @@ nav #logo {
       nav #logo a {
         background-image: url(../images/logo@2x.png); } }
 nav #logout {
-  right: 85px;
+  right: 75px;
   background: white; }
 nav #showAside {
-  right: 20px;
+  right: 10px;
   background: #7FBA00; }
   nav #showAside a {
     background-image: url(../images/menu.png);

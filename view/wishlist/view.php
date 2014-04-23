@@ -5,7 +5,7 @@
 	<title><?php echo $wishlist_name . " | " . $user_name ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body class="wishlist view nojs">
+<body class="wishlist view nojs <?php if($me_feed == 1){ echo "withAside"; } ?>">
 
 	<section class="main">
 

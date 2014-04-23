@@ -5,7 +5,7 @@
 	<title><?php echo $user_name ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body class="user view nojs">
+<body class="user view nojs <?php if($me_feed == 1){ echo "withAside"; } ?>">
 
 	<?php if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") == false){ ?>
 	<div class="beta">

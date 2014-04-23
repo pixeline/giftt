@@ -5,6 +5,7 @@ body{
 	line-height: $lh;
 	background: $white;
 	color: $black;
+	overflow: hidden;
 }
 
 h1, h2, h3{
@@ -124,14 +125,8 @@ header{
 	width: 100%;
 	float: left;
 	background: $white;
+	overflow: auto;
 	@include transition(width 0.2s ease-in-out);
-
-	&.withAside{
-		position: relative;
-		width: 85%;
-		width: calc(100% - 200px);
-		@include transition(width 0.2s ease-in-out);
-	}
 }
 
 .content{
@@ -199,33 +194,105 @@ header{
 
 // ASIDE
 
+body.withAside{
+
+	.main{
+		position: relative;
+		width: 85%;
+		width: calc(100% - 250px);
+		@include transition(width 0.2s ease-in-out);
+	}
+
+	aside{
+		right: 0;
+
+		.wrapper{
+			opacity: 1;
+			@include transition(opacity 0.5s ease-in-out);
+		}
+	}
+}
+
 aside{
 	width: 15%;
-	width: calc(200px);
+	width: calc(250px);
 	float: right;
 	position: fixed;
 	top: 0;
-	padding: 10px;
+	padding: 0;
 	bottom: 0;
-	right: -200px;
-	overflow: scroll;
+	right: -250px;
 	background: $black;
+	overflow: hidden;
 	@include transition(right 0.2s ease-in-out);
 
-	div{
-		height: 200vh;
+	.container{
 		width: 100%;
-		opacity: 0;
+		position: relative;
 		color: $white;
-		@include transition(opacity 0.2s ease-in-out);
+		padding: 0;
 	}
 
-	&.show{
-		right: 0;
+	.title{
+		line-height: 24px;
+		font-family: $freight;
+		font-size: em(17);
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-bottom: 0;
+		padding: 28px 15px 28px 55px;
+	}
 
-		div{
-			opacity: 1;
-			@include transition(opacity 0.2s ease-in-out 0.4s);
+	.wrapper{
+		width: 100%;
+		opacity: 0;
+		overflow: auto;
+		@include transition(opacity 0.3s ease-in-out);
+	}
+
+	.item{
+		color: $white;
+		display: block;
+		overflow: hidden;
+		padding: 12px 15px;
+
+		.user{
+			float: left;
+			width: 40px;
+			padding-right: 12px;
+
+			img{
+				height: 28px;
+				width: 28px;
+				border-radius: 28px;
+				margin-top: 4px;
+			}
+		}
+
+		.content{
+			padding: 0 !important;
+			float: left;
+			width: 180px;
+			font-smoothing: antialiased;
+
+			p{
+				margin: 0;
+			}
+
+			strong{
+				font-weight: 600;
+			}
+
+			img{
+				height: auto;
+				width: 100%;
+				border-radius: 2px;
+				margin-top: 12px;
+			}
+		}
+
+		&:hover{
+			background: $gray75;
 		}
 	}
 }
@@ -253,12 +320,12 @@ nav{
 
 	div{
 		position: absolute;
-		top: 20px;
+		top: 10px;
 		z-index: 10;
 	}
 
 	#logo{
-		left: 20px;
+		left: 10px;
 		background: #7FBA00;
 
 		a{
@@ -274,12 +341,12 @@ nav{
 	}
 
 	#logout{
-		right: 85px;
+		right: 75px;
 		background: $white;
 	}
 
 	#showAside{
-		right: 20px;
+		right: 10px;
 		background: #7FBA00;
 
 		a{

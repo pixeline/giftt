@@ -11,6 +11,7 @@
 	/////////////////////////////////////
 
 	body = $('body');
+	var masContainer;
 
 
 
@@ -25,10 +26,24 @@
 	// AESTHETICS ///////////////////////
 	/////////////////////////////////////
 
+
+	// RESIZE
+
+	$(window).on('resize', function(){
+		resizeStuff();
+	})
+
+	function resizeStuff(){
+		wh = $(window).innerHeight();
+		$('.main').height(wh);
+	}
+
+
 	// INIT
 
 	function init(){
 
+		resizeStuff();
 		smallStuff();
 		initMasonry();
 
@@ -94,15 +109,17 @@
 	// SHOW ASIDE
 
 	$('#showAside').on('click', function(){
-		showAside();
+		aside();
 		return false;
-	})
+	});
 
-	function showAside(){
-		aside = $('aside');
-		main = $('.main');
-		aside.toggleClass('show');
-		main.toggleClass('withAside');
+	function aside(){
+		body.toggleClass('withAside');
+		showFeed();
+		setTimeout(function(){
+			masContainer.masonry();
+		}, 250);
+		$('aside').find('.wrapper').height(wh-80);
 	}
 
 
@@ -359,6 +376,17 @@
 			}
 		});
 	}*/
+
+
+	// SHOW FEED
+
+	function showFeed(){
+
+		$.ajax({
+			url: '/_include/show_feed.php',
+			type: 'POST'
+		});
+	}
 
 
 
