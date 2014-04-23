@@ -19,7 +19,7 @@ foreach($follows as $follow){
 
 ?>
 
-<div class="container">
+<div class="container-fluid">
 
 	<div class="row">
 

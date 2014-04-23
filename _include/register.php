@@ -80,7 +80,7 @@ if(isset($_POST['register'])){
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 <body class="home">
-	<div class="container">
+	<div class="container-fluid">
 		<?php 
 
 		echo $message;

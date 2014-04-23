@@ -13,7 +13,7 @@
 
 		<section class="content">
 
-			<div class="container">
+			<div class="container-fluid">
 
 				<div class="intro">
 					<h2><?php echo $wishlist_name ?><?php if($is_private) echo "<span class='icon entypo lock'></span>"; ?></h2>

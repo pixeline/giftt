@@ -74,8 +74,11 @@ hr{
 	@include clearfix;
 }
 
-.container{
+.container-fluid{
 	position: relative;
+	padding: 0 20px;
+	max-width: 1160px;
+	margin: 0 auto;
 }
 
 .v_align{
@@ -124,7 +127,7 @@ header{
 	@include transition(width 0.2s ease-in-out);
 
 	&.withAside{
-		left: -200px;
+		position: relative;
 		width: 85%;
 		width: calc(100% - 200px);
 		@include transition(width 0.2s ease-in-out);

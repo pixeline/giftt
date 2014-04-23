@@ -1,6 +1,6 @@
 <section class="modal editWish">
 	<div class="v_align">
-		<form class="container" id="edit_wish" action="/<?php echo $wish_url; ?>/edit" method="POST" enctype="multipart/form-data">
+		<form class="container-fluid" id="edit_wish" action="/<?php echo $wish_url; ?>/edit" method="POST" enctype="multipart/form-data">
 			<button type="submit" name="edit_wish" class="hidden"></button>
 			<header class="row">
 				<div class="col-sm-6 title">

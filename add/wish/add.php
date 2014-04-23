@@ -19,7 +19,7 @@ require_once $root . '/add/wish/add_do.php';
 
 		<section class="content form">
 
-			<div class="container">
+			<div class="container-fluid">
 
 				<div class="row">
 

@@ -7,7 +7,7 @@
 </head>
 <body class="user view nojs">
 
-	<?php if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") == false){ // Local dev server ?>
+	<?php if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") == false){ ?>
 	<div class="beta">
 		<p>This is the alpha version of an upcoming wishlist platform. Only <a href="http://pierrestoffe.be/notes/" target="_blank">a few functionnalities</a> have been implemented. <br />Please send your feedback to <a href="mailto:bonjour@pierrestoffe.be?subject=Feedback for Giftt.me">bonjour@pierrestoffe.be</a>. <span class="close" style="font-weight: 600; cursor: pointer;">(close)</span></p>
 	</div>
@@ -19,7 +19,7 @@
 
 		<section class="content">
 
-			<div class="container">
+			<div class="container-fluid">
 
 				<h3>
 					<?php if($me_username == $user_username){ ?>

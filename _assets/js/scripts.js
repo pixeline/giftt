@@ -94,8 +94,7 @@
 	// SHOW ASIDE
 
 	$('#showAside').on('click', function(){
-		alert('You cannot use the "Feed" yet.');
-		/*showAside();*/
+		showAside();
 		return false;
 	})
 

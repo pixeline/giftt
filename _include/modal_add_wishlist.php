@@ -1,6 +1,6 @@
 <section class="modal addWishlist">
 	<div class="v_align">
-		<form class="container" id="add_wishlist" action="/<?php echo $user_url; ?>/wishlist/add" method="POST" enctype="multipart/form-data">
+		<form class="container-fluid" id="add_wishlist" action="/<?php echo $user_url; ?>/wishlist/add" method="POST" enctype="multipart/form-data">
 			<button type="submit" name="add_wishlist" class="hidden"></button>
 			<header class="row">
 				<div class="col-sm-6 title">

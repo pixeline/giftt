@@ -7,7 +7,7 @@
 </head>
 <body id="register_login">
 
-	<div class="container">
+	<div class="container-fluid">
 
 		<div class="row">
 

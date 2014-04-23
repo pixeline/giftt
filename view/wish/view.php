@@ -15,7 +15,7 @@
 
 			<form id="edit_wish" action="/<?php echo $wish_url; ?>/edit" method="POST" enctype="multipart/form-data">
 
-				<div class="container">
+				<div class="container-fluid">
 					<div class="intro">
 						<h2 class="hide_edit"><?php echo $wish_name ?></h2>
 						<input id="name" class="show_edit" type="text" name="name" value="<?php if(isset($wish_name)) echo $wish_name; ?>" required />
@@ -133,7 +133,7 @@
 			?>
 
 			<div class="siblings">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-10 col-md-offset-1">
 							<div class="row">
