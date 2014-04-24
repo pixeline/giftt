@@ -9,7 +9,7 @@ $message = "Form not sent";
 
 if(isset($_POST['login'])){
 
-	$username = htmlspecialchars($_POST['username']);
+	$username = strtolower(htmlspecialchars($_POST['username']));
 	$password = htmlspecialchars($_POST['password']);
 
 	$query = $db->prepare("SELECT * FROM users WHERE username = :username");
