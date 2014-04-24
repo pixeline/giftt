@@ -149,7 +149,7 @@ if(!empty($raw_follows)){
 					<img src="/<?php echo $follower_picture; ?>" alt="<?php echo $follower_name; ?>" />
 				</div>
 				<div class="content">
-					<p><strong><?php echo $follower_name; ?></strong> followed <strong><?php if($followed_name == $me){ echo $followed_name; }else{ echo 'You'; } ?></strong></p>
+					<p><strong><?php echo $follower_name; ?></strong> followed <strong><?php if($followed_name == $me){ echo You; }else{ echo $followed_name; } ?></strong></p>
 				</div>
 			</a>
 <?php
