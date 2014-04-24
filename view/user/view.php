@@ -141,7 +141,6 @@
 
 					if(isset($wishlist_ids)){
 						$wishlist_ids = join(',', $wishlist_ids);
-						$wishlist_ids = "11,7";
 						$query = $db->prepare("SELECT * FROM wishes WHERE wishlist IN($wishlist_ids) AND removed = :removed AND author = :author ORDER BY id DESC LIMIT 25");
 						$query->execute(array(
 							':removed' => 0,
