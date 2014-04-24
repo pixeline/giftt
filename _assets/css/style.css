@@ -2257,6 +2257,7 @@ aside {
     transition: opacity 0.3s ease-in-out; }
   aside .item {
     color: white;
+    background: #2c2c2c;
     display: block;
     overflow: hidden;
     padding: 12px 15px;
@@ -2870,13 +2871,13 @@ ul .wish.add {
 .show_edit {
   display: none; }
 
-.wish.view input, .wish.view textarea {
+.wish.view.edit input, .wish.view.edit textarea {
   font-family: "proxima-nova", sans-serif;
   background: #f4f4f4;
   border: 1px solid #e0e0e0;
   border-radius: 2px;
   padding: 5px; }
-.wish.view input[name=name] {
+.wish.view.edit input[name=name] {
   font-family: "ff-tisa-sans-web-pro", sans-serif;
   font-size: 1.875em;
   line-height: 36px;
@@ -2888,7 +2889,7 @@ ul .wish.add {
   text-align: center;
   padding: 0 10px;
   width: 50%; }
-.wish.view input[name=price] {
+.wish.view.edit input[name=price] {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -2901,27 +2902,27 @@ ul .wish.add {
   font-size: 0.9375em;
   width: 25%;
   text-align: center; }
-.wish.view input[name=origin] {
+.wish.view.edit input[name=origin] {
   margin-top: 14px;
   line-height: 20px;
   width: 100%;
   font-size: 0.9375em; }
-.wish.view textarea {
+.wish.view.edit textarea {
   font-size: 1em;
   line-height: 24px;
   margin: 0 auto 24px;
   width: 100%;
   max-width: 100%;
   min-height: 100px; }
-  .wish.view textarea[name=description] {
+  .wish.view.edit textarea[name=description] {
     font-size: 1.125em;
     line-height: 28px;
     min-height: 176px; }
-.wish.view select {
+.wish.view.edit select {
   background: #f4f4f4;
   border: 1px solid #e0e0e0;
   height: 24px; }
-.wish.view button.show_edit {
+.wish.view.edit button.show_edit {
   font-family: "proxima-nova", sans-serif;
   text-transform: uppercase;
   color: #7fba00;
@@ -2936,9 +2937,9 @@ ul .wish.add {
   -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
   -moz-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out; }
-  .wish.view button.show_edit:hover {
+  .wish.view.edit button.show_edit:hover {
     background: rgba(127, 186, 0, 0.25); }
-  .wish.view button.show_edit:active {
+  .wish.view.edit button.show_edit:active {
     background: #7fba00;
     color: white; }
 

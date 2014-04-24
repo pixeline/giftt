@@ -6,6 +6,6 @@
 		<div class="wrapper">
 			<!-- TO BE FILLED WITH AN AJAX REQUEST -->
 		</div>
-
+		
 	</div>
 </aside>

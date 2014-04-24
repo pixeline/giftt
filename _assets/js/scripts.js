@@ -279,6 +279,7 @@
 	// INLINE FORM
 
 	$('.wish.view').find('.button .hide_edit').on('click', function(){
+		body.addClass('edit');
 		$('.hide_edit').hide();
 		$('.show_edit').show();
 		edit = 1;
