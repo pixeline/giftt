@@ -5,10 +5,10 @@ require_once $root . '/_include/functions.php';
 
 require_once $root . '/_include/user_info.php';
 
+$debug = 1;
+
 
 // GET FOLLOWS LIST
-if($me_id == 1)
-	$me_id = 2;
 
 $query = $db->prepare("SELECT * FROM follows WHERE who = :who AND follow = :follow");
 $query->execute(array(
@@ -18,6 +18,9 @@ $query->execute(array(
 $results = $query->fetchAll();
 
 $raw_follows = array();
+if(isset($debug) && $debug == 1 && $me_id == 1){
+	$raw_follows[] = 1;
+}
 foreach($results as $result){
 	$raw_follows[] = $result['who2'];
 }
