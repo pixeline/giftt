@@ -7,13 +7,13 @@
 </head>
 <body class="user view nojs <?php if($me_feed == 1){ echo "withAside"; } ?>">
 
-	<?php if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") == false){ ?>
-	<div class="beta">
-		<p>This is the alpha version of an upcoming wishlist platform. Only <a href="http://pierrestoffe.be/notes/" target="_blank">a few functionnalities</a> have been implemented. <br />Please send your feedback to <a href="mailto:bonjour@pierrestoffe.be?subject=Feedback for Giftt.me">bonjour@pierrestoffe.be</a>. <span class="close" style="font-weight: 600; cursor: pointer;">(close)</span></p>
-	</div>
-	<?php } ?>
-
 	<section class="main">
+		
+		<?php if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") == false){ ?>
+		<div class="beta">
+			<p>This is the alpha version of an upcoming wishlist platform. Only <a href="http://pierrestoffe.be/notes/" target="_blank">a few functionnalities</a> have been implemented. <br />Please send your feedback to <a href="mailto:bonjour@pierrestoffe.be?subject=Feedback for Giftt.me">bonjour@pierrestoffe.be</a>. <span class="close" style="font-weight: 600; cursor: pointer;">(close)</span></p>
+		</div>
+		<?php } ?>
 
 		<?php require_once $root . '/_include/user_header.php'; ?>
 
@@ -240,8 +240,6 @@
 	<?php require_once $root . '/_include/modal_add_wish.php'; ?>
 
 	<?php require_once $root . '/_include/modal_add_wishlist.php'; ?>
-
-	<?php require_once $root . '/_include/modal_edit_wishlist.php'; ?>
 
 	<?php require_once $root . '/_include/feed.php'; ?>
 
