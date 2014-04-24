@@ -5,7 +5,7 @@ require_once $root . '/_include/functions.php';
 
 require_once $root . '/_include/user_info.php';
 
-$debug = 1;
+/*$debug = 1;*/
 
 
 // GET FOLLOWS LIST
@@ -55,9 +55,9 @@ if(!empty($raw_follows)){
 
 	if(isset($new_follows) && !empty($new_follows)){
 		foreach($new_follows as $new_follow){
-			if($new_follow['who2'] != $me_id){
+			/*if($new_follow['who2'] != $me_id){*/
 				$data[] = $new_follow;
-			}
+			/*}*/
 			if(!in_array($new_follow['who2'], $raw_follows)){
 				$raw_follows[] = $new_follow['who2'];
 			}
@@ -126,7 +126,7 @@ if(!empty($raw_follows)){
 <?php
 		}
 
-		function format_follow($raw, $users){
+		function format_follow($raw, $users, $me){
 
 			foreach($users as $feed_user){
 				if($feed_user['id'] == $raw['who']){
@@ -149,7 +149,7 @@ if(!empty($raw_follows)){
 					<img src="/<?php echo $follower_picture; ?>" alt="<?php echo $follower_name; ?>" />
 				</div>
 				<div class="content">
-					<p><strong><?php echo $follower_name; ?></strong> followed <strong><?php echo $followed_name; ?></strong></p>
+					<p><strong><?php echo $follower_name; ?></strong> followed <strong><?php if($followed_name == $me){ echo $followed_name; }else{ echo 'You'; } ?></strong></p>
 				</div>
 			</a>
 <?php
@@ -159,7 +159,7 @@ if(!empty($raw_follows)){
 			if(isset($row['name'])){
 				format_wish($row, $feed_users, $feed_wishlists);
 			}else{
-				format_follow($row, $feed_users, $feed_wishlists);
+				format_follow($row, $feed_users, $feed_wishlists, $me_username);
 			}
 		}
 	}else{

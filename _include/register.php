@@ -29,7 +29,7 @@ if(isset($_POST['register'])){
 	
 	$error = 0;
 
-	$reserved = array('register', 'login', 'admin', 'pierre', 'giftt');
+	$reserved = array('register', 'login', 'admin', 'pierre', 'giftt', 'you', 'your', 'me', 'five', 'a');
 
 	if($password1 != $password2 || $password1 == ""){
 		$error = 1;
@@ -40,7 +40,7 @@ if(isset($_POST['register'])){
 	}else{
 		$letters = "/^[a-zA-Z'àâéèêôëôùûçÀÂÉÈËÔÙÛÇ()\- ]+$/";
 
-		if(!preg_match($letters, $username) || $username == ""){
+		if(!preg_match($letters, $username) || empty($username) || strlen($username) < 3){
 			$error = 1;
 			$message= "Please enter a valid username";
 		}
