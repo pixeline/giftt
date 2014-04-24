@@ -8,7 +8,7 @@ if(isset($_GET['user'])){
 	$user = $me_username;
 }
 
-$query = $db->prepare("SELECT * FROM users WHERE username = :username");
+$query = $db->prepare("SELECT id, username, firstname, lastname, description, picture FROM users WHERE username = :username");
 $query->execute(array(
 	':username' => $user,
 ));

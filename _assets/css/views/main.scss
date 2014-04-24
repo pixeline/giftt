@@ -283,8 +283,11 @@ aside{
 				font-weight: 600;
 			}
 
-			img{
-				height: auto;
+			.picture{
+				height: 100px;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
 				width: 100%;
 				border-radius: 2px;
 				margin-top: 12px;

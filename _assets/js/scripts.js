@@ -47,6 +47,7 @@
 		resizeStuff();
 		smallStuff();
 		initMasonry();
+		populateFeed();
 
 	}
 
@@ -386,6 +387,20 @@
 			url: '/_include/show_feed.php',
 			type: 'POST'
 		});
+	}
+
+
+	// POPULATE FEED(){
+
+	function populateFeed(){
+
+		$.ajax({
+			url: '/_include/populate_feed.php',
+			type: 'POST',
+			success: function(data){
+				$('aside .wrapper').append(data);
+			}
+		})
 	}
 
 

@@ -17,7 +17,7 @@ if($_POST['data']){
 	));
 
 	if($query->rowCount() > 0){
-		$query = $db->prepare("UPDATE follows SET follow = NOT follow, modif = now() WHERE who = :who AND who2 = :who2");
+		$query = $db->prepare("UPDATE follows SET follow = NOT follow, date = now() WHERE who = :who AND who2 = :who2");
 		$query->execute(array(
 			'who' => $me_id,
 			'who2' => $who2
