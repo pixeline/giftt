@@ -7,7 +7,8 @@ require_once $root . '/_include/user_info.php';
 
 
 // GET FOLLOWS LIST
-$me_id = 2;
+if($me_id == 1)
+	$me_id = 2;
 
 $query = $db->prepare("SELECT * FROM follows WHERE who = :who AND follow = :follow");
 $query->execute(array(

@@ -64,7 +64,14 @@ if(isset($_POST['register'])){
 			));
 			$results = $query->fetch();
 
-			$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description']);
+			$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description'], 'feed' => $results['feed']);
+			
+			$query = $db->prepare("INSERT INTO follows(who, who2) VALUES(:who, :who2)");
+			$query->execute(array(
+				'who' => $results['id'],
+				'who2' => 1
+			));
+
 			header("Location:/");
 		}
 	}
