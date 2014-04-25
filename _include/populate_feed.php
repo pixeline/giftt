@@ -91,7 +91,7 @@ if(!empty($raw_follows)){
 		array_multisort($date, SORT_DESC, $data);
 
 
-		// SEND TO RIGHTFUL FUNCTION
+		// SEND TO THE RIGHT FUNCTION
 
 		function format_wish($raw, $users, $wishlists){
 
@@ -168,7 +168,7 @@ if(!empty($raw_follows)){
 	}
 
 }else{
-	echo "follows no one";
+	echo "<a href='/" . $me_username . "/settings/#friends' class='item empty'><div class='user'>+</div><div class='content'>Follow your friends to see what they're wishing</div></div>";
 }
 
 ?>
