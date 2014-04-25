@@ -2279,7 +2279,8 @@ aside {
       width: 180px;
       font-smoothing: antialiased; }
       aside .item .content p {
-        margin: 0; }
+        margin: 0;
+        font-weight: 500; }
       aside .item .content strong {
         font-weight: 600; }
       aside .item .content .picture {

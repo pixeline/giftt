@@ -134,6 +134,7 @@ if(!empty($raw_follows)){
 				}
 			}
 			$follower_name = $follower['firstname'] . ' ' . $follower['lastname'];
+			$follower_username = $follower['username'];
 			$follower_picture = $follower['picture'];
 
 			foreach($users as $feed_user){
@@ -144,12 +145,12 @@ if(!empty($raw_follows)){
 			$followed_name = $followed['firstname'] . ' ' . $followed['lastname'];
 			$followed_username = $followed['username'];
 ?>
-			<a href="/<?php echo $followed_username; ?>" class="item">
+			<a href="/<?php if($followed_username == $me){ echo $follower_username; }else{ echo $followed_username; }?>" class="item">
 				<div class="user">
 					<img src="/<?php echo $follower_picture; ?>" alt="<?php echo $follower_name; ?>" />
 				</div>
 				<div class="content">
-					<p><strong><?php echo $follower_name; ?></strong> followed <strong><?php if($followed_name == $me){ echo You; }else{ echo $followed_name; } ?></strong></p>
+					<p><strong><?php echo $follower_name; ?></strong> followed <strong><?php if($followed_username == $me){ echo 'You'; }else{ echo $followed_name; } ?></strong></p>
 				</div>
 			</a>
 <?php
@@ -159,7 +160,7 @@ if(!empty($raw_follows)){
 			if(isset($row['name'])){
 				format_wish($row, $feed_users, $feed_wishlists);
 			}else{
-				format_follow($row, $feed_users, $feed_wishlists, $me_username);
+				format_follow($row, $feed_users, $me_username);
 			}
 		}
 	}else{

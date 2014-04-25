@@ -1,7 +1,6 @@
 <section class="modal addWish">
 	<div class="v_align">
 		<form class="container" id="add_wish" action="/<?php echo $me_url; ?>/wish/add" method="POST" enctype="multipart/form-data">
-			<button type="submit" name="add_wish" class="hidden"></button>
 			<header class="row">
 				<div class="col-sm-6 title">
 					<h3>Make a wish</h3>

@@ -64,7 +64,6 @@
 				if(masContainer.find('.wish').not('.add').length > 0){
 					masContainer.imagesLoaded(function(){
 						masContainer.masonry({
-							columnWidth: '.wishes li:nth-child(2)',
 							itemSelector: '.wishes li'
 						})
 					})

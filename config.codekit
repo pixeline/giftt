@@ -525,6 +525,26 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/24_58_1272160736.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/24_58_1272160736.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/24_58_1272160736.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/26_59_1515105431.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/26_59_1515105431.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/26_59_1515105431.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wooden.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
