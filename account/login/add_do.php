@@ -7,8 +7,6 @@ require_once $root . '/_include/functions.php';
 
 if(isset($_POST['login'])){
 
-	$message = array();
-
 	$email = htmlspecialchars($_POST['email']);
 	$password = htmlspecialchars($_POST['password']);
 
@@ -25,20 +23,24 @@ if(isset($_POST['login'])){
 	}
 
 	if(empty($email)){
-		$message[] = "You must provide your email";
-	}elseif(!$email_exists){
-		$message[] = "This email is not registered";
-	}elseif(empty($password)){
-		$message[] = "You must provide a password";
+		$message['email'] = "You must provide your email";
+	}elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+		$message['email'] = "You must provide a valid email address";
+	}
+
+	if(empty($password)){
+		$message['password'] = "You must provide a password";
 	}elseif(strlen($password) < 5){
-		$message[] = "Your password should be at least 5 characters long";
-	}else{
+		$message['password'] = "Your password should be at least 5 characters long";
+	}
+
+	if(!isset($message)){
 		$hash = crypt($password, '$2x$12$' . $results['salt']);
 		if($hash == $results['password']){
 			$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description'], 'feed' => $results['feed']);
 			header('Location:/');
 		}else{
-			$message[] = "The password seems to be wrong";
+			$message['password'] = "The password seems to be wrong";
 		}
 	}
 }

@@ -7,38 +7,60 @@ require_once 'add_do.php';
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Login</title>
+	<title>Login to Giftt</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 <body id="login">
 
-	<div class="container-fluid">
+	<section class="main">
 
-		<div class="row">
+		<?php require_once $root . '/_include/account_header.php'; ?>
 
-			<div class="col-sm-6">
+		<section class="content">
 
-				<?php
-					if(isset($message[0])){
-						echo $message[0];
-					}
-				?>
+			<div class="container-fluid">
 
-				<form action="/login" method="POST">
-					<label for="email">Email</label>
-					<input type="text" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="<?php if(isset($email)){ echo $email; } ?>" />
-					<label for="password">Password</label>
-					<input type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="" />
+				<div class="row">
+					<div class="col-sm-12">
+						<h2>Log into your Giftt account</h2>
+					</div>
+				</div>
 
-					<input type="submit" name="login" value="Submit" />
-				</form>
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
 
-				<a href="/login/facebook" style="margin-top: 50px;">Facebook</a>
+						<a class="facebook" href="/login/facebook"><span class="text">Login with <strong>Facebook</strong></span></a>
+
+						<p class="sep"><span>or</span></p>
+
+						<form action="/login" method="POST">
+
+							<?php
+								if(isset($message[0])){
+									echo $message[0];
+								}
+							?>
+							<label for="email">Email</label>
+							<input <?php if(isset($message['email'])){ echo 'class="error"'; } ?> type="email" name="email" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Email address" value="<?php if(isset($email)){ echo $email; } ?>" />
+							<p class="error"><?php if(isset($message['email'])){ echo $message['email']; } ?></p>
+							<label for="password">Password</label>
+							<input <?php if(isset($message['password'])){ echo 'class="error"'; } ?> type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Password" value="" />
+							<p class="error"><?php if(isset($message['password'])){ echo $message['password']; } ?></p>
+
+							<input type="submit" name="login" value="Login" />
+						</form>
+
+						<p class="change"><a href="/register">Not registered yet?</a></p>
+
+					</div>
+				</div>
 
 			</div>
 
-		</div>
+		</section>
 
-	</div>
+		<?php require_once $root . '/_include/footer.php'; ?>
+
+	</section>
 
 </body>

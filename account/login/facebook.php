@@ -5,10 +5,17 @@ require_once $root . '/_include/functions.php';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/_include/facebook/facebook.php';
 
-$facebook = new Facebook(array(
-	'appId'  => '760804660605313',
-	'secret' => 'c8255cf71dff91ba732560ee9767f611',
-));
+if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") != false){ // Local dev server
+	$facebook = new Facebook(array(
+		'appId'  => '240780376110000',
+		'secret' => 'b085d55f5c0d2b06b22dc5bde8a364cf',
+	));
+}else{
+	$facebook = new Facebook(array(
+		'appId'  => '760804660605313',
+		'secret' => 'c8255cf71dff91ba732560ee9767f611',
+	));
+}
 
 $user = $facebook->getUser();
 
@@ -50,7 +57,7 @@ if($account_exists){
 
 }else{
 
-	echo "No account is linked to your Facebook account. <a href='/register/facebook'>Do you want to</a>?";
+	echo "<strong><em>No Giftt account is linked to this Facebook account.</em></strong>";
 
 }
 

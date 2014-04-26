@@ -6,10 +6,18 @@ require_once 'functions.php';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/_include/facebook/facebook.php';
 
-$facebook = new Facebook(array(
-	'appId'  => '760804660605313',
-	'secret' => 'c8255cf71dff91ba732560ee9767f611',
-));
+if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") != false){ // Local dev server
+	$facebook = new Facebook(array(
+		'appId'  => '240780376110000',
+		'secret' => 'b085d55f5c0d2b06b22dc5bde8a364cf',
+	));
+}else{
+	$facebook = new Facebook(array(
+		'appId'  => '760804660605313',
+		'secret' => 'c8255cf71dff91ba732560ee9767f611',
+	));
+}
+/*$facebook->destroySession();*/
 
 $user = $facebook->getUser();
 
@@ -17,7 +25,7 @@ if($user){
 	try{
 		$user_profile = $facebook->api('/me');
 	}catch(FacebookApiException $e){
-		error_log($e);
+		echo $e;
 		$user = null;
 	}
 }else{
@@ -26,7 +34,13 @@ if($user){
 	header('Location:' . $loginUrl);
 }
 
-if(isset($user_profile)){
+if($user){
+
+	$friends = $facebook->api('/me/friends');
+	$friends_list = '';
+	foreach($friends['data'] as $friend){
+		$friends_list .= $friend['id'] . ',';
+	}
 
 	$facebook_id = $user_profile['id'];
 	$firstname = $user_profile['first_name'];
@@ -122,19 +136,7 @@ if(isset($user_profile)){
 		));
 	}
 
-	header("Location:/");
-
-}else{ 
-
-?>
-	
-	<strong><em>You are not Connected.</em></strong>
-
-<?php 
-
+	header("Location:/register/friends?me=".$results['id']."&me_facebook=".$user_profile['id']."&friends=".$friends_list);
 }
 
 ?>
-
-</body>
-</html>

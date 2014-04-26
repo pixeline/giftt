@@ -6,6 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # SESSION
 RewriteRule ^register/?$ account/register/index.php [L]
 RewriteRule ^register/facebook/?$ account/register/facebook.php [L]
+RewriteRule ^register/friends/?$ account/register/friends.php [L]
 RewriteRule ^login/?$ account/login/index.php [L]
 RewriteRule ^login/facebook/?$ account/login/facebook.php [L]
 RewriteRule ^logout/?$ account/logout/index.php [L]

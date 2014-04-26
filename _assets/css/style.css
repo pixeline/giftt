@@ -2146,6 +2146,7 @@ header {
   float: left;
   background: white;
   overflow: auto;
+  margin-bottom: 20px;
   -webkit-transition: width 0.2s ease-in-out;
   -moz-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out; }
@@ -2555,29 +2556,112 @@ ul .wish.add {
     color: white;
     background: #2c2c2c; }
 
-#register label, #login label {
-  margin-top: 20px;
+#register header, #login header {
+  padding: 60px 0; }
+  #register header img, #login header img {
+    height: 100px;
+    width: 100px;
+    border-radius: 0; }
+#register .facebook, #register .sep, #register label, #register input, #register p.error, #login .facebook, #login .sep, #login label, #login input, #login p.error {
+  width: 280px;
+  margin: 0 auto;
   display: block; }
-  #register label:first-of-type, #login label:first-of-type {
-    margin-top: 0; }
-#register input, #login input {
+#register .facebook, #login .facebook {
+  margin-top: 50px;
+  margin-bottom: 50px;
   display: block;
-  width: 60%;
-  line-height: 20px; }
+  background: #3B579D;
+  color: white;
+  border-radius: 2px;
+  padding-left: 30px;
+  padding-right: 10px;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out; }
+  #register .facebook span.text, #login .facebook span.text {
+    display: inline-block;
+    height: 50px;
+    line-height: 52px;
+    width: 100%;
+    padding-left: 12px;
+    text-align: center;
+    background: url(../images/facebook.png) no-repeat left center;
+    background-size: 12px 21px;
+    font-weight: 500; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+      #register .facebook span.text, #login .facebook span.text {
+        background-image: url(../images/facebook@2x.png); } }
+    #register .facebook span.text strong, #login .facebook span.text strong {
+      font-weight: 600; }
+  #register .facebook:hover, #login .facebook:hover {
+    background: #30477f;
+    position: relative;
+    top: 1px; }
+#register p.sep, #login p.sep {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
+  font-size: 0.75em;
+  border-top: 1px solid #e0e0e0;
+  position: relative;
+  line-height: 30px; }
+  #register p.sep span, #login p.sep span {
+    background: white;
+    position: relative;
+    top: -15px;
+    line-height: 15px;
+    padding: 0 15px; }
+#register form, #login form {
+  margin-top: 14px; }
+#register label, #login label {
+  display: none; }
+#register input, #login input {
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  font-size: 16px;
+  font-family: "proxima-nova", sans-serif;
+  line-height: 33px;
+  padding: 0 6px;
+  margin-top: 20px; }
+  #register input:first-of-type, #login input:first-of-type {
+    margin-top: 0; }
+  #register input.error, #login input.error {
+    border-color: #ba1f00; }
   #register input[type=submit], #login input[type=submit] {
-    margin-top: 20px; }
-    #register input[type=submit] a, #login input[type=submit] a {
-      color: white;
-      background: black;
-      border-color: white; }
-      #register input[type=submit] a:hover, #login input[type=submit] a:hover {
-        background: #3f3f3f; }
-      #register input[type=submit] a:active, #register input[type=submit] a .active, #login input[type=submit] a:active, #login input[type=submit] a .active {
-        background: white;
-        color: black; }
-    #register input[type=submit] span.number, #login input[type=submit] span.number {
-      color: black;
-      background: white; }
+    letter-spacing: 1px;
+    height: 50px;
+    line-height: 46px;
+    border: 2px solid #7fba00;
+    background: white;
+    font-family: "ff-tisa-sans-web-pro", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8125em;
+    color: #7fba00;
+    cursor: pointer;
+    -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out; }
+    #register input[type=submit]:hover, #login input[type=submit]:hover {
+      background: #dfedbf; }
+    #register input[type=submit]:active, #login input[type=submit]:active {
+      background: #7fba00;
+      color: white; }
+  #register input.error + p, #login input.error + p {
+    display: block; }
+#register p.error, #login p.error {
+  display: none;
+  margin-top: 5px;
+  font-size: 0.875em;
+  color: #ba1f00;
+  line-height: 15px;
+  padding: 0 6px; }
+#register p.change, #login p.change {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 0; }
+  #register p.change a, #login p.change a {
+    font-weight: 500;
+    color: #b2b2b2; }
 
 .user.view header, .wishlist.add header, .wishlist.edit header {
   padding-bottom: 45px; }

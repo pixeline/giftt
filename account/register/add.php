@@ -7,42 +7,66 @@ require_once 'add_do.php';
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Register</title>
+	<title>Join Giftt</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 <body id="register">
 
-	<div class="container-fluid">
+	<section class="main">
 
-		<div class="row">
+		<?php require_once $root . '/_include/account_header.php'; ?>
 
-			<div class="col-sm-6">
+		<section class="content">
 
-				<?php
-					if(isset($message[0])){
-						echo $message[0];
-					}
-				?>
+			<div class="container-fluid">
 
-				<form action="/register" method="POST">
-					<label for="firstname">First name</label>
-					<input type="text" name="firstname" autocorrect="off" autocapitalize="on" spellcheck="false" value="<?php if(isset($firstname)){ echo $firstname; } ?>" />
-					<label for="lastname">Last name</label>
-					<input type="text" name="lastname" autocorrect="off" autocapitalize="on" spellcheck="false" value="<?php if(isset($lastname)){ echo $lastname; } ?>" />
-					<label for="email">Email</label>
-					<input type="email" name="email" autocorrect="off" autocapitalize="on" spellcheck="false" value="<?php if(isset($email)){ echo $email; } ?>" />
-					<label for="password">Password</label>
-					<input type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="" />
+				<div class="row">
+					<div class="col-sm-12">
+						<h2>Join the Giftt community, it's free</h2>
+					</div>
+				</div>
 
-					<input type="submit" name="register" value="Submit" />
-				</form>
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
 
-				<a href="/register/facebook" style="margin-top: 50px;">Facebook</a>
+						<a class="facebook" href="/register/facebook"><span class="text">Register with <strong>Facebook</strong></span></a>
+
+						<p class="sep"><span>or</span></p>
+
+						<form action="/register" method="POST">
+
+							<?php
+								if(isset($message[0])){
+									echo $message[0];
+								}
+							?>
+							<label for="firstname">First name</label>
+							<input <?php if(isset($message['firstname'])){ echo 'class="error"'; } ?> type="text" name="firstname" autocorrect="off" autocapitalize="on" spellcheck="false" placeholder="First name" value="<?php if(isset($firstname)){ echo $firstname; } ?>" />
+							<p class="error"><?php if(isset($message['firstname'])){ echo $message['firstname']; } ?></p>
+							<label for="lastname">Last name</label>
+							<input <?php if(isset($message['lastname'])){ echo 'class="error"'; } ?> type="text" name="lastname" autocorrect="off" autocapitalize="on" spellcheck="false" placeholder="Last name" value="<?php if(isset($lastname)){ echo $lastname; } ?>" />
+							<p class="error"><?php if(isset($message['lastname'])){ echo $message['lastname']; } ?></p>
+							<label for="email">Email</label>
+							<input <?php if(isset($message['email'])){ echo 'class="error"'; } ?> type="email" name="email" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Email address" value="<?php if(isset($email)){ echo $email; } ?>" />
+							<p class="error"><?php if(isset($message['email'])){ echo $message['email']; } ?></p>
+							<label for="password">Password</label>
+							<input <?php if(isset($message['password'])){ echo 'class="error"'; } ?> type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Password" value="" />
+							<p class="error"><?php if(isset($message['password'])){ echo $message['password']; } ?></p>
+
+							<input type="submit" name="register" value="Register" />
+						</form>
+
+						<p class="change"><a href="/login">Already registered?</a></p>
+
+					</div>
+				</div>
 
 			</div>
 
-		</div>
+		</section>
 
-	</div>
+		<?php require_once $root . '/_include/footer.php'; ?>
+
+	</section>
 
 </body>

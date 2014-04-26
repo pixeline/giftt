@@ -47,19 +47,39 @@ if(!empty($raw_follows)){
 
 	// GET LAST FOLLOWED BASED ON $follows
 
-	$query = $db->prepare("SELECT * FROM follows WHERE who IN ($follows) AND follow = :follow");
+	$query = $db->prepare("SELECT * FROM follows WHERE who IN ($follows) AND who2 != :id AND follow = :follow");
 	$query->execute(array(
+		':id' => $me_id,
+		':follow' => 1
+	));
+	$new_follows = $query->fetchAll();
+
+	$raw_follows[] = $me_id;
+
+	if(isset($new_follows) && !empty($new_follows)){
+		foreach($new_follows as $new_follow){
+			$data[] = $new_follow;
+			if(!in_array($new_follow['who2'], $raw_follows)){
+				$raw_follows[] = $new_follow['who2'];
+			}
+		}
+	}
+
+
+	// GET LAST PEOPLE WHO FOLLOWED ME
+
+	$query = $db->prepare("SELECT * FROM follows WHERE who2 = :id AND follow = :follow");
+	$query->execute(array(
+		':id' => $me_id,
 		':follow' => 1
 	));
 	$new_follows = $query->fetchAll();
 
 	if(isset($new_follows) && !empty($new_follows)){
 		foreach($new_follows as $new_follow){
-			/*if($new_follow['who2'] != $me_id){*/
-				$data[] = $new_follow;
-			/*}*/
-			if(!in_array($new_follow['who2'], $raw_follows)){
-				$raw_follows[] = $new_follow['who2'];
+			$data[] = $new_follow;
+			if(!in_array($new_follow['who'], $raw_follows)){
+				$raw_follows[] = $new_follow['who'];
 			}
 		}
 	}
@@ -157,18 +177,18 @@ if(!empty($raw_follows)){
 		}
 
 		foreach($data as $key => $row){
-			if(isset($row['name'])){
-				format_wish($row, $feed_users, $feed_wishlists);
-			}else{
+			if(!isset($row['name'])){
 				format_follow($row, $feed_users, $me_username);
+			}else{
+				format_wish($row, $feed_users, $feed_wishlists);
 			}
 		}
 	}else{
-		echo "<a href='/" . $me_username . "/settings/#friends' class='item empty'><div class='user'>+</div><div class='content'>Follow your friends to see what they're wishing</div></div>";
+		echo "<a href='/" . $me_username . "/settings/#friends' class='item empty'><div class='user'>+</div><div class='content'>Follow your friends to see what they're wishing</div></a>";
 	}
 
 }else{
-	echo "<a href='/" . $me_username . "/settings/#friends' class='item empty'><div class='user'>+</div><div class='content'>Follow your friends to see what they're wishing</div></div>";
+	echo "<a href='/" . $me_username . "/settings/#friends' class='item empty'><div class='user'>+</div><div class='content'>Follow your friends to see what they're wishing</div></a>";
 }
 
 ?>

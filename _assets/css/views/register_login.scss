@@ -1,22 +1,146 @@
 #register, #login{
 
-	label{
-		margin-top: 20px;
+	header{
+		padding: 60px 0;
+
+		img{
+			height: 100px;
+			width: 100px;
+			border-radius: 0;
+		}
+	}
+
+	.facebook, .sep, label, input, p.error{
+		width: 280px;
+		margin: 0 auto;
 		display: block;
+	}
+
+	.facebook{
+		margin-top: 50px;
+		margin-bottom: 50px;
+		display: block;
+		background: #3B579D;
+		color: white;
+		border-radius: 2px;
+		padding-left: 30px;
+		padding-right: 10px;
+		@include transition(background 0.2s ease-in-out);
+
+		span.text{
+			display: inline-block;
+			height: 50px;
+			line-height: 52px;
+			width: 100%;
+			padding-left: 12px;
+			text-align: center;
+			background: url(../images/facebook.png) no-repeat left center;
+			background-size: 12px 21px;
+			@include hidpi(1.5){
+				background-image: url(../images/facebook@2x.png);
+			}
+			font-weight: 500;
+
+			strong{
+				font-weight: 600;
+			}
+		}
+
+		&:hover{
+			background: darken(#3B579D, 8%);
+			position: relative;
+			top: 1px;
+		}
+	}
+
+	p.sep{
+		text-align: center;
+		text-transform: uppercase;
+		font-family: $tisa;
+		font-size: em(12);
+		border-top: 1px solid $gray12;
+		position: relative;
+		line-height: $lh * 1.5;
+
+		span{
+			background: white;
+			position: relative;
+			top: -$lh * 0.75;
+			line-height: $lh * 0.75;
+			padding: 0 15px;
+		}
+	}
+
+	form{
+		margin-top: 14px;
+	}
+
+	label{
+		display: none;
+	}
+
+	input{
+		border: 1px solid $gray12;
+		border-radius: 2px;
+		font-size: 16px;
+		font-family: $proxima;
+		line-height: 33px;
+		padding: 0 6px;
+		margin-top: $lh;
 
 		&:first-of-type{
 			margin-top: 0;
 		}
-	}
 
-	input{
-		display: block;
-		width: 60%;
-		line-height: $lh;
+		&.error{
+			border-color: $red;
+		}
 
 		&[type=submit]{
-			margin-top: 20px;
-			@include button;
+			letter-spacing: 1px;
+			height: 50px;
+			line-height: 46px;
+			border: 2px solid $green;
+			background: white;
+			font-family: $tisa;
+			text-transform: uppercase;
+			font-size: em(13);
+			color: $green;
+			cursor: pointer;
+			@include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+
+			&:hover{
+				background: mix($green, white, 25%);
+			}
+
+			&:active{
+				background: $green;
+				color: white;
+			}
+		}
+
+		&.error + p{
+			display: block;
+		}
+	}
+
+	p.error{
+		display: none;
+		margin-top: 5px;
+		font-size: em(14);
+		color: $red;
+		line-height: $lh * 0.75;
+		padding: 0 6px;
+	}
+
+	p.change{
+		text-align: center;
+		margin-top: 24px;
+		margin-bottom: 0;
+
+		a{
+			font-weight: 500;
+			color: $gray30;
 		}
 	}
 }
