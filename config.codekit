@@ -345,13 +345,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_assets\/images\/profile.jpg": {
+	"\/_assets\/images\/profile\/default.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 6914,
-		"inputAbbreviatedPath": "\/_assets\/images\/profile.jpg",
-		"outputAbbreviatedPath": "\/_assets\/images\/profile.jpg",
+		"inputAbbreviatedPath": "\/_assets\/images\/profile\/default.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/profile\/default.jpg",
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},

@@ -8,12 +8,6 @@
 <body class="user view nojs <?php if($me_feed == 1){ echo "withAside"; } ?>">
 
 	<section class="main">
-		
-		<?php if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") == false){ ?>
-		<div class="beta">
-			<p>This is the alpha version of an upcoming wishlist platform. Only <a href="http://pierrestoffe.be/notes/" target="_blank">a few functionnalities</a> have been implemented. <br />Please send your feedback to <a href="mailto:bonjour@pierrestoffe.be?subject=Feedback for Giftt.me">bonjour@pierrestoffe.be</a>. <span class="close" style="font-weight: 600; cursor: pointer;">(close)</span></p>
-		</div>
-		<?php } ?>
 
 		<?php require_once $root . '/_include/user_header.php'; ?>
 
