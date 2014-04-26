@@ -99,7 +99,7 @@
 									</div>
 									<div class="share hide_edit">
 										<div class="facebook">
-											<div class="fb-share-button" data-href="<?php echo $wish_url; ?>" data-type="button"></div>
+											<div class="fb-share-button" data-href="/<?php echo $wish_url; ?>" data-type="button"></div>
 										</div>
 										<div class="twitter">
 											<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-dnt="true">Tweet</a>
