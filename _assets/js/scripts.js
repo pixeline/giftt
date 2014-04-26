@@ -384,7 +384,7 @@
 	function showFeed(){
 
 		$.ajax({
-			url: '/_include/show_feed.php',
+			url: '/_include/feed_show.php',
 			type: 'POST'
 		});
 	}
@@ -395,7 +395,7 @@
 	function populateFeed(){
 
 		$.ajax({
-			url: '/_include/populate_feed.php',
+			url: '/_include/feed_populate.php',
 			type: 'POST',
 			success: function(data){
 				$('aside .wrapper').append(data);

@@ -1,0 +1,22 @@
+#register, #login{
+
+	label{
+		margin-top: 20px;
+		display: block;
+
+		&:first-of-type{
+			margin-top: 0;
+		}
+	}
+
+	input{
+		display: block;
+		width: 60%;
+		line-height: $lh;
+
+		&[type=submit]{
+			margin-top: 20px;
+			@include button;
+		}
+	}
+}

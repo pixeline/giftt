@@ -2540,30 +2540,42 @@ ul .wish.add {
   ul .wish.add:hover {
     background: #f4f4f4; }
 
-#register_login .register h1, #register_login .login h1, #register_login .logged h1, #register_login .logout h1 {
-  margin-top: 60px;
-  margin-bottom: 30px; }
-#register_login .register label, #register_login .login label, #register_login .logged label, #register_login .logout label {
+#landing .button {
+  margin-top: 60px; }
+  #landing .button a {
+    color: #2c2c2c;
+    background: white;
+    border-color: #2c2c2c; }
+    #landing .button a:hover {
+      background: #cacaca; }
+    #landing .button a:active, #landing .button a .active {
+      background: #2c2c2c;
+      color: white; }
+  #landing .button span.number {
+    color: white;
+    background: #2c2c2c; }
+
+#register label, #login label {
   margin-top: 20px;
   display: block; }
-  #register_login .register label:first-of-type, #register_login .login label:first-of-type, #register_login .logged label:first-of-type, #register_login .logout label:first-of-type {
+  #register label:first-of-type, #login label:first-of-type {
     margin-top: 0; }
-#register_login .register input, #register_login .login input, #register_login .logged input, #register_login .logout input {
+#register input, #login input {
   display: block;
   width: 60%;
   line-height: 20px; }
-  #register_login .register input[type=submit], #register_login .login input[type=submit], #register_login .logged input[type=submit], #register_login .logout input[type=submit] {
+  #register input[type=submit], #login input[type=submit] {
     margin-top: 20px; }
-    #register_login .register input[type=submit] a, #register_login .login input[type=submit] a, #register_login .logged input[type=submit] a, #register_login .logout input[type=submit] a {
+    #register input[type=submit] a, #login input[type=submit] a {
       color: white;
       background: black;
       border-color: white; }
-      #register_login .register input[type=submit] a:hover, #register_login .login input[type=submit] a:hover, #register_login .logged input[type=submit] a:hover, #register_login .logout input[type=submit] a:hover {
+      #register input[type=submit] a:hover, #login input[type=submit] a:hover {
         background: #3f3f3f; }
-      #register_login .register input[type=submit] a:active, #register_login .register input[type=submit] a .active, #register_login .login input[type=submit] a:active, #register_login .login input[type=submit] a .active, #register_login .logged input[type=submit] a:active, #register_login .logged input[type=submit] a .active, #register_login .logout input[type=submit] a:active, #register_login .logout input[type=submit] a .active {
+      #register input[type=submit] a:active, #register input[type=submit] a .active, #login input[type=submit] a:active, #login input[type=submit] a .active {
         background: white;
         color: black; }
-    #register_login .register input[type=submit] span.number, #register_login .login input[type=submit] span.number, #register_login .logged input[type=submit] span.number, #register_login .logout input[type=submit] span.number {
+    #register input[type=submit] span.number, #login input[type=submit] span.number {
       color: black;
       background: white; }
 

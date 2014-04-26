@@ -3,10 +3,14 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
+# SESSION
+RewriteRule ^register/?$ account/register/index.php [L]
+RewriteRule ^register/facebook/?$ account/register/facebook.php [L]
+RewriteRule ^login/?$ account/login/index.php [L]
+RewriteRule ^login/facebook/?$ account/login/facebook.php [L]
+RewriteRule ^logout/?$ account/logout/index.php [L]
+
 # USERS
-RewriteRule ^register/?$ _include/register.php [L]
-RewriteRule ^login/?$ _include/login.php [L]
-RewriteRule ^logout/?$ _include/logout.php [L]
 RewriteRule ^([a-z0-9-_]+)/settings/?$ edit/user/index.php?user=$1 [L]
 RewriteRule ^([a-z0-9-_]+)/?$ view/user/index.php?user=$1 [L]
 

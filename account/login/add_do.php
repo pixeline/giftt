@@ -5,54 +5,42 @@ require_once $root . '/_include/functions.php';
 
 // LOG IN
 
-$message = "Form not sent";
-
 if(isset($_POST['login'])){
 
-	$username = strtolower(htmlspecialchars($_POST['username']));
+	$message = array();
+
+	$email = htmlspecialchars($_POST['email']);
 	$password = htmlspecialchars($_POST['password']);
 
-	$query = $db->prepare("SELECT * FROM users WHERE username = :username");
+	$query = $db->prepare("SELECT * FROM users WHERE email = :email");
 	$query->execute(array(
-		'username' => $username
+		'email' => $email
 	));
 	$results = $query->fetch();
 
 	if($query->rowCount() > 0){
-		$user_exists = 1;
+		$email_exists = 1;
 	}else{
-		$user_exists = 0;
+		$email_exists = 0;
 	}
 
-	if(!$user_exists){
-		$message = "This usename doesn't exist";
+	if(empty($email)){
+		$message[] = "You must provide your email";
+	}elseif(!$email_exists){
+		$message[] = "This email is not registered";
+	}elseif(empty($password)){
+		$message[] = "You must provide a password";
+	}elseif(strlen($password) < 5){
+		$message[] = "Your password should be at least 5 characters long";
 	}else{
 		$hash = crypt($password, '$2x$12$' . $results['salt']);
 		if($hash == $results['password']){
 			$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description'], 'feed' => $results['feed']);
 			header('Location:/');
 		}else{
-			$message = "The password seems to be wrong";
+			$message[] = "The password seems to be wrong";
 		}
 	}
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8"/>
-	<title>Index</title>
-	<?php require_once $root . '/_include/head.php'; ?>
-</head>
-<body class="home">
-	<div class="container-fluid">
-		<?php 
-
-		echo $message;
-
-		?>
-	</div>
-</body>
-</html>

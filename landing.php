@@ -5,42 +5,26 @@
 	<title>Register</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body id="register_login">
+<body id="landing">
 
 	<div class="container-fluid">
 
 		<div class="row">
 
 			<div class="col-sm-6 register">
-				<h1>Register</h1>
-				<form action="<?php $root ?>/register" method="POST">
-					<label for="username">Username</label>
-					<input type="text" name="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="" />
-					<label for="password">Password</label>
-					<input type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="" />
-					<label for="password2">Password again</label>
-					<input type="password" name="password2" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="" />
-					<label for="firstname">First name</label>
-					<input type="text" name="firstname" autocorrect="off" autocapitalize="on" spellcheck="false" value="" />
-					<label for="lastname">Last name</label>
-					<input type="text" name="lastname" autocorrect="off" autocapitalize="on" spellcheck="false" value="" />
-					<label for="email">Email</label>
-					<input type="email" name="email" autocorrect="off" autocapitalize="on" spellcheck="false" value="" />
-
-					<input type="submit" name="register" value="Submit" />
-				</form>
+				<div class="button">
+					<a href="/register">
+						<span class="title">Register</span>
+					</a>
+				</div>
 			</div>
 
 			<div class="col-sm-6 login">
-				<h1>Login</h1>
-				<form action="<?php $root ?>/login" method="POST">
-					<label for="username">Username</label>
-					<input type="text" name="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="" />
-					<label for="password">Password</label>
-					<input type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="" />
-
-					<input type="submit" name="login" value="Submit" />
-				</form>
+				<div class="button">
+					<a href="/login">
+						<span class="title">Login</span>
+					</a>
+				</div>
 			</div>
 
 		</div>

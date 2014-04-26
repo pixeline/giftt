@@ -130,15 +130,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/_assets\/css\/views\/login.scss": {
+	"\/_assets\/css\/views\/landing.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 5,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_assets\/css\/views\/login.scss",
-		"outputAbbreviatedPath": "\/_assets\/css\/css\/login.css",
+		"inputAbbreviatedPath": "\/_assets\/css\/views\/landing.scss",
+		"outputAbbreviatedPath": "\/_assets\/css\/views\/landing.css",
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -160,15 +160,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/_assets\/css\/views\/register.scss": {
+	"\/_assets\/css\/views\/register_login.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 5,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_assets\/css\/views\/register.scss",
-		"outputAbbreviatedPath": "\/_assets\/css\/css\/register.css",
+		"inputAbbreviatedPath": "\/_assets\/css\/views\/register_login.scss",
+		"outputAbbreviatedPath": "\/_assets\/css\/views\/register_login.css",
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -295,6 +295,16 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/logo_square.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4382,
+		"inputAbbreviatedPath": "\/_assets\/images\/logo_square.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/logo_square.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/menu.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -332,6 +342,16 @@
 		"initialSize": 98235,
 		"inputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/profile\/pierrestoffe1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8451,
+		"inputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe1.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe1.jpg",
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -623,6 +643,22 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
+	"\/_include\/facebook\/base_facebook.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_include\/facebook\/base_facebook.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/_include\/facebook\/facebook.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_include\/facebook\/facebook.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
 	"\/_include\/feed.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -676,14 +712,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/login.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
-	"\/_include\/logout.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_include\/logout.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
@@ -751,14 +779,6 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
-	"\/_include\/register.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_include\/register.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
 	"\/_include\/show_feed.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -812,6 +832,94 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/wishlist_info.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/login\/add.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/login\/add.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/login\/add_do.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/login\/add_do.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/login\/facebook.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/login\/facebook.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/login\/functions.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/login\/functions.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/login\/index.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/login\/index.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/logout\/index.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/logout\/index.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/register\/add.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/register\/add.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/register\/add_do.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/register\/add_do.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/register\/facebook.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/register\/facebook.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/register\/functions.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/register\/functions.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/account\/register\/index.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/account\/register\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
