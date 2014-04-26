@@ -2146,7 +2146,7 @@ header {
   float: left;
   background: white;
   overflow: auto;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   -webkit-transition: width 0.2s ease-in-out;
   -moz-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out; }
