@@ -31,7 +31,7 @@
 
 	<div class="container-fluid">
 		
-		<a class="user" href="/<?php echo $user_url; ?>"><img src="<?php if(isset($user_picture)){ echo $user_picture; }else{ echo '/_assets/images/profile.jpg';} ?>" alt="<?php echo $user_name; ?>" /></a>
+		<a class="user" href="/<?php echo $user_url; ?>"><img src="/<?php if(isset($user_picture)){ echo $user_picture; }else{ echo '_assets/images/profile/default.jpg';} ?>" alt="<?php echo $user_name; ?>" /></a>
 		<h2><?php echo $user_name; ?></h2>
 		<p><?php echo $user_description; ?></p>
 		<?php if($me_username == $user_username){ ?>
