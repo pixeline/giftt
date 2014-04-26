@@ -29,7 +29,7 @@ require_once 'add_do.php';
 				<div class="row">
 					<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
 
-						<a class="facebook" href="/login/facebook"><span class="text">Login with <strong>Facebook</strong></span></a>
+						<a class="facebook" href="/login/facebook"><span class="text">Log in with <strong>Facebook</strong></span></a>
 
 						<p class="sep"><span>or</span></p>
 
@@ -62,5 +62,13 @@ require_once 'add_do.php';
 		<?php require_once $root . '/_include/footer.php'; ?>
 
 	</section>
+
+	<?php 
+
+	if(isset($_GET['nofacebook'])){
+		echo "<script>alert('Sorry, your Facebook account is not registered on Giftt')</script>";
+	}
+
+	?>
 
 </body>

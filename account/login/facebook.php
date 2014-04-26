@@ -57,7 +57,7 @@ if($account_exists){
 
 }else{
 
-	echo "<strong><em>No Giftt account is linked to this Facebook account.</em></strong>";
+	header("Location:/login?nofacebook");
 
 }
 
