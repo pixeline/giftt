@@ -12,7 +12,7 @@ function in_multiarray($needle, $haystack){
 function user_exists($string, $array){
 	$i = 1;
 	$string_new = $string;
-	if(in_array($string_new, array('register', 'login', 'admin', 'pierre', 'giftt', 'you', 'your', 'me', 'five', 'a'))){
+	if(in_array($string_new, array('register', 'login', 'admin', 'pierre', 'giftt', 'you', 'your', 'me', 'five', 'a', 'default'))){
 		$string_new = $string . $i++;
 	}
 	while(in_multiarray($string_new, $array)){

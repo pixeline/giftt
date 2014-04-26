@@ -136,7 +136,7 @@ if(!empty($raw_follows)){
 ?>
 			<a href="/<?php echo $wish_link; ?>" class="item">
 				<div class="user">
-					<img src="/<?php echo $author_picture; ?>" alt="<?php echo $author_name; ?>" />
+					<img src="/<?php if(!empty($author_picture)){ echo $author_picture; }else{ echo "_assets/images/profile/default.jpg"; } ?>" alt="<?php echo $author_name; ?>" />
 				</div>
 				<div class="content">
 					<p><strong><?php echo $author_name; ?></strong> added <strong><?php echo $wish_name; ?></strong> to <strong><?php echo $wishlist_name; ?></strong></p>
@@ -167,7 +167,7 @@ if(!empty($raw_follows)){
 ?>
 			<a href="/<?php if($followed_username == $me){ echo $follower_username; }else{ echo $followed_username; }?>" class="item">
 				<div class="user">
-					<img src="/<?php echo $follower_picture; ?>" alt="<?php echo $follower_name; ?>" />
+					<img src="/<?php if(!empty($follower_picture)){ echo $follower_picture; }else{ echo "_assets/images/profile/default.jpg"; } ?>" alt="<?php echo $follower_name; ?>" />
 				</div>
 				<div class="content">
 					<p><strong><?php echo $follower_name; ?></strong> followed <strong><?php if($followed_username == $me){ echo 'You'; }else{ echo $followed_name; } ?></strong></p>
