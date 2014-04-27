@@ -61,7 +61,7 @@
 		<?php } ?>
 		<?php if($me_username == $user_username){ ?>
 		<div class="button edit">
-			<a href="/<?php echo $me_url; ?>/settings" onclick="alert('You cannot edit your settings yet.'); return false;">
+			<a href="/<?php echo $me_url; ?>/settings">
 				<span class="title">Settings</span>
 			</a>
 		</div>

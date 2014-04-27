@@ -142,6 +142,8 @@ require_once $root . '/edit/wish/edit_do.php';
 
 		</section>
 
+		<?php require_once $root . '/_include/footer.php'; ?>
+
 	</section>
 
 	<?php require_once $root . '/_include/feed.php'; ?>

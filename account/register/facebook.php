@@ -64,7 +64,7 @@ if($user){
 		));
 		$results = $query->fetch();
 		if(empty($results['picture'])){
-			$url = 'http://graph.facebook.com/' . $results['username'] . '/picture?width=200&height=200';
+			$url = 'http://graph.facebook.com/' . $facebook_id . '/picture?width=200&height=200';
 			$data = file_get_contents($url);
 			$fileName = $results['username'] . '.jpg';
 			$file = fopen($root . '/_assets/images/profile/' . $fileName, 'w+');
@@ -99,7 +99,7 @@ if($user){
 
 		$username_new = user_exists($username, $users);
 		
-		$url = 'http://graph.facebook.com/' . $username . '/picture?width=200&height=200';
+		$url = 'http://graph.facebook.com/' . $facebook_id . '/picture?width=200&height=200';
 		$data = file_get_contents($url);
 		$fileName = $username_new . '.jpg';
 		$file = fopen($root . '/_assets/images/profile/' . $fileName, 'w+');

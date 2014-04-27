@@ -223,7 +223,7 @@
 		margin-top: 0;
 
 		&.error + span{
-			display: inline-block;
+			display: inline-block !important;
 		}
 	}
 

@@ -63,6 +63,8 @@ require_once $root . '/add/wishlist/add_do.php';
 
 		</section>
 
+		<?php require_once $root . '/_include/footer.php'; ?>
+
 	</section>
 
 	<?php require_once $root . '/_include/feed.php'; ?>

@@ -2973,7 +2973,7 @@ ul .wish.add {
     cursor: pointer;
     margin-top: 0; }
     .modal input[type=file].error + span {
-      display: inline-block; }
+      display: inline-block !important; }
   .modal input[type=checkbox] {
     height: 35px;
     margin-left: 0;

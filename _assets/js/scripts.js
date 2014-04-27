@@ -175,7 +175,7 @@
 		if(!!el.attr('required')){
 			if(tag == "input"){
 				if(type == "file"){
-					if(!el.val().length && el.siblings('img').attr('src') == '/'){
+					if(!el.val().length && (el.siblings('img').attr('src') == '' || el.siblings('img').attr('src') == '/')){
 						name = el.attr('id');
 						errors[name] = tag;
 					}

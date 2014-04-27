@@ -138,6 +138,8 @@ require_once $root . '/add/wish/add_do.php';
 
 		</section>
 
+		<?php require_once $root . '/_include/footer.php'; ?>
+
 	</section>
 
 	<?php require_once $root . '/_include/feed.php'; ?>
