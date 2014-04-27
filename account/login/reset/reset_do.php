@@ -36,8 +36,7 @@ if(isset($_POST['reset'])){
 		));
 
 		$link = '<a href="http://giftt.me/reset/index.php?email=' . $email . '&token=' . $token . '"><strong>click on this link to reset your password</strong></a>';
-
-		$email = "pierre.stoffe@gmail.com"; 
+ 
 		$subject ="Reset your Giftt password"; 
 		$headers = "From: pierre@giftt.me"; 
 		$body = "It seems you've forgotten your Giftt password. \nIf you haven't requested a password reset, just trash this email, otherwise, " . $link . "\n\nPierre from <a href='http://giftt.me'>Giftt.me</a>";  
