@@ -20,6 +20,47 @@ require_once 'reset_do.php';
 
 			<div class="container-fluid">
 
+				<?php 
+					// SI DEPUIS UN EMAIL
+					if(isset($_GET['email']) && isset($_GET['token'])){
+						$email = $_GET['email'];
+						$token = $_GET['token'];
+						$hashed_token = crypt($email, '$2x$12$' . $token);
+
+						$query = $db->prepare("SELECT reset FROM users WHERE email = :email");
+						$query->execute(array(
+							':email' => $email
+						));
+						$results = $query->fetchAll();
+						
+						$reset = $results[0]['reset'];
+						$hashed_reset = crypt($email, '$2x$12$' . $reset);
+
+						// SI TOKEN CORRECT
+						if($hashed_token == $hashed_reset){
+				?>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<h2 style="margin-bottom: 40px;">Choose a new password</h2>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+						<form action="#" method="POST">
+							<label for="password">Password</label>
+							<input <?php if(isset($message['password'])){ echo 'class="error"'; } ?> type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Password" value="" />
+							<p class="error"><?php if(isset($message['password'])){ echo $message['password']; } ?></p>
+
+							<input type="submit" name="newpass" value="Save my new password" />
+						</form>
+
+				<?php
+						// SI TOKEN INCORRECT
+						}else{
+				?>
+
 				<div class="row">
 					<div class="col-sm-12">
 						<h2>Did you forget your Gifft password?</h2>
@@ -29,13 +70,37 @@ require_once 'reset_do.php';
 				<div class="row">
 					<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
 
-						<?php
-							if(isset($_GET['email'])){
-								$email = $_GET['email'];
-							}
-						?>
+						<p style="text-align: center; padding: 0 6px; margin-top: 50px;">The link you've followed is incorrect<br /><a href="/reset">Ask for a new one</a></p>
 
-						<form action="/login/reset" method="POST">
+				<?php
+						}
+
+					// SI PAS ENCORE ENVOYE EMAIL
+					}else{
+	
+						if(isset($_GET['email'])){
+							$email = $_GET['email'];
+						}
+				?>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<h2>Did you forget your Gifft password?</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+						
+						<?php
+							if(isset($sent) && $sent == 1){
+						?>
+						<p class="intro">An email was just sent to <?php echo $email ?>.</p>
+						
+						<?php
+							}else{
+						?>
+						<form action="/reset" method="POST">
 							<p class="intro">We'll send you an email with all the information you need to reset your password.</p>
 							<label for="email">Email</label>
 							<input <?php if(isset($message['email'])){ echo 'class="error"'; } ?> type="email" name="email" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Email address" value="<?php if(isset($email)){ echo $email; } ?>" />
@@ -45,6 +110,9 @@ require_once 'reset_do.php';
 						</form>
 
 						<p class="change"><a href="/register">Not registered yet?</a></p>
+						<?php } ?>
+
+				<?php } ?>
 
 					</div>
 				</div>
@@ -56,13 +124,5 @@ require_once 'reset_do.php';
 		<?php require_once $root . '/_include/footer.php'; ?>
 
 	</section>
-
-	<?php 
-
-	if(isset($_GET['nofacebook'])){
-		echo "<script>alert('Sorry, your Facebook account is not registered on Giftt')</script>";
-	}
-
-	?>
 
 </body>

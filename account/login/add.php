@@ -34,18 +34,12 @@ require_once 'add_do.php';
 						<p class="sep"><span>or</span></p>
 
 						<form action="/login" method="POST">
-
-							<?php
-								if(isset($message[0])){
-									echo $message[0];
-								}
-							?>
 							<label for="email">Email</label>
 							<input <?php if(isset($message['email'])){ echo 'class="error"'; } ?> type="email" name="email" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Email address" value="<?php if(isset($email)){ echo $email; } ?>" />
 							<p class="error"><?php if(isset($message['email'])){ echo $message['email']; } ?></p>
 							<label for="password">Password</label>
 							<input <?php if(isset($message['password'])){ echo 'class="error"'; } ?> type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Password" value="" />
-							<p class="error"><?php if(isset($message['password'])){ echo $message['password']; } ?></p>
+							<p class="error"><?php if(isset($message['password'])){ echo $message['password']; } echo '. <a href="/reset/index.php'; if(isset($email) && !empty($email)){ echo "?email=" . $email; } echo '">Did you forget your password?</a>'; ?></p>
 
 							<input type="submit" name="login" value="Login" />
 						</form>
