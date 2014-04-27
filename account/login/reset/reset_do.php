@@ -39,7 +39,7 @@ if(isset($_POST['reset'])){
  
 		$subject ="Reset your Giftt password"; 
 		$headers = "From: pierre@giftt.me"; 
-		$body = "It seems you've forgotten your Giftt password. \nIf you haven't requested a password reset, just trash this email, otherwise, " . $link . "\n\nPierre from <a href='http://giftt.me'>Giftt.me</a>";  
+		$body = "It seems you've forgotten your Giftt password. If you haven't requested a password reset, just trash this email, otherwise, " . $link . "Pierre from <a href='http://giftt.me'>Giftt.me</a>";  
 		mail($email, $subject, $headers, $body);
 
 		$sent = 1;
