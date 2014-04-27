@@ -45,7 +45,7 @@ if(isset($_POST['reset'])){
 		$body = "<html><body>";
 		$body .= "It seems you've forgotten your Giftt password.<br /> If you haven't requested a password reset, just trash this email, otherwise, " . $link . ".<br /><br />Pierre from <a href='http://giftt.me'>Giftt.me</a><";
 		$body .= "</body></html>";
-		mail($email, $subject, $headers, $body);
+		mail($email, $subject, $body, $headers);
 
 		$sent = 1;
 	}
