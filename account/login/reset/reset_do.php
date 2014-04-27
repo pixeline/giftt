@@ -38,8 +38,13 @@ if(isset($_POST['reset'])){
 		$link = '<a href="http://giftt.me/reset/index.php?email=' . $email . '&token=' . $token . '"><strong>click on this link to reset your password</strong></a>';
  
 		$subject ="Reset your Giftt password"; 
-		$headers = "From: pierre@giftt.me"; 
-		$body = "<html><body>It seems you've forgotten your Giftt password.<br /> If you haven't requested a password reset, just trash this email, otherwise, " . $link . ".<br /><br />Pierre from <a href='http://giftt.me'>Giftt.me</a></body></html>";  
+		$headers = "From: no-reply@giftt.me\r\n";
+		$headers .= "Reply-To: no-reply@giftt.me\r\n";
+		$headers .= "MIME-Version: 1.0\r\n";
+		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+		$body = "<html><body>";
+		$body .= "It seems you've forgotten your Giftt password.<br /> If you haven't requested a password reset, just trash this email, otherwise, " . $link . ".<br /><br />Pierre from <a href='http://giftt.me'>Giftt.me</a><";
+		$body .= "</body></html>";
 		mail($email, $subject, $headers, $body);
 
 		$sent = 1;
