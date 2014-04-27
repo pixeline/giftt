@@ -10,7 +10,7 @@
 		}
 	}
 
-	.facebook, .sep, label, input, p.error{
+	.facebook, .sep, label, input, p.error, p.forgot{
 		width: 280px;
 		margin: 0 auto;
 		display: block;
@@ -131,6 +131,12 @@
 		color: $red;
 		line-height: $lh * 0.75;
 		padding: 0 6px;
+
+		a{
+			display: inline;
+			color: $red;
+			text-decoration: underline;
+		}
 	}
 
 	p.change{
@@ -142,5 +148,11 @@
 			font-weight: 500;
 			color: $gray30;
 		}
+	}
+
+	p.intro{
+		margin-top: 50px;
+		margin-bottom: 30px;
+		padding: 0 6px;
 	}
 }

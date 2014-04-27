@@ -1,3 +1,3 @@
 <footer>
-	<p>© 2014, Giftt.me</p>
+	<p>© <?php echo date('Y'); ?>, <a href="#">Giftt.me</a></p>
 </footer>

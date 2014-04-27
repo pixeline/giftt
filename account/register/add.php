@@ -34,12 +34,6 @@ require_once 'add_do.php';
 						<p class="sep"><span>or</span></p>
 
 						<form action="/register" method="POST">
-
-							<?php
-								if(isset($message[0])){
-									echo $message[0];
-								}
-							?>
 							<label for="firstname">First name</label>
 							<input <?php if(isset($message['firstname'])){ echo 'class="error"'; } ?> type="text" name="firstname" autocorrect="off" autocapitalize="on" spellcheck="false" placeholder="First name" value="<?php if(isset($firstname)){ echo $firstname; } ?>" />
 							<p class="error"><?php if(isset($message['firstname'])){ echo $message['firstname']; } ?></p>

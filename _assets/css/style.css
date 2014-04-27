@@ -2300,6 +2300,10 @@ footer {
   color: #b2b2b2;
   font-size: 0.875em;
   overflow: hidden; }
+  footer a {
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit; }
 
 nav a {
   height: 45px;
@@ -2566,7 +2570,7 @@ ul .wish.add {
     height: 100px;
     width: 100px;
     border-radius: 0; }
-#register .facebook, #register .sep, #register label, #register input, #register p.error, #login .facebook, #login .sep, #login label, #login input, #login p.error {
+#register .facebook, #register .sep, #register label, #register input, #register p.error, #register p.forgot, #login .facebook, #login .sep, #login label, #login input, #login p.error, #login p.forgot {
   width: 280px;
   margin: 0 auto;
   display: block; }
@@ -2659,6 +2663,10 @@ ul .wish.add {
   color: #ba1f00;
   line-height: 15px;
   padding: 0 6px; }
+  #register p.error a, #login p.error a {
+    display: inline;
+    color: #ba1f00;
+    text-decoration: underline; }
 #register p.change, #login p.change {
   text-align: center;
   margin-top: 24px;
@@ -2666,6 +2674,10 @@ ul .wish.add {
   #register p.change a, #login p.change a {
     font-weight: 500;
     color: #b2b2b2; }
+#register p.intro, #login p.intro {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding: 0 6px; }
 
 .user.view header, .wishlist.add header, .wishlist.edit header {
   padding-bottom: 45px; }

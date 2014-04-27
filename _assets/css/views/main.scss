@@ -311,6 +311,12 @@ footer{
 	color: $gray30;
 	font-size: em(14);
 	overflow: hidden;
+
+	a{
+		color: inherit;
+		font-weight: inherit;
+		font-size: inherit;
+	}
 }
 
 
