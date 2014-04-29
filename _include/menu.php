@@ -1,19 +1,11 @@
 <nav>
 	<div id="logo">
 		<a href="/">
-
+			<h1>Giftt</h1>
 		</a>
 	</div>
 
-	<div id="logout">
-		<a href="/logout">
+	<div id="settings" class="icon-settings"><span>Edit your profile</span></div>
 
-		</a>
-	</div>
-
-	<div id="showAside">
-		<a href="#">
-
-		</a>
-	</div>
+	<div id="show_hide" class="icon-show_hide"><span>Show or hide feed</span></div>
 </nav>

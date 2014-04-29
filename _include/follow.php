@@ -22,13 +22,17 @@ if($_POST['data']){
 			'who' => $me_id,
 			'who2' => $who2
 		));
+		echo "update";
 	}else{
 		$query = $db->prepare("INSERT INTO follows(who, who2) VALUES(:who, :who2)");
 		$query->execute(array(
 			'who' => $me_id,
 			'who2' => $who2
 		));
+		echo "insert";
 	}
+
+	echo "sent";
 
 }
 

@@ -1,3 +1,4 @@
+<?php if($me_id == $user_id){ ?>
 <section class="modal editWish">
 	<div class="v_align">
 		<form class="container" id="edit_wish" action="/<?php echo $wish_url; ?>/edit" method="POST" enctype="multipart/form-data">
@@ -95,3 +96,4 @@
 		</form>
 	</div>
 </section>
+<?php } ?>

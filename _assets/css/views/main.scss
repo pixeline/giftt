@@ -341,35 +341,39 @@ nav{
 		background: #7FBA00;
 
 		a{
-			width: 85px;
+			text-indent: -9999px;
+			width: 65px;
+			height: 65px;
 			background-image: url(../images/logo.png);
-			background-size: 46px, 20px;
+			background-size: 100%;
 			background-position: center center;
 			background-repeat: no-repeat;
 			@include hidpi(1.5){
-				background-image: url(../images/logo@2x.png);
+				background-image: url(../images/logo_square.png);
 			}
 		}
 	}
 
-	#logout{
-		right: 70px;
-		background: $white;
+	[class^="icon-"]{
+		width: 40px;
+		line-height: 55px;
+		font-size: 20px;
+		color: $gray50;
+		display: block;
+		cursor: pointer;
+		@include transition(color 0.2s ease-in-out);
+
+		&:hover{
+			color: $black;
+		}
 	}
 
-	#showAside{
-		right: 10px;
-		background: #7FBA00;
+	#settings{
+		right: 65px;
+	}
 
-		a{
-			background-image: url(../images/menu.png);
-			background-size: 21px, 18px;
-			background-position: center center;
-			background-repeat: no-repeat;
-			@include hidpi(1.5){
-				background-image: url(../images/menu@2x.png);
-			}
-		}
+	#show_hide{
+		right: 20px;
 	}
 }
 

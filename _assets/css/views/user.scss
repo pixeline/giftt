@@ -11,6 +11,47 @@
 
 .user.view{
 
+	p.description{
+		margin-bottom: 12px;
+	}
+
+	h2 + .button{
+		margin-top: 8px;
+	}
+
+	.follow{
+
+		a{
+
+			&:hover{
+				border-color: $green;
+				background: $green;
+				color: $white;
+			}
+		}
+
+		&.following{
+
+			a{
+
+				&:hover{
+					background: $red;
+					border-color: $red;
+					color: $white;
+				}
+			}
+		}
+	}
+
+	.follow_stats{
+		font-weight: 600;
+		margin-bottom: 0;
+
+		a{
+			font-weight: 600;
+		}
+	}
+
 	.content{
 		padding-bottom: 30px;
 	}

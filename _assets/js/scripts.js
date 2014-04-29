@@ -109,7 +109,7 @@
 
 	// SHOW ASIDE
 
-	$('#showAside').on('click', function(){
+	$('#show_hide').on('click', function(){
 		aside();
 		return false;
 	});
@@ -347,11 +347,11 @@
 				title = button.find('.title');
 				number = button.find('.number');
 				button.parents('.follow').toggleClass('following');
-				if(title.text() == 'Following'){
+				if(title.text() == 'Unfollow'){
 					title.text('Follow');
 					number.text(parseInt(number.text())-1);
 				}else{
-					title.text('Following');
+					title.text('Unfollow');
 					number.text(parseInt(number.text())+1);
 				}
 			}

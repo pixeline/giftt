@@ -1,3 +1,4 @@
+<?php if($me_id == $user_id){ ?>
 <section class="modal addWishlist">
 	<div class="v_align">
 		<form class="container" id="add_wishlist" action="/<?php echo $user_url; ?>/wishlist/add" method="POST" enctype="multipart/form-data">
@@ -42,3 +43,4 @@
 		</form>
 	</div>
 </section>
+<?php } ?>
