@@ -48,8 +48,8 @@
 
 					<li class="col-xs-6 col-sm-4 col-md-3">
 						<div class="wishlist add">
-							<div class="cover entypo plus">
-								<span class="icon"></span>
+							<div class="cover">
+								<span class="icon-add"></span>
 							</div>
 							<a href="/<?php echo $user_url; ?>/wishlist/add" class="modal_trigger" data-target="addWishlist"></a>
 						</div>
@@ -148,8 +148,8 @@
 
 					<li class="col-xs-6 col-sm-4 col-md-3">
 						<div class="wish add">
-							<div class="cover entypo plus">
-								<span class="icon"></span>
+							<div class="cover">
+								<span class="icon-add"></span>
 							</div>
 							<a href="/<?php echo $me_url; ?>/wish/add" class="modal_trigger" data-target="addWish"></a>
 						</div>

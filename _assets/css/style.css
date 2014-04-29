@@ -1332,12 +1332,24 @@ td.visible-print {
   -moz-osx-font-smoothing: grayscale; }
   [class^="icon-"] span, [class*=" icon-"] span {
     display: none; }
+  [class^="icon-"] + .title, [class*=" icon-"] + .title {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; }
 
 .icon-settings:before {
   content: "\e600"; }
 
 .icon-show_hide:before {
   content: "\e601"; }
+
+.icon-add:before {
+  content: "\e602"; }
+
+.icon-add {
+  font-size: 3.125em;
+  line-height: 300px;
+  color: #b2b2b2; }
 
 body {
   font-family: "proxima-nova", sans-serif;
@@ -1604,11 +1616,7 @@ footer {
     font-weight: inherit;
     font-size: inherit; }
 
-nav a {
-  height: 45px;
-  min-width: 50px;
-  display: block; }
-nav div {
+nav div, nav label {
   position: absolute;
   top: 10px;
   z-index: 10; }
@@ -1638,8 +1646,34 @@ nav [class^="icon-"] {
   transition: color 0.2s ease-in-out; }
   nav [class^="icon-"]:hover {
     color: #2c2c2c; }
+nav input {
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
 nav #settings {
-  right: 65px; }
+  right: 60px; }
+  nav #settings span {
+    text-indent: -9999px; }
+nav input:checked + ul {
+  display: block; }
+nav ul.settings-list {
+  display: none;
+  position: absolute;
+  top: 52px;
+  right: 60px;
+  z-index: 100;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 2px;
+  font-weight: 600; }
+  nav ul.settings-list li {
+    border-bottom: 1px solid #e0e0e0; }
+    nav ul.settings-list li:last-child {
+      border-bottom: 0; }
+  nav ul.settings-list a {
+    padding: 10px 18px 8px;
+    font-size: 0.9375em;
+    width: 100%; }
 nav #show_hide {
   right: 20px; }
 
@@ -1675,17 +1709,13 @@ nav #show_hide {
       padding-right: 12px; }
 
 .icon {
-  font-family: "Entypo";
+  font-family: "icons";
   font-size: 2.625em;
   speak: none;
   text-transform: none;
   display: inline-block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
-  .icon + .title {
-    position: absolute;
-    top: -9999px;
-    left: -9999px; }
 
 ul .wishlist, ul .wishlist.add {
   display: block;
@@ -1754,10 +1784,6 @@ ul .wishlist.add {
   transition: background 0.2s ease-in-out; }
   ul .wishlist.add .cover {
     height: 298px; }
-  ul .wishlist.add .icon {
-    font-size: 6.25em;
-    line-height: 300px;
-    color: #b2b2b2; }
   ul .wishlist.add:hover {
     background: #f4f4f4; }
 
@@ -1828,10 +1854,6 @@ ul .wish.add {
   transition: background 0.2s ease-in-out; }
   ul .wish.add .cover {
     height: 298px; }
-  ul .wish.add .icon {
-    font-size: 6.25em;
-    line-height: 300px;
-    color: #b2b2b2; }
   ul .wish.add:hover {
     background: #f4f4f4; }
 
@@ -1972,7 +1994,7 @@ ul .wish.add {
     margin-bottom: 20px; }
 
 .user.view p.description {
-  margin-bottom: 12px; }
+  margin-bottom: 18px; }
 .user.view h2 + .button {
   margin-top: 8px; }
 .user.view .follow a:hover {

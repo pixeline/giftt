@@ -324,13 +324,7 @@ footer{
 
 nav{
 
-	a{
-		height: 45px;
-		min-width: 50px;
-		display: block;
-	}
-
-	div{
+	div, label{
 		position: absolute;
 		top: 10px;
 		z-index: 10;
@@ -368,8 +362,48 @@ nav{
 		}
 	}
 
+	input{
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
 	#settings{
-		right: 65px;
+		right: 60px;
+
+		span{
+			text-indent: -9999px;
+		}
+	}
+
+	input:checked + ul{
+		display: block;
+	}
+
+	ul.settings-list{
+		display: none;
+		position: absolute;
+		top: 52px;
+		right: 60px;
+		z-index: 100;
+		background: white;
+		border: 2px solid $gray12;
+		border-radius: 2px;
+		font-weight: 600;
+
+		li{
+			border-bottom: 1px solid $gray12;
+
+			&:last-child{
+				border-bottom: 0;
+			}
+		}
+
+		a{
+			padding: 10px 18px 8px;
+			font-size: em(15);
+			width: 100%;
+		}
 	}
 
 	#show_hide{

@@ -8,18 +8,34 @@
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 	span{
 		display: none;
 	}
 
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	& + .title{
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
 }
 
 .icon-settings:before {
 	content: "\e600";
 }
+
 .icon-show_hide:before {
 	content: "\e601";
+}
+
+.icon-add:before {
+	content: "\e602";
+}
+
+.icon-add{
+	font-size: em(50);
+	line-height: $lh * 15;
+	color: $gray30;
 }
