@@ -76,11 +76,11 @@ if(isset($_POST['register'])){
 		$response = get_headers($gravatar_check);
 		if($response[0] != "HTTP/1.0 404 Not Found"){
 		    $url = $gravatar;
-		    $data = file_get_contents($url);
 		}
 
 		// DB STUFF
 		if(isset($url)){
+		    $data = file_get_contents($url);
 			$fileName = $username . '.jpg';
 			$file = fopen($root . '/_assets/images/profile/' . $fileName, 'w+');
 			fputs($file, $data);

@@ -5,21 +5,22 @@ if(isset($_POST['edit_wish'])){
 	$wish_name = htmlspecialchars($_POST['name']);
 	$wish_origin = htmlspecialchars($_POST['origin']);
 	$wish_price = htmlspecialchars($_POST['price']);
-	/*if(isset($_FILES['image'])){*/
-		$wish_image = $_FILES['image'];
-	/*}*/
+	$wish_image = $_FILES['image'];
 	$wish_wishlist = htmlspecialchars($_POST['wishlist']);
 	$wish_description = htmlspecialchars($_POST['description']);
 	$wish_notes = htmlspecialchars($_POST['notes']);
 
 	// REQUIRED INPUTS (EXCEPT FILES)
-	$required_fields = array('name', 'wishlist', 'description');
-	$errors = array();
-
-	foreach($required_fields as $field){
-		if(isset($_POST[$field]) && empty($_POST[$field])){
-			$errors[$field] = "You must provide a " . $field;
-		}
+	if(!isset($wish_name) || empty($wish_name)){
+		$message['name'] = "You must provide your first name";
+	}
+	
+	if(!isset($wish_wishlist) || empty($wish_wishlist)){
+		$message['wishlist'] = "You must choose a wishlist";
+	}
+	
+	if(!isset($wish_description) || empty($wish_description)){
+		$message['description'] = "You must provide a description";
 	}
 
 	// FILES VALIDATION
@@ -34,15 +35,15 @@ if(isset($_POST['edit_wish'])){
 				$wish_cover = '_assets/images/wishes/' . basename($image_rename);
 				move_uploaded_file($wish_image['tmp_name'], $root . '/' . $wish_cover);
 			}else{
-				$errors['image'] = "The photo should be a .jpg, .png or .gif file";
+				$message['image'] = "The photo should be a .jpg, .png or .gif file";
 			}
 		}else{
-			$errors['image'] = "The photo is too big";
+			$message['image'] = "The photo is too big";
 		}
 	}
 
-	if(!count($errors)){
-		if(!empty($_FILES['image']['name'])){
+	if(!isset($message)){
+		if(!empty($_FILES['image']['name'])){ // SI PAS DE CHANGEMENT D'IMAGE
 			$query = $db->prepare("UPDATE wishes SET wishlist=:wishlist, name=:name, cover=:cover, description=:description, notes=:notes, price=:price, origin=:origin WHERE id=:id");
 			$query->execute(array(
 				'wishlist' => $wish_wishlist,
@@ -77,14 +78,7 @@ if(isset($_POST['edit_wish'])){
 
 		header("Location:/" . $me_username . '/' . $wishlist_slug . '/' . $wish_id);
 	}else{
-		$message = '<p>You must correct the following fields :</p>';
-		$message .= '<ul>';
-		foreach($errors as $field => $error){
-			if($error){
-				$message .= "<li>" . $error . "</li>";
-			}
-		}
-		$message .= '</ul>';
+		echo json_encode($message);
 	}
 }
 

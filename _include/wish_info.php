@@ -10,7 +10,7 @@ $wish_id = $_GET['wish'];
 $query = $db->prepare("SELECT * FROM wishes WHERE id = :id AND wishlist = :wishlist AND removed = :removed");
 $query->execute(array(
 	':id' => $wish_id,
-	':wishlist' => $wishlist_id,
+	':wishlist' => $current_wishlist_id,
 	":removed" => 0
 ));
 
@@ -22,7 +22,7 @@ if($query->rowCount() == 0){
 	$wish_author = $wish['author'];
 	$wish_wishlist = $wish['wishlist'];
 	$wish_name = $wish['name'];
-	$wish_cover = $wish['cover'];
+	$wish_picture = $wish['picture'];
 	$wish_description = $wish['description'];
 	$wish_notes = $wish['notes'];
 	$wish_price = $wish['price'];

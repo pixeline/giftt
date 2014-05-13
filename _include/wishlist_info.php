@@ -17,18 +17,18 @@ if($query->rowCount() == 0){
 	header("Location:/404.php");
 }else{
 	$wishlist = $query->fetch();
-	$wishlist_id = $wishlist['id'];
-	$wishlist_author = $wishlist['author'];
-	$wishlist_name = $wishlist['name'];
-	$wishlist_slug = $wishlist['slug'];
-	$wishlist_private = $wishlist['private'];
-	$wishlist_date = strtotime($wishlist['date']);
-	$wishlist_url = $user_username . "/" . $wishlist_slug;
+	$current_wishlist_id = $wishlist['id'];
+	$current_wishlist_author = $wishlist['author'];
+	$current_wishlist_name = $wishlist['name'];
+	$current_wishlist_slug = $wishlist['slug'];
+	$current_wishlist_private = $wishlist['private'];
+	$current_wishlist_date = strtotime($wishlist['date']);
+	$current_wishlist_url = $user_username . "/" . $current_wishlist_slug;
 
-	if($wishlist_private){
+	if($current_wishlist_private){
 		$is_private = 1;
-		if($wishlist_author != $me_id){
-			$wishlist_access = 0;
+		if($current_wishlist_author != $me_id){
+			$current_wishlist_access = 0;
 		}
 	}else{
 		$is_private = 0;

@@ -26,7 +26,6 @@
 	// AESTHETICS ///////////////////////
 	/////////////////////////////////////
 
-
 	// RESIZE
 
 	$(window).on('resize', function(){
@@ -36,7 +35,7 @@
 	function resizeStuff(){
 		wh = $(window).innerHeight();
 		$('.main').height(wh);
-		$('aside').find('.wrapper').height(wh-80);
+		$('.feed').find('.wrapper').height(wh-80);
 	}
 
 
@@ -58,10 +57,10 @@
 	}
 
 	function initMasonry(){
-		if((body.hasClass('wishlist') && body.hasClass('view')) || (body.hasClass('user') && body.hasClass('view'))){
+		if((body.hasClass('user') || body.hasClass('wishlist')) && body.hasClass('view')){
 			setTimeout(function(){
 				masContainer = $('.wishes');
-				if(masContainer.find('.wish').not('.add').length > 0){
+				if(masContainer.find('.wish').length > 0){
 					masContainer.imagesLoaded(function(){
 						masContainer.masonry({
 							itemSelector: '.wishes li'
@@ -85,25 +84,21 @@
 	// NAVIGATION ///////////////////////
 	/////////////////////////////////////
 
-	// MENU
+	// SHOW SETTINGS
 
-	$('.menu li').on('click', function(){
-		menu($(this));
+	$('#settings').on('click', function(){
+		showSettings();
+		return false;
+	});
+
+	$('.main').on('click', function(){
+		if($('.settings-list').hasClass('show')){
+			showSettings();
+		}
 	})
 
-	function menu(el){
-		if(el.hasClass('active')){
-			return false;
-		}
-		id = el.attr('id');
-		el.siblings('li').removeClass('active');
-		el.addClass('active');
-		wishlists = $('.wishlists');
-		wishlistsAll = wishlists.find('.public, .private');
-		wishlistsAll.fadeOut(200);
-		setTimeout(function(){
-			wishlists.find('li.'+id).fadeIn(200);
-		}, 200);
+	function showSettings(){
+		$('.settings-list').toggleClass('show');
 	}
 
 
@@ -117,10 +112,19 @@
 	function aside(){
 		body.toggleClass('withAside');
 		showFeed();
-		setTimeout(function(){
-			masContainer.masonry();
-		}, 250);
+		if((body.hasClass('user') || body.hasClass('wishlist')) && body.hasClass('view')){
+			setTimeout(function(){
+				masContainer.masonry();
+			}, 250);
+		}
 	}
+
+
+	// PODS SHOW/HIDE
+
+	$('.pod.collapse header').on('click', function(){
+		$(this).siblings('.wrapper').slideToggle(200);
+	})
 
 
 
@@ -137,7 +141,7 @@
 
 	// VALIDATION
 
-	form = $('form');
+	/*form = $('form');
 	form.submit(function(){
 		thisForm = $(this);
 		fields = $(this).find('input, textarea, select, radio');
@@ -218,7 +222,7 @@
 				errors[name] = tag;
 			}
 		}
-	}
+	}*/
 
 
 	// MODALS
@@ -311,6 +315,41 @@
 	}
 
 
+	// RADIO TRICK
+
+	$('.radio label').on('click', function(){
+		$(this).siblings('label').removeClass('active');
+		$(this).addClass('active');
+	});
+
+
+	// CLOSE SLIDE CONTAINER
+
+	$('.icon-close').on('click', function(){
+		$(this).parents('.slide_container').slideUp(200);
+		$('.form-trigger').slideDown(200);
+	});
+
+	$('.form-trigger a').on('click', function(){
+		cont = $(this).parent('.form-trigger');
+		target = cont.data('target');
+		$('.slide_container.'+target).slideDown(200, function(){
+			$(this).find('input').first().focus();
+		});
+		cont.slideUp(200);
+		return false;
+	})
+
+
+	// INPUT FOCUS
+
+	$('.slide_container').find('input[type=text], textarea').on('focus', function(){
+		$(this).addClass('active');
+	}).on('blur', function(){
+		$(this).removeClass('active');
+	})
+
+
 
 
 
@@ -359,26 +398,6 @@
 	}
 
 
-	// LOGOUT
-
-	/*$('#logout').on('click', function(){
-		logout();
-		return false;
-	})
-
-	function logout(){
-
-		$.ajax({
-			url: '/_include/logout.php',
-			type: 'POST',
-			data: 'logout=yes',
-			success: function(){
-				window.location = '/';
-			}
-		});
-	}*/
-
-
 	// SHOW FEED
 
 	function showFeed(){
@@ -390,7 +409,7 @@
 	}
 
 
-	// POPULATE FEED(){
+	// POPULATE FEED
 
 	function populateFeed(){
 
@@ -398,9 +417,46 @@
 			url: '/_include/feed_populate.php',
 			type: 'POST',
 			success: function(data){
-				$('aside .wrapper').append(data);
+				$('.feed .wrapper').append(data);
 			}
 		})
+	}
+
+
+	// TEST
+
+	$('.wish.view form').submit(function(){
+		thisForm = $(this);
+		fields = $(this).find('input, textarea, select, radio');
+		errors = {};
+		thisForm.find('label, input, select, textarea').removeClass('error');
+		fields.each(function(){
+			validate($(this));
+		})
+		$.each(errors, function(key, value){
+			thisForm.find('label[for='+key+']').addClass('error');
+			thisForm.find(value+'[id='+key+']').addClass('error');
+		})
+		if(!$.isEmptyObject(errors)){
+			return false;
+		}
+	})
+
+	function editWish(){
+		data = $("#edit_wish").serializeArray();
+		$.ajax({
+			url: '/edit/wish/edit_do.php',
+			type: 'POST',
+			data: data,
+			success: function(data){
+				results = $.parseJSON(data);
+				showErrors(results);
+			}
+		})
+	}
+
+	function showErrors(data){
+		console.log(data);
 	}
 
 

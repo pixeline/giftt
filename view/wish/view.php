@@ -81,7 +81,7 @@
 										</a>
 										<a href="<?php echo $wish_origin; ?>" target="_blank" class="price hide_edit"><?php echo $wish_price; ?></a>
 										<input id="price" class="show_edit" type="text" name="price" value="<?php if(isset($wish_price)) echo $wish_price; ?>" />
-										<input id="image" class="hidden" type="file" name="image" required />
+										<input id="image" class="hidden" type="file" name="image" />
 									</div>
 									<input id="origin" class="show_edit" type="url" name="origin" value="<?php if(isset($wish_origin)) echo $wish_origin; ?>" placeholder="http://" required />
 								</div>

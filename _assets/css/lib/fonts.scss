@@ -1,7 +1,6 @@
 @include font-face(icons, '/_assets/fonts/icomoon');
 
 [class^="icon-"], [class*=" icon-"]{
-	font-family: 'icons';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -10,6 +9,10 @@
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	&:before, &:after{
+		font-family: 'icons';
+	}
 
 	span{
 		display: none;
@@ -22,20 +25,36 @@
 	}
 }
 
-.icon-settings:before {
+.icon-settings:before{
 	content: "\e600";
 }
 
-.icon-show_hide:before {
+.icon-show_hide:before{
 	content: "\e601";
 }
 
-.icon-add:before {
+.icon-add:before{
 	content: "\e602";
+}
+
+.icon-ellipsis:before{
+	content: "\e603";
+}
+
+.icon-close:before{
+	content: "\e604";
+}
+
+.icon-plus:after{
+	content: "\e605";
+}
+
+.icon-minus:after{
+	content: "\e606";
 }
 
 .icon-add{
 	font-size: em(50);
-	line-height: $lh * 15;
+	line-height: $lh * 10;
 	color: $gray30;
 }

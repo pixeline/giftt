@@ -5,6 +5,9 @@
 	<title><?php echo $user_name ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
+
+<?php require_once $root . '/view/user/view_do.php'; ?>
+
 <body class="user view nojs <?php if($me_feed == 1){ echo "withAside"; } ?>">
 
 	<section class="main">
@@ -12,232 +15,196 @@
 		<?php require_once $root . '/_include/user_header.php'; ?>
 
 		<section class="content">
-
 			<div class="container-fluid">
 
-				<h3>
-					<?php if($me_username == $user_username){ ?>
-						Your wishlists
-					<?php }else{ ?>
-						<?php echo $user_firstname ?>'s wishlists
-					<?php } ?>
-				</h3>
-
-				<ul class="row wishlists">
-
-					<?php
-
-					if($user_id == $me_id){
-						$query = $db->prepare("SELECT * FROM wishlists WHERE author = :id AND removed = :removed");
-						$query->execute(array(
-							':id' => $user_id,
-							':removed' => 0
-						));
-					}else{
-						$query = $db->prepare("SELECT * FROM wishlists WHERE author = :id AND private = :private AND removed = :removed");
-						$query->execute(array(
-							':id' => $user_id,
-							':private' => 0,
-							':removed' => 0
-						));
-					}
-
-					if($me_username == $user_username){
-
-					?>
-
-					<li class="col-xs-6 col-sm-4 col-md-3">
-						<div class="wishlist add">
-							<div class="cover">
-								<span class="icon-add"></span>
-							</div>
-							<a href="/<?php echo $user_url; ?>/wishlist/add" class="modal_trigger" data-target="addWishlist"></a>
-						</div>
-					</li>
-
-					<?php
-
-					}
-
-					if($query->rowCount() > 0){
-
-						while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
-							$wishlists[] = $wishlist;
-						}
-
-						foreach($wishlists as $wishlist){
-							$wishlist_ids[] = $wishlist['id'];
-							$wishlist_name = $wishlist['name'];
-							$wishlist_slug = $wishlist['slug'];
-							$wishlist_id = $wishlist['id'];
-							$wishlist_private = $wishlist['private'];
-							$wishlist_url = $user_username . "/" . $wishlist_slug;
-
-							$query = $db->prepare("SELECT cover FROM wishes WHERE wishlist = :id AND removed = :removed ORDER BY id ASC LIMIT 1");
-							$query->execute(array(
-								':id' => $wishlist_id,
-								':removed' => 0
-							));
-							$wish_cover = $query->fetch();
-
-							if($wishlist_private){
-								$is_private = 1;
-							}else{
-								$is_private = 0;
-							}
-
-					?>
-
-					<li class="col-xs-6 col-sm-4 col-md-3 <?php if($is_private){ echo 'private'; }else{ echo 'public'; } ?>">
-						<div class="wishlist">
-							<div class="cover" style="background-image: url(/<?php echo $wish_cover['cover']; ?>);"></div>
-							<h4><?php echo $wishlist_name; ?></h4>
-							<a href="/<?php echo $wishlist_url; ?>"></a>
-							<?php if($is_private){ ?>
-							<div class="entypo lock">
-								<span class="icon"></span>
-								<span class="title">Private</span>
-							</div>
+				<!-- SIDEBAR -->
+				<aside class="col-sm-3">
+					<div class="pod wishlists">
+						<header>
+							<h4>Wishlists</h4>
+							<?php if($profile){ ?>
+								<a href="#" class="icon icon-plus"></a>
 							<?php } ?>
-							<?php if($me_username == $user_username){ ?>
-							<!-- <div class="button edit" data-target="editWishlist">
-								<a href="/<?php echo $wishlist_url; ?>/edit">
-									<span class="title">Edit</span>
-								</a>
-							</div> -->
-							<?php } ?>
-						</div>
-					</li>
+						</header>
 
-					<?php
+						<ul>
+							<li class="all active"><a href="/<?php echo $user_username; ?>">All<span><?php echo count($wishes); ?></span></a></li>
 
-						}
-					
-					}
+							<?php
 
-					?>
+								if($query_wishlists->rowCount() > 0){
 
-				</ul>
+									$wishlists = array();
+									while($wishlist = $query_wishlists->fetch(PDO::FETCH_ASSOC)){
+										$wishlists[] = $wishlist;
 
-				<hr>
+										$wishlist_id = $wishlist['id'];
+										$wishlist_name = $wishlist['name'];
+										$wishlist_slug = $wishlist['slug'];
+										$wishlist_private = $wishlist['private'];
+										$wishlist_url = $user_username . "/" . $wishlist_slug;
 
-				<h3>
-					<?php if($me_username == $user_username){ ?>
-						Your latest wishes
-					<?php }else{ ?>
-						<?php echo $user_firstname ?>'s latest wishes
-					<?php } ?>
-				</h3>
+										$query_wishes = $db->prepare("SELECT * FROM wishes WHERE wishlist = :id AND removed = 0 ORDER BY id DESC");
+										$query_wishes->execute(array(
+											':id' => $wishlist_id
+										));
 
-				<ul class="row wishes">
+										$wish_count = 0;
+										while($wish = $query_wishes->fetch(PDO::FETCH_ASSOC)){
+											if(in_array($wishlist_id, $wish)){
+												$wish_count++;
+											}
+										}
+							?>
 
-					<?php
+							<li><a href="/<?php echo $wishlist_url; ?>"><?php echo $wishlist_name; ?><span><?php echo $wish_count; ?></span></a></li>
 
-					if(isset($wishlist_ids)){
-						$wishlist_ids = join(',', $wishlist_ids);
-						$query = $db->prepare("SELECT * FROM wishes WHERE wishlist IN($wishlist_ids) AND removed = :removed AND author = :author ORDER BY id DESC LIMIT 25");
-						$query->execute(array(
-							':removed' => 0,
-							':author' => $user_id
-						));
-					}
+							<?php 
+									}
+								}
+							?>
 
-					if($me_username == $user_username){
+						</ul>
+					</div>
 
-					?>
+					<div class="pod collapse following">
+						<header>
+							<h4>Following</h4>
+							<span><?php if($followings){ echo count($followings); }else{ echo "0"; } ?></span>
+						</header>
 
-					<li class="col-xs-6 col-sm-4 col-md-3">
-						<div class="wish add">
-							<div class="cover">
-								<span class="icon-add"></span>
-							</div>
-							<a href="/<?php echo $me_url; ?>/wish/add" class="modal_trigger" data-target="addWish"></a>
-						</div>
-					</li>
-
-					<?php
-
-					}
-
-					if(isset($wishlist_ids) && $query->rowCount() > 0){
-
-						while($wish = $query->fetch(PDO::FETCH_ASSOC)){
-							$wishes[] = $wish;
-						}
-
-						foreach($wishes as $wish){
-							$wish_id = $wish['id'];
-							$wish_name = $wish['name'];
-							$wish_wishlist = $wish['wishlist'];
-							$wish_cover = $wish['cover'];
-							$wish_price = $wish['price'];
-							$wish_origin = $wish['origin'];
-							$query = $db->prepare("SELECT slug FROM wishlists WHERE id = :id");
-							$query->execute(array(
-								':id' => $wish_wishlist
-							));
-							$wishlist_slug = $query->fetch();
-							$wishlist_slug = $wishlist_slug['slug'];
-							$wish_url = $user_username . "/" . $wishlist_slug . "/" . $wish_id;
-
-							if(!empty($wish_origin)){
-								$wish_origin = str_replace('http://', '', $wish_origin);
-								$wish_origin = str_replace('www.', '', $wish_origin);
-								$wish_origin = str_replace('?', '', $wish_origin);
-								$wish_origin = explode('/', $wish_origin);
-							}
-
-					?>
-
-					<li class="col-xs-6 col-sm-4 col-md-3">
-						<div class="wish">
-							<img src="/<?php echo $wish_cover; ?>" />
-							<div class="infos">
-								<div class="top">
-									<h4><?php echo $wish_name; ?></h4>
-									<?php
-										if(!empty($wish_price)){
-									?>
-
-									<p class="price"><?php echo $wish_price; ?></p>
-									<?php } ?>
-								</div>
-								<?php
-									if(!empty($wish_origin)){
+						<div class="wrapper">
+							<ul>
+								<?php 
+									if(isset($followings)){
+										foreach($followings as $following){
+											$following_username = $following['username'];
+											$following_name = $following['firstname'] . ' ' . $following['lastname'];
+											if(isset($following['picture'])){
+												$following_picture = $following['picture'];
+											}else{
+												$following_picture = '_assets/images/profile/default.jpg';
+											}
 								?>
-								<p class="origin">from <?php echo $wish_origin[0]; ?></p>
+								<li><a href="/<?php echo $following_username; ?>"><img src="<?php echo $following_picture; ?>" alt="<?php echo $follower_name; ?>" /></a></li>
+								<?php
+											
+										}
+									}else{
+								?>
+								<li>Nobody</li>
 								<?php } ?>
-							</div>
-							<a href="/<?php echo $wish_url ?>"></a>
+							</ul>
 						</div>
-					</li>
+					</div>
 
-					<?php
+					<div class="pod collapse followers">
+						<header>
+							<h4>Followers</h4>
+							<span><?php if($followers){ echo count($followers); }else{ echo "0"; } ?></span>
+						</header>
+						<div class="wrapper">
+							
+							<ul>
+								<?php 
+									if(isset($followers)){
+										foreach($followers as $follower){
+											$follower_username = $follower['username'];
+											$follower_name = $follower['firstname'] . ' ' . $follower['lastname'];
+											if(isset($follower['picture'])){
+												$follower_picture = $follower['picture'];
+											}else{
+												$follower_picture = '_assets/images/profile/default.jpg';
+											}
+								?>
+								<li><a href="/<?php echo $follower_username; ?>"><img src="<?php echo $follower_picture; ?>" alt="<?php echo $follower_name; ?>" /></a></li>
+								<?php
+											
+										}
+									}else{
+								?>
+								<li>Nobody</li>
+								<?php } ?>
+							</ul>
+						</div>
+					</div>
+				</aside>
 
-						}
-					
-					}
+				<!-- WISHES -->
+				<section class="col-sm-9 mosaic">
+					<div class="action row">
+						<p class="col-sm-12">
+							<?php
+								if($profile){
+							?>
+							<a class="green" href="#">Make a wish<span href="#" class="icon icon-plus"></span></a>
+							<?php
+								}else{
+									if(in_array($user_id, $me_followings_id)){
+							?>
+							<a href="#">Unfollow <?php echo $user_firstname; ?><span href="#" class="icon icon-minus"></span></a>
+							<?php
+									}else{
+							?>
+							<a class="green" href="#">Follow <?php echo $user_firstname; ?><span href="#" class="icon icon-plus"></span></a>
+							<?php
+									}
+								}
+							?>
+						</p>
+					</div>
+					<div class="row wishes">
+						<ul>
+							<?php
+								if(isset($wishes)){
+									foreach($wishes as $wish){
+										$wish_id = $wish['id'];
+										$wish_name = $wish['name'];
+										$wish_picture = $wish['picture'];
+										$wish_origin = $wish['origin'];
+										if(!empty($wish_origin)){
+											$wish_short_origin = str_replace('http://', '', $wish_origin);
+											$wish_short_origin = str_replace('www.', '', $wish_short_origin);
+											$wish_short_origin = explode('/', $wish_short_origin);
+											$wish_short_origin = $wish_short_origin[0];
+										}
+										$wishlist_index = searchForId($wish['wishlist'], $wishlists);
 
-					?>
+										$wish_url = $user_username . '/' . $wishlists[$wishlist_index]['slug'] . '/' . $wish_id;
+							?>
 
-				</ul>
+							<li class="col-xs-6 col-md-4 col-lg-3">
+								<div class="wish">
+									<a href="/<?php echo $wish_url; ?>">
+										<img src="/<?php echo $wish_picture; ?>" />
+									</a>
+									<div class="infos">
+										<h3><a href="/<?php echo $wish_url; ?>"><?php echo $wish_name; ?></a></h3>
+										<p class="origin"><a href="<?php echo $wish_origin; ?>"><?php echo $wish_short_origin; ?></a></p>
+									</div>
+								</div>
+							</li>
 
+							<?php
+									}
+								}else{
+									echo "nothing";
+								}
+							?>
+						</ul>
+					</div>
+				</section>
 			</div>
-
 		</section>
 
 		<?php require_once $root . '/_include/footer.php'; ?>
 
 	</section>
 
-	<?php require_once $root . '/_include/modal_add_wish.php'; ?>
-
-	<?php require_once $root . '/_include/modal_add_wishlist.php'; ?>
-
 	<?php require_once $root . '/_include/feed.php'; ?>
-
 	<?php require_once $root . '/_include/foot.php'; ?>
 	<script src="/_assets/js/masonry.min.js"></script>
 	<script src="/_assets/js/imagesloaded.min.js"></script>
+	
 </body>
 </html>

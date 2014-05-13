@@ -28,12 +28,12 @@ require_once $root . '/edit/wish/edit_do.php';
 						<h3>Edit <?php echo $wish_name; ?></h3>
 
 						<form id="edit_wish" action="/<?php echo $wish_url; ?>/edit" method="POST" enctype="multipart/form-data">
-							
-							<?php if(isset($message)){ ?>
-								<div class="error_block">
-									<?php  echo $message; ?>
-								</div>
-							<?php } ?>
+
+							<?php 
+								if(isset($message)){
+									var_dump($message);
+								}
+							?>
 							
 							<div class="row">
 								<div class="col-sm-12">

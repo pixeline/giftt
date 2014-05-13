@@ -1,4 +1,4 @@
-<aside>
+<aside class="feed">
 	<div class="container">
 		
 		<p class="title">Recently...</p>

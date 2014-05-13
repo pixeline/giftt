@@ -5,10 +5,11 @@
 		</a>
 	</div>
 
-	<label for="settings-toggle" id="settings" class="icon-settings"></label>
-	<input id="settings-toggle" type="checkbox">
+	<div id="settings" class="icon-settings">
+		<span>Settings</span>
+	</div>
 	<ul class="settings-list">
-		<li><a href="#">Edit your profile</a></li>
+		<li><a href="/settings">Edit profile</a></li>
 		<li><a href="/logout">Logout</a></li>
 	</ul>
 

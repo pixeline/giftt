@@ -1,77 +1,267 @@
-.user.view, .wishlist.add, .wishlist.edit{
+.user.view, .wishlist.view{
+
+	// HEADER
 
 	header{
-		padding-bottom: 45px;
 
 		a.user{
 			margin-bottom: 20px;
 		}
+
+		p{
+			margin-bottom: 0;
+		}
+
 	}
 }
 
-.user.view{
+.user.view, .wishlist.view{
 
-	p.description{
-		margin-bottom: 18px;
-	}
+	.content{
 
-	h2 + .button{
-		margin-top: 8px;
-	}
+		.icon{
+			font-size: em(16) !important;
+			font-weight: 600;
+		}
 
-	.follow{
+		aside{
+			width: 20%;
+			width: calc(280px);
 
-		a{
+			.pod{
+				margin-bottom: 10px;
+				clear: both;
+			}
 
-			&:hover{
-				border-color: $green;
-				background: $green;
-				color: $white;
+			header, .wishlists li a{
+				padding: 0 15px;
+			}
+
+			header{
+				border-bottom: 1px solid $gray12;
+				font-size: em(16);
+				overflow: hidden;
+				margin-bottom: 12px;
+
+				h4{
+					line-height: 60px;
+					font-weight: 600;
+					font-family: $tisa;
+					text-transform: uppercase;
+					float: left;
+				}
+
+				a.icon, span{
+					float: right;
+					line-height: 60px;
+					font-size: em(14);
+					font-weight: 600;
+					color: $gray20;
+				}
+
+				a.icon{
+
+					&:hover{
+						color: $green;
+					}
+				}
+			}
+
+			.wishlists{
+
+				ul{
+					clear: both;
+
+					a{
+						line-height: 38px;
+						color: $green;
+						display: block;
+
+						span{
+							color: $gray20;
+							font-size: em(14);
+							float: right;
+						}
+					}
+
+					li{
+
+						a:hover, &.active a{
+							background: $green;
+							color: $white;
+							border-radius: 2px;
+							text-decoration: none;
+
+							span{
+								color: $white;
+							}
+						}
+					}
+
+					li.all{
+
+						a{
+							color: $gray60;
+						}
+
+						a:hover, &.active a{
+							background: $gray4;
+							color: $gray60;
+
+							span{
+								color: $gray60;
+							}
+						}
+
+					}
+
+					.more{
+
+						a{
+							color: $gray20;
+							font-size: em(15);
+
+							&:hover{
+								background: none;
+								color: $black;
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+			}
+
+			.following, .followers{
+
+				header{
+					cursor: pointer;
+					@include transition(border 0.2s ease-in-out);
+
+					&:hover{
+						border-color: $green;
+					}
+				}
+
+				.wrapper{
+					display: none;
+					overflow: hidden;
+				}
+
+				ul{
+					overflow: hidden;
+					padding: 0 11px;
+					margin: 10px 0 5px;
+				}
+
+				li{
+					float: left;
+					padding: 4px;
+					width: 25%;
+
+					a{
+						float: left;
+						opacity: 0.8;
+						@include transition(opacity 0.2s ease-in-out);
+
+						img{
+							width: 100%;
+							height: auto;
+							border-radius: 40px;
+							float: left;
+						}
+
+						&:hover{
+							opacity: 1;
+						}
+					}
+				}
 			}
 		}
 
-		&.following{
+		.mosaic{
+			width: 80%;
+			width: calc(100% - 280px);
+			padding-left: 25px;
 
-			a{
+			.action{
+				padding: 0 15px;
 
-				&:hover{
-					background: $red;
-					border-color: $red;
-					color: $white;
+				p{
+					margin-bottom: 0;
+				}
+
+				a{
+					float: right;
+					line-height: 60px;
+					text-align: right;
+					color: $gray30;
+					font-family: $tisa;
+					font-weight: 600;
+					font-size: em(14);
+					text-transform: uppercase;
+
+					&.green{
+						color: $green;
+					}
+
+					&:after{
+						margin-left: 8px;
+					}
+				}
+
+				.icon{
+					margin-left: 6px;
+				}
+			}
+		}
+
+		.wishes{
+			margin-bottom: 30px;
+
+			li{
+				margin-bottom: 30px;
+
+				.wish{
+					border: 1px solid $gray12;
+					border-radius: 2px;
+					@include transition(box-shadow 0.2s ease-in-out);
+
+					img{
+						width: 100%;
+						height: auto;
+						border-bottom: 1px solid $gray12;
+					}
+
+					&:hover{
+						box-shadow: 0 0 6px 0 $gray12;
+					}
+
+					.infos{
+						padding: 12px;
+					}
+
+					h3{
+						font-family: $proxima;
+						margin: 0;
+					}
+
+					p{
+						margin-bottom: 0;
+
+						a{
+							color: $gray20;
+							font-size: em(14);
+
+							&:hover{
+								color: $gray40;
+								text-decoration: underline;
+							}
+						}
+					}
 				}
 			}
 		}
 	}
 
-	.follow_stats{
-		font-weight: 600;
-		margin-bottom: 0;
-
-		a{
-			font-weight: 600;
-		}
-	}
-
-	.content{
-		padding-bottom: 30px;
-	}
-
-	.menu + .wishlists{
-		margin-top: 40px;
-	}
-
-	.wishlists, .wishes{
-		margin-top: 50px;
-
-		li{
-
-			&.private{
-				/* display: none; */
-			}
-		}
-	}
-
-	h3:nth-of-type(2){
-		margin-top: 60px;
-	}
+	
 }
