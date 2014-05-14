@@ -4,8 +4,7 @@
 
 	<div class="container-fluid">
 		
-		<a class="user" href="/<?php echo $user_username; ?>"><img src="/<?php if(!empty($user_picture)){ echo $user_picture; }else{ echo '_assets/images/profile/default.jpg';} ?>" alt="<?php echo $user_name; ?>" /></a>
-		<h3><a href="/<?php echo $wishlist_url; ?>"><?php echo $wishlist_name; ?></a></h3>
+		<a class="user" href="/<?php echo $user['username']; ?>"><img src="/<?php if(!empty($user['picture'])){ echo $user['picture']; }else{ echo '_assets/images/profile/default.jpg';} ?>" alt="<?php echo $user_name; ?>" /></a>
 
 	</div>
 

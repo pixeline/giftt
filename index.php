@@ -10,7 +10,7 @@ if(!isset($me)){
 }else{
 
 	require_once $root . '/_include/user_info.php';
-	require_once $root . '/view/user/view.php';
+	require_once $root . '/view/wishlist/view.php';
 
 }
 

@@ -14,7 +14,7 @@ function searchForId($id, $array){
 
 // GET WISHLISTS
 
-if($profile){
+if($mine){
 	$query_wishlists = $db->prepare("SELECT * FROM wishlists WHERE author = :id AND removed = 0 ORDER BY id DESC");
 	$query_wishlists->execute(array(
 		':id' => $user_id

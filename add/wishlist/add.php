@@ -15,7 +15,7 @@ require_once $root . '/add/wishlist/add_do.php';
 
 	<section class="main">
 
-		<?php require_once $root . '/_include/user_header.php'; ?>
+		<?php require_once $root . '/_include/wishlist_header.php'; ?>
 
 		<section class="content form">
 

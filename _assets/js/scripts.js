@@ -350,6 +350,32 @@
 	})
 
 
+	// ADD WISHLISt
+
+	$('a.icon-plus').on('click', function(){
+		target = $(this).data('target');
+		if(target == 'add_wishlist'){
+			$('.wishlists li.add').toggle();
+			$('.wishlists form input').first().focus();
+		}
+
+		$('.wishlists form').submit(function(e){
+			thisForm = $(this);
+			inputName = thisForm.find('#name');
+			errors = {};
+			if(!inputName.val()){
+				errors['name'] = "Please give it a name";
+			}
+			thisForm.find('input').removeClass('error');
+			thisForm.find('#name').attr('placeholder', 'Name');
+			$.each(errors, function(key, value){
+				thisForm.find('input[name='+key+']').addClass('error').attr('placeholder', value);
+				e.preventDefault();
+			})
+		})
+	})
+
+
 
 
 
@@ -364,15 +390,15 @@
 
 	// FOLLOW
 
-	$('.button.canfollow a').on('click', function(){
+	$('.follow').on('click', function(){
 		button = $(this);
-		who2 = button.data('who2');
-		follow(who2, button);
+		who = button.data('who');
+		follow(who, button);
 		return false;
 	})
 
-	function follow(who2, button){
-		followData = {'who2': who2};
+	function follow(who, button){
+		followData = {'who2': who};
 
 		$.ajax({
 			url: '/_include/follow.php',
@@ -383,16 +409,7 @@
 				return false;
 			},
 			success: function(){
-				title = button.find('.title');
-				number = button.find('.number');
-				button.parents('.follow').toggleClass('following');
-				if(title.text() == 'Unfollow'){
-					title.text('Follow');
-					number.text(parseInt(number.text())-1);
-				}else{
-					title.text('Unfollow');
-					number.text(parseInt(number.text())+1);
-				}
+				location.reload();
 			}
 		});
 	}

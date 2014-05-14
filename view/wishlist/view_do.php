@@ -1,37 +1,39 @@
 <?php
 
-// FUNCTIONS
-
-function searchForId($id, $array){
-	foreach($array as $key => $val){
-		if($val['id'] === $id){
-			return $key;
-		}
-	}
-	return null;
-}
-
-
 // GET WISHLISTS
 
-if($profile){
+if($mine){
 	$query_wishlists = $db->prepare("SELECT * FROM wishlists WHERE author = :id AND removed = 0 ORDER BY id DESC");
 	$query_wishlists->execute(array(
-		':id' => $user_id
+		':id' => $user['id']
 	));
 }else{
 	$query_wishlists = $db->prepare("SELECT * FROM wishlists WHERE author = :id AND private = 0 AND removed = 0 ORDER BY id DESC");
 	$query_wishlists->execute(array(
-		':id' => $user_id
+		':id' => $user['id']
 	));
+}
+
+$wishlists = array();
+while($wishlist = $query_wishlists->fetch(PDO::FETCH_ASSOC)){
+	$wishlists[] = $wishlist;
+}
+
+$wishlists_id = array();
+foreach($wishlists as $wishlist){
+	$wishlists_id[] = $wishlist['id'];
+}
+
+if(isset($wishlists_id[0])){
+	$wishlists_id = join(',', $wishlists_id);
 }
 
 
 // GET WISHES
 
-$query_wishes = $db->prepare("SELECT * FROM wishes WHERE removed = 0 AND author = :id ORDER BY id DESC");
+$query_wishes = $db->prepare("SELECT * FROM wishes WHERE removed = 0 AND author = :id AND wishlist IN ($wishlists_id) ORDER BY id DESC");
 $query_wishes->execute(array(
-	':id' => $user_id
+	':id' => $user['id']
 ));
 
 $wishes = array();
@@ -44,8 +46,8 @@ while($wish = $query_wishes->fetch(PDO::FETCH_ASSOC)){
 
 $query = $db->prepare("SELECT who2, follow FROM follows WHERE who = :id AND follow = 1 AND who2 != :id2");
 $query->execute(array(
-	':id' => $me_id,
-	':id2' => $me_id
+	':id' => $me['id'],
+	':id2' => $me['id']
 ));
 
 $followings_id = array();
@@ -69,8 +71,8 @@ if(isset($followings_id[0])){
 
 $query = $db->prepare("SELECT who, follow FROM follows WHERE who2 = :id AND follow = 1 AND who != :id2");
 $query->execute(array(
-	':id' => $user_id,
-	':id2' => $user_id
+	':id' => $user['id'],
+	':id2' => $user['id']
 ));
 
 $followers_id = array();

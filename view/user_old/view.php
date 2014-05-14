@@ -22,7 +22,7 @@
 					<div class="pod wishlists">
 						<header>
 							<h4>Wishlists</h4>
-							<?php if($profile){ ?>
+							<?php if($mine){ ?>
 								<a href="#" class="icon icon-plus"></a>
 							<?php } ?>
 						</header>
@@ -135,7 +135,7 @@
 					<div class="action row">
 						<p class="col-sm-12">
 							<?php
-								if($profile){
+								if($mine){
 							?>
 							<a class="green" href="#">Make a wish<span href="#" class="icon icon-plus"></span></a>
 							<?php

@@ -15,10 +15,10 @@ RewriteRule ^logout/?$ account/logout/index.php [L]
 # USERS
 RewriteRule ^settings/?$ edit/user/index.php [L]
 RewriteRule ^([a-z0-9-_]+)/settings/?$ edit/user/index.php?user=$1 [L]
-RewriteRule ^([a-z0-9-_]+)/?$ view/user/index.php?user=$1 [L]
+RewriteRule ^([a-z0-9-_]+)/?$ view/wishlist/index.php?user=$1 [L]
 
 # WISHLISTS
-RewriteRule ^([a-z0-9-_]+)/wishlist/add/?$ add/wishlist/index.php?user=$1 [L]
+RewriteRule ^wishlist/add/?$ add/wishlist/index.php [L]
 RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/edit/?$ edit/wishlist/index.php?user=$1&wishlist=$2 [L]
 RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/remove/?$ remove/wishlist/index.php?user=$1&wishlist=$2 [L]
 RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/?$ view/wishlist/index.php?user=$1&wishlist=$2 [L]

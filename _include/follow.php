@@ -12,21 +12,21 @@ if($_POST['data']){
 
 	$query = $db->prepare("SELECT * FROM follows WHERE who = :who AND who2 = :who2");
 	$query->execute(array(
-		'who' => $me_id,
+		'who' => $me['id'],
 		'who2' => $who2
 	));
 
 	if($query->rowCount() > 0){
 		$query = $db->prepare("UPDATE follows SET follow = NOT follow, date = now() WHERE who = :who AND who2 = :who2");
 		$query->execute(array(
-			'who' => $me_id,
+			'who' => $me['id'],
 			'who2' => $who2
 		));
 		echo "update";
 	}else{
 		$query = $db->prepare("INSERT INTO follows(who, who2) VALUES(:who, :who2)");
 		$query->execute(array(
-			'who' => $me_id,
+			'who' => $me['id'],
 			'who2' => $who2
 		));
 		echo "insert";

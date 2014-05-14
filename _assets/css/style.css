@@ -1362,6 +1362,15 @@ td.visible-print {
 .icon-minus:after {
   content: "\e606"; }
 
+.icon-lock:before {
+  content: "\e607"; }
+
+.icon-share:before {
+  content: "\e608"; }
+
+.icon-hamburger:before {
+  content: "\e609"; }
+
 .icon-add {
   font-size: 3.125em;
   line-height: 200px;
@@ -1388,17 +1397,7 @@ h2 {
   text-align: center;
   padding: 0 100px; }
 
-/* h3{
-	font-size: em(20);
-	line-height: $lh * 1.5;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	margin-bottom: 32px;
-	text-align: center;
-} */
 p {
-  margin: 0 auto 24px;
   font-size: 1em;
   line-height: 24px; }
 
@@ -1412,14 +1411,6 @@ a {
 
 strong {
   font-weight: 600; }
-
-hr {
-  margin-top: 40px;
-  background-color: #f4f4f4;
-  border: 1px solid #f4f4f4;
-  max-width: 25%;
-  margin-left: auto;
-  margin-right: auto; }
 
 .mute {
   color: #7f7f7f; }
@@ -1445,6 +1436,17 @@ hr {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
+.main {
+  border-top: 3px solid #6eb004;
+  width: 100%;
+  float: left;
+  background: white;
+  overflow: auto;
+  padding-bottom: 20px;
+  -webkit-transition: width 0.2s ease-in-out;
+  -moz-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out; }
+
 .main > header {
   background: #f4f4f4;
   padding: 50px 0 45px;
@@ -1456,7 +1458,8 @@ hr {
     height: 75px;
     width: auto; }
   .main > header p {
-    max-width: 450px; }
+    max-width: 450px;
+    margin: 0 auto; }
   .main > header .button {
     clear: both;
     margin: 0 5px; }
@@ -1470,69 +1473,114 @@ hr {
         background: #2c2c2c;
         color: white; }
 
-.main {
-  border-top: 3px solid #6eb004;
-  width: 100%;
-  float: left;
+nav div {
+  position: absolute;
+  top: 10px;
+  z-index: 10; }
+nav #logo {
+  left: 10px;
+  background: #7FBA00; }
+  nav #logo a {
+    text-indent: -9999px;
+    width: 65px;
+    height: 65px;
+    background-image: url(../images/logo.png);
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+      nav #logo a {
+        background-image: url(../images/logo_square.png); } }
+nav [class^="icon-"] {
+  width: 40px;
+  line-height: 55px;
+  font-size: 20px;
+  color: #7f7f7f;
+  display: block;
+  cursor: pointer;
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out; }
+  nav [class^="icon-"]:hover {
+    color: #2c2c2c; }
+nav #settings {
+  right: 60px; }
+nav ul.settings-list {
+  text-align: left;
+  display: none;
+  position: absolute;
+  top: 52px;
+  right: 60px;
+  z-index: 100;
   background: white;
-  overflow: auto;
-  padding-bottom: 20px;
-  -webkit-transition: width 0.2s ease-in-out;
-  -moz-transition: width 0.2s ease-in-out;
-  transition: width 0.2s ease-in-out; }
+  border: 2px solid #e0e0e0;
+  border-radius: 2px;
+  font-weight: 600; }
+  nav ul.settings-list li {
+    border-bottom: 1px solid #e0e0e0; }
+    nav ul.settings-list li:last-child {
+      border-bottom: 0; }
+  nav ul.settings-list a {
+    padding: 10px 18px 8px;
+    font-size: 0.9375em;
+    width: 100%; }
+  nav ul.settings-list.show {
+    display: block; }
+nav #show_hide {
+  right: 20px; }
 
 .content {
-  padding: 60px 0; }
-
-.menu {
-  text-align: center;
-  margin-bottom: 20px; }
-  .menu ul {
-    display: inline-block;
-    border-top: 2px solid #cccccc; }
-  .menu li {
-    float: left;
-    padding: 10px 20px 0;
-    border-top: 2px solid transparent;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 0.875em;
-    margin-top: -2px;
-    color: #b2b2b2;
-    cursor: pointer;
-    -webkit-transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out, border 0.2s ease-in-out; }
-    .menu li.active {
-      border-color: #6eb004;
-      color: #2c2c2c; }
-      .menu li.active:hover {
-        border-color: #6eb004;
-        color: #2c2c2c; }
-    .menu li:hover {
-      color: #2c2c2c; }
-
-.intro {
-  margin-bottom: 60px;
-  text-align: center; }
-  .intro h2 {
-    margin-bottom: 4px; }
-  .intro p.mute {
-    text-align: center;
-    max-width: 450px; }
-  .intro .button {
-    position: absolute;
-    top: 0;
-    right: 15px; }
-    .intro .button a {
-      color: #2c2c2c;
-      background: white;
-      border-color: #2c2c2c; }
-      .intro .button a:hover {
-        background: #cacaca; }
-      .intro .button a:active, .intro .button a .active {
-        background: #2c2c2c;
-        color: white; }
+  padding: 50px 0;
+  overflow: hidden; }
+  .content aside {
+    width: 20%;
+    width: calc(280px); }
+    .content aside .pod {
+      margin-bottom: 10px;
+      clear: both; }
+    .content aside ul, .content aside .cont {
+      margin-top: 16px; }
+    .content aside header {
+      padding: 0 15px;
+      border-bottom: 1px solid #e0e0e0;
+      font-size: 1em;
+      overflow: hidden; }
+      .content aside header h4 {
+        line-height: 60px;
+        font-weight: 600;
+        font-family: "ff-tisa-sans-web-pro", sans-serif;
+        text-transform: uppercase;
+        float: left; }
+      .content aside header a.icon, .content aside header span {
+        float: right;
+        line-height: 60px;
+        font-size: 1em;
+        font-weight: 600;
+        color: #cccccc; }
+  .content .heart {
+    width: 80%;
+    width: calc(100% - 280px);
+    padding-left: 25px; }
+    .content .heart .action {
+      padding: 0 15px; }
+      .content .heart .action p {
+        margin-bottom: 0; }
+      .content .heart .action a {
+        float: right;
+        line-height: 60px;
+        text-align: right;
+        color: #b2b2b2;
+        font-family: "ff-tisa-sans-web-pro", sans-serif;
+        font-weight: 600;
+        font-size: 0.875em;
+        text-transform: uppercase; }
+        .content .heart .action a.green {
+          color: #6eb004; }
+      .content .heart .action .icon {
+        margin-left: 6px;
+        font-size: 1.125em;
+        position: relative;
+        top: 1px; }
 
 body.withAside .main {
   position: relative;
@@ -1625,62 +1673,6 @@ footer {
     color: inherit;
     font-weight: inherit;
     font-size: inherit; }
-
-nav div {
-  position: absolute;
-  top: 10px;
-  z-index: 10; }
-nav #logo {
-  left: 10px;
-  background: #7FBA00; }
-  nav #logo a {
-    text-indent: -9999px;
-    width: 65px;
-    height: 65px;
-    background-image: url(../images/logo.png);
-    background-size: 100%;
-    background-position: center center;
-    background-repeat: no-repeat; }
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
-      nav #logo a {
-        background-image: url(../images/logo_square.png); } }
-nav [class^="icon-"] {
-  width: 40px;
-  line-height: 55px;
-  font-size: 20px;
-  color: #7f7f7f;
-  display: block;
-  cursor: pointer;
-  -webkit-transition: color 0.2s ease-in-out;
-  -moz-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out; }
-  nav [class^="icon-"]:hover {
-    color: #2c2c2c; }
-nav #settings {
-  right: 60px; }
-nav ul.settings-list {
-  text-align: left;
-  display: none;
-  position: absolute;
-  top: 52px;
-  right: 60px;
-  z-index: 100;
-  background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 2px;
-  font-weight: 600; }
-  nav ul.settings-list li {
-    border-bottom: 1px solid #e0e0e0; }
-    nav ul.settings-list li:last-child {
-      border-bottom: 0; }
-  nav ul.settings-list a {
-    padding: 10px 18px 8px;
-    font-size: 0.9375em;
-    width: 100%; }
-  nav ul.settings-list.show {
-    display: block; }
-nav #show_hide {
-  right: 20px; }
 
 .beta {
   text-align: center;
@@ -1853,258 +1845,262 @@ nav #show_hide {
   margin-bottom: 30px;
   padding: 0 6px; }
 
-.user.view header a.user, .wishlist.view header a.user {
+.user.view .main > header a.user, .wishlist.view .main > header a.user {
   margin-bottom: 20px; }
-.user.view header p, .wishlist.view header p {
+.user.view .main > header p, .wishlist.view .main > header p {
   margin-bottom: 0; }
-
-.user.view .content .icon, .wishlist.view .content .icon {
-  font-size: 1em !important;
-  font-weight: 600; }
-.user.view .content aside, .wishlist.view .content aside {
-  width: 20%;
-  width: calc(280px); }
-  .user.view .content aside .pod, .wishlist.view .content aside .pod {
-    margin-bottom: 10px;
-    clear: both; }
-  .user.view .content aside header, .user.view .content aside .wishlists li a, .wishlist.view .content aside header, .wishlist.view .content aside .wishlists li a {
-    padding: 0 15px; }
-  .user.view .content aside header, .wishlist.view .content aside header {
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 1em;
-    overflow: hidden;
-    margin-bottom: 12px; }
-    .user.view .content aside header h4, .wishlist.view .content aside header h4 {
-      line-height: 60px;
-      font-weight: 600;
-      font-family: "ff-tisa-sans-web-pro", sans-serif;
-      text-transform: uppercase;
-      float: left; }
-    .user.view .content aside header a.icon, .user.view .content aside header span, .wishlist.view .content aside header a.icon, .wishlist.view .content aside header span {
-      float: right;
-      line-height: 60px;
-      font-size: 0.875em;
-      font-weight: 600;
-      color: #cccccc; }
-    .user.view .content aside header a.icon:hover, .wishlist.view .content aside header a.icon:hover {
-      color: #6eb004; }
-  .user.view .content aside .wishlists ul, .wishlist.view .content aside .wishlists ul {
-    clear: both; }
-    .user.view .content aside .wishlists ul a, .wishlist.view .content aside .wishlists ul a {
-      line-height: 38px;
-      color: #6eb004;
-      display: block; }
-      .user.view .content aside .wishlists ul a span, .wishlist.view .content aside .wishlists ul a span {
-        color: #cccccc;
-        font-size: 0.875em;
-        float: right; }
-    .user.view .content aside .wishlists ul li a:hover, .user.view .content aside .wishlists ul li.active a, .wishlist.view .content aside .wishlists ul li a:hover, .wishlist.view .content aside .wishlists ul li.active a {
-      background: #6eb004;
-      color: white;
-      border-radius: 2px;
-      text-decoration: none; }
-      .user.view .content aside .wishlists ul li a:hover span, .user.view .content aside .wishlists ul li.active a span, .wishlist.view .content aside .wishlists ul li a:hover span, .wishlist.view .content aside .wishlists ul li.active a span {
-        color: white; }
-    .user.view .content aside .wishlists ul li.all a, .wishlist.view .content aside .wishlists ul li.all a {
-      color: #666666; }
-    .user.view .content aside .wishlists ul li.all a:hover, .user.view .content aside .wishlists ul li.all.active a, .wishlist.view .content aside .wishlists ul li.all a:hover, .wishlist.view .content aside .wishlists ul li.all.active a {
-      background: #f4f4f4;
-      color: #666666; }
-      .user.view .content aside .wishlists ul li.all a:hover span, .user.view .content aside .wishlists ul li.all.active a span, .wishlist.view .content aside .wishlists ul li.all a:hover span, .wishlist.view .content aside .wishlists ul li.all.active a span {
-        color: #666666; }
-    .user.view .content aside .wishlists ul .more a, .wishlist.view .content aside .wishlists ul .more a {
+.user.view .content aside li.wishlist a, .user.view .content aside li.add, .wishlist.view .content aside li.wishlist a, .wishlist.view .content aside li.add {
+  padding: 0 15px; }
+.user.view .content aside header a.icon:hover, .wishlist.view .content aside header a.icon:hover {
+  color: #6eb004; }
+.user.view .content aside .wishlists ul, .wishlist.view .content aside .wishlists ul {
+  clear: both; }
+  .user.view .content aside .wishlists ul li, .wishlist.view .content aside .wishlists ul li {
+    margin-bottom: 2px; }
+  .user.view .content aside .wishlists ul a, .wishlist.view .content aside .wishlists ul a {
+    line-height: 38px;
+    color: #6eb004;
+    display: block; }
+    .user.view .content aside .wishlists ul a span, .wishlist.view .content aside .wishlists ul a span {
       color: #cccccc;
-      font-size: 0.9375em; }
-      .user.view .content aside .wishlists ul .more a:hover, .wishlist.view .content aside .wishlists ul .more a:hover {
-        background: none;
-        color: #2c2c2c;
-        text-decoration: underline; }
-  .user.view .content aside .following header, .user.view .content aside .followers header, .wishlist.view .content aside .following header, .wishlist.view .content aside .followers header {
-    cursor: pointer;
-    -webkit-transition: border 0.2s ease-in-out;
-    -moz-transition: border 0.2s ease-in-out;
-    transition: border 0.2s ease-in-out; }
-    .user.view .content aside .following header:hover, .user.view .content aside .followers header:hover, .wishlist.view .content aside .following header:hover, .wishlist.view .content aside .followers header:hover {
-      border-color: #6eb004; }
-  .user.view .content aside .following .wrapper, .user.view .content aside .followers .wrapper, .wishlist.view .content aside .following .wrapper, .wishlist.view .content aside .followers .wrapper {
-    display: none;
-    overflow: hidden; }
-  .user.view .content aside .following ul, .user.view .content aside .followers ul, .wishlist.view .content aside .following ul, .wishlist.view .content aside .followers ul {
-    overflow: hidden;
-    padding: 0 11px;
-    margin: 10px 0 5px; }
-  .user.view .content aside .following li, .user.view .content aside .followers li, .wishlist.view .content aside .following li, .wishlist.view .content aside .followers li {
-    float: left;
-    padding: 4px;
-    width: 25%; }
-    .user.view .content aside .following li a, .user.view .content aside .followers li a, .wishlist.view .content aside .following li a, .wishlist.view .content aside .followers li a {
-      float: left;
-      opacity: 0.8;
-      -webkit-transition: opacity 0.2s ease-in-out;
-      -moz-transition: opacity 0.2s ease-in-out;
-      transition: opacity 0.2s ease-in-out; }
-      .user.view .content aside .following li a img, .user.view .content aside .followers li a img, .wishlist.view .content aside .following li a img, .wishlist.view .content aside .followers li a img {
-        width: 100%;
-        height: auto;
-        border-radius: 40px;
-        float: left; }
-      .user.view .content aside .following li a:hover, .user.view .content aside .followers li a:hover, .wishlist.view .content aside .following li a:hover, .wishlist.view .content aside .followers li a:hover {
-        opacity: 1; }
-.user.view .content .mosaic, .wishlist.view .content .mosaic {
-  width: 80%;
-  width: calc(100% - 280px);
-  padding-left: 25px; }
-  .user.view .content .mosaic .action, .wishlist.view .content .mosaic .action {
-    padding: 0 15px; }
-    .user.view .content .mosaic .action p, .wishlist.view .content .mosaic .action p {
-      margin-bottom: 0; }
-    .user.view .content .mosaic .action a, .wishlist.view .content .mosaic .action a {
-      float: right;
-      line-height: 60px;
-      text-align: right;
-      color: #b2b2b2;
-      font-family: "ff-tisa-sans-web-pro", sans-serif;
-      font-weight: 600;
       font-size: 0.875em;
-      text-transform: uppercase; }
-      .user.view .content .mosaic .action a.green, .wishlist.view .content .mosaic .action a.green {
-        color: #6eb004; }
-      .user.view .content .mosaic .action a:after, .wishlist.view .content .mosaic .action a:after {
-        margin-left: 8px; }
-    .user.view .content .mosaic .action .icon, .wishlist.view .content .mosaic .action .icon {
-      margin-left: 6px; }
-.user.view .content .wishes, .wishlist.view .content .wishes {
-  margin-bottom: 30px; }
-  .user.view .content .wishes li, .wishlist.view .content .wishes li {
-    margin-bottom: 30px; }
-    .user.view .content .wishes li .wish, .wishlist.view .content .wishes li .wish {
-      border: 1px solid #e0e0e0;
-      border-radius: 2px;
-      -webkit-transition: box-shadow 0.2s ease-in-out;
-      -moz-transition: box-shadow 0.2s ease-in-out;
-      transition: box-shadow 0.2s ease-in-out; }
-      .user.view .content .wishes li .wish img, .wishlist.view .content .wishes li .wish img {
-        width: 100%;
-        height: auto;
-        border-bottom: 1px solid #e0e0e0; }
-      .user.view .content .wishes li .wish:hover, .wishlist.view .content .wishes li .wish:hover {
-        box-shadow: 0 0 6px 0 #e0e0e0; }
-      .user.view .content .wishes li .wish .infos, .wishlist.view .content .wishes li .wish .infos {
-        padding: 12px; }
-      .user.view .content .wishes li .wish h3, .wishlist.view .content .wishes li .wish h3 {
-        font-family: "proxima-nova", sans-serif;
-        margin: 0; }
-      .user.view .content .wishes li .wish p, .wishlist.view .content .wishes li .wish p {
-        margin-bottom: 0; }
-        .user.view .content .wishes li .wish p a, .wishlist.view .content .wishes li .wish p a {
-          color: #cccccc;
-          font-size: 0.875em; }
-          .user.view .content .wishes li .wish p a:hover, .wishlist.view .content .wishes li .wish p a:hover {
-            color: #999999;
-            text-decoration: underline; }
-
-.wish.view header a.user {
-  margin-bottom: 20px; }
-.wish.view header h3 {
-  margin-bottom: 0; }
-.wish.view .share > div {
-  height: 50px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 4px; }
-.wish.view .details .photo {
-  position: relative;
-  display: block;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
-  overflow: hidden; }
-.wish.view .details img {
-  display: block;
-  width: 100%;
-  height: auto; }
-.wish.view .details a {
-  display: block; }
-.wish.view .details .price {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #6eb004;
-  color: white;
-  border-radius: 2px;
-  padding: 8px 13px 6px;
-  font-weight: 400;
-  font-size: 0.9375em; }
-.wish.view .details h5 {
-  color: #6eb004;
-  font-size: 0.875em;
-  font-weight: 600;
-  margin-bottom: 8px; }
-.wish.view .details .description p {
-  font-size: 1.125em;
-  line-height: 28px; }
-.wish.view .siblings {
-  margin-top: 80px;
-  background: #f4f4f4;
-  border-bottom: 1px solid #e0e0e0;
-  border-top: 1px solid #e0e0e0;
-  padding: 50px 0;
-  text-align: center; }
-  .wish.view .siblings h4 {
-    font-size: 1.125em;
-    margin-bottom: 40px; }
-  .wish.view .siblings .wish {
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    background: white;
-    border: 1px solid #e0e0e0;
+      float: right; }
+  .user.view .content aside .wishlists ul li.wishlist a:hover, .user.view .content aside .wishlists ul li.wishlist.active a, .wishlist.view .content aside .wishlists ul li.wishlist a:hover, .wishlist.view .content aside .wishlists ul li.wishlist.active a {
+    background: #6eb004;
+    color: white;
     border-radius: 2px;
-    text-align: center;
-    position: relative; }
-    .wish.view .siblings .wish img {
+    text-decoration: none; }
+    .user.view .content aside .wishlists ul li.wishlist a:hover span, .user.view .content aside .wishlists ul li.wishlist.active a span, .wishlist.view .content aside .wishlists ul li.wishlist a:hover span, .wishlist.view .content aside .wishlists ul li.wishlist.active a span {
+      color: white; }
+  .user.view .content aside .wishlists ul li.all a, .wishlist.view .content aside .wishlists ul li.all a {
+    color: #666666; }
+  .user.view .content aside .wishlists ul li.all a:hover, .user.view .content aside .wishlists ul li.all.active a, .wishlist.view .content aside .wishlists ul li.all a:hover, .wishlist.view .content aside .wishlists ul li.all.active a {
+    background: #f4f4f4;
+    color: #666666; }
+    .user.view .content aside .wishlists ul li.all a:hover span, .user.view .content aside .wishlists ul li.all.active a span, .wishlist.view .content aside .wishlists ul li.all a:hover span, .wishlist.view .content aside .wishlists ul li.all.active a span {
+      color: #666666; }
+  .user.view .content aside .wishlists ul li.add, .wishlist.view .content aside .wishlists ul li.add {
+    line-height: 38px;
+    border: 1px solid #cccccc;
+    box-shadow: inset 0 0 4px 2px #f4f4f4;
+    overflow: hidden;
+    border-radius: 2px;
+    padding-right: 0;
+    display: none; }
+    .user.view .content aside .wishlists ul li.add input, .wishlist.view .content aside .wishlists ul li.add input {
+      border: 0;
+      background: 0;
+      margin: 0; }
+      .user.view .content aside .wishlists ul li.add input[type=text], .wishlist.view .content aside .wishlists ul li.add input[type=text] {
+        float: left;
+        width: 85%;
+        width: calc(100% - 45px);
+        font-family: "proxima-nova", sans-serif;
+        font-size: 1em;
+        padding: 9px 0; }
+      .user.view .content aside .wishlists ul li.add input.error::-webkit-input-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error::-webkit-input-placeholder {
+        color: #ba1f01; }
+      .user.view .content aside .wishlists ul li.add input.error::-moz-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error::-moz-placeholder {
+        color: #ba1f01; }
+      .user.view .content aside .wishlists ul li.add input.error:-moz-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error:-moz-placeholder {
+        color: #ba1f01; }
+      .user.view .content aside .wishlists ul li.add input.error:-ms-input-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error:-ms-input-placeholder {
+        color: #ba1f01; }
+    .user.view .content aside .wishlists ul li.add .private_checkbox, .wishlist.view .content aside .wishlists ul li.add .private_checkbox {
+      float: left;
+      width: 15%;
+      width: calc(45px);
+      text-align: right; }
+      .user.view .content aside .wishlists ul li.add .private_checkbox label, .wishlist.view .content aside .wishlists ul li.add .private_checkbox label {
+        width: 100%;
+        position: relative;
+        top: 2px;
+        color: #e0e0e0;
+        padding: 9px 15px;
+        cursor: pointer;
+        -webkit-transition: color 0.2s ease-in-out;
+        -moz-transition: color 0.2s ease-in-out;
+        transition: color 0.2s ease-in-out; }
+        .user.view .content aside .wishlists ul li.add .private_checkbox label:hover, .wishlist.view .content aside .wishlists ul li.add .private_checkbox label:hover {
+          color: #cccccc; }
+      .user.view .content aside .wishlists ul li.add .private_checkbox input, .wishlist.view .content aside .wishlists ul li.add .private_checkbox input {
+        display: none; }
+        .user.view .content aside .wishlists ul li.add .private_checkbox input:checked + label, .wishlist.view .content aside .wishlists ul li.add .private_checkbox input:checked + label {
+          color: #2c2c2c; }
+  .user.view .content aside .wishlists ul .more a, .wishlist.view .content aside .wishlists ul .more a {
+    color: #cccccc;
+    font-size: 0.9375em; }
+    .user.view .content aside .wishlists ul .more a:hover, .wishlist.view .content aside .wishlists ul .more a:hover {
+      background: none;
+      color: #2c2c2c;
+      text-decoration: underline; }
+.user.view .content aside .following header, .user.view .content aside .followers header, .wishlist.view .content aside .following header, .wishlist.view .content aside .followers header {
+  cursor: pointer;
+  -webkit-transition: border 0.2s ease-in-out;
+  -moz-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out; }
+  .user.view .content aside .following header:hover, .user.view .content aside .followers header:hover, .wishlist.view .content aside .following header:hover, .wishlist.view .content aside .followers header:hover {
+    border-color: #6eb004; }
+.user.view .content aside .following .wrapper, .user.view .content aside .followers .wrapper, .wishlist.view .content aside .following .wrapper, .wishlist.view .content aside .followers .wrapper {
+  display: none;
+  overflow: hidden; }
+.user.view .content aside .following ul, .user.view .content aside .followers ul, .wishlist.view .content aside .following ul, .wishlist.view .content aside .followers ul {
+  overflow: hidden;
+  padding: 0 11px;
+  margin: 22px 0 5px; }
+.user.view .content aside .following li, .user.view .content aside .followers li, .wishlist.view .content aside .following li, .wishlist.view .content aside .followers li {
+  float: left;
+  padding: 4px;
+  width: 23%;
+  margin: 1%; }
+  .user.view .content aside .following li a, .user.view .content aside .followers li a, .wishlist.view .content aside .following li a, .wishlist.view .content aside .followers li a {
+    float: left;
+    opacity: 0.8;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; }
+    .user.view .content aside .following li a img, .user.view .content aside .followers li a img, .wishlist.view .content aside .following li a img, .wishlist.view .content aside .followers li a img {
       width: 100%;
       height: auto;
-      display: block; }
-    .wish.view .siblings .wish .infos {
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      -webkit-transition: opacity 0.2s ease-in-out;
-      -moz-transition: opacity 0.2s ease-in-out;
-      transition: opacity 0.2s ease-in-out; }
-    .wish.view .siblings .wish .top {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px; }
-    .wish.view .siblings .wish h5 {
-      font-size: 1.125em;
-      line-height: 20px;
-      text-align: left;
-      font-weight: 600;
-      margin-bottom: 5px; }
-    .wish.view .siblings .wish p {
-      margin-bottom: 0;
-      text-align: left;
-      font-weight: 500; }
-      .wish.view .siblings .wish p.price {
-        color: #6eb004; }
-    .wish.view .siblings .wish > a {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%; }
-    .wish.view .siblings .wish:hover .infos {
+      border-radius: 40px;
+      float: left; }
+    .user.view .content aside .following li a:hover, .user.view .content aside .followers li a:hover, .wishlist.view .content aside .following li a:hover, .wishlist.view .content aside .followers li a:hover {
       opacity: 1; }
-  .wish.view .siblings .col-sm-3 {
-    float: none;
-    display: inline-block;
-    vertical-align: top; }
+.user.view .content .wishes li, .wishlist.view .content .wishes li {
+  margin-bottom: 30px; }
+  .user.view .content .wishes li .wish, .wishlist.view .content .wishes li .wish {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out; }
+    .user.view .content .wishes li .wish img, .wishlist.view .content .wishes li .wish img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #e0e0e0; }
+    .user.view .content .wishes li .wish:hover, .wishlist.view .content .wishes li .wish:hover {
+      box-shadow: 0 0 6px 0 #e0e0e0; }
+    .user.view .content .wishes li .wish .infos, .wishlist.view .content .wishes li .wish .infos {
+      padding: 12px; }
+    .user.view .content .wishes li .wish h3, .wishlist.view .content .wishes li .wish h3 {
+      font-family: "proxima-nova", sans-serif;
+      margin: 0;
+      line-height: 22px; }
+    .user.view .content .wishes li .wish p a, .wishlist.view .content .wishes li .wish p a {
+      color: #cccccc;
+      font-size: 0.875em; }
+      .user.view .content .wishes li .wish p a:hover, .wishlist.view .content .wishes li .wish p a:hover {
+        color: #999999;
+        text-decoration: underline; }
+
+.wish.view .container-fluid {
+  max-width: 1200px; }
+.wish.view .content {
+  		/* .wish_related{
+  			margin-top: 50px;
+  
+  			h4{
+  				font-family: $tisa;
+  				font-weight: 600;
+  				font-size: em(16);
+  				line-height: $lh * 1.2;
+  				text-transform: uppercase;
+  				padding: 18px 15px;
+  				border-bottom: 1px solid $gray12;
+  				margin-bottom: 30px;
+  			}
+  
+  			ul{
+  				padding: 0 15px;
+  
+  				.wish{
+  					border: 1px solid $gray12;
+  					border-radius: 2px;
+  					@include transition(box-shadow 0.2s ease-in-out);
+  
+  					a{
+  						display: block;
+  					}
+  
+  					img{
+  						display: block;
+  						width: 100%;
+  						height: auto;
+  					}
+  
+  					&:hover{
+  						box-shadow: 0 0 6px 0 $gray12;
+  					}
+  				}
+  			}
+  		} */ }
+  .wish.view .content aside .information p, .wish.view .content aside .actions p {
+    padding: 0 15px;
+    line-height: 38px;
+    margin-bottom: 0; }
+  .wish.view .content aside .information a {
+    font-weight: 600;
+    color: #6eb004; }
+  .wish.view .content aside .actions a {
+    color: #b2b2b2;
+    font-family: "ff-tisa-sans-web-pro", sans-serif;
+    font-weight: 600;
+    font-size: 0.875em;
+    text-transform: uppercase; }
+    .wish.view .content aside .actions a.green {
+      color: #6eb004; }
+    .wish.view .content aside .actions a span {
+      font-size: 1.125em;
+      margin-right: 8px;
+      position: relative;
+      top: 2px; }
+  .wish.view .content .heart {
+    margin-top: 16px; }
+    .wish.view .content .heart .current_wish img {
+      width: 100%;
+      height: auto;
+      border-radius: 2px;
+      border: 1px solid #e0e0e0; }
+    .wish.view .content .heart .current_wish h3 {
+      font-size: 1.5em;
+      line-height: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 5px 0 2px; }
+    .wish.view .content .heart .current_wish p.price {
+      color: #6eb004;
+      font-weight: 600;
+      font-size: 1.125em;
+      margin-bottom: 20px; }
+    .wish.view .content .heart .current_wish p.description {
+      font-size: 1.0625em;
+      line-height: 28px;
+      margin-bottom: 16px; }
+      .wish.view .content .heart .current_wish p.description:last-of-type {
+        margin-bottom: 0; }
+    .wish.view .content .heart .current_wish span.description_more {
+      display: block;
+      margin-top: 10px; }
+  .wish.view .content .wish_navigation {
+    margin-top: 40px; }
+    .wish.view .content .wish_navigation a {
+      font-family: "ff-tisa-sans-web-pro", sans-serif;
+      font-size: 0.875em;
+      text-transform: uppercase;
+      color: #b2b2b2; }
+      .wish.view .content .wish_navigation a:before, .wish.view .content .wish_navigation a:after {
+        font-size: 1.125em;
+        text-decoration: none; }
+    .wish.view .content .wish_navigation .prev {
+      float: left; }
+      .wish.view .content .wish_navigation .prev a:before {
+        content: "<\00a0\00a0"; }
+    .wish.view .content .wish_navigation .next {
+      float: right;
+      text-align: right; }
+      .wish.view .content .wish_navigation .next a:after {
+        content: "\00a0\00a0>"; }
 
 .modal {
   position: fixed;

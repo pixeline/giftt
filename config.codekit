@@ -365,16 +365,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_assets\/images\/profile\/pierrestoffe1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 8451,
-		"inputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe1.jpg",
-		"outputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe1.jpg",
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/_assets\/images\/test.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -837,14 +827,6 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
-	"\/_include\/user_header.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_include\/user_header.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
 	"\/_include\/user_info.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1173,27 +1155,27 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
-	"\/view\/user\/index.php": {
+	"\/view\/user_old\/index.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/view\/user\/index.php",
+		"inputAbbreviatedPath": "\/view\/user_old\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
-	"\/view\/user\/view.php": {
+	"\/view\/user_old\/view.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/view\/user\/view.php",
+		"inputAbbreviatedPath": "\/view\/user_old\/view.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
-	"\/view\/user\/view_do.php": {
+	"\/view\/user_old\/view_do.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/view\/user\/view_do.php",
+		"inputAbbreviatedPath": "\/view\/user_old\/view_do.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
@@ -1210,6 +1192,14 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/wish\/view.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/view\/wish\/view_do.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/view\/wish\/view_do.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},

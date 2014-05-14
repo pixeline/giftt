@@ -11,7 +11,7 @@ if(!isset($me)){
 
 	require_once $root . '/_include/user_info.php';
 
-	if($user_id != $me_id){
+	if($user['id'] != $me['id']){
 		header("Location:/" . $user_username);
 	}
 	require_once'add.php';

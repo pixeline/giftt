@@ -1,5 +1,24 @@
 <?php
 
+// FUNCTIONS
+
+function searchForId($id, $array){
+	foreach($array as $key => $val){
+		if($val['id'] === $id){
+			return $key;
+		}
+	}
+	return null;
+}
+
+function shortUrl($string){
+	$shorter = str_replace('http://', '', $string);
+	$shorter = str_replace('www.', '', $shorter);
+	$shorter = explode('/', $shorter);
+	return $shorter[0];
+}
+
+
 // BASICS
 
 if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") != false){ // Local dev server

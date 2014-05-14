@@ -1,159 +1,174 @@
 .wish.view{
 
-	header{
-
-		a.user{
-			margin-bottom: 20px;
-		}
-
-		h3{
-			margin-bottom: 0;
-		}
+	.container-fluid{
+		max-width: 1200px;
 	}
 
-	.share{
+	.content{
 
-		& > div{
-			height: 50px;
-			display: inline-block;
-			vertical-align: middle;
-			margin-right: 4px;
-		}
-	}
+		aside{
 
-	.details{
+			.information, .actions{
 
-		.photo{
-			position: relative;
-			display: block;
-			border: 1px solid $gray12;
-			border-radius: 2px;
-			overflow: hidden;
-		}
+				.cont{
 
-		img{
-			display: block;
-			width: 100%;
-			height: auto;
-		}
+				}
 
-		a{
-			display: block;
-		}
-
-		.price{
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			background: $green;
-			color: $white;
-			border-radius: 2px;
-			padding: 8px 13px 6px;
-			font-weight: 400;
-			font-size: em(15);
-		}
-
-		h5{
-			color: $green;
-			font-size: em(14);
-			font-weight: 600;
-			margin-bottom: 8px;
-		}
-
-		.description{
-
-			p{
-				font-size: em(18);
-				line-height: $lh * 1.4;
-			}
-		}
-	}
-
-	.siblings{
-		margin-top: 80px;
-		background: $gray4;
-		border-bottom: 1px solid $gray12;
-		border-top: 1px solid $gray12;
-		padding: 50px 0;
-		text-align: center;
-
-		h4{
-			font-size: em(18);
-			margin-bottom: 40px;
-		}
-
-		.wish{
-			display: block;
-			overflow: hidden;
-			width: 100%;
-			background: $white;
-			border: 1px solid $gray12;
-			border-radius: 2px;
-			text-align: center;
-			position: relative;
-
-			img{
-				width: 100%;
-				height: auto;
-				display: block;
+				p{
+					padding: 0 15px;
+					line-height: 38px;
+					margin-bottom: 0;
+				}
 			}
 
-			.infos{
-				opacity: 0;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background: rgba($white, 0.9);
-				@include transition(opacity 0.2s ease-in-out);
-			}
+			.information{
 
-			.top{
-				position: absolute;
-				top: 20px;
-				left: 20px;
-				right: 20px;
-			}
-
-			h5{
-				font-size: em(18);
-				line-height: $lh * 1;
-				text-align: left;
-				font-weight: 600;
-				margin-bottom: 5px;
-			}
-
-			p{
-				margin-bottom: 0;
-				text-align: left;
-				font-weight: 500;
-
-				&.price{
+				a{
+					font-weight: 600;
 					color: $green;
 				}
 			}
 
-			& > a{
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
+			.actions{
+
+				a{
+					color: $gray30;
+					font-family: $tisa;
+					font-weight: 600;
+					font-size: em(14);
+					text-transform: uppercase;
+
+					&.green{
+						color: $green;
+					}
+
+					span{
+						font-size: em(18);
+						margin-right: 8px;
+						position: relative;
+						top: 2px;
+					}
+				}
+
 			}
+		}
 
-			&:hover{
+		.heart{
+			margin-top: 16px;
 
-				.infos{
-					opacity: 1;
+			.current_wish{
+
+				img{
+					width: 100%;
+					height: auto;
+					border-radius: 2px;
+					border: 1px solid $gray12;
+				}
+
+				h3{
+					font-size: em(24);
+					line-height: $lh * 1.4;
+					font-weight: 700;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					margin: 5px 0 2px;
+				}
+
+				p.price{
+					color: $green;
+					font-weight: 600;
+					font-size: em(18);
+					margin-bottom: 20px;
+				}
+
+				p.description{
+					font-size: em(17);
+					line-height: $lh * 1.4;
+					margin-bottom: 16px;
+
+					&:last-of-type{
+						margin-bottom: 0;
+					}
+				}
+
+				span.description_more{
+					display: block;
+					margin-top: 10px;
 				}
 			}
 		}
 
-		.col-sm-3{
-			float: none;
-			display: inline-block;
-			vertical-align: top;
+		/* .wish_related{
+			margin-top: 50px;
+
+			h4{
+				font-family: $tisa;
+				font-weight: 600;
+				font-size: em(16);
+				line-height: $lh * 1.2;
+				text-transform: uppercase;
+				padding: 18px 15px;
+				border-bottom: 1px solid $gray12;
+				margin-bottom: 30px;
+			}
+
+			ul{
+				padding: 0 15px;
+
+				.wish{
+					border: 1px solid $gray12;
+					border-radius: 2px;
+					@include transition(box-shadow 0.2s ease-in-out);
+
+					a{
+						display: block;
+					}
+
+					img{
+						display: block;
+						width: 100%;
+						height: auto;
+					}
+
+					&:hover{
+						box-shadow: 0 0 6px 0 $gray12;
+					}
+				}
+			}
+		} */
+
+		.wish_navigation{
+			margin-top: 40px;
+
+			a{
+				font-family: $tisa;
+				font-size: em(14);
+				text-transform: uppercase;
+				color: $gray30;
+
+				&:before, &:after{
+					font-size: em(18);
+					text-decoration: none;
+				}
+			}
+
+			.prev{
+				float: left;
+
+				a:before{
+					content: "<\00a0\00a0";
+				}
+			}
+
+			.next{
+				float: right;
+				text-align: right;
+
+				a:after{
+					content: "\00a0\00a0>";
+				}
+			}
 		}
 	}
+	
 }

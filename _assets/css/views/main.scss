@@ -22,18 +22,7 @@ h2{
 	padding: 0 100px;
 }
 
-/* h3{
-	font-size: em(20);
-	line-height: $lh * 1.5;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	margin-bottom: 32px;
-	text-align: center;
-} */
-
 p{
-	margin: 0 auto $lh * 1.2;
 	font-size: em(16);
 	line-height: $lh * 1.2;
 }
@@ -51,15 +40,6 @@ a{
 
 strong{
 	font-weight: 600;
-}
-
-hr{
-	margin-top: 40px;
-	background-color: $gray4;
-	border: 1px solid $gray4;
-	max-width: 25%;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .mute{
@@ -90,6 +70,19 @@ hr{
 }
 
 
+// MAIN
+
+.main{
+	border-top: 3px solid $green;
+	width: 100%;
+	float: left;
+	background: $white;
+	overflow: auto;
+	padding-bottom: 20px;
+	@include transition(width 0.2s ease-in-out);
+}
+
+
 // HEADER
 
 .main > header{
@@ -107,6 +100,7 @@ hr{
 
 	p{
 		max-width: 450px;
+		margin: 0 auto;
 	}
 
 	.button{
@@ -117,82 +111,171 @@ hr{
 }
 
 
-// MAIN
+// NAV
 
-.main{
-	border-top: 3px solid $green;
-	width: 100%;
-	float: left;
-	background: $white;
-	overflow: auto;
-	padding-bottom: 20px;
-	@include transition(width 0.2s ease-in-out);
-}
+nav{
 
-.content{
-	padding: 60px 0;
-}
-
-.menu{
-	text-align: center;
-	margin-bottom: 20px;
-
-	ul{
-		display: inline-block;
-		border-top: 2px solid $gray20;
+	div{
+		position: absolute;
+		top: 10px;
+		z-index: 10;
 	}
 
-	li{
-		float: left;
-		padding: 10px 20px 0;
-		border-top: 2px solid transparent;
-		text-transform: uppercase;
-		font-weight: 600;
-		font-size: em(14);
-		margin-top: -2px;
-		color: $gray30;
-		cursor: pointer;
-		@include transition(color 0.2s ease-in-out, border 0.2s ease-in-out);
+	#logo{
+		left: 10px;
+		background: #7FBA00;
 
-		&.active{
-			border-color: $green;
-			color: $black;
-
-			&:hover{
-				border-color: $green;
-				color: $black;
+		a{
+			text-indent: -9999px;
+			width: 65px;
+			height: 65px;
+			background-image: url(../images/logo.png);
+			background-size: 100%;
+			background-position: center center;
+			background-repeat: no-repeat;
+			@include hidpi(1.5){
+				background-image: url(../images/logo_square.png);
 			}
 		}
+	}
+
+	[class^="icon-"]{
+		width: 40px;
+		line-height: 55px;
+		font-size: 20px;
+		color: $gray50;
+		display: block;
+		cursor: pointer;
+		@include transition(color 0.2s ease-in-out);
 
 		&:hover{
 			color: $black;
 		}
 	}
-}
 
-.intro{
-	margin-bottom: 60px;
-	text-align: center;
-
-	h2{
-		margin-bottom: 4px;
+	#settings{
+		right: 60px;
 	}
 
-	p.mute{
-		text-align: center;
-		max-width: 450px;
-	}
-
-	.button{
-		@include button($black, $white);
+	ul.settings-list{
+		text-align: left;
+		display: none;
 		position: absolute;
-		top: 0;
-		right: 15px;
+		top: 52px;
+		right: 60px;
+		z-index: 100;
+		background: white;
+		border: 2px solid $gray12;
+		border-radius: 2px;
+		font-weight: 600;
+
+		li{
+			border-bottom: 1px solid $gray12;
+
+			&:last-child{
+				border-bottom: 0;
+			}
+		}
+
+		a{
+			padding: 10px 18px 8px;
+			font-size: em(15);
+			width: 100%;
+		}
+
+		&.show{
+			display: block;
+		}
+	}
+
+	#show_hide{
+		right: 20px;
 	}
 }
 
 
-// ASIDE
+// CONTENT
+
+.content{
+	padding: 50px 0;
+	overflow: hidden;
+
+	aside{
+		width: 20%;
+		width: calc(280px);
+
+		.pod{
+			margin-bottom: 10px;
+			clear: both;
+		}
+
+		ul, .cont{
+			margin-top: 16px;
+		}
+
+		header{
+			padding: 0 15px;
+			border-bottom: 1px solid $gray12;
+			font-size: em(16);
+			overflow: hidden;
+
+			h4{
+				line-height: 60px;
+				font-weight: 600;
+				font-family: $tisa;
+				text-transform: uppercase;
+				float: left;
+			}
+
+			a.icon, span{
+				float: right;
+				line-height: 60px;
+				font-size: em(16);
+				font-weight: 600;
+				color: $gray20;
+			}
+		}
+	}
+
+	.heart{
+		width: 80%;
+		width: calc(100% - 280px);
+		padding-left: 25px;
+
+		.action{
+			padding: 0 15px;
+
+			p{
+				margin-bottom: 0;
+			}
+
+			a{
+				float: right;
+				line-height: 60px;
+				text-align: right;
+				color: $gray30;
+				font-family: $tisa;
+				font-weight: 600;
+				font-size: em(14);
+				text-transform: uppercase;
+
+				&.green{
+					color: $green;
+				}
+			}
+
+			.icon{
+				margin-left: 6px;
+				font-size: em(18);
+				position: relative;
+				top: 1px;
+			}
+		}
+	}
+}
+
+
+// FEED
 
 body.withAside{
 
@@ -308,89 +391,6 @@ footer{
 		color: inherit;
 		font-weight: inherit;
 		font-size: inherit;
-	}
-}
-
-
-// MENU
-
-nav{
-
-	div{
-		position: absolute;
-		top: 10px;
-		z-index: 10;
-	}
-
-	#logo{
-		left: 10px;
-		background: #7FBA00;
-
-		a{
-			text-indent: -9999px;
-			width: 65px;
-			height: 65px;
-			background-image: url(../images/logo.png);
-			background-size: 100%;
-			background-position: center center;
-			background-repeat: no-repeat;
-			@include hidpi(1.5){
-				background-image: url(../images/logo_square.png);
-			}
-		}
-	}
-
-	[class^="icon-"]{
-		width: 40px;
-		line-height: 55px;
-		font-size: 20px;
-		color: $gray50;
-		display: block;
-		cursor: pointer;
-		@include transition(color 0.2s ease-in-out);
-
-		&:hover{
-			color: $black;
-		}
-	}
-
-	#settings{
-		right: 60px;
-	}
-
-	ul.settings-list{
-		text-align: left;
-		display: none;
-		position: absolute;
-		top: 52px;
-		right: 60px;
-		z-index: 100;
-		background: white;
-		border: 2px solid $gray12;
-		border-radius: 2px;
-		font-weight: 600;
-
-		li{
-			border-bottom: 1px solid $gray12;
-
-			&:last-child{
-				border-bottom: 0;
-			}
-		}
-
-		a{
-			padding: 10px 18px 8px;
-			font-size: em(15);
-			width: 100%;
-		}
-
-		&.show{
-			display: block;
-		}
-	}
-
-	#show_hide{
-		right: 20px;
 	}
 }
 

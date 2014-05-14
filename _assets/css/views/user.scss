@@ -1,8 +1,6 @@
 .user.view, .wishlist.view{
 
-	// HEADER
-
-	header{
+	.main > header{
 
 		a.user{
 			margin-bottom: 20px;
@@ -13,51 +11,16 @@
 		}
 
 	}
-}
-
-.user.view, .wishlist.view{
 
 	.content{
 
-		.icon{
-			font-size: em(16) !important;
-			font-weight: 600;
-		}
-
 		aside{
-			width: 20%;
-			width: calc(280px);
 
-			.pod{
-				margin-bottom: 10px;
-				clear: both;
-			}
-
-			header, .wishlists li a{
+			li.wishlist a, li.add{
 				padding: 0 15px;
 			}
 
 			header{
-				border-bottom: 1px solid $gray12;
-				font-size: em(16);
-				overflow: hidden;
-				margin-bottom: 12px;
-
-				h4{
-					line-height: 60px;
-					font-weight: 600;
-					font-family: $tisa;
-					text-transform: uppercase;
-					float: left;
-				}
-
-				a.icon, span{
-					float: right;
-					line-height: 60px;
-					font-size: em(14);
-					font-weight: 600;
-					color: $gray20;
-				}
 
 				a.icon{
 
@@ -72,6 +35,10 @@
 				ul{
 					clear: both;
 
+					li{
+						margin-bottom: 2px;
+					}
+
 					a{
 						line-height: 38px;
 						color: $green;
@@ -84,7 +51,7 @@
 						}
 					}
 
-					li{
+					li.wishlist{
 
 						a:hover, &.active a{
 							background: $green;
@@ -113,6 +80,66 @@
 							}
 						}
 
+					}
+
+					li.add{
+						line-height: 38px;
+						border: 1px solid $gray20;
+						box-shadow: inset 0 0 4px 2px $gray4;
+						overflow: hidden;
+						border-radius: 2px;
+						padding-right: 0;
+						display: none;
+
+						input{
+							border: 0;
+							background: 0;
+							margin: 0;
+
+							&[type=text]{
+								float: left;
+								width: 85%;
+								width: calc(100% - 45px);
+								font-family: $proxima;
+								font-size: em(16);
+								padding: 9px 0;
+							}
+
+							&.error{
+								@include placeholder{
+									color: $red;
+								}
+							}
+						}
+
+						.private_checkbox{
+							float: left;
+							width: 15%;
+							width: calc(45px);
+							text-align: right;
+
+							label{
+								width: 100%;
+								position: relative;
+								top: 2px;
+								color: $gray12;
+								padding: 9px 15px;
+								cursor: pointer;
+								@include transition(color 0.2s ease-in-out);
+
+								&:hover{
+									color: $gray20;
+								}
+							}
+
+							input{
+								display: none;
+
+								&:checked + label{
+									color: $black;
+								}
+							}
+						}
 					}
 
 					.more{
@@ -150,13 +177,14 @@
 				ul{
 					overflow: hidden;
 					padding: 0 11px;
-					margin: 10px 0 5px;
+					margin: 22px 0 5px;
 				}
 
 				li{
 					float: left;
 					padding: 4px;
-					width: 25%;
+					width: 23%;
+					margin: 1%;
 
 					a{
 						float: left;
@@ -178,45 +206,7 @@
 			}
 		}
 
-		.mosaic{
-			width: 80%;
-			width: calc(100% - 280px);
-			padding-left: 25px;
-
-			.action{
-				padding: 0 15px;
-
-				p{
-					margin-bottom: 0;
-				}
-
-				a{
-					float: right;
-					line-height: 60px;
-					text-align: right;
-					color: $gray30;
-					font-family: $tisa;
-					font-weight: 600;
-					font-size: em(14);
-					text-transform: uppercase;
-
-					&.green{
-						color: $green;
-					}
-
-					&:after{
-						margin-left: 8px;
-					}
-				}
-
-				.icon{
-					margin-left: 6px;
-				}
-			}
-		}
-
 		.wishes{
-			margin-bottom: 30px;
 
 			li{
 				margin-bottom: 30px;
@@ -243,10 +233,10 @@
 					h3{
 						font-family: $proxima;
 						margin: 0;
+						line-height: $lh * 1.1;
 					}
 
 					p{
-						margin-bottom: 0;
 
 						a{
 							color: $gray20;

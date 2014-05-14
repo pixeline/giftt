@@ -13,8 +13,8 @@ function slugify($text){ // from http://stackoverflow.com/questions/2955251/php-
 	return $text;
 }
 
-if(isset($_POST['add_wishlist'])){
-	$wishlist_author = $me_id;
+if(isset($_POST)){
+	$wishlist_author = $me['id'];
 	$wishlist_name = htmlspecialchars($_POST['name']);
 	$wishlist_slug = slugify($wishlist_name);
 
@@ -42,7 +42,7 @@ if(isset($_POST['add_wishlist'])){
 			'slug' => $wishlist_slug,
 			'private' => $wishlist_private
 		));
-		header("Location:/" . $me_username . '/' . $wishlist_slug);
+		header("Location:/" . $me['username'] . '/' . $wishlist_slug);
 	}else{
 		$message = '<p>You must correct the following fields :</p>';
 		$message .= '<ul>';

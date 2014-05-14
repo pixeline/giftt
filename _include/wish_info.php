@@ -5,30 +5,20 @@ require_once $root . '/_include/wishlist_info.php';
 
 // GET WISHLIST INFOS
 
-$wish_id = $_GET['wish'];
+$get_wish = $_GET['wish'];
 
-$query = $db->prepare("SELECT * FROM wishes WHERE id = :id AND wishlist = :wishlist AND removed = :removed");
+$query = $db->prepare("SELECT * FROM wishes WHERE id = :id AND wishlist = :wishlist AND removed = 0");
 $query->execute(array(
-	':id' => $wish_id,
-	':wishlist' => $current_wishlist_id,
-	":removed" => 0
+	':id' => $get_wish,
+	':wishlist' => $current_wishlist['id']
 ));
 
 if($query->rowCount() == 0){
 	header("Location:/404.php");
 }else{
-	$wish = $query->fetch();
-	$wish_id = $wish['id'];
-	$wish_author = $wish['author'];
-	$wish_wishlist = $wish['wishlist'];
-	$wish_name = $wish['name'];
-	$wish_picture = $wish['picture'];
-	$wish_description = $wish['description'];
-	$wish_notes = $wish['notes'];
-	$wish_price = $wish['price'];
-	$wish_origin = $wish['origin'];
-	$wish_date = strtotime($wish['date']);
-	$wish_url = $user_username . "/" . $wishlist_slug . "/" . $wish_id;
+	$current_wish = $query->fetch(PDO::FETCH_ASSOC);
+	$current_wish_date = strtotime($current_wish['date']);
+	$current_wish_url = $user['username'] . "/" . $current_wishlist['slug'] . "/" . $current_wish['id'];
 }
 
 ?>
