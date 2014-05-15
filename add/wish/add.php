@@ -87,7 +87,7 @@
 							</div>
 							
 							<label for="description"><strong>Description</strong></label>
-							<textarea id="description" name="description" placeholder="Description" ><?php if(isset($wish_description)) echo $wish_description ?></textarea>
+							<textarea id="description" name="description" placeholder="Description of the item" ><?php if(isset($wish_description)) echo $wish_description ?></textarea>
 						</div>
 						<div class="col-sm-8 col-sm-offset-4">
 							<input class="text" type="submit" name="add_wish" value="Add your wish" />

@@ -8,7 +8,7 @@
 
 <?php require_once 'view_do.php'; ?>
 
-<body class="wish view nojs <?php if($me['feed'] == 1){ echo "withAside"; } ?>">
+<body class="wish view nojs">
 
 	<section class="main">
 
@@ -49,37 +49,6 @@
 						<?php } ?>
 					</div>
 				</div>
-
-				<?php if($prev_wish || $next_wish){ ?>
-
-				<!-- NAVIGATION -->
-				<div class="wish_navigation row">
-					<?php 
-						if($prev_wish){
-							$wishlist_index = searchForId($prev_wish['wishlist'], $wishlists);
-							$prev_wish_url = $user['username'] . '/' . $wishlists[$wishlist_index]['slug'] . '/' . $prev_wish['id'];
-					?>
-					<div class="prev col-sm-4 col-sm-offset-4">
-						<p>
-							<a href="/<?php echo $prev_wish_url; ?>"><?php echo $prev_wish['name']; ?></a>
-						</p>
-					</div>
-					<?php 
-						}
-						
-						if($next_wish){
-							$wishlist_index = searchForId($next_wish['wishlist'], $wishlists);
-							$next_wish_url = $user['username'] . '/' . $wishlists[$wishlist_index]['slug'] . '/' . $next_wish['id'];
-					?>
-					<div class="next col-sm-4">
-						<p>
-							<a href="/<?php echo $next_wish_url; ?>"><?php echo $next_wish['name']; ?></a>
-						</p>
-					</div>
-					<?php } ?>
-				</div>
-
-				<?php } ?>
 			</section>
 
 			<!-- SIDEBAR -->
@@ -115,6 +84,39 @@
 				</div>
 
 			</aside>
+
+			<?php if($prev_wish || $next_wish){ ?>
+
+			<!-- NAVIGATION -->
+			<div class="wish_navigation col-sm-6 col-sm-offset-3">
+				<div class="row">
+					<?php 
+						if($prev_wish){
+							$wishlist_index = searchForId($prev_wish['wishlist'], $wishlists);
+							$prev_wish_url = $user['username'] . '/' . $wishlists[$wishlist_index]['slug'] . '/' . $prev_wish['id'];
+					?>
+					<div class="prev col-sm-6">
+						<p>
+							<a href="/<?php echo $prev_wish_url; ?>"><?php echo $prev_wish['name']; ?></a>
+						</p>
+					</div>
+					<?php 
+						}
+						
+						if($next_wish){
+							$wishlist_index = searchForId($next_wish['wishlist'], $wishlists);
+							$next_wish_url = $user['username'] . '/' . $wishlists[$wishlist_index]['slug'] . '/' . $next_wish['id'];
+					?>
+					<div class="next col-sm-6">
+						<p>
+							<a href="/<?php echo $next_wish_url; ?>"><?php echo $next_wish['name']; ?></a>
+						</p>
+					</div>
+					<?php } ?>
+				</div>
+			</div>
+
+			<?php } ?>
 
 		</section>
 

@@ -9,6 +9,9 @@
 		<?php if(!empty($user['description'])){ ?>
 			<p class="description"><?php echo $user['description']; ?></p>
 		<?php } ?>
+		<?php if($mine){ ?>
+			<a class="settings" href="#">Edit my profile</a>
+		<?php } ?>
 
 	</div>
 

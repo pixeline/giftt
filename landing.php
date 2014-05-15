@@ -25,8 +25,8 @@
 		<div class="container intro">
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1">
-					<h2>Amazing slogan about wishlists</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue ipsum, pellentesque nec pretium eu, elementum quis nibh. Aenean dictum sapien nulla.</p>
+					<h2>Make wishes, share wishlists</h2>
+					<p>With Giftt, be sure to remember every gift idea you have, whether it's for you or a friend. <br />Add wishes, manage wishlists and share them with friends, all in a single place.</p>
 				</div>
 				<a class="register button" href="/register">Create your first wishlist</a>
 			</div>
@@ -37,23 +37,23 @@
 		<div class="container features">
 			<div class="row">
 				<div class="col-sm-12">
-					<h3>Giftt.me a reason...</h3>
+					<h3>This makes Giftt unique</h3>
 				</div>
 				<ul>
 					<li class="col-xs-12 col-sm-4">
-						<img src="/_assets/images/landing/feature1.jpg" alt="Make wishes, share wishes" />
-						<h4>Make wishes, share wishes</h4>
-						<p>Create wishlists for you, your friends, your family, and <strong>share them instantly</strong> with everyone that matters.</p>
+						<img src="/_assets/images/landing/feature1.jpg" alt="Share your wishlists" />
+						<h4>Share your wishlists</h4>
+						<p>Create wishlists for you, your friends and your family, and <strong>share them instantly</strong> with everyone that matters.</p>
 					</li>
 
 					<li class="col-xs-12 col-sm-4">
-						<img src="/_assets/images/landing/feature2.jpg" alt="Keep your wishlists safe" />
+						<img src="/_assets/images/landing/feature1.jpg" alt="Keep your wishlists safe" />
 						<h4>Keep your wishlists safe</h4>
-						<p>Browse the Internet for gift ideas and keep them safe in a <strong>private wishlist</strong>. You can be sure nobody but you will see this wishlist.</p>
+						<p>Browse the Internet for gift ideas and keep them safe in a <strong>private wishlist</strong>. You can be sure you alone will see this wishlist.</p>
 					</li>
 
 					<li class="col-xs-12 col-sm-4">
-						<img src="/_assets/images/landing/feature3.jpg" alt="Browser extension" />
+						<img src="/_assets/images/landing/feature1.jpg" alt="Browser extension" />
 						<h4>Browser extension</h4>
 						<p>With the <strong>Giftt browser extension</strong>, saving gift ideas into one of your Giftt wishlists only takes a second.</p>
 					</li>

@@ -24,21 +24,22 @@ foreach($wishlists as $wishlist){
 	$wishlists_id[] = $wishlist['id'];
 }
 
-if(isset($wishlists_id[0])){
-	$wishlists_id = join(',', $wishlists_id);
-}
-
-
+	
 // GET WISHES
 
-$query_wishes = $db->prepare("SELECT * FROM wishes WHERE removed = 0 AND author = :id AND wishlist IN ($wishlists_id) ORDER BY id DESC");
-$query_wishes->execute(array(
-	':id' => $user['id']
-));
-
 $wishes = array();
-while($wish = $query_wishes->fetch(PDO::FETCH_ASSOC)){
-	$wishes[] = $wish;
+if(isset($wishlists_id[0])){
+	$wishlists_id = join(',', $wishlists_id);
+
+	$query_wishes = $db->prepare("SELECT * FROM wishes WHERE removed = 0 AND author = :id AND wishlist IN ($wishlists_id) ORDER BY id DESC");
+	$query_wishes->execute(array(
+		':id' => $user['id']
+	));
+
+	$wishes = array();
+	while($wish = $query_wishes->fetch(PDO::FETCH_ASSOC)){
+		$wishes[] = $wish;
+	}
 }
 
 

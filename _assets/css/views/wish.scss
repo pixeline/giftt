@@ -8,6 +8,13 @@
 
 		aside{
 
+			.icon_cont{
+
+				span{
+					top: 8px;
+				}
+			}
+
 			.information, .actions{
 
 				.cont{
@@ -16,7 +23,7 @@
 
 				p{
 					padding: 0 15px;
-					line-height: 38px;
+					line-height: 36px;
 					margin-bottom: 0;
 				}
 			}
@@ -30,6 +37,10 @@
 			}
 
 			.actions{
+
+				p{
+					line-height: 34px;
+				}
 
 				a{
 					color: $gray30;
@@ -68,6 +79,11 @@
 					height: auto;
 					border-radius: 2px;
 					border: 1px solid $gray12;
+					@include transition(opacity 0.2s ease-in-out);
+
+					&:hover{
+						opacity: 0.8;
+					}
 				}
 
 				.title{

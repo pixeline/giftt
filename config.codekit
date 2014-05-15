@@ -328,6 +328,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/landing\/feature1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1546,
+		"inputAbbreviatedPath": "\/_assets\/images\/landing\/feature1.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/landing\/feature1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -390,6 +401,17 @@
 		"initialSize": 6914,
 		"inputAbbreviatedPath": "\/_assets\/images\/profile\/default.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/profile\/default.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/profile\/maudestoffe.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10155,
+		"inputAbbreviatedPath": "\/_assets\/images\/profile\/maudestoffe.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/profile\/maudestoffe.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -786,6 +808,17 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/24_58_1272160736.png",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/24_58_1272160736.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/25_76_1301330305.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12682,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/25_76_1301330305.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/25_76_1301330305.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

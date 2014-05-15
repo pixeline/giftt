@@ -15,7 +15,7 @@
 
 <?php require_once 'view_do.php'; ?>
 
-<body class="wishlist view nojs <?php if($me['feed'] == 1){ echo "withAside"; } ?>">
+<body class="wishlist view nojs">
 
 	<section class="main">
 
@@ -101,8 +101,8 @@
 
 					<div class="wrapper">
 						<ul>
-							<?php 
-								if(isset($followings)){
+							<?php
+								if(isset($followings[0])){
 									foreach($followings as $following){
 										$following_name = $following['firstname'] . ' ' . $following['lastname'];
 										if(!isset($following['picture'])){
@@ -115,7 +115,7 @@
 									}
 								}else{
 							?>
-							<li>Nobody</li>
+							<li class="nobody">You're not following anybody</li>
 							<?php } ?>
 						</ul>
 					</div>
@@ -129,8 +129,8 @@
 					<div class="wrapper">
 						
 						<ul>
-							<?php 
-								if(isset($followers)){
+							<?php
+								if(isset($followers[0])){
 									foreach($followers as $follower){
 										$follower_name = $follower['firstname'] . ' ' . $follower['lastname'];
 										if(!isset($follower['picture'])){
@@ -143,7 +143,7 @@
 									}
 								}else{
 							?>
-							<li>Nobody</li>
+							<li class="nobody">Nobody follows you yet</li>
 							<?php } ?>
 						</ul>
 					</div>
@@ -162,11 +162,11 @@
 							}else{
 								if(in_array($user['id'], $me_followings_id)){
 						?>
-						<a class="follow" href="#" data-who="<?php echo $user['id']; ?>">Unfollow <?php echo $user['firstname']; ?><span href="#" class="icon icon-minus"></span></a>
+						<a class="icon_cont follow" href="#" data-who="<?php echo $user['id']; ?>">Unfollow <?php echo $user['firstname']; ?><span href="#" class="icon icon-minus"></span></a>
 						<?php
 								}else{
 						?>
-						<a class="green follow" href="#" data-who="<?php echo $user['id']; ?>">Follow <?php echo $user['firstname']; ?><span href="#" class="icon icon-plus"></span></a>
+						<a class="icon_cont green follow" href="#" data-who="<?php echo $user['id']; ?>">Follow <?php echo $user['firstname']; ?><span href="#" class="icon icon-plus"></span></a>
 						<?php
 								}
 							}
@@ -205,7 +205,17 @@
 						<?php
 								}
 							}else{
-								echo "nothing";
+
+								if($mine){ ?>
+						<a class="nothing col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" href="/<?php echo $user['username'] . '/'; if(isset($current_wishlist['slug'])){ echo $current_wishlist['slug'] . '/'; } ?>add">
+							You haven't added any wish<?php if(isset($current_wishlist['slug'])){ echo ' in ' . $current_wishlist['name']; } ?> yet.<br /><span>Make your first wish now</span>
+						</a>
+						<?php 	}else{ ?>
+						<div class="nothing col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" href="/<?php echo $user['username'] . '/'; if(isset($current_wishlist['slug'])){ echo $current_wishlist['slug'] . '/'; } ?>add">
+							<?php echo $user['firstname']; ?> hasn't added any wish<?php if(isset($current_wishlist['slug'])){ echo ' in ' . $current_wishlist['name']; } ?> yet.
+						</div>
+						<?php
+								}
 							}
 						?>
 					</ul>

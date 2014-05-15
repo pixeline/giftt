@@ -131,7 +131,7 @@ if(!empty($raw_follows)){
 			$wishlist_name = $wishlist['name'];
 
 			$wish_name = $raw['name'];
-			$wish_picture = $raw['cover'];
+			$wish_picture = $raw['picture'];
 			$wish_link = $author['username'] . '/' . $wishlist['slug'] . '/' . $raw['id'];
 ?>
 			<a href="/<?php echo $wish_link; ?>" class="item">
@@ -139,7 +139,7 @@ if(!empty($raw_follows)){
 					<img src="/<?php if(!empty($author_picture)){ echo $author_picture; }else{ echo "_assets/images/profile/default.jpg"; } ?>" alt="<?php echo $author_name; ?>" />
 				</div>
 				<div class="content">
-					<p><strong><?php echo $author_name; ?></strong> added <strong><?php echo $wish_name; ?></strong> to <strong><?php echo $wishlist_name; ?></strong></p>
+					<p><strong><?php echo $author_name; ?></strong> added <strong><?php echo $wish_name; ?></strong></p>
 					<div class="picture" style="background-image: url(/<?php echo $wish_picture; ?>);"></div>
 				</div>
 			</a>

@@ -18,6 +18,7 @@ RewriteRule ^([a-z0-9-_]+)/settings/?$ edit/user/index.php?user=$1 [L]
 RewriteRule ^([a-z0-9-_]+)/?$ view/wishlist/index.php?user=$1 [L]
 
 # WISHES
+RewriteRule ^wishlist/add/?$ add/wishlist/index.php [L]
 RewriteRule ^[a-z0-9-_]+/add/?$ add/wish/index.php [L]
 RewriteRule ^[a-z0-9-_]+/([a-z0-9-_]+)/add/?$ add/wish/index.php?wishlist=$1 [L]
 RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/([0-9]+)/edit/?$ edit/wish/index.php?user=$1&wishlist=$2&wish=$3 [L]

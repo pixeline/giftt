@@ -33,10 +33,6 @@
 	content: "\e601";
 }
 
-.icon-add:before{
-	content: "\e602";
-}
-
 .icon-ellipsis:before{
 	content: "\e603";
 }
@@ -73,8 +69,6 @@
 	content: "\e60b";
 }
 
-.icon-add{
-	font-size: em(50);
-	line-height: $lh * 10;
-	color: $gray30;
+.icon-logout:before{
+	content: "\e60c";
 }

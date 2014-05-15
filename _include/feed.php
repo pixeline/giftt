@@ -1,11 +1,26 @@
-<aside class="feed">
+<aside class="alter">
 	<div class="container">
 		
-		<p class="title">Recently...</p>
+		<form class="search" action="#" method="POST">
+			<label for="search">Search</label>
+			<input id="search" name="search" placeholder="Search..." />
+		</form>
 
 		<div class="wrapper">
-			<!-- TO BE FILLED WITH AN AJAX REQUEST -->
+			<div class="feed">
+				<!-- TO BE FILLED WITH AN AJAX REQUEST -->
+			</div>
+			<div class="results">
+				<div class="item">
+					search results will be shown here
+				</div>
+				<!-- TO BE FILLED WITH AN AJAX REQUEST -->
+			</div>
 		</div>
 		
+		<div class="logout">
+			<a href="/logout" class="icon icon-logout"></a>
+		</div>
+
 	</div>
 </aside>
