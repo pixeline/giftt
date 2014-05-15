@@ -70,13 +70,13 @@ if(isset($_POST['register'])){
 
 		// IMAGE
 
-		$gravatar_id = md5(trim($email));
+		/*$gravatar_id = md5(trim($email));
 		$gravatar = 'http://www.gravatar.com/avatar/' . $gravatar_id . '?s=200';
 		$gravatar_check = 'http://www.gravatar.com/avatar/' . $gravatar_id . '?d=404';
 		$response = get_headers($gravatar_check);
 		if($response[0] != "HTTP/1.0 404 Not Found"){
 		    $url = $gravatar;
-		}
+		}*/
 
 		// DB STUFF
 		if(isset($url)){
