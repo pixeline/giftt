@@ -133,7 +133,7 @@
 								if(isset($followers[0])){
 									foreach($followers as $follower){
 										$follower_name = $follower['firstname'] . ' ' . $follower['lastname'];
-										if(!isset($follower['picture'])){
+										if(!isset($follower['picture']) || empty($follower['picture'])){
 											$follower['picture'] = '_assets/images/profile/default.jpg';
 										}
 							?>
