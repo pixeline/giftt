@@ -45,7 +45,7 @@ if(isset($wishlists_id[0])){
 
 // GET FOLLOWS
 
-$query = $db->prepare("SELECT who2, follow FROM follows WHERE who = :id AND follow = 1 AND who2 != :id2");
+$query = $db->prepare("SELECT who2, follow FROM follows WHERE who = :id AND follow = 1 AND who2 != :id2 ORDER BY id DESC");
 $query->execute(array(
 	':id' => $me['id'],
 	':id2' => $me['id']
@@ -70,7 +70,7 @@ if(isset($followings_id[0])){
 }
 
 
-$query = $db->prepare("SELECT who, follow FROM follows WHERE who2 = :id AND follow = 1 AND who != :id2");
+$query = $db->prepare("SELECT who, follow FROM follows WHERE who2 = :id AND follow = 1 AND who != :id2 ORDER BY id DESC");
 $query->execute(array(
 	':id' => $user['id'],
 	':id2' => $user['id']
