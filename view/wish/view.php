@@ -27,7 +27,7 @@
 						<?php } ?>
 					</div>
 
-					<div class="col-sm-4">
+					<div class="picture col-sm-4">
 						<?php if(!empty($current_wish['origin'])){ ?>
 						<a href="<?php echo $current_wish['origin']; ?>" target="_blank">
 							<img src="/<?php echo $current_wish['picture']; ?>" alt="<?php echo $current_wish['name']; ?>" />

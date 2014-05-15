@@ -1469,19 +1469,15 @@ nav div {
   top: 10px;
   z-index: 10; }
 nav #logo {
-  left: 10px;
-  background: #7FBA00; }
+  left: 10px; }
   nav #logo a {
-    text-indent: -9999px;
+    display: block;
+    color: #f4f4f4; }
+  nav #logo img {
+    border-radius: 0;
+    display: block;
     width: 65px;
-    height: 65px;
-    background-image: url(../images/logo.png);
-    background-size: 100%;
-    background-position: center center;
-    background-repeat: no-repeat; }
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
-      nav #logo a {
-        background-image: url(../images/logo_square.png); } }
+    height: 65px; }
 nav [class^="icon-"] {
   width: 40px;
   line-height: 59px;
@@ -2130,6 +2126,8 @@ a.button {
     color: #6eb004;
     font-weight: 600;
     font-size: 1.125em; }
+  .wish.view .content .heart .current_wish .picture {
+    text-align: right; }
   .wish.view .content .heart .current_wish p.description {
     font-size: 1.0625em;
     line-height: 28px;

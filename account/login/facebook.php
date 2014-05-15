@@ -17,6 +17,7 @@ if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") != false){ // Local dev server
 	));
 }
 
+$user = 0;
 $user = $facebook->getUser();
 
 if($user){
@@ -32,33 +33,23 @@ if($user){
 	header('Location:' . $loginUrl);
 }
 
-$facebook_id = $user_profile['id'];
+if($user){
 
-$query = $db->prepare("SELECT * FROM users WHERE facebook_id = :id");
-$query->execute(array(
-	'id' => $facebook_id
-));
-
-if($query->rowCount() > 0){
-	$account_exists = 1;
-}else{
-	$account_exists = 0;
-}
-
-if($account_exists){
 	$query = $db->prepare("SELECT * FROM users WHERE facebook_id = :id");
 	$query->execute(array(
-		'id' => $facebook_id
+		'id' => $user
 	));
-	$results = $query->fetch();	
 
-	$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description'], 'feed' => $results['feed']);
-	header("Location:/");
+	$facebook_user = $query->fetch(PDO::FETCH_ASSOC);
 
+	if(isset($facebook_user['id'])){
+		$_SESSION['me'] = array('id' => $facebook_user['id'], 'username' => $facebook_user['username'], 'firstname' => $facebook_user['firstname'], 'lastname' => $facebook_user['lastname'], 'description' => $facebook_user['description'], 'feed' => $facebook_user['feed']);
+		header("Location:/");
+	}else{
+		header("Location:/login?nofacebook");
+	}
 }else{
-
-	header("Location:/login?nofacebook");
-
+	echo "Something went wrong with Facebook";
 }
 
 ?>

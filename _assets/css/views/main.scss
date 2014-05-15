@@ -123,19 +123,17 @@ nav{
 
 	#logo{
 		left: 10px;
-		background: #7FBA00;
 
 		a{
-			text-indent: -9999px;
+			display: block;
+			color: $gray4;
+		}
+
+		img{
+			border-radius: 0;
+			display: block;
 			width: 65px;
 			height: 65px;
-			background-image: url(../images/logo.png);
-			background-size: 100%;
-			background-position: center center;
-			background-repeat: no-repeat;
-			@include hidpi(1.5){
-				background-image: url(../images/logo_square.png);
-			}
 		}
 	}
 

@@ -17,7 +17,6 @@ if(strstr($_SERVER["HTTP_HOST"], "tfe.dev") != false){ // Local dev server
 		'secret' => 'c8255cf71dff91ba732560ee9767f611',
 	));
 }
-/*$facebook->destroySession();*/
 
 $user = $facebook->getUser();
 

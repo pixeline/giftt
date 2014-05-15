@@ -1,7 +1,7 @@
 <nav>
 	<div id="logo">
 		<a href="/">
-			<h1>Giftt</h1>
+			<img src="/_assets/images/logo_square.png" alt="Giftt" />
 		</a>
 	</div>
 
