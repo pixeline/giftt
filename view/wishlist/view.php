@@ -105,7 +105,7 @@
 								if(isset($followings[0])){
 									foreach($followings as $following){
 										$following_name = $following['firstname'] . ' ' . $following['lastname'];
-										if(!isset($following['picture'])){
+										if(!isset($following['picture']) || empty($following['picture'])){
 											$following['picture'] = '_assets/images/profile/default.jpg';
 										}
 							?>
