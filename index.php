@@ -7,16 +7,18 @@ if(isset($_GET['discover'])){
 
 	require_once $root . '/landing.php';
 
-}
-
-if(!isset($me)){
-
-	header("Location:/discover");
-
 }else{
 
-	require_once $root . '/_include/user_info.php';
-	require_once $root . '/view/wishlist/view.php';
+	if(!isset($me)){
+
+		header("Location:/discover");
+
+	}else{
+
+		require_once $root . '/_include/user_info.php';
+		require_once $root . '/view/wishlist/view.php';
+
+	}
 
 }
 
