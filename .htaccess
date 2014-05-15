@@ -4,6 +4,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # SESSION
+RewriteRule ^discover/?$ index.php?discover=1 [L]
 RewriteRule ^register/?$ account/register/index.php [L]
 RewriteRule ^register/facebook/?$ account/register/facebook.php [L]
 RewriteRule ^register/friends/?$ account/register/friends.php [L]

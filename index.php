@@ -3,9 +3,15 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 require_once $root . '/_include/functions.php';
 
-if(!isset($me)){
+if(isset($_GET['discover'])){
 
 	require_once $root . '/landing.php';
+
+}
+
+if(!isset($me)){
+
+	header("Location:/discover");
 
 }else{
 
