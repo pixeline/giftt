@@ -2,22 +2,30 @@
 
 if(isset($_POST['add_wish'])){
 	
-	$wish_author = $me_id;
+	$wish_author = $me['id'];
 	$wish_name = htmlspecialchars($_POST['name']);
 	$wish_origin = htmlspecialchars($_POST['origin']);
 	$wish_price = htmlspecialchars($_POST['price']);
+	$wish_currency = htmlspecialchars($_POST['currency']);
+	if(empty($wish_currency)){
+		$wish_price_full = $wish_price . "$";
+	}else{
+		$wish_price_full = $wish_price . $wish_currency;
+	}
 	$wish_image = $_FILES['image'];
+	if(!isset($_POST['wishlist'])){
+		$_POST['wishlist'] = "";
+	}
 	$wish_wishlist = htmlspecialchars($_POST['wishlist']);
 	$wish_description = htmlspecialchars($_POST['description']);
-	$wish_notes = htmlspecialchars($_POST['notes']);
 
 	// REQUIRED INPUTS (EXCEPT FILES)
-	$required_fields = array('name', 'wishlist', 'origin', 'description');
-	$errors = array();
+	$required_fields = array('name', 'wishlist');
+	$message = array();
 
 	foreach($required_fields as $field){
 		if(isset($_POST[$field]) && empty($_POST[$field])){
-			$errors[$field] = "You must provide a " . $field;
+			$message[$field] = "You must provide a " . $field;
 		}
 	}
 
@@ -33,25 +41,24 @@ if(isset($_POST['add_wish'])){
 				$wish_cover = '_assets/images/wishes/' . basename($image_rename);
 				move_uploaded_file($wish_image['tmp_name'], $root . '/' . $wish_cover);
 			}else{
-				$errors['image'] = "The photo should be a .jpg, .png or .gif file";
+				$message['image'] = "The picture should be a .jpg, .png or .gif file";
 			}
 		}else{
-			$errors['image'] = "The photo is too big";
+			$message['image'] = "The picture is too big (limited to 1 mo)";
 		}
 	}else{
-		$errors['image'] = "You must choose a photo";
+		$message['image'] = "You must provide a picture";
 	}
 
-	if(!count($errors)){
-		$query = $db->prepare("INSERT INTO wishes(author, wishlist, name, cover, description, notes, price, origin) VALUES(:author, :wishlist, :name, :cover, :description, :notes, :price, :origin)");
+	if(!count($message)){
+		$query = $db->prepare("INSERT INTO wishes(author, wishlist, name, picture, description, price, origin) VALUES(:author, :wishlist, :name, :cover, :description, :price, :origin)");
 		$query->execute(array(
 			'author' => $wish_author,
 			'wishlist' => $wish_wishlist,
 			'name' => $wish_name,
 			'cover' => $wish_cover,
 			'description' => $wish_description,
-			'notes' => $wish_notes,
-			'price' => $wish_price,
+			'price' => $wish_price_full,
 			'origin' => $wish_origin,
 		));
 
@@ -69,19 +76,9 @@ if(isset($_POST['add_wish'])){
 			':name' => $wish_name,
 			':wishlist' => $wish_wishlist
 		));
-		$cur_wish = $query->fetch();
-		$wish_id = $cur_wish['id'];
+		$wish = $query->fetch();
 
-		header("Location:/" . $me_username . '/' . $wishlist_slug . '/' . $wish_id);
-	}else{
-		$message = '<p>You must correct the following fields :</p>';
-		$message .= '<ul>';
-		foreach($errors as $field => $error){
-			if($error){
-				$message .= "<li>" . $error . "</li>";
-			}
-		}
-		$message .= '</ul>';
+		header("Location:/" . $me['username'] . '/' . $wishlist_slug . '/' . $wish['id']);
 	}
 }
 

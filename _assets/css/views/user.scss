@@ -6,10 +6,6 @@
 			margin-bottom: 20px;
 		}
 
-		p{
-			margin-bottom: 0;
-		}
-
 	}
 
 	.content{
@@ -23,6 +19,8 @@
 			header{
 
 				a.icon{
+					margin-right: -10px;
+					padding: 0 10px;
 
 					&:hover{
 						color: $green;
@@ -202,6 +200,19 @@
 							opacity: 1;
 						}
 					}
+				}
+			}
+		}
+
+		.heart{
+
+			.icon_cont{
+				padding-right: 24px;
+
+				span{
+					left: auto;
+					right: 0;
+					top: 22px;
 				}
 			}
 		}

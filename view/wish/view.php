@@ -6,7 +6,7 @@
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 
-<?php require_once $root . '/view/wish/view_do.php'; ?>
+<?php require_once 'view_do.php'; ?>
 
 <body class="wish view nojs <?php if($me['feed'] == 1){ echo "withAside"; } ?>">
 
@@ -19,16 +19,16 @@
 			<!-- WISH -->
 			<section class="col-sm-9 heart">
 				<div class="row current_wish">
-					<div class="col-sm-8 col-sm-offset-4">
+					<div class="title col-sm-8 col-sm-offset-4">
 						<h3><?php echo $current_wish['name']; ?></h3>
 						
-						<?php if(isset($current_wish['price'])){ ?>
+						<?php if(!empty($current_wish['price'])){ ?>
 						<p class="price"><?php echo $current_wish['price']; ?></p>
 						<?php } ?>
 					</div>
 
 					<div class="col-sm-4">
-						<?php if(isset($current_wish['origin'])){ ?>
+						<?php if(!empty($current_wish['origin'])){ ?>
 						<a href="<?php echo $current_wish['origin']; ?>" target="_blank">
 							<img src="/<?php echo $current_wish['picture']; ?>" alt="<?php echo $current_wish['name']; ?>" />
 						</a>
@@ -39,49 +39,44 @@
 
 					<div class="col-sm-8">
 						
-						<?php if(isset($current_wish['description'])){ ?>
+						<?php if(!empty($current_wish['description'])){ ?>
 						<p class="description"><?php echo $current_wish['description']; ?></p>
-							<?php if(isset($current_wish['origin'])){ ?>
+							<?php if(!empty($current_wish['origin'])){ ?>
 							<span class="description_more"><a href="<?php echo $current_wish['origin']; ?>" target="_blank">more information...</a></span>
 							<?php } ?>
+						<?php }else{ ?>
+							<span class="mute">No description available...</span>
 						<?php } ?>
 					</div>
 				</div>
 
-				<?php if(isset($prev_wish) || isset($next_wish)){ ?>
+				<?php if($prev_wish || $next_wish){ ?>
 
-				<!-- <div class="row wish_related">
-					<div class="col-sm-12">
-						<h4><?php echo $user['firstname']; ?> also wishes...</h4>
-					</div>
-					<ul class="wishes">
-						<?php 
-							foreach($wishes as $wish){
-								$wishlist_index = searchForId($wish['wishlist'], $wishlists);
-								$wish_url = $user['username'] . '/' . $wishlists[$wishlist_index]['slug'] . '/' . $wish['id'];
-						?>
-						<li class="col-sm-3">
-							<div class="wish">
-								<a href="/<?php echo $wish_url; ?>">
-									<img src="/<?php echo $wish['picture']; ?>" alt="<?php echo $wish['name']; ?>" />
-								</a>
-							</div>
-						</li>
-						<?php } ?>
-					</ul>
-				</div> -->
-
+				<!-- NAVIGATION -->
 				<div class="wish_navigation row">
-					<div class="prev col-sm-6">
+					<?php 
+						if($prev_wish){
+							$wishlist_index = searchForId($prev_wish['wishlist'], $wishlists);
+							$prev_wish_url = $user['username'] . '/' . $wishlists[$wishlist_index]['slug'] . '/' . $prev_wish['id'];
+					?>
+					<div class="prev col-sm-4 col-sm-offset-4">
 						<p>
-							<a href="<?php echo $prev_wish['url']; ?>"><?php echo $prev_wish['name']; ?></a>
+							<a href="/<?php echo $prev_wish_url; ?>"><?php echo $prev_wish['name']; ?></a>
 						</p>
 					</div>
-					<div class="next col-sm-6">
+					<?php 
+						}
+						
+						if($next_wish){
+							$wishlist_index = searchForId($next_wish['wishlist'], $wishlists);
+							$next_wish_url = $user['username'] . '/' . $wishlists[$wishlist_index]['slug'] . '/' . $next_wish['id'];
+					?>
+					<div class="next col-sm-4">
 						<p>
-							<a href="<?php echo $next_wish['url']; ?>"><?php echo $next_wish['name']; ?></a>
+							<a href="/<?php echo $next_wish_url; ?>"><?php echo $next_wish['name']; ?></a>
 						</p>
 					</div>
+					<?php } ?>
 				</div>
 
 				<?php } ?>
@@ -98,7 +93,7 @@
 						<p class="date"><?php echo date('F jS, Y', $current_wish_date); ?></p>
 						<p class="author">By <a href="/<?php echo $user['username']; ?>"><?php echo $user_name; ?></a></p>
 						<p class="wishlist">In <a href="/<?php echo $user['username'] . '/' . $current_wishlist['slug']; ?>"><?php echo $current_wishlist['name']; ?></a></p>
-						<?php if(isset($current_wish['origin'])){ ?>
+						<?php if(!empty($current_wish['origin'])){ ?>
 							<p class="origin">From <a href="<?php echo $current_wish['origin']; ?>" target="_blank"><?php echo shortUrl($current_wish['origin']); ?></a></p>
 						<?php } ?>
 					</div>
@@ -110,8 +105,12 @@
 					</header>
 
 					<div class="cont">
-						<p><a class="green" href="#"><span href="#" class="icon icon-plus"></span>Wish it too</a></p>
-						<p><a href="#"><span href="#" class="icon icon-share"></span>Share</a></p>
+						<?php if($current_wish['author'] == $user['id']){ ?>
+						<p><a class="icon_cont" href="#"><span class="icon icon-edit"></span>Edit wish</a></p>
+						<?php }else{ ?>
+						<p><a class="icon_cont green" href="#"><span class="icon icon-plus"></span>Wish it too</a></p>
+						<?php } ?>
+						<p><a class="icon_cont" href="#"><span class="icon icon-share"></span>Share</a></p>
 					</div>
 				</div>
 

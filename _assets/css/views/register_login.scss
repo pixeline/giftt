@@ -10,9 +10,25 @@
 		}
 	}
 
-	.facebook, .sep, label, input, p.error, p.forgot{
+	h2{
+
+		small{
+			font-family: $proxima;
+			font-weight: 500;
+			font-size: 17px;
+			text-transform: none;
+			color: $gray40;
+			letter-spacing: 0;
+		}
+	}
+
+	.facebook, .sep, form{
 		width: 280px;
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.facebook, .sep{
 		display: block;
 	}
 
@@ -71,74 +87,6 @@
 		}
 	}
 
-	form{
-		margin-top: 14px;
-	}
-
-	label{
-		display: none;
-	}
-
-	input{
-		border: 1px solid $gray12;
-		border-radius: 2px;
-		font-size: 16px;
-		font-family: $proxima;
-		line-height: 33px;
-		padding: 0 6px;
-		margin-top: $lh;
-
-		&:first-of-type{
-			margin-top: 0;
-		}
-
-		&.error{
-			border-color: $red;
-		}
-
-		&[type=submit]{
-			letter-spacing: 1px;
-			height: 50px;
-			line-height: 46px;
-			border: 2px solid $green;
-			background: white;
-			font-family: $tisa;
-			text-transform: uppercase;
-			font-size: em(13);
-			color: $green;
-			cursor: pointer;
-			@include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
-
-			&:hover{
-				background: mix($green, white, 25%);
-			}
-
-			&:active{
-				background: $green;
-				color: white;
-			}
-		}
-
-		&.error + p{
-			display: block;
-		}
-	}
-
-	p.error{
-		display: none;
-		margin-top: 5px;
-		font-size: em(14);
-		color: $red;
-		line-height: $lh * 0.75;
-		padding: 0 6px;
-
-		a{
-			display: inline;
-			color: $red;
-			text-decoration: underline;
-		}
-	}
-
 	p.change{
 		text-align: center;
 		margin-top: 24px;
@@ -150,9 +98,7 @@
 		}
 	}
 
-	p.intro{
-		margin-top: 50px;
-		margin-bottom: 30px;
-		padding: 0 6px;
+	form{
+		margin-top: 14px;
 	}
 }

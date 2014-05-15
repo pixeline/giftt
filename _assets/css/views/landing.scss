@@ -1,16 +1,156 @@
 #landing{
+	border-top: 3px solid $green;
 
-	.button{
-		margin-top: 60px;
-		@include button($black, $white);
+	.container{
+		max-width: 1000px;
 	}
 
-	.register{
-		text-align: right;
+	a.button{
+		font-family: $freight;
+		text-transform: uppercase;
+		font-size: em(15);
+		border: 1px solid $gray20;
+		border-radius: 2px;
+		color: $gray40;
+		line-height: 38px;
+		padding: 0 20px;
+		letter-spacing: 1px;
+		@include transition(color 0.2s ease-in-out, background 0.2s ease-in-out);
+
+		&:hover{
+			background: $white;
+			color: $black;
+			text-decoration: none;
+		}
+
+		&.register{
+			border-color: $green;
+			color: $green;
+			margin-right: 14px;
+
+			&:hover{
+				background: $green;
+				color: $white;
+			}
+		}
 	}
 
-	.beta{
-		margin-top: 80px;
+	header{
+		background: $gray4;
+		padding: 24px 0;
+		border-bottom: 1px solid $gray12;
+		margin-bottom: 80px;
+
+		.logo{
+
+			a{
+				float: left;
+			}
+
+			img{
+				display: block;
+				width: 75px;
+				height: auto;
+			}
+		}
+
+		.actions{
+			text-align: right;
+			padding: 18px 0;
+		}
+	}
+
+	.intro{
+		text-align: center;
+
+		h2{
+			margin-bottom: 20px;
+		}
+
+		p{
+			font-size: em(18);
+			color: $gray50;
+			line-height: $lh * 1.2;
+		}
+
+		a.button{
+			margin-top: 32px;
+		}
+	}
+
+	.cover{
+		margin: 30px auto 60px;
+		width: 100%;
+		height: auto;
+		max-width: 1200px;
+		display: block;
+	}
+
+	.features{
+		text-align: center;
+		overflow: hidden;
+
+		h3{
+			font-size: em(18);
+			line-height: $lh * 1.2;
+			text-transform: uppercase;
+			padding: 0 75px 20px;
+			border-bottom: 1px solid $gray12;
+			display: inline-block;
+			margin-bottom: 50px;
+		}
+
+		li{
+			margin-bottom: 40px;
+
+			img{
+				height: 100px;
+				width: 160px;
+			}
+
+			h4{
+				font-family: $tisa;
+				font-weight: 600;
+				font-size: em(14);
+				line-height: $lh * 1.2;
+				text-transform: uppercase;
+				color: $gray50;
+				margin: 15px 0 10px;
+			}
+
+			p{
+				line-height: $lh * 1.2;
+
+				a{
+					color: $gray50;
+				}
+			}
+		}
+
+		.button{
+			margin: 20px auto 0;
+			border-width: 2px;
+			padding: 0 35px;
+			line-height: $lh * 2.5;
+		}
+	}
+
+	footer{
+		overflow: hidden;
+		margin: 100px auto 30px;
+		padding-top: 30px;
+		border-top: 1px solid $gray12;
+
+		li{
+
+			&:first-child{
+				text-align: left;
+			}
+
+			&:last-child{
+				text-align: right;
+			}
+		}
 	}
 
 }

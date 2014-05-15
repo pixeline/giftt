@@ -307,7 +307,7 @@
 		if(input.files && input.files[0]){
 			var reader = new FileReader();
 			reader.onload = function(e){
-				$('form .file_cont img').attr('src', e.target.result).css({'display': 'block'});
+				$('form .file_cont img').attr('src', e.target.result).show();
 				$('form .file_cont span').hide();
 			}
 			reader.readAsDataURL(input.files[0]);

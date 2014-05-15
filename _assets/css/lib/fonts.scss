@@ -65,6 +65,14 @@
 	content: "\e609";
 }
 
+.icon-edit:before{
+	content: "\e60a";
+}
+
+.icon-picture:before{
+	content: "\e60b";
+}
+
 .icon-add{
 	font-size: em(50);
 	line-height: $lh * 10;

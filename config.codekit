@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "16877",
+"creatorBuild": "16921",
 "files": {
 	"\/_assets\/css\/lib\/fonts.scss": {
 		"createSourceMap": 0,
@@ -11,6 +11,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/lib\/fonts.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/fonts.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -26,6 +27,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/lib\/grid.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/grid.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -41,6 +43,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/lib\/mixins.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/mixins.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -56,6 +59,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/lib\/reset.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/reset.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -71,6 +75,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/lib\/variables.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/variables.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -83,6 +88,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/style.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_assets\/css\/style.scss": {
@@ -94,6 +100,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/style.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/style.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -109,6 +116,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/views\/elements.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/elements.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -124,6 +132,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/views\/form.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/form.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -139,6 +148,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/views\/landing.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/views\/landing.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -154,6 +164,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/views\/main.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/main.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -169,6 +180,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/views\/register_login.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/views\/register_login.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -184,6 +196,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/views\/retina.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/views\/retina.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -199,6 +212,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/views\/user.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/user.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -214,6 +228,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/views\/wish.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/wish.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -229,6 +244,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/css\/views\/wishlist.scss",
 		"outputAbbreviatedPath": "\/_assets\/css\/css\/wishlist.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -242,6 +258,7 @@
 		"initialSize": 52147,
 		"inputAbbreviatedPath": "\/_assets\/images\/birthday.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/birthday.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -252,6 +269,7 @@
 		"initialSize": 21001,
 		"inputAbbreviatedPath": "\/_assets\/images\/christmas.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/christmas.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -262,6 +280,7 @@
 		"initialSize": 22705,
 		"inputAbbreviatedPath": "\/_assets\/images\/clothes.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/clothes.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -272,6 +291,7 @@
 		"initialSize": 212,
 		"inputAbbreviatedPath": "\/_assets\/images\/facebook.png",
 		"outputAbbreviatedPath": "\/_assets\/images\/facebook.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -282,6 +302,7 @@
 		"initialSize": 299,
 		"inputAbbreviatedPath": "\/_assets\/images\/facebook@2x.png",
 		"outputAbbreviatedPath": "\/_assets\/images\/facebook@2x.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -292,6 +313,18 @@
 		"initialSize": 6091,
 		"inputAbbreviatedPath": "\/_assets\/images\/feed_test.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/feed_test.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/landing\/cover.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 371436,
+		"inputAbbreviatedPath": "\/_assets\/images\/landing\/cover.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/landing\/cover.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -302,6 +335,7 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/_assets\/images\/logo.png",
 		"outputAbbreviatedPath": "\/_assets\/images\/logo.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -312,6 +346,7 @@
 		"initialSize": 332,
 		"inputAbbreviatedPath": "\/_assets\/images\/logo@2x.png",
 		"outputAbbreviatedPath": "\/_assets\/images\/logo@2x.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -322,6 +357,7 @@
 		"initialSize": 4382,
 		"inputAbbreviatedPath": "\/_assets\/images\/logo_square.png",
 		"outputAbbreviatedPath": "\/_assets\/images\/logo_square.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -332,6 +368,7 @@
 		"initialSize": 225,
 		"inputAbbreviatedPath": "\/_assets\/images\/menu.png",
 		"outputAbbreviatedPath": "\/_assets\/images\/menu.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -342,6 +379,7 @@
 		"initialSize": 331,
 		"inputAbbreviatedPath": "\/_assets\/images\/menu@2x.png",
 		"outputAbbreviatedPath": "\/_assets\/images\/menu@2x.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -352,6 +390,7 @@
 		"initialSize": 6914,
 		"inputAbbreviatedPath": "\/_assets\/images\/profile\/default.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/profile\/default.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -362,6 +401,7 @@
 		"initialSize": 98235,
 		"inputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -372,6 +412,7 @@
 		"initialSize": 37927,
 		"inputAbbreviatedPath": "\/_assets\/images\/test.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/test.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -382,6 +423,7 @@
 		"initialSize": 14202,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_11_2137415154.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_11_2137415154.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -392,6 +434,7 @@
 		"initialSize": 14202,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_12_1596110458.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_12_1596110458.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -402,6 +445,7 @@
 		"initialSize": 14202,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_25_394570251.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_25_394570251.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -412,6 +456,139 @@
 		"initialSize": 14202,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_28_827138111.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_28_827138111.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_65_1077067221.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 914057,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_65_1077067221.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_65_1077067221.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_65_1199154897.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 896988,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_65_1199154897.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_65_1199154897.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_65_186514013.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 914057,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_65_186514013.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_65_186514013.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_65_425894733.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 914057,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_65_425894733.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_65_425894733.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_65_843974970.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 914057,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_65_843974970.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_65_843974970.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_75_1022106321.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 914057,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_1022106321.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_1022106321.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_75_1458025008.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 914057,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_1458025008.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_1458025008.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_75_1904150305.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 915233,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_1904150305.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_1904150305.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_75_2103232761.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 914057,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_2103232761.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_2103232761.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_75_340292424.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 896988,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_340292424.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_340292424.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_75_555948760.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 915233,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_555948760.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_555948760.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_75_912635905.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 914057,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_912635905.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_75_912635905.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -422,6 +599,7 @@
 		"initialSize": 60231,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1094053005.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1094053005.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -432,6 +610,7 @@
 		"initialSize": 14202,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_111165768.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_111165768.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -442,6 +621,7 @@
 		"initialSize": 14202,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1129359707.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1129359707.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -452,6 +632,7 @@
 		"initialSize": 38307,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1174597395.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1174597395.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -462,6 +643,7 @@
 		"initialSize": 52147,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1262705799.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1262705799.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -472,6 +654,7 @@
 		"initialSize": 24735,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1327925778.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1327925778.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -482,6 +665,7 @@
 		"initialSize": 52147,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1420614050.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1420614050.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -492,6 +676,7 @@
 		"initialSize": 38307,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1570030068.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1570030068.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -502,6 +687,7 @@
 		"initialSize": 14202,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1744724674.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1744724674.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -512,6 +698,7 @@
 		"initialSize": 52147,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1823721358.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1823721358.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -522,6 +709,7 @@
 		"initialSize": 21001,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1951507875.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1951507875.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -532,6 +720,7 @@
 		"initialSize": 22705,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_271524161.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_271524161.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -542,6 +731,7 @@
 		"initialSize": 38307,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_339974855.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_339974855.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -552,6 +742,7 @@
 		"initialSize": 14202,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_40838009.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_40838009.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -562,6 +753,7 @@
 		"initialSize": 38307,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_632037117.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_632037117.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -572,6 +764,7 @@
 		"initialSize": 52147,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_735972925.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_735972925.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -582,6 +775,7 @@
 		"initialSize": 52147,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_959849963.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_959849963.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -592,6 +786,7 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/24_58_1272160736.png",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/24_58_1272160736.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -602,6 +797,7 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/26_59_1515105431.png",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/26_59_1515105431.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -612,6 +808,7 @@
 		"initialSize": 38307,
 		"inputAbbreviatedPath": "\/_assets\/images\/wooden.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wooden.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -622,6 +819,7 @@
 		"initialSize": 14202,
 		"inputAbbreviatedPath": "\/_assets\/images\/workplace.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/workplace.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -631,6 +829,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/js\/imagesloaded.min.js",
 		"outputAbbreviatedPath": "\/_assets\/js\/imagesloaded.min.min.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
@@ -641,6 +840,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/js\/jquery.min.js",
 		"outputAbbreviatedPath": "\/_assets\/js\/jquery.min.min.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
@@ -651,6 +851,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/js\/masonry.min.js",
 		"outputAbbreviatedPath": "\/_assets\/js\/masonry.min.min.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
@@ -661,6 +862,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/js\/scripts.js",
 		"outputAbbreviatedPath": "\/_assets\/js\/scripts.min.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
@@ -671,6 +873,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_assets\/js\/scripts.min.js",
 		"outputAbbreviatedPath": "\/_assets\/js\/scripts.min.min.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
@@ -681,6 +884,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/account_header.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/conn.php": {
@@ -689,6 +893,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/conn.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/facebook\/base_facebook.php": {
@@ -697,6 +902,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/facebook\/base_facebook.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/facebook\/facebook.php": {
@@ -705,6 +911,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/facebook\/facebook.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/feed.php": {
@@ -713,6 +920,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/feed.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/feed_populate.php": {
@@ -721,6 +929,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/feed_populate.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/feed_show.php": {
@@ -729,6 +938,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/feed_show.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/follow.php": {
@@ -737,6 +947,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/follow.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/foot.php": {
@@ -745,6 +956,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/foot.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/footer.php": {
@@ -753,6 +965,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/footer.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/functions.php": {
@@ -761,6 +974,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/functions.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/head.php": {
@@ -769,6 +983,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/head.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/me_info.php": {
@@ -777,6 +992,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/me_info.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/menu.php": {
@@ -785,6 +1001,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/menu.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/modal_add_existing_wish.php": {
@@ -793,6 +1010,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/modal_add_existing_wish.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/modal_add_wish.php": {
@@ -801,6 +1019,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/modal_add_wish.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/modal_add_wishlist.php": {
@@ -809,6 +1028,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/modal_add_wishlist.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/modal_edit_wish.php": {
@@ -817,6 +1037,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/modal_edit_wish.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/modal_edit_wishlist.php": {
@@ -825,6 +1046,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/modal_edit_wishlist.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/user_info.php": {
@@ -833,6 +1055,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/user_info.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/wish_header.php": {
@@ -841,6 +1064,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/wish_header.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/wish_info.php": {
@@ -849,6 +1073,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/wish_info.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/wishlist_header.php": {
@@ -857,6 +1082,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/wishlist_header.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_include\/wishlist_info.php": {
@@ -865,6 +1091,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_include\/wishlist_info.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/login\/add.php": {
@@ -873,6 +1100,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/login\/add.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/login\/add_do.php": {
@@ -881,6 +1109,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/login\/add_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/login\/facebook.php": {
@@ -889,6 +1118,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/login\/facebook.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/login\/index.php": {
@@ -897,6 +1127,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/login\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/login\/reset\/index.php": {
@@ -905,6 +1136,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/login\/reset\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/login\/reset\/reset.php": {
@@ -913,6 +1145,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/login\/reset\/reset.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/login\/reset\/reset_do.php": {
@@ -921,6 +1154,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/login\/reset\/reset_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/logout\/index.php": {
@@ -929,6 +1163,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/logout\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/register\/add.php": {
@@ -937,6 +1172,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/register\/add.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/register\/add_do.php": {
@@ -945,6 +1181,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/register\/add_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/register\/facebook.php": {
@@ -953,6 +1190,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/register\/facebook.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/register\/friends.php": {
@@ -961,6 +1199,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/register\/friends.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/register\/functions.php": {
@@ -969,6 +1208,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/register\/functions.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/account\/register\/index.php": {
@@ -977,6 +1217,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/account\/register\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/add\/wish\/add.php": {
@@ -985,6 +1226,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/add\/wish\/add.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/add\/wish\/add_do.php": {
@@ -993,6 +1235,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/add\/wish\/add_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/add\/wish\/index.php": {
@@ -1001,6 +1244,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/add\/wish\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/add\/wishlist\/add.php": {
@@ -1009,6 +1253,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/add\/wishlist\/add.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/add\/wishlist\/add_do.php": {
@@ -1017,6 +1262,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/add\/wishlist\/add_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/add\/wishlist\/include.php": {
@@ -1025,6 +1271,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/add\/wishlist\/include.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/add\/wishlist\/index.php": {
@@ -1033,6 +1280,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/add\/wishlist\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/deploy.php": {
@@ -1041,6 +1289,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/deploy.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/edit\/user\/index.php": {
@@ -1049,6 +1298,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/edit\/user\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/edit\/wish\/edit.php": {
@@ -1057,6 +1307,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/edit\/wish\/edit.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/edit\/wish\/edit_do.php": {
@@ -1065,6 +1316,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/edit\/wish\/edit_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/edit\/wish\/index.php": {
@@ -1073,6 +1325,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/edit\/wish\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/edit\/wishlist\/edit.php": {
@@ -1081,6 +1334,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/edit\/wishlist\/edit.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/edit\/wishlist\/edit_do.php": {
@@ -1089,6 +1343,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/edit\/wishlist\/edit_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/edit\/wishlist\/index.php": {
@@ -1097,6 +1352,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/edit\/wishlist\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/index.php": {
@@ -1105,6 +1361,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/landing.php": {
@@ -1113,6 +1370,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/landing.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/remove\/wish\/index.php": {
@@ -1121,6 +1379,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/remove\/wish\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/remove\/wish\/remove_do.php": {
@@ -1129,6 +1388,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/remove\/wish\/remove_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/remove\/wishlist\/index.php": {
@@ -1137,6 +1397,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/remove\/wishlist\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/remove\/wishlist\/remove_do.php": {
@@ -1145,6 +1406,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/remove\/wishlist\/remove_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/snippets.php": {
@@ -1153,6 +1415,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/snippets.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/view\/user_old\/index.php": {
@@ -1161,6 +1424,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/user_old\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/view\/user_old\/view.php": {
@@ -1169,6 +1433,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/user_old\/view.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/view\/user_old\/view_do.php": {
@@ -1177,6 +1442,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/user_old\/view_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/view\/wish\/index.php": {
@@ -1185,6 +1451,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/wish\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/view\/wish\/view.php": {
@@ -1193,6 +1460,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/wish\/view.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/view\/wish\/view_do.php": {
@@ -1201,6 +1469,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/wish\/view_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/view\/wishlist\/index.php": {
@@ -1209,6 +1478,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/wishlist\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/view\/wishlist\/view.php": {
@@ -1217,6 +1487,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/wishlist\/view.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/view\/wishlist\/view_do.php": {
@@ -1225,6 +1496,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/wishlist\/view_do.php",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		}
 	},
@@ -1304,6 +1576,14 @@
 			"active": 1,
 			"flagValue": -1
 			},
+		"no_debugger": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_empty_functions": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"no_empty_param_list": {
 			"active": 0,
 			"flagValue": -1
@@ -1313,6 +1593,10 @@
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_interpolation_in_single_quotes": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -1338,6 +1622,10 @@
 			},
 		"no_trailing_whitespace": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"no_unnecessary_double_quotes": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"non_empty_constructor_needs_parens": {
@@ -1458,10 +1746,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"gcl": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"globalstrict": {
 			"active": 0,
 			"flagValue": -1
@@ -1574,10 +1858,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"onevar": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"phantom": {
 			"active": 0,
 			"flagValue": -1
@@ -1614,10 +1894,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"smarttabs": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"strict": {
 			"active": 0,
 			"flagValue": -1
@@ -1630,10 +1906,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"trailing": {
-			"active": 1,
-			"flagValue": -1
-			},
 		"typed": {
 			"active": 0,
 			"flagValue": -1
@@ -1644,10 +1916,6 @@
 			},
 		"unused": {
 			"active": 1,
-			"flagValue": -1
-			},
-		"white": {
-			"active": 0,
 			"flagValue": -1
 			},
 		"withstmt": {

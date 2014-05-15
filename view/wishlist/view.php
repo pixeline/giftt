@@ -13,7 +13,7 @@
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 
-<?php require_once $root . '/view/wishlist/view_do.php'; ?>
+<?php require_once 'view_do.php'; ?>
 
 <body class="wishlist view nojs <?php if($me['feed'] == 1){ echo "withAside"; } ?>">
 
@@ -157,7 +157,7 @@
 						<?php
 							if($mine){
 						?>
-						<a class="green" href="#">Make a wish<span href="#" class="icon icon-plus"></span></a>
+						<a class="icon_cont green" href="/<?php echo $user['username'] . '/'; if(isset($current_wishlist['slug'])){ echo $current_wishlist['slug'] . '/'; } ?>add">Make a wish<span href="#" class="icon icon-plus"></span></a>
 						<?php
 							}else{
 								if(in_array($user['id'], $me_followings_id)){
@@ -195,7 +195,9 @@
 								</a>
 								<div class="infos">
 									<h3><a href="/<?php echo $wish_url; ?>"><?php echo $wish['name']; ?></a></h3>
+									<?php if(!empty($wish['origin'])){ ?>
 									<p class="origin"><a href="<?php echo $wish['origin']; ?>" target="_blank"><?php echo $wish_short_origin; ?></a></p>
+									<?php } ?>
 								</div>
 							</div>
 						</li>

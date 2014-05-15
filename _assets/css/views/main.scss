@@ -19,7 +19,6 @@ h2{
 	letter-spacing: 1px;
 	margin-bottom: 10px;
 	text-align: center;
-	padding: 0 100px;
 }
 
 p{
@@ -200,6 +199,25 @@ nav{
 	padding: 50px 0;
 	overflow: hidden;
 
+	.icon{
+
+		&:hover{
+			text-decoration: none;
+		}
+	}
+
+	.icon_cont{
+		position: relative;
+		padding-left: 24px;
+
+		span{
+			position: absolute;
+			top: 10px;
+			left: 0;
+			width: 20px;
+		}
+	}
+
 	aside{
 		width: 20%;
 		width: calc(280px);
@@ -265,10 +283,7 @@ nav{
 			}
 
 			.icon{
-				margin-left: 6px;
 				font-size: em(18);
-				position: relative;
-				top: 1px;
 			}
 		}
 	}
@@ -391,18 +406,5 @@ footer{
 		color: inherit;
 		font-weight: inherit;
 		font-size: inherit;
-	}
-}
-
-
-// DEV
-
-.beta{
-	text-align: center;
-	width: 100%;
-
-	p{
-		margin: 10px 0;
-		line-height: $lh * 1.2;
 	}
 }

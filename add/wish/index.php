@@ -9,11 +9,7 @@ if(!isset($me)){
 
 }else{
 
-	require_once $root . '/_include/user_info.php';
-
-	if($user_id != $me_id){
-		header("Location:/" . $user_username . "/" . $wishlist_slug);
-	}
+	require_once $root . '/_include/wishlist_info.php';
 	require_once'add.php';
 
 }

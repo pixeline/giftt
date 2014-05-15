@@ -22,7 +22,7 @@ require_once 'add_do.php';
 
 				<div class="row">
 					<div class="col-sm-12">
-						<h2>Join the Giftt community, it's free</h2>
+						<h2>Join the Giftt community <small>...it's free</small></h2>
 					</div>
 				</div>
 
@@ -33,9 +33,9 @@ require_once 'add_do.php';
 
 						<p class="sep"><span>or</span></p>
 
-						<form action="/register" method="POST">
+						<form class="default" action="/register" method="POST">
 							<label for="firstname">First name</label>
-							<input <?php if(isset($message['firstname'])){ echo 'class="error"'; } ?> type="text" name="firstname" autocorrect="off" autocapitalize="on" spellcheck="false" placeholder="First name" value="<?php if(isset($firstname)){ echo $firstname; } ?>" />
+							<input class="first<?php if(isset($message['firstname'])){ echo ' error'; } ?>" type="text" name="firstname" autocorrect="off" autocapitalize="on" spellcheck="false" placeholder="First name" value="<?php if(isset($firstname)){ echo $firstname; } ?>" />
 							<p class="error"><?php if(isset($message['firstname'])){ echo $message['firstname']; } ?></p>
 							<label for="lastname">Last name</label>
 							<input <?php if(isset($message['lastname'])){ echo 'class="error"'; } ?> type="text" name="lastname" autocorrect="off" autocapitalize="on" spellcheck="false" placeholder="Last name" value="<?php if(isset($lastname)){ echo $lastname; } ?>" />
