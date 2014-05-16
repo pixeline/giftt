@@ -2032,6 +2032,8 @@ a.button {
     -webkit-transition: box-shadow 0.2s ease-in-out;
     -moz-transition: box-shadow 0.2s ease-in-out;
     transition: box-shadow 0.2s ease-in-out; }
+    .user.view .content .wishes li .wish > a, .wishlist.view .content .wishes li .wish > a {
+      width: 100%; }
     .user.view .content .wishes li .wish img, .wishlist.view .content .wishes li .wish img {
       width: 100%;
       height: auto;

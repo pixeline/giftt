@@ -240,6 +240,10 @@
 					border-radius: 2px;
 					@include transition(box-shadow 0.2s ease-in-out);
 
+					& > a{
+						width: 100%;
+					}
+
 					img{
 						width: 100%;
 						height: auto;
