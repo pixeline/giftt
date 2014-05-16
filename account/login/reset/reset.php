@@ -10,7 +10,7 @@ require_once 'reset_do.php';
 	<title>Forgot your Giftt password</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body id="login">
+<body id="login" class="reset">
 
 	<section class="main">
 
@@ -43,6 +43,7 @@ require_once 'reset_do.php';
 				<div class="row">
 					<div class="col-sm-12">
 						<h2 style="margin-bottom: 40px;">Choose a new password</h2>
+					</div>
 				</div>
 
 				<div class="row">
@@ -99,9 +100,11 @@ require_once 'reset_do.php';
 						
 						<?php
 							}else{
+
 						?>
-						<form action="/reset" method="POST">
-							<p class="intro">We'll send you an email with all the information you need to reset your password.</p>
+
+						<p class="intro">We'll send you an email with all the information you need to reset your password.</p>
+						<form class="default" action="/reset" method="POST">
 							<label for="email">Email</label>
 							<input <?php if(isset($message['email'])){ echo 'class="error"'; } ?> type="email" name="email" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Email address" value="<?php if(isset($email)){ echo $email; } ?>" />
 							<p class="error"><?php if(isset($message['email'])){ echo $message['email']; } ?></p>

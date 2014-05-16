@@ -2258,6 +2258,12 @@ form.default p.error {
     color: #ba1f01;
     text-decoration: underline; }
 
+p.intro {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 0 6px;
+  text-align: center; }
+
 .wish.add form {
   margin-top: 40px; }
 .wish.add #price {
