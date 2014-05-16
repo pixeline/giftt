@@ -7,10 +7,12 @@ if(isset($_POST['add_wish'])){
 	$wish_origin = htmlspecialchars($_POST['origin']);
 	$wish_price = htmlspecialchars($_POST['price']);
 	$wish_currency = htmlspecialchars($_POST['currency']);
-	if(empty($wish_currency)){
-		$wish_price_full = $wish_price . "$";
-	}else{
-		$wish_price_full = $wish_price . $wish_currency;
+	if(!$empty($wish_price)){
+		if(empty($wish_currency)){
+			$wish_price_full = $wish_price . "$";
+		}else{
+			$wish_price_full = $wish_price . $wish_currency;
+		}
 	}
 	$wish_image = $_FILES['image'];
 	if(!isset($_POST['wishlist'])){
