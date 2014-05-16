@@ -74,7 +74,7 @@
 					</header>
 
 					<div class="cont">
-						<?php if($current_wish['author'] == $user['id']){ ?>
+						<?php if($mine){ ?>
 						<p><a class="icon_cont" href="#"><span class="icon icon-edit"></span>Edit wish</a></p>
 						<?php }else{ ?>
 						<p><a class="icon_cont green" href="#"><span class="icon icon-plus"></span>Wish it too</a></p>
