@@ -49,7 +49,7 @@ require_once 'reset_do.php';
 				<div class="row">
 					<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
 
-						<form action="#" method="POST">
+						<form class="default" action="#" method="POST">
 							<label for="password">Password</label>
 							<input <?php if(isset($message['password'])){ echo 'class="error"'; } ?> type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Password" value="" />
 							<p class="error"><?php if(isset($message['password'])){ echo $message['password']; } ?></p>
