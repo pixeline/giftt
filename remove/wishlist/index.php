@@ -11,10 +11,10 @@ if(!isset($me)){
 
 	require_once $root . '/_include/wishlist_info.php';
 
-	if($user_id != $me_id){
-		header("Location:/" . $user_username);
+	if($user['id'] != $me['id']){
+		header("Location:/" . $user['username']);
 	}
-	require_once'remove_do.php';
+	require_once'remove.php';
 
 }
 

@@ -105,7 +105,6 @@
 		})
 
 		aside();
-
 		return false;
 	});
 
@@ -264,7 +263,7 @@
 	}
 
 
-	// RADIO TRICK (add secret wishlist)
+	// RADIO TRICK (add [secret] wishlist)
 
 	$('.wishlist label').on('click', function(){
 		$(this).toggleClass('active');
