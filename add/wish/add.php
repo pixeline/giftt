@@ -18,7 +18,7 @@
 
 			<div class="container">
 
-				<h2>Make a wish</h2>
+				<h2>Add a wish</h2>
 
 				<form class="default" action="#" method="POST" enctype="multipart/form-data">
 					

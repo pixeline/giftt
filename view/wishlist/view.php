@@ -44,6 +44,7 @@
 
 						<li class="add">
 							<form action="/wishlist/add" method="POST">
+								<input type="submit" class="hidden" />
 								<input type="text" id="name" name="name" placeholder="Name" />
 								<div class="private_checkbox">
 									<input type="checkbox" id="private" name="private" />
@@ -78,13 +79,31 @@
 
 						?>
 
-						<li class="wishlist<?php if($active_wishlist){ echo " active"; } ?>">
+						<li class="wishlist<?php if($active_wishlist){ echo " active"; } if($mine){ echo " mine"; } if($wishlist['private']){ echo " private"; } ?>">
 							<a href="/<?php echo $wishlist_url; ?>"><?php echo $wishlist['name']; ?>
 								<span><?php echo $wish_count; ?></span>
 							</a>
+							<a class="icon icon-edit" href="/<?php echo $wishlist_url; ?>/edit"></a>
 						</li>
 
-						<?php 
+						<?php
+									if($mine){
+						?>
+
+						<li class="edit">
+							<form action="/<?php echo $wishlist_url; ?>/edit" method="POST">
+								<input type="submit" class="hidden" />
+								<input type="text" id="name" name="name" placeholder="Name" value="<?php echo $wishlist['name']; ?>" />
+								<div class="private_checkbox">
+									<input type="checkbox" id="private_<?php echo $wishlist['id']; ?>" name="private" <?php if($wishlist['private']){ echo "checked"; } ?>/>
+									<label for="private_<?php echo $wishlist['id']; ?>" class="icon-lock<?php if($wishlist['private']){ echo " active"; } ?>" title="Make this wishlist secret"></label>
+								</div>
+								<a href="/<?php echo $wishlist_url; ?>/remove" class="remove icon icon-close"></a>
+							</form>
+						</li>
+
+						<?php
+									}
 								}
 							}
 						?>
@@ -157,7 +176,7 @@
 						<?php
 							if($mine){
 						?>
-						<a class="icon_cont green" href="/<?php echo $user['username'] . '/'; if(isset($current_wishlist['slug'])){ echo $current_wishlist['slug'] . '/'; } ?>add">Make a wish<span href="#" class="icon icon-plus"></span></a>
+						<a class="icon_cont green" href="/<?php echo $user['username'] . '/'; if(isset($current_wishlist['slug'])){ echo $current_wishlist['slug'] . '/'; } ?>add">Add a wish<span href="#" class="icon icon-plus"></span></a>
 						<?php
 							}else{
 								if(in_array($user['id'], $me_followings_id)){

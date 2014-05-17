@@ -94,17 +94,18 @@
 	// NAVIGATION ///////////////////////
 	/////////////////////////////////////
 
-	$('.main').on('click', function(){
-		if(body.hasClass('withAside')){
-			aside();
-		}
-	})
-
 
 	// SHOW ASIDE
 
 	$('#show_hide').on('click', function(){
+		$('.main').one('click', function(){
+			if(body.hasClass('withAside')){
+				aside();
+			}
+		})
+
 		aside();
+
 		return false;
 	});
 
@@ -263,24 +264,60 @@
 	}
 
 
-	// RADIO TRICK
+	// RADIO TRICK (add secret wishlist)
 
-	$('.radio label').on('click', function(){
-		$(this).siblings('label').removeClass('active');
-		$(this).addClass('active');
+	$('.wishlist label').on('click', function(){
+		$(this).toggleClass('active');
+		$(this).siblings('input').prop("checked", !checkBoxes.prop("checked"));
 	});
 
 
-	// ADD WISHLISt
+	// ADD WISHLIST
 
-	$('a.icon-plus').on('click', function(){
+	$('.wishlist a.icon-plus').on('click', function(){
 		target = $(this).data('target');
+		elem = $('.wishlists li.add');
 		if(target == 'add_wishlist'){
-			$('.wishlists li.add').toggle();
-			$('.wishlists form input').first().focus();
+			elem.toggle();
+			elem.find('form input').first().focus();
 		}
 
-		$('.wishlists form').submit(function(e){
+		elem.find('form').find('#name').removeClass('error').attr('placeholder', 'Name');
+		elem.find('form').submit(function(e){
+			thisForm = $(this);
+			inputName = thisForm.find('#name');
+			errors = {};
+			if(!inputName.val()){
+				errors['name'] = "Please give it a name";
+			}
+			thisForm.find('#name').removeClass('error').attr('placeholder', 'Name');
+			$.each(errors, function(key, value){
+				thisForm.find('input[name='+key+']').addClass('error').attr('placeholder', value);
+				e.preventDefault();
+			})
+		})
+		
+		elem.on('click', function(e){
+			e.stopPropagation();
+		})
+
+		$('html').one('click', function(){
+			elem.hide();
+			$('.wishlist').show();
+		})
+
+		return false;
+	})
+
+
+	// EDIT WISHLIST
+
+	$('.wishlist a.icon-edit').on('click', function(){
+		parent = $(this).parent('li');
+		parent.hide();
+		parent.next().show();
+
+		parent.next().find('form').submit(function(e){
 			thisForm = $(this);
 			inputName = thisForm.find('#name');
 			errors = {};
@@ -294,8 +331,24 @@
 				e.preventDefault();
 			})
 		})
+		
+		parent.next().on('click', function(e){
+			e.stopPropagation();
+		})
+
+		$('html').one('click', function(){
+			$('.wishlists .edit').hide();
+			$('.wishlist').show();
+		})
 
 		return false;
+	})
+
+
+	// REMOVE WISHLIST
+
+	$('li.edit .remove').on('click', function(){
+		$(this).submit();
 	})
 
 
