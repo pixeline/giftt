@@ -37,7 +37,7 @@ if(isset($_POST['login'])){
 	if(!isset($message)){
 		$hash = crypt($password, '$2x$12$' . $results['salt']);
 		if($hash == $results['password']){
-			$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description'], 'feed' => $results['feed']);
+			$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description']);
 			header('Location:/');
 		}else{
 			$message['password'] = "The password seems to be wrong";

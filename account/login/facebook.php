@@ -43,7 +43,7 @@ if($user){
 	$facebook_user = $query->fetch(PDO::FETCH_ASSOC);
 
 	if(isset($facebook_user['id'])){
-		$_SESSION['me'] = array('id' => $facebook_user['id'], 'username' => $facebook_user['username'], 'firstname' => $facebook_user['firstname'], 'lastname' => $facebook_user['lastname'], 'description' => $facebook_user['description'], 'feed' => $facebook_user['feed']);
+		$_SESSION['me'] = array('id' => $facebook_user['id'], 'username' => $facebook_user['username'], 'firstname' => $facebook_user['firstname'], 'lastname' => $facebook_user['lastname'], 'description' => $facebook_user['description']);
 		header("Location:/");
 	}else{
 		header("Location:/login?nofacebook");
