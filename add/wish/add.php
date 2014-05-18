@@ -26,15 +26,15 @@
 						<div class="col-sm-4">
 							<label for="image"><strong>Photo</strong></label>
 							<div class="file_cont<?php if(isset($message['image'])){ echo ' error'; } ?>">
-								<img src="/<?php echo $wish_picture; ?>" alt="<?php if(isset($wish_name)) echo $wish_name; ?>" <?php if(!isset($wish_picture)) echo "style='display: none;'"; ?> />
-								<span class="icon-picture" <?php if(isset($wish_picture)) echo "style='display: none;'"; ?>></span>
+								<img src="/<?php echo $_POST['picture']; ?>" alt="<?php if(isset($_POST['name'])) echo $_POST['name']; ?>" <?php if(!isset($_POST['picture'])) echo "style='display: none;'"; ?> />
+								<span class="icon-picture" <?php if(isset($_POST['picture'])) echo "style='display: none;'"; ?>></span>
 								<input <?php if(isset($message['image'])){ echo 'class="error"'; } ?>id="image" type="file" name="image" required />
 								<p class="error"><?php if(isset($message['image'])){ echo $message['image']; } ?></p>
 							</div>
 						</div>
 						<div class="col-sm-8">
 							<label for="name"><strong>Name</strong> (required)</label>
-							<input class="first<?php if(isset($message['name'])){ echo ' error'; } ?>" id="name" type="text" name="name" value="<?php if(isset($wish_name)) echo $wish_name; ?>" placeholder="Name" required />
+							<input class="first<?php if(isset($message['name'])){ echo ' error'; } ?>" id="name" type="text" name="name" value="<?php if(isset($_POST['name'])) echo $_POST['name']; ?>" placeholder="Name" required />
 							<p class="error"><?php if(isset($message['name'])){ echo $message['name']; } ?></p>
 							
 							<label for="wishlist"><strong>Wishlist</strong> (required)</label>
@@ -75,19 +75,19 @@
 							<div class="row">
 								<div class="col-sm-5">
 									<label for="price"><strong>Price</strong></label>
-									<input id="price" type="text" name="price" value="<?php if(isset($wish_price)) echo $wish_price ?>" placeholder="Price" />
+									<input id="price" type="text" name="price" value="<?php if(isset($wish_price)) echo $wish_price; ?>" placeholder="Price" />
 									<label for="currency"><strong>Currency</strong></label>
 									<input id="currency" type="text" name="currency" value="<?php if(isset($wish_currency)) echo $wish_currency; ?>" placeholder="$" />
 								</div>
 
 								<div class="col-sm-7">
 									<label for="origin"><strong>Origin</strong></label>
-									<input id="origin" type="url" name="origin" value="<?php if(isset($wish_origin)) echo $wish_origin ?>" placeholder="http://" />
+									<input id="origin" type="url" name="origin" value="<?php if(isset($wish_origin)) echo $wish_origin; ?>" placeholder="http://" />
 								</div>
 							</div>
 							
 							<label for="description"><strong>Description</strong></label>
-							<textarea id="description" name="description" placeholder="Description of the item" ><?php if(isset($wish_description)) echo $wish_description ?></textarea>
+							<textarea id="description" name="description" placeholder="Description of the item" ><?php if(isset($wish_description)) echo $wish_description; ?></textarea>
 						</div>
 						<div class="col-sm-8 col-sm-offset-4">
 							<input class="text" type="submit" name="add_wish" value="Add your wish" />

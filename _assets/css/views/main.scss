@@ -74,9 +74,9 @@ strong{
 .main{
 	border-top: 3px solid $green;
 	width: 100%;
-	float: left;
 	background: $white;
 	overflow: auto;
+	float: left;
 	@include transition(transform 0.2s ease-in-out);
 }
 
@@ -311,15 +311,16 @@ body.withAside{
 }
 
 .alter{
-	width: 15%;
-	width: calc(240px);
 	float: right;
+	display: none;
 	position: fixed;
 	top: 0;
-	padding: 0;
 	bottom: 0;
 	right: 0;
 	z-index: -1;
+	padding: 0;
+	width: 15%;
+	width: calc(240px);
 	background: $black;
 	overflow: hidden;
 	@include transition(right 0.2s ease-in-out);

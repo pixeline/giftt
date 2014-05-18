@@ -23,7 +23,7 @@
 						<h3><?php echo $current_wish['name']; ?></h3>
 						
 						<?php if(!empty($current_wish['price'])){ ?>
-						<p class="price"><?php echo $current_wish['price']; ?></p>
+						<p class="price"><?php if($current_wish['currency'] == "$"){ echo '$'; } echo $current_wish['price']; if($current_wish['currency'] != "$"){ echo $current_wish['currency']; } ?></p>
 						<?php } ?>
 					</div>
 
@@ -40,12 +40,12 @@
 					<div class="col-sm-8">
 						
 						<?php if(!empty($current_wish['description'])){ ?>
-						<p class="description"><?php echo $current_wish['description']; ?></p>
+						<p class="description"><?php echo nl2br($current_wish['description']); ?></p>
 							<?php if(!empty($current_wish['origin'])){ ?>
-							<span class="description_more"><a href="<?php echo $current_wish['origin']; ?>" target="_blank">more information...</a></span>
+						<p class="description_more"><a href="<?php echo $current_wish['origin']; ?>" target="_blank">more information...</a></p>
 							<?php } ?>
 						<?php }else{ ?>
-							<span class="mute">No description available...</span>
+							<p class="mute">No description available...</p>
 						<?php } ?>
 					</div>
 				</div>
@@ -75,11 +75,12 @@
 
 					<div class="cont">
 						<?php if($mine){ ?>
-						<p><a class="icon_cont" href="#"><span class="icon icon-edit"></span>Edit wish</a></p>
+						<p class="edit"><a class="icon_cont" href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>/edit"><span class="icon icon-edit"></span>Edit wish</a></p>
+						<p class="remove"><a class="icon_cont" href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>/remove"><span class="icon icon-close"></span>Remove wish</a></p>
 						<?php }else{ ?>
-						<p><a class="icon_cont green" href="#"><span class="icon icon-plus"></span>Wish it too</a></p>
+						<p class="add"><a class="icon_cont green" href="#"><span class="icon icon-plus"></span>Wish it too</a></p>
 						<?php } ?>
-						<p><a class="icon_cont" href="#"><span class="icon icon-share"></span>Share</a></p>
+						<p class="share"><a class="icon_cont" href="#"><span class="icon icon-share"></span>Share</a></p>
 					</div>
 				</div>
 

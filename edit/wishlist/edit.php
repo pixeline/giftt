@@ -1,19 +1,6 @@
 <?php
 
-// SLUGIFY A TEXT
-function slugify($text){ // from http://stackoverflow.com/questions/2955251/php-function-to-make-slug-url-string
-	$text = preg_replace('~[^\\pL\d]+~u', '-', $text);
-	$text = trim($text, '-');
-	$text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
-	$text = strtolower($text);
-	$text = preg_replace('~[^-\w]+~', '', $text);
-	if(empty($text)){
-		return 'n-a';
-	}
-	return $text;
-}
-
-if(isset($_POST)){
+if(isset($_POST['name'])){
 	$wishlist_name = htmlspecialchars($_POST['name']);
 	$wishlist_slug = slugify($wishlist_name);
 
@@ -43,6 +30,8 @@ if(isset($_POST)){
 		));
 		header("Location:/" . $me['username'] . '/' . $wishlist_slug);
 	}
+}else{
+	header('Location:/');
 }
 
 ?>

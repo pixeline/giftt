@@ -11,7 +11,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 logo">
-					<a href="/"><img src="/_assets/images/logo_square.png" alt="Giftt" /></a>
+					<a href="/"><img src="/_assets/images/logo.png" alt="Giftt" /></a>
 				</div>
 				<div class="col-sm-6 actions">
 					<a class="register button" href="/register">Join Giftt</a>

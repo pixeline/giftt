@@ -11,8 +11,8 @@ if(!isset($me)){
 
 	require_once $root . '/_include/wish_info.php';
 
-	if($wishlist_author != $me_id){
-		header("Location:/" . $user_username . "/" . $wishlist_slug);
+	if($current_wishlist['author'] != $me['id']){
+		header("Location:/" . $user['username'] . "/" . $current_wishlist['slug']);
 	}
 	require_once'edit.php';
 

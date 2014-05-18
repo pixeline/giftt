@@ -66,6 +66,16 @@
 					}
 				}
 
+				p.remove{
+
+					&:hover{
+
+						a{
+							color: $red;
+						}
+					}
+				}
+
 			}
 		}
 
@@ -112,15 +122,6 @@
 					font-size: em(17);
 					line-height: $lh * 1.4;
 					margin-bottom: 16px;
-
-					&:last-of-type{
-						margin-bottom: 0;
-					}
-				}
-
-				span.description_more{
-					display: block;
-					margin-top: 10px;
 				}
 			}
 		}
@@ -175,7 +176,7 @@
 	}	
 }
 
-.wish.add{
+.wish.add, .wish.edit{
 
 	.container{
 		max-width: 600px;

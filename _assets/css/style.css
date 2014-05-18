@@ -1439,9 +1439,9 @@ strong {
 .main {
   border-top: 3px solid #6eb004;
   width: 100%;
-  float: left;
   background: white;
   overflow: auto;
+  float: left;
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
   -moz-transition: -moz-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out; }
@@ -1592,15 +1592,16 @@ body.withAside #show_hide {
   color: #2c2c2c; }
 
 .alter {
-  width: 15%;
-  width: calc(240px);
   float: right;
+  display: none;
   position: fixed;
   top: 0;
-  padding: 0;
   bottom: 0;
   right: 0;
   z-index: -1;
+  padding: 0;
+  width: 15%;
+  width: calc(240px);
   background: #2c2c2c;
   overflow: hidden;
   -webkit-transition: right 0.2s ease-in-out;
@@ -2144,6 +2145,8 @@ a.button {
     margin-right: 8px; }
   .wish.view .content aside .actions a:hover span {
     text-decoration: none; }
+.wish.view .content aside .actions p.remove:hover a {
+  color: #ba1f01; }
 .wish.view .content .heart {
   margin-top: 16px; }
   .wish.view .content .heart .current_wish img {
@@ -2174,11 +2177,6 @@ a.button {
     font-size: 1.0625em;
     line-height: 28px;
     margin-bottom: 16px; }
-    .wish.view .content .heart .current_wish p.description:last-of-type {
-      margin-bottom: 0; }
-  .wish.view .content .heart .current_wish span.description_more {
-    display: block;
-    margin-top: 10px; }
 .wish.view .content .wish_navigation {
   margin-top: 40px; }
   .wish.view .content .wish_navigation p {
@@ -2207,10 +2205,10 @@ a.button {
       right: 0;
       content: ">"; }
 
-.wish.add .container {
+.wish.add .container, .wish.edit .container {
   max-width: 600px;
   margin-top: 10px; }
-.wish.add h2 {
+.wish.add h2, .wish.edit h2 {
   font-size: 1.5em;
   line-height: 28px;
   letter-spacing: 0; }
@@ -2266,7 +2264,8 @@ form.default .file_cont {
   text-align: center; }
   form.default .file_cont img {
     width: 100%;
-    height: auto; }
+    height: auto;
+    display: block; }
   form.default .file_cont.error {
     border-color: #ba1f01; }
   form.default .file_cont span {
@@ -2306,16 +2305,16 @@ p.intro {
   padding: 0 6px;
   text-align: center; }
 
-.wish.add form {
+.wish.add form, .wish.edit form {
   margin-top: 40px; }
-.wish.add #price {
+.wish.add #price, .wish.edit #price {
   float: left;
   width: 75%;
   width: calc(100% - 40px);
   border-right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
-.wish.add #currency {
+.wish.add #currency, .wish.edit #currency {
   float: left;
   width: 25%;
   width: calc(40px);

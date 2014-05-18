@@ -2,29 +2,71 @@
 
 if(isset($_POST['edit_wish'])){
 	
+	$wish_author = $me['id'];
 	$wish_name = htmlspecialchars($_POST['name']);
 	$wish_origin = htmlspecialchars($_POST['origin']);
 	$wish_price = htmlspecialchars($_POST['price']);
+	$wish_currency = htmlspecialchars($_POST['currency']);
 	$wish_image = $_FILES['image'];
-	$wish_wishlist = htmlspecialchars($_POST['wishlist']);
+	if(!isset($_POST['wishlist'])){
+		$_POST['wishlist'] = "";
+	}
+	if(isset($_POST['new_wishlist'])){
+		$wishlist_author = $me['id'];
+		$wishlist_name = htmlspecialchars($_POST['new_wishlist']);
+		$wishlist_slug = slugify($wishlist_name);
+
+		if(!isset($_POST['new_wishlist_private'])){
+			$wishlist_private = 0;
+		}else{
+			$wishlist_private = 1;
+		}
+
+		// REQUIRED INPUTS (EXCEPT FILES)
+		$required_fields = array('new_wishlist');
+		$errors = array();
+
+		foreach($required_fields as $field){
+			if(isset($_POST[$field]) && empty($_POST[$field])){
+				$errors[$field] = "You must provide a " . $field;
+			}
+		}
+
+		if(!count($errors)){
+			$query = $db->prepare("INSERT INTO wishlists(author, name, slug, private) VALUES(:author, :name, :slug, :private)");
+			$query->execute(array(
+				'author' => $wishlist_author,
+				'name' => $wishlist_name,
+				'slug' => $wishlist_slug,
+				'private' => $wishlist_private
+			));
+			$query = $db->prepare("SELECT id FROM wishlists WHERE slug = :slug");
+			$query->execute(array(
+				'slug' => $wishlist_slug
+			));
+			$results = $query->fetch(PDO::FETCH_ASSOC);
+			$wish_wishlist = $results['id'];
+		}else{
+			echo "You must name your new wishlist";
+			die;
+		}
+	}else{
+		$wish_wishlist = htmlspecialchars($_POST['wishlist']);
+	}
 	$wish_description = htmlspecialchars($_POST['description']);
-	$wish_notes = htmlspecialchars($_POST['notes']);
 
 	// REQUIRED INPUTS (EXCEPT FILES)
-	if(!isset($wish_name) || empty($wish_name)){
-		$message['name'] = "You must provide your first name";
-	}
-	
-	if(!isset($wish_wishlist) || empty($wish_wishlist)){
-		$message['wishlist'] = "You must choose a wishlist";
-	}
-	
-	if(!isset($wish_description) || empty($wish_description)){
-		$message['description'] = "You must provide a description";
+	$required_fields = array('name', 'wishlist');
+	$message = array();
+
+	foreach($required_fields as $field){
+		if(isset($_POST[$field]) && empty($_POST[$field])){
+			$message[$field] = "You must provide a " . $field;
+		}
 	}
 
 	// FILES VALIDATION
-	if(isset($wish_image) && !empty($_FILES['image']['name'])){
+	if(isset($wish_image['name']) && !empty($wish_image['name'])){
 		if($wish_image['size'] <= 1048576){
 			$file_path = pathinfo($wish_image['name']);
 			$file_type = $file_path['extension'];
@@ -32,53 +74,59 @@ if(isset($_POST['edit_wish'])){
 
 			if(in_array($file_type, $file_type_valid)){
 				$image_rename = $wish_author . '_' . $wish_wishlist . '_' . rand() . '.' . $file_type;
-				$wish_cover = '_assets/images/wishes/' . basename($image_rename);
-				move_uploaded_file($wish_image['tmp_name'], $root . '/' . $wish_cover);
+				$wish_picture = '_assets/images/wishes/' . basename($image_rename);
+				move_uploaded_file($wish_image['tmp_name'], $root . '/' . $wish_picture);
 			}else{
-				$message['image'] = "The photo should be a .jpg, .png or .gif file";
+				$message['image'] = "The picture should be a .jpg, .png or .gif file";
 			}
 		}else{
-			$message['image'] = "The photo is too big";
+			$message['image'] = "The picture is too big (limited to 1 mo)";
 		}
 	}
 
-	if(!isset($message)){
-		if(!empty($_FILES['image']['name'])){ // SI PAS DE CHANGEMENT D'IMAGE
-			$query = $db->prepare("UPDATE wishes SET wishlist=:wishlist, name=:name, cover=:cover, description=:description, notes=:notes, price=:price, origin=:origin WHERE id=:id");
+	if(!count($message)){
+		if(!empty($wish_image['name'])){ // SI PAS DE CHANGEMENT D'IMAGE
+			$query = $db->prepare("UPDATE wishes SET wishlist=:wishlist, name=:name, picture=:picture, description=:description, price=:price, currency=:currency, origin=:origin WHERE id=:id");
 			$query->execute(array(
 				'wishlist' => $wish_wishlist,
 				'name' => $wish_name,
-				'cover' => $wish_cover,
+				'picture' => $wish_picture,
 				'description' => $wish_description,
-				'notes' => $wish_notes,
 				'price' => $wish_price,
+				'currency' => $wish_currency,
 				'origin' => $wish_origin,
-				'id' => $wish_id
+				'id' => $current_wish['id']
 			));
 		}else{
-			$query = $db->prepare("UPDATE wishes SET wishlist=:wishlist, name=:name, description=:description, notes=:notes, price=:price, origin=:origin WHERE id=:id");
+			$query = $db->prepare("UPDATE wishes SET wishlist=:wishlist, name=:name, description=:description, price=:price, currency=:currency, origin=:origin WHERE id=:id");
 			$query->execute(array(
 				'wishlist' => $wish_wishlist,
 				'name' => $wish_name,
 				'description' => $wish_description,
-				'notes' => $wish_notes,
 				'price' => $wish_price,
+				'currency' => $wish_currency,
 				'origin' => $wish_origin,
-				'id' => $wish_id
+				'id' => $current_wish['id']
 			));
 		}
 
-		$query = $db->prepare("SELECT slug FROM wishlists WHERE id=:id");
+		// GET SELECTED WiSHLIST SLUG
+		$query = $db->prepare("SELECT slug FROM wishlists WHERE id = :id");
 		$query->execute(array(
-			'id' => $wish_wishlist
+			':id' => $wish_wishlist,
 		));
+		$sel_wishlist = $query->fetch();
+		$wishlist_slug = $sel_wishlist['slug'];
 
-		$results = $query->fetch();
-		$wishlist_slug = $results['slug'];
+		// GET CURRENT WiSH ID
+		$query = $db->prepare("SELECT id FROM wishes WHERE name = :name AND wishlist = :wishlist");
+		$query->execute(array(
+			':name' => $wish_name,
+			':wishlist' => $wish_wishlist
+		));
+		$wish = $query->fetch();
 
-		header("Location:/" . $me_username . '/' . $wishlist_slug . '/' . $wish_id);
-	}else{
-		echo json_encode($message);
+		header("Location:/" . $me['username'] . '/' . $wishlist_slug . '/' . $wish['id']);
 	}
 }
 

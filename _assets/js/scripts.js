@@ -267,7 +267,7 @@
 
 	$('.wishlist label').on('click', function(){
 		$(this).toggleClass('active');
-		$(this).siblings('input').prop("checked", !checkBoxes.prop("checked"));
+		$(this).parents('.private_checkbox').siblings('input[type=text]').focus();
 	});
 
 
@@ -276,12 +276,9 @@
 	$('.wishlist a.icon-plus').on('click', function(){
 		target = $(this).data('target');
 		elem = $('.wishlists li.add');
-		if(target == 'add_wishlist'){
-			elem.toggle();
-			elem.find('form input').first().focus();
-		}
-
-		elem.find('form').find('#name').removeClass('error').attr('placeholder', 'Name');
+		elem.toggle();
+		elem.find('#name').focus().removeClass('error').attr('placeholder', 'Name');
+		
 		elem.find('form').submit(function(e){
 			thisForm = $(this);
 			inputName = thisForm.find('#name');
@@ -315,6 +312,7 @@
 		parent = $(this).parent('li');
 		parent.hide();
 		parent.next().show();
+		parent.next().find('form').find('#name').focus();
 
 		parent.next().find('form').submit(function(e){
 			thisForm = $(this);
@@ -348,6 +346,19 @@
 
 	$('li.edit .remove').on('click', function(){
 		$(this).submit();
+	})
+
+
+
+
+	// ADD WISH
+
+	$('.wish.add, .wish.edit').find('select[name=wishlist]').on('change', function(){
+		if($(this).val() == "new"){
+			$(this).css({'opacity': 0.2}).after('<input id="new_wishlist" type="text" name="new_wishlist" placeholder="Name your new wishlist" required />').siblings('#new_wishlist').focus();
+		}else{
+			$(this).css({'opacity': 1}).siblings('#new_wishlist').remove();
+		}
 	})
 
 
@@ -404,6 +415,7 @@
 	// POPULATE FEED
 
 	function populateFeed(){
+		$('.alter').show();
 
 		$.ajax({
 			url: '/_include/feed_populate.php',
