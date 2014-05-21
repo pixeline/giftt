@@ -6,13 +6,17 @@
 			margin-bottom: 20px;
 		}
 
-		a.settings{
+		a.settings, a.logout, span{
 			margin-top: 12px;
 			font-family: $tisa;
 			font-size: em(14);
 			font-weight: 600;
 			text-transform: uppercase;
 			color: $gray30;
+		}
+
+		span{
+			margin: 0 8px;
 		}
 
 	}

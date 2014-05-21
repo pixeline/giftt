@@ -1772,13 +1772,15 @@ a.button {
 
 .user.view .main > header a.user, .wishlist.view .main > header a.user {
   margin-bottom: 20px; }
-.user.view .main > header a.settings, .wishlist.view .main > header a.settings {
+.user.view .main > header a.settings, .user.view .main > header a.logout, .user.view .main > header span, .wishlist.view .main > header a.settings, .wishlist.view .main > header a.logout, .wishlist.view .main > header span {
   margin-top: 12px;
   font-family: "ff-tisa-sans-web-pro", sans-serif;
   font-size: 0.875em;
   font-weight: 600;
   text-transform: uppercase;
   color: #b2b2b2; }
+.user.view .main > header span, .wishlist.view .main > header span {
+  margin: 0 8px; }
 .user.view .content aside li.wishlist a, .user.view .content aside li.add, .user.view .content aside li.edit, .wishlist.view .content aside li.wishlist a, .wishlist.view .content aside li.add, .wishlist.view .content aside li.edit {
   padding: 0 15px; }
 .user.view .content aside header a.icon, .wishlist.view .content aside header a.icon {

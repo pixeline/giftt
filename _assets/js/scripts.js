@@ -40,7 +40,7 @@
 			fix = 0;
 		}
 		$('.main').height(wh-fix);
-		$('.alter').find('.wrapper').height(wh-84-60);
+		$('.alter').find('.wrapper').height(wh-84);
 		i++;
 	}
 
@@ -110,10 +110,7 @@
 
 	function aside(){
 		body.toggleClass('withAside');
-		showFeed();
-		if(body.hasClass('wishlist')){
-			runMasonry();
-		}
+		$('.alter .search').find('input').focus();
 	}
 
 
@@ -127,7 +124,9 @@
 	// SEARCH
 
 	feedHidden = 0;
-	$('.search input').on('keyup', function(e){
+	$('.search').on('submit', function(e){
+		e.preventDefault();
+	}).find('input').on('keyup', function(e){
 		input = $(this);
 		alter = $('.alter');
 		feed = alter.find('.feed');
@@ -145,6 +144,10 @@
 			feedHidden = 0;
 		}
 
+		if(e.which == 13){
+			window.location.href = results.find('a').first().attr('href');
+		}
+
 		doSearch($(this).val());
 	})
 
@@ -160,91 +163,6 @@
 	/////////////////////////////////////
 	// FORMS ////////////////////////////
 	/////////////////////////////////////
-
-	// VALIDATION
-
-	/*form = $('form');
-	form.submit(function(){
-		thisForm = $(this);
-		fields = $(this).find('input, textarea, select, radio');
-		errors = {};
-		thisForm.find('label, input, select, textarea').removeClass('error');
-		fields.each(function(){
-			validate($(this));
-		})
-		$.each(errors, function(key, value){
-			thisForm.find('label[for='+key+']').addClass('error');
-			thisForm.find(value+'[id='+key+']').addClass('error');
-		})
-		if(!$.isEmptyObject(errors)){
-			return false;
-		}
-	})
-
-	function validate(el){
-		tag = el.prop('tagName').toLowerCase();
-		type = el.prop('type').toLowerCase();
-		if(tag == 'input'){
-			isRequired(el, tag);
-			if(type == 'file'){
-				isImage(el);
-				isNotTooBig(el);
-			}
-		}else if(tag == 'select'){
-			isRequired(el, tag);
-		}else if(tag == 'textarea'){
-			isRequired(el, tag);
-		}
-	}
-
-	function isRequired(el){
-		if(!!el.attr('required')){
-			if(tag == "input"){
-				if(type == "file"){
-					if(!el.val().length && (el.siblings('img').attr('src') == '' || el.siblings('img').attr('src') == '/')){
-						name = el.attr('id');
-						errors[name] = tag;
-					}
-				}else{
-					if(!el.val().length){
-						name = el.attr('id');
-						errors[name] = tag;
-					}
-				}
-			}else if(tag == "select"){
-				bar = el.find('option:selected').attr('value');
-				if(!bar){
-					name = el.attr('id');
-					errors[name] = tag;
-				}
-			}else if(tag == "textarea"){
-				if(!el.val().length){
-					name = el.attr('id');
-					errors[name] = tag;
-				}
-			}
-		}
-	}
-
-	function isImage(el){
-		ext = el.val().substring(el.val().lastIndexOf('.') + 1);
-		if(el.val().length){
-			if(ext != "jpg" && ext != "jpeg" && ext != "png" && ext != "gif"){
-				name = 'image';
-				errors[name] = tag;
-			}
-		}
-	}
-
-	function isNotTooBig(el){
-		file = el[0].files[0];
-		if(file){
-			if(file.size > 1000000 || el.fileSize > 1000000){
-				name = 'image';
-				errors[name] = tag;
-			}
-		}
-	}*/
 
 
 	// SHOW UPLOADED IMAGE
@@ -375,43 +293,6 @@
 	/////////////////////////////////////
 	// AJAX REQUESTS ////////////////////
 	/////////////////////////////////////
-
-	// FOLLOW
-
-	$('.follow').on('click', function(){
-		button = $(this);
-		who = button.data('who');
-		follow(who, button);
-		return false;
-	})
-
-	function follow(who, button){
-		followData = {'who2': who};
-
-		$.ajax({
-			url: '/_include/follow.php',
-			type: 'POST',
-			data: {data:followData},
-			dataType: 'text',
-			error: function(){
-				return false;
-			},
-			success: function(){
-				location.reload();
-			}
-		});
-	}
-
-
-	// SHOW FEED
-
-	function showFeed(){
-
-		$.ajax({
-			url: '/_include/feed_show.php',
-			type: 'POST'
-		});
-	}
 
 
 	// POPULATE FEED

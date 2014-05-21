@@ -3,7 +3,7 @@
 		
 		<form class="search" action="#" method="POST">
 			<label for="search">Search</label>
-			<input id="search" name="search" placeholder="Search..." />
+			<input id="search" name="search" autocomplete="off" autocapitalize="off" placeholder="Search..." />
 		</form>
 
 		<div class="wrapper">
@@ -15,9 +15,9 @@
 			</div>
 		</div>
 		
-		<div class="logout">
+		<!-- <div class="logout">
 			<a href="/logout" class="icon icon-logout"></a>
-		</div>
+		</div> -->
 
 	</div>
 </aside>

@@ -5,10 +5,9 @@ require_once $root . '/_include/functions.php';
 
 // REGISTER
 
-if(isset($_POST['data'])){
+if(isset($_GET['id'])){
 
-	$data = $_POST['data'];
-	$who2 = htmlspecialchars($data['who2']);
+	$who2 = htmlspecialchars($_GET['id']);
 
 	$query = $db->prepare("SELECT * FROM follows WHERE who = :who AND who2 = :who2");
 	$query->execute(array(
@@ -29,6 +28,15 @@ if(isset($_POST['data'])){
 			'who2' => $who2
 		));
 	}
+
+	$query = $db->prepare("SELECT * FROM users WHERE id = :id");
+	$query->execute(array(
+		'id' => $_GET['id']
+	));
+
+	$user = $query->fetch();
+
+	header("Location:/" . $user['username']);
 
 }
 

@@ -15,6 +15,7 @@ RewriteRule ^logout/?$ account/logout/index.php [L]
 
 # USERS
 RewriteRule ^settings/?$ edit/user/index.php [L]
+RewriteRule ^follow/([0-9]+)/?$ _include/follow.php?id=$1 [L]
 RewriteRule ^([a-z0-9-_]+)/?$ view/wishlist/index.php?user=$1 [L]
 
 # ADD

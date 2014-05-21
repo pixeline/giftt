@@ -181,11 +181,11 @@
 							}else{
 								if(in_array($user['id'], $me_followings_id)){
 						?>
-						<a class="icon_cont follow" href="#" data-who="<?php echo $user['id']; ?>">Unfollow <?php echo $user['firstname']; ?><span href="#" class="icon icon-minus"></span></a>
+						<a class="icon_cont follow" href="/follow/<?php echo $user['id']; ?>">Unfollow <?php echo $user['firstname']; ?><span href="#" class="icon icon-minus"></span></a>
 						<?php
 								}else{
 						?>
-						<a class="icon_cont green follow" href="#" data-who="<?php echo $user['id']; ?>">Follow <?php echo $user['firstname']; ?><span href="#" class="icon icon-plus"></span></a>
+						<a class="icon_cont green follow" href="/follow/<?php echo $user['id']; ?>">Follow <?php echo $user['firstname']; ?><span href="#" class="icon icon-plus"></span></a>
 						<?php
 								}
 							}

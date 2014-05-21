@@ -10,7 +10,7 @@
 			<p class="description"><?php echo $user['description']; ?></p>
 		<?php } ?>
 		<?php if($mine){ ?>
-			<a class="settings" href="#">Edit my profile</a>
+			<a class="settings" href="#">Edit your profile</a><span>|</span><a class="logout" href="/logout">Logout</a>
 		<?php } ?>
 
 	</div>
