@@ -13,7 +13,7 @@ function searchForId($id, $array){
 
 function shortUrl($string){
 	$shorter = str_replace('https://', '', $string);
-	$shorter = str_replace('http://', '', $string);
+	$shorter = str_replace('http://', '', $shorter);
 	$shorter = str_replace('www.', '', $shorter);
 	$shorter = explode('/', $shorter);
 	return $shorter[0];
