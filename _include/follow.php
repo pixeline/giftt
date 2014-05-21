@@ -5,7 +5,7 @@ require_once $root . '/_include/functions.php';
 
 // REGISTER
 
-if($_POST['data']){
+if(isset($_POST['data'])){
 
 	$data = $_POST['data'];
 	$who2 = htmlspecialchars($data['who2']);
@@ -22,17 +22,13 @@ if($_POST['data']){
 			'who' => $me['id'],
 			'who2' => $who2
 		));
-		echo "update";
 	}else{
 		$query = $db->prepare("INSERT INTO follows(who, who2) VALUES(:who, :who2)");
 		$query->execute(array(
 			'who' => $me['id'],
 			'who2' => $who2
 		));
-		echo "insert";
 	}
-
-	echo "sent";
 
 }
 

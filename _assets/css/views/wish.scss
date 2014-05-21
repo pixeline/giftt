@@ -68,10 +68,24 @@
 
 				p.remove{
 
+					.icon-close{
+						font-size: em(20);
+					}
+
 					&:hover{
 
 						a{
 							color: $red;
+						}
+					}
+				}
+
+				p.share{
+
+					&:hover{
+
+						a{
+							color: $green;
 						}
 					}
 				}

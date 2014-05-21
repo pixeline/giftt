@@ -144,6 +144,8 @@
 			results.hide();
 			feedHidden = 0;
 		}
+
+		doSearch($(this).val());
 	})
 
 
@@ -421,46 +423,29 @@
 			url: '/_include/feed_populate.php',
 			type: 'POST',
 			success: function(data){
-				$('.alter .feed').append(data);
+				$('.alter .feed').empty().append(data);
 			}
 		})
 	}
 
 
-	// TEST
+	// SEARCH
 
-	$('.wish.view form').submit(function(){
-		thisForm = $(this);
-		fields = $(this).find('input, textarea, select, radio');
-		errors = {};
-		thisForm.find('label, input, select, textarea').removeClass('error');
-		fields.each(function(){
-			validate($(this));
-		})
-		$.each(errors, function(key, value){
-			thisForm.find('label[for='+key+']').addClass('error');
-			thisForm.find(value+'[id='+key+']').addClass('error');
-		})
-		if(!$.isEmptyObject(errors)){
-			return false;
-		}
-	})
+	function doSearch(value){
+		searchData = {search: value};
 
-	function editWish(){
-		data = $("#edit_wish").serializeArray();
 		$.ajax({
-			url: '/edit/wish/edit_do.php',
+			url: '/_include/search.php',
 			type: 'POST',
-			data: data,
+			data: {data:searchData},
+			error: function(){
+				return false;
+			},
 			success: function(data){
-				results = $.parseJSON(data);
-				showErrors(results);
+				console.log(data);
+				$('.alter .results').empty().append(data);
 			}
-		})
-	}
-
-	function showErrors(data){
-		console.log(data);
+		});
 	}
 
 })();

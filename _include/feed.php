@@ -11,9 +11,6 @@
 				<!-- TO BE FILLED WITH AN AJAX REQUEST -->
 			</div>
 			<div class="results">
-				<div class="item">
-					search results will be shown here
-				</div>
 				<!-- TO BE FILLED WITH AN AJAX REQUEST -->
 			</div>
 		</div>

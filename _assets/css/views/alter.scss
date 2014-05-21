@@ -1,0 +1,165 @@
+// ALTER
+
+body.withAside{
+
+	.main{
+		@include transform(translateX(-240px));
+	}
+
+	#show_hide{
+		color: $black;
+	}
+}
+
+.alter{
+	float: right;
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+	padding: 0;
+	width: 15%;
+	width: calc(240px);
+	background: $black;
+	overflow: hidden;
+	@include transition(right 0.2s ease-in-out);
+
+	.container{
+		width: 100%;
+		position: relative;
+		color: $white;
+		padding: 0;
+		margin: 0;
+	}
+
+	.search{
+		margin: 0 20px;
+		border-bottom: 1px solid mix($white, $black, 10%);
+
+		label{
+			display: none;
+		}
+
+		input{
+			margin: 18px 0;
+			display: block;
+			width: 100%;
+			height: 44px;
+			background: mix($white, $black, 10%);
+			border: 0;
+			border-radius: 2px;
+			font-family: $proxima;
+			font-size: 15px;
+			color: $white;
+			padding: 0 12px;
+
+			@include placeholder{
+				color: mix($white, $black, 40%)
+			}
+		}
+	}
+
+	.wrapper{
+		width: 100%;
+		overflow: auto;
+		@include transition(opacity 0.3s ease-in-out);
+	}
+
+	a{
+		color: $white;
+	}
+
+	.item{
+		background: $black;
+		display: block;
+		overflow: hidden;
+		padding: 12px 20px;
+		@include transition(background 0.2s ease-in-out);
+
+		.user{
+			float: left;
+			width: 44px;
+			padding-right: 12px;
+
+			img{
+				height: 28px;
+				width: 28px;
+				border-radius: 28px;
+				margin-top: 4px;
+			}
+		}
+
+		.content{
+			padding: 0 !important;
+			float: left;
+			width: 156px;
+			font-smoothing: antialiased;
+
+			p{
+				margin: 0;
+				font-weight: 500;
+				font-size: em(15);
+			}
+
+			strong{
+				font-weight: 600;
+			}
+
+			.picture{
+				height: 100px;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+				width: 100%;
+				border-radius: 2px;
+				margin-top: 12px;
+			}
+		}
+
+		&:hover{
+			background: mix($white, $black, 10%);
+		}
+	}
+
+	.logout{
+		margin: 0 20px;
+		border-top: 1px solid mix($white, $black, 10%);
+		text-align: right;
+
+		a{
+			padding: 0 10px;
+			line-height: 60px;
+			color: mix($white, $black, 30%);
+			@include transition(color 0.2s ease-in-out);
+
+			&:hover{
+				color: $white;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.results{
+		display: none;
+		padding: 0 20px;
+		
+		p{
+			margin: 18px 0 5px;
+			font-family: $freight;
+			font-weight: 600;
+			font-size: em(13);
+			color: mix($white, $black, 30%);
+			text-transform: uppercase;
+		}
+
+		.item{
+			padding: 6px 0;
+
+			&:hover{
+				background: $black;
+			}
+		}
+	}
+}
