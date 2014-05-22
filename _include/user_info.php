@@ -24,17 +24,6 @@ if($query->rowCount() == 0){
 	}else{
 		$mine = 0;
 	}
-
-	$query = $db->prepare("SELECT who2, follow FROM follows WHERE who = :id AND follow = 1 AND who2 != :id2");
-	$query->execute(array(
-		':id' => $me['id'],
-		':id2' => $me['id']
-	));
-
-	$me_followings_id = array();
-	while($follow = $query->fetch(PDO::FETCH_ASSOC)){
-		$me_followings_id[] = $follow['who2'];
-	}
 }
 
 ?>

@@ -87,6 +87,7 @@ if($user){
 
 		// CREATE USERNAME
 		$username = strtolower($firstname) . strtolower($lastname);
+		$username = unAccent($username);
 
 		$query = $db->prepare("SELECT username FROM users WHERE username LIKE :username");
 		$query->execute(array(
@@ -124,8 +125,8 @@ if($user){
 	));
 	$results = $query->fetch();
 
-	$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description']);
-
+	$_SESSION['me'] = array('id' => $results['id'], 'username' => $results['username'], 'firstname' => $results['firstname'], 'lastname' => $results['lastname'], 'description' => $results['description'], 'picture' => $results['picture'], 'email' => $results['email']);
+	
 	if(isset($new) && $new == 1){
 		$query = $db->prepare("INSERT INTO follows(who, who2) VALUES(:who, :who2)");
 		$query->execute(array(

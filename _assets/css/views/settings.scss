@@ -1,0 +1,71 @@
+.settings{
+
+	header{
+		padding: 0;
+		height: 87px;
+
+		#show_hide{
+			top: 15px;
+		}
+	}
+
+	.container-fluid{
+		max-width: 400px;
+	}
+
+	h3{
+		margin-top: 60px;
+		font-family: $tisa;
+		font-size: em(16);
+		font-weight: 600;
+		text-transform: uppercase;
+
+		&:first-of-type{
+			margin-top: 40px;
+		}
+
+		& + p{
+			color: $gray50;
+			font-size: em(14);
+			margin-top: 5px;
+			line-height: $lh * 0.8;
+		}
+	}
+
+	form{
+		margin-top: 25px;
+	}
+
+	.image{
+		padding-right: 0;
+		text-align: center;
+	}
+
+	.file_cont{
+		border-radius: 110px !important;
+		display: inline-block;
+		width: 90px;
+		height: 90px;
+
+		img{
+			border-radius: 100px;
+			padding: 4px;
+			height: 100% !important;
+		}
+
+		span{
+			padding: 25px 0 !important;
+		}
+
+		&.error{
+			margin-bottom: 20px;
+
+			p{
+				width: 100%;
+				padding: 0;
+				text-align: center;
+			}
+		}
+	}
+
+}

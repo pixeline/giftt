@@ -34,7 +34,7 @@
 						</div>
 						<div class="col-sm-8">
 							<label for="name"><strong>Name</strong> (required)</label>
-							<input class="first<?php if(isset($message['name'])){ echo ' error'; } ?>" id="name" type="text" name="name" value="<?php if(isset($current_wish['name'])) echo $current_wish['name']; ?>" placeholder="Name" required />
+							<input class="first<?php if(isset($message['name'])){ echo ' error'; } ?>" id="name" type="text" name="name" value="<?php if(isset($wish_name)){ echo $wish_name; }else if(isset($current_wish['name'])) echo $current_wish['name']; ?>" placeholder="Name" required />
 							<p class="error"><?php if(isset($message['name'])){ echo $message['name']; } ?></p>
 							
 							<label for="wishlist"><strong>Wishlist</strong> (required)</label>
