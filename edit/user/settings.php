@@ -63,7 +63,7 @@
 								<textarea id="description" name="description" placeholder="A short description of yourself" ><?php if(isset($me['description'])) echo $me['description']; ?></textarea>
 								<p class="error"><?php if(isset($message['email'])){ echo $message['email']; } ?></p>
 
-								<input type="submit" name="edit_profile" value="Save modifications" />
+								<input type="submit" name="edit_profile" value="Save profile" />
 							</div>
 						</div>
 					</form>
