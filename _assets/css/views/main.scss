@@ -151,46 +151,8 @@ nav{
 		}
 	}
 
-	#settings{
-		right: 66px;
-
-		&.active{
-			color: $black;
-		}
-	}
-
-	ul.settings-list{
-		text-align: left;
-		display: none;
-		position: absolute;
-		top: 55px;
-		right: 66px;
-		z-index: 100;
-		background: white;
-		border: 2px solid $gray12;
-		border-radius: 2px;
-		font-weight: 600;
-
-		li{
-			border-bottom: 1px solid $gray12;
-
-			&:last-child{
-				border-bottom: 0;
-			}
-		}
-
-		a{
-			padding: 10px 18px 8px;
-			font-size: em(15);
-			width: 100%;
-		}
-
-		&.show{
-			display: block;
-		}
-	}
-
 	#show_hide{
+		top: 14px;
 		right: 24px;
 		font-size: em(16);
 	}

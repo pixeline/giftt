@@ -1,12 +1,14 @@
 #register, #login{
 
 	header{
-		padding: 60px 0;
+		margin-bottom: 0;
 
-		img{
-			height: 100px;
-			width: 100px;
-			border-radius: 0;
+		.logo a{
+			width: 100%;
+
+			img{
+				margin: 0 auto;
+			}
 		}
 	}
 
@@ -19,6 +21,7 @@
 			text-transform: none;
 			color: $gray40;
 			letter-spacing: 0;
+			line-height: 20px;
 		}
 	}
 

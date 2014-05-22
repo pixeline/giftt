@@ -1490,32 +1490,8 @@ nav [class^="icon-"] {
   transition: color 0.2s ease-in-out; }
   nav [class^="icon-"]:hover {
     color: #2c2c2c; }
-nav #settings {
-  right: 66px; }
-  nav #settings.active {
-    color: #2c2c2c; }
-nav ul.settings-list {
-  text-align: left;
-  display: none;
-  position: absolute;
-  top: 55px;
-  right: 66px;
-  z-index: 100;
-  background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 2px;
-  font-weight: 600; }
-  nav ul.settings-list li {
-    border-bottom: 1px solid #e0e0e0; }
-    nav ul.settings-list li:last-child {
-      border-bottom: 0; }
-  nav ul.settings-list a {
-    padding: 10px 18px 8px;
-    font-size: 0.9375em;
-    width: 100%; }
-  nav ul.settings-list.show {
-    display: block; }
 nav #show_hide {
+  top: 14px;
   right: 24px;
   font-size: 1em; }
 
@@ -1619,96 +1595,98 @@ a.button {
       background: #6eb004;
       color: white; }
 
-#landing {
+#landing, #register, #login {
   border-top: 3px solid #6eb004; }
-  #landing .container {
+  #landing .container, #register .container, #login .container {
     max-width: 1000px; }
-  #landing header {
+  #landing header, #register header, #login header {
     background: #f4f4f4;
     padding: 24px 0;
     border-bottom: 1px solid #e0e0e0;
     margin-bottom: 80px; }
-    #landing header .logo a {
+    #landing header .logo a, #register header .logo a, #login header .logo a {
       float: left; }
-    #landing header .logo img {
+    #landing header .logo img, #register header .logo img, #login header .logo img {
       display: block;
       width: 75px;
       height: auto; }
-    #landing header .actions {
+    #landing header .actions, #register header .actions, #login header .actions {
       text-align: right;
       padding: 18px 0; }
-      #landing header .actions .button {
+      #landing header .actions .button, #register header .actions .button, #login header .actions .button {
         font-size: 0.875em; }
-  #landing .intro {
-    text-align: center; }
-    #landing .intro h2 {
-      margin-bottom: 20px; }
-    #landing .intro p {
-      font-size: 1.125em;
-      color: #7f7f7f;
-      line-height: 24px; }
-    #landing .intro a.button {
-      margin-top: 32px; }
-  #landing .cover {
-    margin: 30px auto 60px;
-    width: 100%;
-    height: auto;
-    max-width: 1200px;
-    display: block; }
-  #landing .features {
-    text-align: center;
-    overflow: hidden; }
-    #landing .features h3 {
-      font-size: 1.125em;
+
+#landing .intro {
+  text-align: center; }
+  #landing .intro h2 {
+    margin-bottom: 20px; }
+  #landing .intro p {
+    font-size: 1.125em;
+    color: #7f7f7f;
+    line-height: 24px; }
+  #landing .intro a.button {
+    margin-top: 32px; }
+#landing .cover {
+  margin: 30px auto 60px;
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  display: block; }
+#landing .features {
+  text-align: center;
+  overflow: hidden; }
+  #landing .features h3 {
+    font-size: 1.125em;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 0 75px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: inline-block;
+    margin-bottom: 50px; }
+  #landing .features li {
+    margin-bottom: 40px; }
+    #landing .features li h4 {
+      font-family: "ff-tisa-sans-web-pro", sans-serif;
+      font-weight: 600;
+      font-size: 0.875em;
       line-height: 24px;
       text-transform: uppercase;
-      padding: 0 75px 20px;
-      border-bottom: 1px solid #e0e0e0;
-      display: inline-block;
-      margin-bottom: 50px; }
-    #landing .features li {
-      margin-bottom: 40px; }
-      #landing .features li h4 {
-        font-family: "ff-tisa-sans-web-pro", sans-serif;
-        font-weight: 600;
-        font-size: 0.875em;
-        line-height: 24px;
-        text-transform: uppercase;
-        color: #7f7f7f;
-        margin: 15px 0 10px;
-        letter-spacing: 1px; }
-      #landing .features li p {
-        line-height: 24px; }
-        #landing .features li p a {
-          color: #7f7f7f; }
-    #landing .features .button {
-      margin: 20px auto 0;
-      border-width: 2px;
-      padding: 0 35px;
-      line-height: 50px; }
-  #landing footer {
-    overflow: hidden;
-    margin: 100px auto 30px;
-    padding-top: 30px;
-    border-top: 1px solid #e0e0e0; }
-    #landing footer li:first-child {
-      text-align: left; }
-    #landing footer li:last-child {
-      text-align: right; }
+      color: #7f7f7f;
+      margin: 15px 0 10px;
+      letter-spacing: 1px; }
+    #landing .features li p {
+      line-height: 24px; }
+      #landing .features li p a {
+        color: #7f7f7f; }
+  #landing .features .button {
+    margin: 20px auto 0;
+    border-width: 2px;
+    padding: 0 35px;
+    line-height: 50px; }
+#landing footer {
+  overflow: hidden;
+  margin: 100px auto 30px;
+  padding-top: 30px;
+  border-top: 1px solid #e0e0e0; }
+  #landing footer li:first-child {
+    text-align: left; }
+  #landing footer li:last-child {
+    text-align: right; }
 
 #register header, #login header {
-  padding: 60px 0; }
-  #register header img, #login header img {
-    height: 100px;
-    width: 100px;
-    border-radius: 0; }
+  margin-bottom: 0; }
+  #register header .logo a, #login header .logo a {
+    width: 100%; }
+    #register header .logo a img, #login header .logo a img {
+      margin: 0 auto; }
 #register h2 small, #login h2 small {
   font-family: "proxima-nova", sans-serif;
   font-weight: 500;
   font-size: 17px;
   text-transform: none;
   color: #999999;
-  letter-spacing: 0; }
+  letter-spacing: 0;
+  line-height: 20px; }
 #register .facebook, #register .sep, #register form, #login .facebook, #login .sep, #login form {
   width: 280px;
   margin-left: auto;
@@ -2344,8 +2322,6 @@ body.withAside #show_hide {
 .settings header {
   padding: 0;
   height: 87px; }
-  .settings header #show_hide {
-    top: 15px; }
 .settings .container-fluid {
   max-width: 400px; }
 .settings h3 {
