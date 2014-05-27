@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Giftt extension</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="//use.typekit.net/jmx3imb.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+	<div class="container">
+		<form action="#" method="POST" enctype="multipart/form-data">
+			<div class="sep">
+				<span id="image">Drop a picture here...</span>
+			</div>
+
+			<div class="sep">
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" />
+			</div>
+
+			<div class="sep">
+				<label for="price">Price</label>
+				<input type="text" id="price" name="price" />
+				<input type="text" id="currency" name="currency" value="$" />
+			</div>
+
+			<div class="sep">
+				<label for="wishlist">Wishlist</label>
+				<select id="wishlist" name="wishlist"></select>
+			</div>
+
+			<div class="sep fade">
+				<label for="description">Description</label>
+				<textarea id="description" name="description" noresize></textarea>
+			</div>
+
+			<div class="sep submit">
+				<input type="submit" id="submit" value="Add to Giftt" />
+			</div>
+
+		</form>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="script.js"></script>
+
+</body>
+</html>

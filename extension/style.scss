@@ -1,0 +1,108 @@
+$black: rgba(44, 44, 44, 1);
+$green: rgba(110, 176, 4, 1);
+
+$freight: "freight-sans-pro", sans-serif;
+$proxima: "proxima-nova", sans-serif;
+
+body{
+	padding: 0;
+	margin: 0;
+	font-family: $proxima;
+}
+
+.container{
+	width: 190px;
+	background: $green;
+	color: white;
+	padding: 15px;
+}
+
+form{
+	margin-bottom: 0;
+}
+
+#image{
+	text-align: center;
+	border: 2px dashed rgba(255, 255, 255, 0.8);
+	border-radius: 2px;
+	float: left;
+	width: 100%;
+	box-sizing: border-box;
+	line-height: 128px;
+	height: 130px;
+	display: block;
+	margin: 0;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.sep{
+	clear: both;
+	overflow: hidden;
+	margin-top: 15px;
+
+	&:first-of-type{
+		margin-top: 0;
+	}
+}
+
+input, label, select, textarea{
+	float: left;
+	width: 100%;
+	font-family: $proxima;
+	font-size: 14px;
+	color: white;
+}
+
+input, select, textarea{
+	margin-top: 4px;
+	border: 2px solid rgba(255, 255, 255, 0.8);
+	border-radius: 2px;
+	background: none;
+	height: 35px;
+	padding: 0 10px;
+}
+
+label{
+	color: rgba(255, 255, 255, 0.8);
+	padding: 0 6px;
+}
+
+select{
+	opacity: 1;
+}
+
+textarea{
+	padding: 10px;
+	height: 100px;
+	line-height: 20px;
+	resize: none;
+}
+
+#price{
+	width: 75%;
+}
+
+#currency{
+	width: 20%;
+	margin-left: 5%;
+	text-align: center;
+}
+
+#submit{
+	font-family: $freight;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	height: 45px;
+	line-height: 43px;
+	font-weight: 600;
+	cursor: pointer;
+	-webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+
+	&:hover{
+		background: white;
+		color: $green;
+	}
+}

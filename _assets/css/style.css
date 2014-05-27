@@ -1674,7 +1674,7 @@ a.button {
     text-align: right; }
 
 #register header, #login header {
-  margin-bottom: 0; }
+  margin-bottom: 30px; }
   #register header .logo a, #login header .logo a {
     width: 100%; }
     #register header .logo a img, #login header .logo a img {
