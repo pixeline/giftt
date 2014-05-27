@@ -13,7 +13,7 @@
 		}
 	}
 
-	function br2ta(str) {
+	function br2rn(str) {
 		str = str.replace(/<br\s*\/?>/mg, "\r\n");
 		str = str.replace(/[\r\n]+$/, "");
 		return str;
@@ -25,6 +25,7 @@
 	container = $('.container');
 	form = $('form');
 	formImage = form.find('#image');
+	formPicture = form.find('#picture'); // hidden field
 	formName = form.find('#name');
 	formPrice = form.find('#price');
 	formCurrency = form.find('#currency');
@@ -41,11 +42,16 @@
 	theCurrency = decodeURI(getUrlParameter('currency'));
 	formCurrency.val(theCurrency);
 
-	theDescription = br2ta(decodeURI(getUrlParameter('description')));
+	theDescription = br2rn(decodeURI(getUrlParameter('description')));
+	theDescription = theDescription.replace('$and$', '&');
+	theDescription = theDescription.replace('$equals$', '=');
 	formDescription.val(theDescription);
 
-	theImage = br2ta(decodeURI(getUrlParameter('image')));
-	formImage.empty().css({'background': 'url(' + theImage + ') no-repeat center center', 'background-size': 'cover', 'border': 0});
+	theImage = decodeURI(getUrlParameter('image'));
+	if(theImage.length != ""){
+		formPicture.val(theImage);
+		formImage.empty().css({'background': 'url(' + theImage + ') no-repeat center center', 'background-size': 'cover', 'border': 0});
+	}
 
 	function getWishlists(){
 		$.ajax({
@@ -60,7 +66,6 @@
 			}
 		})
 	}
-
 	getWishlists();
 
 })();
