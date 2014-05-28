@@ -14,7 +14,7 @@
 	<div class="container">
 		<form action="#" method="POST" enctype="multipart/form-data">
 			<div class="sep">
-				<span id="image">Drop a picture here...</span>
+				<span id="image" ondragover='event.preventDefault();' ondrop='alert("ok")'>Drop a picture here...</span>
 				<input type="text" id="picture" name="image" />
 			</div>
 

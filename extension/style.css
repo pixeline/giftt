@@ -24,7 +24,16 @@ form {
   display: block;
   margin: 0;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8); }
+  color: rgba(255, 255, 255, 0.8);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  -webkit-transition: opacity 0.2s ease-in-out, background 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, background 0.2s ease-in-out; }
+  #image.hover {
+    opacity: 0.5; }
+  #image.start {
+    background-color: rgba(255, 255, 255, 0.2); }
 
 #picture {
   display: none; }
@@ -59,7 +68,7 @@ select {
   opacity: 1; }
 
 textarea {
-  padding: 10px;
+  padding: 5px 10px;
   height: 100px;
   line-height: 20px;
   resize: none; }

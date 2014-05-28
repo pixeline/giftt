@@ -34,23 +34,31 @@
 	formSubmit = form.find('#submit');
 
 	theName = decodeURI(getUrlParameter('name'));
-	formName.val(theName);
+	if(theName){
+		formName.val(theName);
+	}
 
 	thePrice = decodeURI(getUrlParameter('price'));
-	formPrice.val(thePrice);
+	if(thePrice != "" && thePrice != "undefined"){
+		formPrice.val(thePrice);
+	}
 
 	theCurrency = decodeURI(getUrlParameter('currency'));
-	formCurrency.val(theCurrency);
+	if(theCurrency != "" && theCurrency != "undefined"){
+		formCurrency.val(theCurrency);
+	}
 
 	theDescription = br2rn(decodeURI(getUrlParameter('description')));
 	theDescription = theDescription.replace('$and$', '&');
 	theDescription = theDescription.replace('$equals$', '=');
-	formDescription.val(theDescription);
+	if(theDescription != "" && theDescription != "undefined"){
+		formDescription.val(theDescription);
+	}
 
 	theImage = decodeURI(getUrlParameter('image'));
-	if(theImage.length != ""){
+	if(theImage != "" && theImage != "undefined"){
 		formPicture.val(theImage);
-		formImage.empty().css({'background': 'url(' + theImage + ') no-repeat center center', 'background-size': 'cover', 'border': 0});
+		formImage.empty().css({'background-image': 'url(' + theImage + ')', 'border': 0}).removeClass('hover');
 	}
 
 	function getWishlists(){
@@ -67,5 +75,26 @@
 		})
 	}
 	getWishlists();
+
+
+	// POST MESSAGE LISTENER
+
+	function respond(e){
+		if(e.data.indexOf('drop=') > -1){
+			imageSrc = e.data.replace('drop=', '');
+			formPicture.val(imageSrc);
+			formImage.empty().css({'background-image': 'url(' + imageSrc + ')', 'border': 0}).removeClass('hover');
+		}else if(e.data == "enter"){
+			formImage.addClass('hover');
+		}else if(e.data == "leave"){
+			formImage.removeClass('hover');
+		}else if(e.data == "start"){
+			formImage.addClass('start');
+		}else if(e.data == "end"){
+			formImage.removeClass('start');
+		}
+	}
+
+	window.addEventListener('message', respond, false);
 
 })();
