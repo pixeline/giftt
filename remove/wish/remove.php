@@ -6,6 +6,6 @@ $query->execute(array(
 	':id' => $current_wish['id']
 ));
 
-header("Location:/" . $me['username'] . '/' . $current_wishlist['slug']);
+header("Location:/" . $me['username']);
 
 ?>

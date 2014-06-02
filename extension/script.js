@@ -26,6 +26,7 @@
 	form = $('form');
 	formImage = form.find('#image');
 	formPicture = form.find('#picture'); // hidden field
+	formOrigin = form.find('#origin'); // hidden field
 	formName = form.find('#name');
 	formPrice = form.find('#price');
 	formCurrency = form.find('#currency');
@@ -33,32 +34,35 @@
 	formDescription = form.find('#description');
 	formSubmit = form.find('#submit');
 
-	theName = decodeURI(getUrlParameter('name'));
+	theName = decodeURIComponent(getUrlParameter('name'));
 	if(theName){
 		formName.val(theName);
 	}
 
-	thePrice = decodeURI(getUrlParameter('price'));
+	thePrice = decodeURIComponent(getUrlParameter('price'));
 	if(thePrice != "" && thePrice != "undefined"){
 		formPrice.val(thePrice);
 	}
 
-	theCurrency = decodeURI(getUrlParameter('currency'));
+	theCurrency = decodeURIComponent(getUrlParameter('currency'));
 	if(theCurrency != "" && theCurrency != "undefined"){
 		formCurrency.val(theCurrency);
 	}
 
-	theDescription = br2rn(decodeURI(getUrlParameter('description')));
-	theDescription = theDescription.replace('$and$', '&');
-	theDescription = theDescription.replace('$equals$', '=');
+	theDescription = br2rn(decodeURIComponent(getUrlParameter('description')));
 	if(theDescription != "" && theDescription != "undefined"){
 		formDescription.val(theDescription);
 	}
 
-	theImage = decodeURI(getUrlParameter('image'));
+	theImage = decodeURIComponent(getUrlParameter('image'));
 	if(theImage != "" && theImage != "undefined"){
 		formPicture.val(theImage);
-		formImage.empty().css({'background-image': 'url(' + theImage + ')', 'border': 0}).removeClass('hover');
+		formImage.empty().css({'background-image': 'url(' + theImage + ')'}).addClass('found').removeClass('hover');
+	}
+
+	theOrigin = decodeURIComponent(getUrlParameter('url'));
+	if(theOrigin != "" && theOrigin != "undefined"){
+		formOrigin.val(theOrigin);
 	}
 
 	function getWishlists(){
@@ -77,13 +81,29 @@
 	getWishlists();
 
 
+	// NEW WISHLIST
+
+	$('select[name=wishlist]').on('change', function(){
+		if($(this).val() == "setnew"){
+			new_wishlist_name = prompt("Please give this wishlist a name");
+			if(new_wishlist_name != "" && new_wishlist_name != null){
+				$('input[id=new_wishlist]').remove();
+				$(this).after('<input id="new_wishlist" type="text" name="new_wishlist" value="' + new_wishlist_name + '" required />').siblings('#new_wishlist').hide();
+				$(this).children().last().before('<option value="new">' + new_wishlist_name + '</option>').prev().prop('selected', true);
+			}else{
+				$(this).children().first().prop('selected', true);
+			}
+		}
+	})
+
+
 	// POST MESSAGE LISTENER
 
 	function respond(e){
 		if(e.data.indexOf('drop=') > -1){
 			imageSrc = e.data.replace('drop=', '');
 			formPicture.val(imageSrc);
-			formImage.empty().css({'background-image': 'url(' + imageSrc + ')', 'border': 0}).removeClass('hover');
+			formImage.empty().css({'background-image': 'url(' + imageSrc + ')'}).addClass('found').removeClass('hover');
 		}else if(e.data == "enter"){
 			formImage.addClass('hover');
 		}else if(e.data == "leave"){
@@ -96,5 +116,26 @@
 	}
 
 	window.addEventListener('message', respond, false);
+
+
+	// SUBMIT
+
+	form.on('submit', function(){
+		submitForm();
+		return false;
+	})
+
+	function submitForm(){
+		data = form.serialize();
+
+		$.ajax({
+			url: '/extension/add.php',
+			type: 'POST',
+			data: data,
+			success: function(data){
+				alert('done');
+			}
+		})
+	}
 
 })();

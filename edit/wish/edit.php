@@ -67,7 +67,7 @@
 
 								?>
 
-								<option value="new">New wishlist</option>
+								<option value="setnew">New wishlist</option>
 
 							</select>
 							<p class="error"><?php if(isset($message['wishlist'])){ echo $message['wishlist']; } ?></p>

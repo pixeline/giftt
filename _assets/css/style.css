@@ -1536,8 +1536,7 @@ nav #show_hide {
         color: #cccccc; }
   .content .heart {
     width: 80%;
-    width: calc(100% - 280px);
-    padding-left: 25px; }
+    width: calc(100% - 280px); }
     .content .heart .action {
       padding: 0 15px; }
       .content .heart .action p {
@@ -1921,12 +1920,14 @@ a.button {
       opacity: 1; }
   .user.view .content aside .following li.nobody, .user.view .content aside .followers li.nobody, .wishlist.view .content aside .following li.nobody, .wishlist.view .content aside .followers li.nobody {
     width: 100%; }
-.user.view .content .heart .icon_cont, .wishlist.view .content .heart .icon_cont {
-  padding-right: 24px; }
-  .user.view .content .heart .icon_cont span, .wishlist.view .content .heart .icon_cont span {
-    left: auto;
-    right: 0;
-    top: 22px; }
+.user.view .content .heart, .wishlist.view .content .heart {
+  padding-left: 25px; }
+  .user.view .content .heart .icon_cont, .wishlist.view .content .heart .icon_cont {
+    padding-right: 24px; }
+    .user.view .content .heart .icon_cont span, .wishlist.view .content .heart .icon_cont span {
+      left: auto;
+      right: 0;
+      top: 22px; }
 .user.view .content .wishes li, .wishlist.view .content .wishes li {
   margin-bottom: 30px; }
   .user.view .content .wishes li .wish, .wishlist.view .content .wishes li .wish {
@@ -2218,9 +2219,9 @@ body.withAside #show_hide {
     position: relative;
     color: white;
     padding: 0;
-    margin: 0; }
+    margin: 0 !important; }
   .alter .search {
-    margin: 0 20px;
+    margin: 0 20px !important;
     border-bottom: 1px solid #414141; }
     .alter .search label {
       display: none; }

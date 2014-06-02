@@ -338,6 +338,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/profile\/1_7_222815711.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 52828,
+		"inputAbbreviatedPath": "\/_assets\/images\/profile\/1_7_222815711.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/profile\/1_7_222815711.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/profile\/adrienlabigne.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -701,6 +712,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/1_74_1570460963.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54516,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_74_1570460963.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_74_1570460963.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wishes\/1_74_1672774094.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -708,6 +730,17 @@
 		"initialSize": 117091,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_74_1672774094.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_74_1672774094.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_74_1998881931.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54516,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_74_1998881931.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_74_1998881931.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -778,6 +811,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/1_7_1280479270.jpeg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28653,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1280479270.jpeg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1280479270.jpeg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_1312564878.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54516,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1312564878.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1312564878.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wishes\/1_7_1420614050.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -785,6 +840,17 @@
 		"initialSize": 14360,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1420614050.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1420614050.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_1569648726.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 52828,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1569648726.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1569648726.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -844,6 +910,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/1_7_2015299888.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54516,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_2015299888.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_2015299888.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wishes\/1_7_271524161.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -877,6 +954,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/1_7_518446744.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 52828,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_518446744.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_518446744.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wishes\/1_7_632037117.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -899,6 +987,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/1_7_738293330.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 24786,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_738293330.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_738293330.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_89617140.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54516,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_89617140.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_89617140.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_925643916.jpeg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 24391,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_925643916.jpeg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_925643916.jpeg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wishes\/1_7_959849963.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -906,6 +1027,72 @@
 		"initialSize": 52147,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_959849963.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_959849963.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_86_2003164853.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12427,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_86_2003164853.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_86_2003164853.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1__33299584.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 659799,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1__33299584.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1__33299584.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_new_1609992930.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 122,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_new_1609992930.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_new_1609992930.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_new_420173241.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4382,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_new_420173241.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_new_420173241.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_new_433146155.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 544853,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_new_433146155.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_new_433146155.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_new_933745010.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 122,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_new_933745010.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_new_933745010.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1712,6 +1899,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/edit\/wishlist\/index.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/extension\/add.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/extension\/add.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

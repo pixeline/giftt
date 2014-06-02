@@ -31,16 +31,34 @@ if(!empty($raw_follows)){
 
 	$follows = join(',', $raw_follows);
 
-	$query = $db->prepare("SELECT * FROM wishes WHERE author IN ($follows) AND removed = :removed");
+	$query = $db->prepare("SELECT * FROM wishlists WHERE author IN ($follows) AND private = 0 AND removed = :removed");
 	$query->execute(array(
 		':removed' => 0
 	));
-	$wishes = $query->fetchAll();
+	$wishlists_query = $query->fetchAll();
 
-	$data = array();
-	if(isset($wishes) && !empty($wishes)){
-		foreach($wishes as $wish){
-			$data[] = $wish;
+	$wishlists = array();
+	if(isset($wishlists_query) && !empty($wishlists_query)){
+		foreach($wishlists_query as $wishlist){
+			$wishlists[] = $wishlist['id'];
+		}
+	}
+
+	if(!empty($wishlists)){
+
+		$wishlists_list = join(',', $wishlists);
+
+		$query = $db->prepare("SELECT * FROM wishes WHERE wishlist IN ($wishlists_list) AND removed = :removed");
+		$query->execute(array(
+			':removed' => 0
+		));
+		$wishes = $query->fetchAll();
+
+		$data = array();
+		if(isset($wishes) && !empty($wishes)){
+			foreach($wishes as $wish){
+				$data[] = $wish;
+			}
 		}
 	}
 

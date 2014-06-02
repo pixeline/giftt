@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title><?php echo $current_wish['name'] . " | " . $user_name; ?></title>
+	<title><?php echo $current_wish['name'] . " | " . $user_name . ' | Giftt'; ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 
@@ -40,7 +40,7 @@
 					<div class="col-sm-8">
 						
 						<?php if(!empty($current_wish['description'])){ ?>
-						<p class="description"><?php echo nl2br($current_wish['description']); ?></p>
+						<p class="description"><?php echo htmlspecialchars_decode(nl2br($current_wish['description'])); ?></p>
 							<?php if(!empty($current_wish['origin'])){ ?>
 						<p class="description_more"><a href="<?php echo $current_wish['origin']; ?>" target="_blank">more information...</a></p>
 							<?php } ?>
@@ -80,7 +80,9 @@
 						<?php }else{ ?>
 						<p class="add"><a class="icon_cont green" href="#"><span class="icon icon-plus"></span>Wish it too</a></p>
 						<?php } ?>
+						<?php if(!$is_private){ ?>
 						<p class="share"><a class="icon_cont" href="#"><span class="icon icon-share"></span>Share</a></p>
+						<?php } ?>
 					</div>
 				</div>
 
@@ -98,7 +100,8 @@
 					?>
 					<div class="prev col-sm-6">
 						<p>
-							<a href="/<?php echo $prev_wish_url; ?>"><?php echo $prev_wish['name']; ?></a>
+							<?php $prev_wish_name = strlen($prev_wish['name']) > 25 ? substr($prev_wish['name'],0,25)."..." : $prev_wish['name']; ?>
+							<a href="/<?php echo $prev_wish_url; ?>"><?php echo $prev_wish_name; ?></a>
 						</p>
 					</div>
 					<?php 
@@ -110,7 +113,8 @@
 					?>
 					<div class="next col-sm-6">
 						<p>
-							<a href="/<?php echo $next_wish_url; ?>"><?php echo $next_wish['name']; ?></a>
+							<?php $next_wish_name = strlen($next_wish['name']) > 25 ? substr($next_wish['name'],0,25)."..." : $next_wish['name']; ?>
+							<a href="/<?php echo $next_wish_url; ?>"><?php echo $next_wish_name; ?></a>
 						</p>
 					</div>
 					<?php } ?>

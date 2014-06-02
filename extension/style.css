@@ -34,8 +34,10 @@ form {
     opacity: 0.5; }
   #image.start {
     background-color: rgba(255, 255, 255, 0.2); }
+  #image.found {
+    border: 0; }
 
-#picture {
+#picture, #origin {
   display: none; }
 
 .sep {

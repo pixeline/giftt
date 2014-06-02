@@ -7,7 +7,7 @@
 			if(isset($get_wishlist)){
 				echo $current_wishlist['name'] . " | ";
 			}
-			echo $user_name; 
+			echo $user_name . ' | Giftt';
 		?>
 	</title>
 	<?php require_once $root . '/_include/head.php'; ?>
@@ -80,7 +80,11 @@
 						?>
 
 						<li class="wishlist<?php if($active_wishlist){ echo " active"; } if($mine){ echo " mine"; } if($wishlist['private']){ echo " private"; } ?>">
-							<a href="/<?php echo $wishlist_url; ?>"><?php echo $wishlist['name']; ?>
+							<a href="/<?php echo $wishlist_url; ?>">
+								<?php 
+									$wishlist_name = strlen($wishlist['name']) > 22 ? substr($wishlist['name'],0,22)."..." : $wishlist['name'];
+									echo $wishlist_name;
+								?>
 								<span><?php echo $wish_count; ?></span>
 							</a>
 							<a class="icon icon-edit" href="/<?php echo $wishlist_url; ?>/edit"></a>

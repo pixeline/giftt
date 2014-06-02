@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['add_wish'])){
-	
+
 	$wish_author = $me['id'];
 	$wish_name = htmlspecialchars($_POST['name']);
 	$wish_origin = htmlspecialchars($_POST['origin']);
@@ -10,52 +10,28 @@ if(isset($_POST['add_wish'])){
 	if(empty($wish_currency)){
 		$wish_currency = "$";
 	}
+
 	$wish_image = $_FILES['image'];
+	
 	if(!isset($_POST['wishlist'])){
 		$_POST['wishlist'] = "";
 	}
-	if(isset($_POST['new_wishlist'])){
+
+	$wish_wishlist = htmlspecialchars($_POST['wishlist']);
+	if(isset($wish_wishlist) && $wish_wishlist == "new"){
 		$wishlist_author = $me['id'];
 		$wishlist_name = htmlspecialchars($_POST['new_wishlist']);
 		$wishlist_slug = slugify($wishlist_name);
 
-		if(!isset($_POST['new_wishlist_private'])){
-			$wishlist_private = 0;
-		}else{
+		if(isset($_POST['new_wishlist_private'])){
 			$wishlist_private = 1;
-		}
-
-		// REQUIRED INPUTS (EXCEPT FILES)
-		$required_fields = array('new_wishlist');
-		$errors = array();
-
-		foreach($required_fields as $field){
-			if(isset($_POST[$field]) && empty($_POST[$field])){
-				$errors[$field] = "You must provide a " . $field;
-			}
-		}
-
-		if(!count($errors)){
-			$query = $db->prepare("INSERT INTO wishlists(author, name, slug, private) VALUES(:author, :name, :slug, :private)");
-			$query->execute(array(
-				'author' => $wishlist_author,
-				'name' => $wishlist_name,
-				'slug' => $wishlist_slug,
-				'private' => $wishlist_private
-			));
-			$query = $db->prepare("SELECT id FROM wishlists WHERE slug = :slug");
-			$query->execute(array(
-				'slug' => $wishlist_slug
-			));
-			$results = $query->fetch(PDO::FETCH_ASSOC);
-			$wish_wishlist = $results['id'];
 		}else{
-			echo "You must name your new wishlist";
-			die;
+			$wishlist_private = 0;
 		}
-	}else{
-		$wish_wishlist = htmlspecialchars($_POST['wishlist']);
+
+		$new_wishlist = 1;
 	}
+
 	$wish_description = htmlspecialchars($_POST['description']);
 
 	// REQUIRED INPUTS (EXCEPT FILES)
@@ -90,6 +66,25 @@ if(isset($_POST['add_wish'])){
 	}
 
 	if(!count($message)){
+
+		// INSERT NEW WISHLIST (MAYBE)
+		if(isset($new_wishlist) && $new_wishlist == 1){
+			$query = $db->prepare("INSERT INTO wishlists(author, name, slug, private) VALUES(:author, :name, :slug, :private)");
+			$query->execute(array(
+				'author' => $wishlist_author,
+				'name' => $wishlist_name,
+				'slug' => $wishlist_slug,
+				'private' => $wishlist_private
+			));
+			$query = $db->prepare("SELECT id FROM wishlists WHERE slug = :slug");
+			$query->execute(array(
+				'slug' => $wishlist_slug
+			));
+			$results = $query->fetch(PDO::FETCH_ASSOC);
+			$wish_wishlist = $results['id'];
+		}
+
+		// INSERT NEW WISH
 		$query = $db->prepare("INSERT INTO wishes(author, wishlist, name, picture, description, price, currency, origin) VALUES(:author, :wishlist, :name, :picture, :description, :price, :currency, :origin)");
 		$query->execute(array(
 			'author' => $wish_author,

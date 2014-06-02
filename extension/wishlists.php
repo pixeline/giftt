@@ -14,6 +14,11 @@ if(isset($me)){
 	while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
 		$wishlists[] = $wishlist;
 	}
+?>
+
+	<option value="0" disabled>Choose a wishlist...</option>
+
+<?php
 
 	if(isset($wishlists[0])){
 
@@ -26,6 +31,12 @@ if(isset($me)){
 		}
 
 	}
+?>
+
+	<option value="setnew">New wishlist</option>
+
+<?php
+
 }
 
 ?>

@@ -47,9 +47,13 @@ form{
 	&.start{
 		background-color: rgba(255, 255, 255, 0.2);
 	}
+
+	&.found{
+		border: 0;
+	}
 }
 
-#picture{
+#picture, #origin{
 	display: none;
 }
 

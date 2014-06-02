@@ -1,5 +1,17 @@
 (function(){
 
+	// SHOW OR HIDE?
+
+	var iframe = document.getElementById('iframeId');
+	var dropzone = document.getElementById('dropzone');
+	if(iframe){
+		iframe.remove(0);
+		dropzone.remove(0);
+		return;
+	}
+
+
+
 	// GET INFO
 
 	name = "";
@@ -8,12 +20,49 @@
 	description = "";
 	image = "";
 
-	if(window.location.href.indexOf('etsy.com') > -1){
+	var metas = document.getElementsByTagName('meta');
+	function getMetaContent(target){
+		for(i=0; i<metas.length; i++){
+			if(metas[i].getAttribute("property") == target){
+				return metas[i].getAttribute("content");
+			}else if(metas[i].getAttribute("name") == target){
+				return metas[i].getAttribute("content");
+			}
+		}
+		return false;
+	}
+
+	// defaults
+	if(getMetaContent('og:title')){
+		name = getMetaContent('og:title');
+	}else{
 		nameElem = document.querySelectorAll('h1')[0];
 		if(nameElem){
 			name = nameElem.textContent.trim();
 		}
+	}
 
+	if(getMetaContent('og:image')){
+		image = getMetaContent('og:image');
+	}
+
+	if(getMetaContent('description')){
+		description = getMetaContent('description');
+	}
+
+	console.log(description);
+
+	// specific stories
+	if(window.location.href.indexOf('etsy.com') > -1){
+		if(getMetaContent('og:title') != ""){
+			name = getMetaContent('og:title');
+		}
+
+		if(getMetaContent('og:image') != ""){
+			image = getMetaContent('og:image');
+		}
+
+		// PRICE NEEDS TO BE RETRIEVED THIS WAY, OTHERWISE IT WILL NOT ALWAYS BE THE SAME CURRENCY/CONVERSION
 		priceElem = document.querySelectorAll('.price-block')[0];
 		if(priceElem){
 			priceElem = priceElem.querySelectorAll('span.currency-value')[0];
@@ -67,14 +116,46 @@
 
 			description = descriptionElem.textContent.trim();
 			description.substring(0, 300);
-			description = description.replace('&', '$and$');
-			description = description.replace('=', '$equals$');
 		}
 
 		imageElem = document.querySelectorAll('#main-image-container')[0];
 		if(imageElem){
 			imageElem = imageElem.querySelectorAll('img')[0];
 			image = imageElem.getAttribute('src');
+		}
+	}else if(window.location.href.indexOf('store.apple') > -1){
+		priceElem = document.querySelectorAll('span[itemprop="price"]')[0];
+		if(priceElem){
+			price = priceElem.textContent.trim();
+		}
+
+		currencyElem = document.querySelectorAll('meta[itemprop="priceCurrency"]')[0];
+		if(currencyElem){
+			currencyElem = currencyElem.getAttribute('content');
+			if(currencyElem.indexOf('$') > -1 || currencyElem.indexOf('USD') > -1){
+				price = price.replace('$', '');
+				price = price.replace('USD', '');
+				currency = '$';
+			}else if(currencyElem.indexOf('€') > -1 || currencyElem.indexOf('EUR') > -1){
+				price = price.replace('€', '');
+				price = price.replace('EUR', '');
+				currency = '€';
+			}else if(currencyElem.indexOf('£') > -1 || currencyElem.indexOf('GBP') > -1){
+				price = price.replace('£', '');
+				price = price.replace('GBP', '');
+				currency = '£';
+			}
+		}
+
+		imageElem = document.querySelectorAll('#productInfo')[0];
+		if(imageElem){
+			imageElem = imageElem.querySelectorAll('img')[0];
+			image = imageElem.getAttribute('src');
+			console.log(image);
+		}
+	}else if(window.location.href.indexOf('pinterest.com') > -1){
+		if(getMetaContent('og:description')){
+			name = getMetaContent('og:description');
 		}
 	}
 
@@ -85,15 +166,7 @@
 
 	serverUrl = "http://tfe.dev/";
 
-	var iframe = document.getElementById('iframeId');
-	var dropzone = document.getElementById('dropzone');
-	if(iframe){
-		iframe.remove(0);
-		dropzone.remove(0);
-		return;
-	}
-
-	iframeSrc = serverUrl + 'extension/index.html?name=' + encodeURI(name) + '&url=' + window.location + '&price=' + encodeURI(price) + '&currency=' + encodeURI(currency) + '&description=' + encodeURI(description) + '&image=' + encodeURI(image);
+	iframeSrc = serverUrl + 'extension/index.html?name=' + encodeURIComponent(name) + '&url=' + window.location + '&price=' + encodeURIComponent(price) + '&currency=' + encodeURIComponent(currency) + '&description=' + encodeURIComponent(description) + '&image=' + encodeURIComponent(image);
 
 	iframe = document.createElement('iframe');
 	iframe.src = iframeSrc;
@@ -124,7 +197,7 @@
 	dropzone.addEventListener('dragenter', dragEnter, false);
 	dropzone.addEventListener('dragleave', dragLeave, false);
 	dropzone.addEventListener('drop', drop, false);
-	document.addEventListener('dragstart', dragStart, true);
+	document.addEventListener('dragstart', dragStart, false);
 	document.addEventListener('dragend', dragEnd, false);
 
 	function dragOver(e){
@@ -137,12 +210,6 @@
 		e.preventDefault();
 
 		iframe.contentWindow.postMessage('enter', 'http://tfe.dev/');
-	}
-
-	function dragStart(e){
-		e.stopPropagation();
-
-		iframe.contentWindow.postMessage('start', 'http://tfe.dev/');
 	}
 
 	function dragLeave(e){
@@ -164,6 +231,12 @@
 		iframe.contentWindow.postMessage('drop='+url[1], 'http://tfe.dev/');
 		
 		return false;
+	}
+
+	function dragStart(e){
+		e.stopPropagation();
+
+		iframe.contentWindow.postMessage('start', 'http://tfe.dev/');
 	}
 
 	function dragEnd(e){

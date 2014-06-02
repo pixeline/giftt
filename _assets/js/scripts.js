@@ -269,15 +269,18 @@
 	})
 
 
-
-
 	// ADD WISH
 
 	$('.wish.add, .wish.edit').find('select[name=wishlist]').on('change', function(){
-		if($(this).val() == "new"){
-			$(this).css({'opacity': 0.2}).after('<input id="new_wishlist" type="text" name="new_wishlist" placeholder="Name your new wishlist" required />').siblings('#new_wishlist').focus();
-		}else{
-			$(this).css({'opacity': 1}).siblings('#new_wishlist').remove();
+		if($(this).val() == "setnew"){
+			new_wishlist_name = prompt("Please give this wishlist a name");
+			if(new_wishlist_name != "" && new_wishlist_name != "null"){
+				$('input[id=new_wishlist]').remove();
+				$(this).after('<input id="new_wishlist" type="text" name="new_wishlist" value="' + new_wishlist_name + '" required />').siblings('#new_wishlist').hide();
+				$(this).children().last().before('<option value="new">' + new_wishlist_name + '</option>').prev().prop('selected', true);
+			}else{
+				$(this).children().first().prop('selected', true);
+			}
 		}
 	})
 

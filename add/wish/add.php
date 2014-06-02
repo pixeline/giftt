@@ -26,7 +26,7 @@
 						<div class="col-sm-4">
 							<label for="image"><strong>Photo</strong></label>
 							<div class="file_cont<?php if(isset($message['image'])){ echo ' error'; } ?>">
-								<img src="/<?php echo $_POST['picture']; ?>" alt="<?php if(isset($_POST['name'])) echo $_POST['name']; ?>" <?php if(!isset($_POST['picture'])) echo "style='display: none;'"; ?> />
+								<img src="/<?php if(isset($_POST['picture'])) echo $_POST['picture']; ?>" alt="<?php if(isset($_POST['name'])) echo $_POST['name']; ?>" <?php if(!isset($_POST['picture'])) echo "style='display: none;'"; ?> />
 								<span class="icon-picture" <?php if(isset($_POST['picture'])) echo "style='display: none;'"; ?>></span>
 								<input <?php if(isset($message['image'])){ echo 'class="error"'; } ?>id="image" type="file" name="image" required />
 								<p class="error"><?php if(isset($message['image'])){ echo $message['image']; } ?></p>
@@ -67,7 +67,7 @@
 
 								?>
 
-								<option value="new">New wishlist</option>
+								<option value="setnew">New wishlist</option>
 
 							</select>
 							<p class="error"><?php if(isset($message['wishlist'])){ echo $message['wishlist']; } ?></p>
