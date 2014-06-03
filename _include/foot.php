@@ -1,4 +1,5 @@
 <script src="/_assets/js/jquery.min.js"></script>
+<script src="/_assets/js/fastclick.min.js"></script>
 <script src="/_assets/js/scripts.min.js"></script>
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

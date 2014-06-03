@@ -35,6 +35,7 @@
 	i = 0;
 	function resizeStuff(){
 		wh = $(window).innerHeight();
+		ww = $(window).innerWidth();
 		fix = 3;
 		if(i == 0){
 			fix = 0;
@@ -53,6 +54,7 @@
 		smallStuff();
 		initMasonry();
 		populateFeed();
+		FastClick.attach(document.body);
 
 	}
 
@@ -110,7 +112,9 @@
 
 	function aside(){
 		body.toggleClass('withAside');
-		$('.alter .search').find('input').focus();
+		if(ww > 767){
+			$('.alter .search').find('input').focus();
+		}
 	}
 
 
