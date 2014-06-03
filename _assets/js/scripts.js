@@ -152,7 +152,7 @@
 	})
 
 
-	// ARROWS TO NAVIGATE BETWEEN WISHES
+	// ARROWS TO NAVIGATE BETWEEN WISHES AND SHOW/HIDE SIDEBAR
 
 	$(document).keydown(function(e){
 		if(e.keyCode == 37){
@@ -162,6 +162,8 @@
 					location.href = target;
 				}
 				return false;
+			}else if(body.hasClass('wishlist view')){
+				aside();
 			}
 		}else if(e.keyCode == 39){
 			if(body.hasClass('wish view')){
@@ -170,6 +172,8 @@
 					location.href = target;
 				}
 				return false;
+			}else if(body.hasClass('wishlist view')){
+				aside();
 			}
 		}
 	});
