@@ -152,6 +152,29 @@
 	})
 
 
+	// ARROWS TO NAVIGATE BETWEEN WISHES
+
+	$(document).keydown(function(e){
+		if(e.keyCode == 37){
+			if(body.hasClass('wish view')){
+				target = $('.wish_navigation').find('.prev').find('a').attr('href');
+				if(target != "undefined" && target != null){
+					location.href = target;
+				}
+				return false;
+			}
+		}else if(e.keyCode == 39){
+			if(body.hasClass('wish view')){
+				target = $('.wish_navigation').find('.next').find('a').attr('href');
+				if(target != "undefined" && target != null){
+					location.href = target;
+				}
+				return false;
+			}
+		}
+	});
+
+
 
 
 

@@ -40,7 +40,7 @@
 					<div class="col-sm-8">
 						
 						<?php if(!empty($current_wish['description'])){ ?>
-						<p class="description"><?php echo htmlspecialchars_decode(nl2br($current_wish['description'])); ?></p>
+						<p class="description"><?php echo nl2br(rtrim(ltrim(htmlspecialchars_decode($current_wish['description'])))); ?></p>
 							<?php if(!empty($current_wish['origin'])){ ?>
 						<p class="description_more"><a href="<?php echo $current_wish['origin']; ?>" target="_blank">more information...</a></p>
 							<?php } ?>
