@@ -2041,7 +2041,7 @@ a.button {
   .user.view .settings, .user.view .settings + span, .wishlist.view .settings, .wishlist.view .settings + span {
     display: none; }
   .user.view .content, .wishlist.view .content {
-    padding: 40px 0; }
+    padding: 40px 0 0; }
     .user.view .content aside, .wishlist.view .content aside {
       display: none; }
     .user.view .content .select, .wishlist.view .content .select {
