@@ -23,6 +23,40 @@
 
 		<section class="content container-fluid">
 
+			<!-- SELECT FOR MOBILE -->
+			<div class="select">
+				<select onchange="location = this.options[this.selectedIndex].value;">
+					<option value="/<?php echo $user['username']; ?>">All wishlists</option>
+					<?php
+						if(isset($wishlists[0])){
+
+							$current_wishes = array();
+							foreach($wishlists as $wishlist){
+								$wishlist_url = $user['username'] . "/" . $wishlist['slug'];
+								$active_wishlist = 0;
+								if(isset($current_wishlist['id'])){
+									if($wishlist['id'] == $current_wishlist['id']){
+										$active_wishlist = 1;
+									}
+								}
+								$wish_count = 0;
+								foreach($wishes as $wish){
+									if(in_array($wishlist['id'], $wish)){
+										$wish_count++;
+										if($active_wishlist){
+											$current_wishes[] = $wish;
+										}
+									}
+								}
+					?>
+					<option value="/<?php echo $user['username'] . '/' . $wishlist['slug']; ?>"<?php if($active_wishlist){ echo " selected"; } ?>><?php echo $wishlist['name']; ?></option>
+					<?php
+							}
+						}
+					?>
+				</select>
+			</div>
+
 			<!-- SIDEBAR -->
 			<aside class="col-sm-3">
 				<div class="pod wishlists">

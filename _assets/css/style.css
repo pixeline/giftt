@@ -1569,6 +1569,13 @@ footer {
     font-weight: inherit;
     font-size: inherit; }
 
+@media screen and (max-width: 767px) {
+  nav #logo img {
+    width: 50px;
+    height: 50px; }
+  nav #show_hide {
+    line-height: 44px;
+    font-size: 0.9375em; } }
 a.button {
   font-family: "freight-sans-pro", sans-serif;
   text-transform: uppercase;
@@ -1588,8 +1595,7 @@ a.button {
     text-decoration: none; }
   a.button.register {
     border-color: #6eb004;
-    color: #6eb004;
-    margin-right: 14px; }
+    color: #6eb004; }
     a.button.register:hover {
       background: #6eb004;
       color: white; }
@@ -1609,12 +1615,14 @@ a.button {
       display: block;
       width: 75px;
       height: auto; }
-    #landing header .actions, #register header .actions, #login header .actions {
-      text-align: right;
-      padding: 18px 0; }
-      #landing header .actions .button, #register header .actions .button, #login header .actions .button {
-        font-size: 0.875em; }
 
+#landing header .actions {
+  text-align: right;
+  padding-top: 18px; }
+  #landing header .actions .button {
+    font-size: 0.875em; }
+#landing header .register {
+  margin-right: 14px; }
 #landing .intro {
   text-align: center; }
   #landing .intro h2 {
@@ -1657,11 +1665,6 @@ a.button {
       line-height: 24px; }
       #landing .features li p a {
         color: #7f7f7f; }
-  #landing .features .button {
-    margin: 20px auto 0;
-    border-width: 2px;
-    padding: 0 35px;
-    line-height: 50px; }
 #landing footer {
   overflow: hidden;
   margin: 100px auto 30px;
@@ -1671,6 +1674,39 @@ a.button {
     text-align: left; }
   #landing footer li:last-child {
     text-align: right; }
+@media screen and (min-width: 768px) {
+  #landing .features .button {
+    margin: 20px auto 0;
+    border-width: 2px;
+    padding: 13px 35px;
+    line-height: 24px; } }
+@media screen and (max-width: 767px) {
+  #landing header {
+    margin-bottom: 40px; }
+    #landing header .logo {
+      overflow: hidden;
+      text-align: center; }
+      #landing header .logo a {
+        float: none; }
+    #landing header .actions {
+      text-align: center; }
+  #landing .intro {
+    margin-bottom: 40px; }
+    #landing .intro a.button {
+      margin-top: 24px; }
+  #landing .cover {
+    display: none; }
+  #landing .features h3 {
+    display: none; }
+  #landing .features li {
+    margin-bottom: 24px; }
+  #landing .features a.button {
+    border-width: 1px; }
+  #landing footer {
+    margin-top: 50px;
+    padding-top: 24px; }
+    #landing footer li:last-child {
+      display: none; } }
 
 #register header, #login header {
   margin-bottom: 30px; }
@@ -1746,6 +1782,16 @@ a.button {
     color: #b2b2b2; }
 #register form, #login form {
   margin-top: 14px; }
+@media screen and (max-width: 767px) {
+  #register header, #login header {
+    margin-bottom: 0; }
+  #register .content, #login .content {
+    padding: 40px 0; }
+  #register .facebook, #login .facebook {
+    margin-top: 24px;
+    margin-bottom: 30px; }
+  #register form, #login form {
+    margin-top: 0; } }
 
 .user.view .main > header a.user, .wishlist.view .main > header a.user {
   margin-bottom: 20px; }
@@ -1758,6 +1804,8 @@ a.button {
   color: #b2b2b2; }
 .user.view .main > header span, .wishlist.view .main > header span {
   margin: 0 8px; }
+.user.view .content .select, .wishlist.view .content .select {
+  display: none; }
 .user.view .content aside li.wishlist a, .user.view .content aside li.add, .user.view .content aside li.edit, .wishlist.view .content aside li.wishlist a, .wishlist.view .content aside li.add, .wishlist.view .content aside li.edit {
   padding: 0 15px; }
 .user.view .content aside header a.icon, .wishlist.view .content aside header a.icon {
@@ -1981,6 +2029,34 @@ a.button {
     text-decoration: none; }
     .user.view .content a.nothing:hover span, .wishlist.view .content a.nothing:hover span {
       text-decoration: underline; }
+@media screen and (max-width: 767px) {
+  .user.view .settings, .user.view .settings + span, .wishlist.view .settings, .wishlist.view .settings + span {
+    display: none; }
+  .user.view .content, .wishlist.view .content {
+    padding: 40px 0; }
+    .user.view .content aside, .wishlist.view .content aside {
+      display: none; }
+    .user.view .content .select, .wishlist.view .content .select {
+      display: block;
+      width: 100%;
+      padding: 0 15px; }
+      .user.view .content .select select, .wishlist.view .content .select select {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        background: #f4f4f4;
+        border-color: #cccccc;
+        font-size: 0.875em; }
+    .user.view .content .heart, .wishlist.view .content .heart {
+      width: 100%;
+      padding-left: 15px;
+      clear: both;
+      margin-top: 24px; }
+      .user.view .content .heart .action, .wishlist.view .content .heart .action {
+        display: none; } }
+@media screen and (max-width: 399px) {
+  .user.view .content .wishes li, .wishlist.view .content .wishes li {
+    width: 100%; } }
 
 .wish.view .container-fluid {
   max-width: 1200px; }
@@ -2071,6 +2147,23 @@ a.button {
     .wish.view .content .wish_navigation .next a:after {
       right: 0;
       content: ">"; }
+@media screen and (max-width: 767px) {
+  .wish.view .content {
+    padding: 40px 0; }
+    .wish.view .content aside {
+      display: none; }
+    .wish.view .content .heart {
+      width: 100%;
+      padding-left: 15px;
+      clear: both;
+      margin-top: 0; }
+      .wish.view .content .heart .current_wish .picture {
+        margin-bottom: 12px;
+        text-align: left; }
+    .wish.view .content .wish_navigation .prev, .wish.view .content .wish_navigation .next {
+      width: 50%; }
+    .wish.view .content .wish_navigation .prev {
+      float: left; } }
 
 .wish.add .container, .wish.edit .container {
   max-width: 600px;

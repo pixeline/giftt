@@ -104,4 +104,24 @@
 	form{
 		margin-top: 14px;
 	}
+
+	@media screen and (max-width: 767px){
+
+		header{
+			margin-bottom: 0;
+		}
+
+		.content{
+			padding: 40px 0;
+		}
+
+		.facebook{
+			margin-top: 24px;
+			margin-bottom: 30px;
+		}
+
+		form{
+			margin-top: 0;
+		}
+	}
 }

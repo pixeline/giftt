@@ -187,7 +187,41 @@
 				}
 			}
 		}
-	}	
+	}
+
+	@media screen and (max-width: 767px){
+
+		.content{
+			padding: 40px 0;
+
+			aside{
+				display: none;
+			}
+
+			.heart{
+				width: 100%;
+				padding-left: 15px;
+				clear: both;
+				margin-top: 0;
+
+				.current_wish .picture{
+					margin-bottom: 12px;
+					text-align: left;
+				}
+			}
+
+			.wish_navigation{
+
+				.prev, .next{
+					width: 50%;
+				}
+
+				.prev{
+					float: left;
+				}
+			}
+		}
+	}
 }
 
 .wish.add, .wish.edit{
