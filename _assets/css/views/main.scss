@@ -292,4 +292,9 @@ footer{
 			font-size: em(15);
 		}
 	}
+
+	.main{
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
 }
