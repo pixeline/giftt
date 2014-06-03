@@ -1579,6 +1579,10 @@ footer {
 
   .main {
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; }
+
+  .alter .wrapper {
+    overflow-y: scroll;
     -webkit-overflow-scrolling: touch; } }
 a.button {
   font-family: "freight-sans-pro", sans-serif;
