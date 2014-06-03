@@ -60,10 +60,14 @@
 						color: $green;
 						display: block;
 
-						span{
+						span.number{
 							color: $gray20;
 							font-size: em(14);
 							float: right;
+						}
+
+						span.icon{
+							margin-right: 5px;
 						}
 					}
 
@@ -85,7 +89,7 @@
 								text-decoration: none !important;
 							}
 
-							span{
+							span.number{
 								color: $white;
 							}
 						}
@@ -94,7 +98,7 @@
 
 							&:hover, &.active{
 
-								span{
+								span.number{
 									display: none;
 								}
 
@@ -121,7 +125,7 @@
 							background: $gray4;
 							color: $gray60;
 
-							span{
+							span.number{
 								color: $gray60;
 							}
 						}

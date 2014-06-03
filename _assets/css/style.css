@@ -1830,10 +1830,12 @@ a.button {
     line-height: 38px;
     color: #6eb004;
     display: block; }
-    .user.view .content aside .wishlists ul a span, .wishlist.view .content aside .wishlists ul a span {
+    .user.view .content aside .wishlists ul a span.number, .wishlist.view .content aside .wishlists ul a span.number {
       color: #cccccc;
       font-size: 0.875em;
       float: right; }
+    .user.view .content aside .wishlists ul a span.icon, .wishlist.view .content aside .wishlists ul a span.icon {
+      margin-right: 5px; }
   .user.view .content aside .wishlists ul li.wishlist a.icon, .wishlist.view .content aside .wishlists ul li.wishlist a.icon {
     position: absolute;
     top: 0;
@@ -1844,9 +1846,9 @@ a.button {
     color: white;
     border-radius: 2px;
     text-decoration: none !important; }
-  .user.view .content aside .wishlists ul li.wishlist:hover span, .user.view .content aside .wishlists ul li.wishlist.active span, .wishlist.view .content aside .wishlists ul li.wishlist:hover span, .wishlist.view .content aside .wishlists ul li.wishlist.active span {
+  .user.view .content aside .wishlists ul li.wishlist:hover span.number, .user.view .content aside .wishlists ul li.wishlist.active span.number, .wishlist.view .content aside .wishlists ul li.wishlist:hover span.number, .wishlist.view .content aside .wishlists ul li.wishlist.active span.number {
     color: white; }
-  .user.view .content aside .wishlists ul li.wishlist.mine:hover span, .user.view .content aside .wishlists ul li.wishlist.mine.active span, .wishlist.view .content aside .wishlists ul li.wishlist.mine:hover span, .wishlist.view .content aside .wishlists ul li.wishlist.mine.active span {
+  .user.view .content aside .wishlists ul li.wishlist.mine:hover span.number, .user.view .content aside .wishlists ul li.wishlist.mine.active span.number, .wishlist.view .content aside .wishlists ul li.wishlist.mine:hover span.number, .wishlist.view .content aside .wishlists ul li.wishlist.mine.active span.number {
     display: none; }
   .user.view .content aside .wishlists ul li.wishlist.mine:hover a.icon, .user.view .content aside .wishlists ul li.wishlist.mine.active a.icon, .wishlist.view .content aside .wishlists ul li.wishlist.mine:hover a.icon, .wishlist.view .content aside .wishlists ul li.wishlist.mine.active a.icon {
     display: block;
@@ -1859,7 +1861,7 @@ a.button {
   .user.view .content aside .wishlists ul li.all a:hover, .user.view .content aside .wishlists ul li.all.active a, .wishlist.view .content aside .wishlists ul li.all a:hover, .wishlist.view .content aside .wishlists ul li.all.active a {
     background: #f4f4f4;
     color: #666666; }
-    .user.view .content aside .wishlists ul li.all a:hover span, .user.view .content aside .wishlists ul li.all.active a span, .wishlist.view .content aside .wishlists ul li.all a:hover span, .wishlist.view .content aside .wishlists ul li.all.active a span {
+    .user.view .content aside .wishlists ul li.all a:hover span.number, .user.view .content aside .wishlists ul li.all.active a span.number, .wishlist.view .content aside .wishlists ul li.all a:hover span.number, .wishlist.view .content aside .wishlists ul li.all.active a span.number {
       color: #666666; }
   .user.view .content aside .wishlists ul li.add, .user.view .content aside .wishlists ul li.edit, .wishlist.view .content aside .wishlists ul li.add, .wishlist.view .content aside .wishlists ul li.edit {
     line-height: 38px;

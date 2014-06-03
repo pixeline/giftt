@@ -49,7 +49,7 @@
 									}
 								}
 					?>
-					<option value="/<?php echo $user['username'] . '/' . $wishlist['slug']; ?>"<?php if($active_wishlist){ echo " selected"; } ?>><?php echo $wishlist['name']; ?></option>
+					<option value="/<?php echo $user['username'] . '/' . $wishlist['slug']; ?>"<?php if($active_wishlist){ echo " selected"; } ?>><?php echo $wishlist['name']; if($wishlist['private']){ echo " (private)"; } ?></option>
 					<?php
 							}
 						}
@@ -70,7 +70,7 @@
 					<ul>
 						<li class="all wishlist<?php if(!isset($get_wishlist)){ echo " active"; }?>">
 							<a href="/<?php echo $user['username']; ?>">All
-								<span><?php echo count($wishes); ?></span>
+								<span class="number"><?php echo count($wishes); ?></span>
 							</a>
 						</li>
 
@@ -116,10 +116,16 @@
 						<li class="wishlist<?php if($active_wishlist){ echo " active"; } if($mine){ echo " mine"; } if($wishlist['private']){ echo " private"; } ?>">
 							<a href="/<?php echo $wishlist_url; ?>">
 								<?php 
+									if($wishlist['private']){
+								?>
+								<span class="icon icon-lock"></span>
+								<?php 
+									}
+
 									$wishlist_name = strlen($wishlist['name']) > 22 ? substr($wishlist['name'],0,22)."..." : $wishlist['name'];
 									echo $wishlist_name;
 								?>
-								<span><?php echo $wish_count; ?></span>
+								<span class="number"><?php echo $wish_count; ?></span>
 							</a>
 							<a class="icon icon-edit" href="/<?php echo $wishlist_url; ?>/edit"></a>
 						</li>
