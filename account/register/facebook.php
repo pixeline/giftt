@@ -36,6 +36,7 @@ if($user){
 if($user){
 
 	$friends = $facebook->api('/me/friends');
+	$friends_list = array();
 	foreach($friends['data'] as $friend){
 		$friends_list[] = $friend['id'];
 	}
