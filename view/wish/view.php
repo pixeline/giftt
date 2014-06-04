@@ -67,7 +67,7 @@
 						<?php } ?>
 					</div>
 				</div>
-
+				<?php if(isset($me)){ ?>
 				<div class="pod actions">
 					<header>
 						<h4>Actions</h4>
@@ -85,10 +85,11 @@
 						<?php } ?>
 					</div>
 				</div>
+				<?php } ?>
 
 			</aside>
 
-			<?php if($prev_wish || $next_wish){ ?>
+			<?php if(($prev_wish || $next_wish) && isset($me)){ ?>
 
 			<!-- NAVIGATION -->
 			<div class="wish_navigation col-sm-6 col-sm-offset-3">

@@ -167,7 +167,7 @@
 				}
 				return false;
 			}else if(body.hasClass('wishlist view')){
-				aside();
+				$('#show_hide').click();
 			}
 		}else if(e.keyCode == 39){
 			if(body.hasClass('wish view')){
@@ -177,7 +177,7 @@
 				}
 				return false;
 			}else if(body.hasClass('wishlist view')){
-				aside();
+				$('#show_hide').click();
 			}
 		}
 	});

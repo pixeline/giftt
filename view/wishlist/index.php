@@ -5,7 +5,7 @@ require_once $root . '/_include/functions.php';
 
 if(!isset($me)){
 
-	header("Location:/");
+	header("Location:/register");
 
 }else{
 

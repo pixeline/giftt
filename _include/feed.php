@@ -1,3 +1,4 @@
+<?php if(isset($me)){ ?>
 <aside class="alter">
 	<div class="container">
 		
@@ -21,3 +22,4 @@
 
 	</div>
 </aside>
+<?php } ?>

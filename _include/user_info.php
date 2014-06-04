@@ -19,7 +19,7 @@ if($query->rowCount() == 0){
 	$user = $query->fetch();
 	$user_name = $user['firstname'] . ' ' . $user['lastname'];
 
-	if($user['id'] == $me['id']){
+	if(isset($me['id']) && $user['id'] == $me['id']){
 		$mine = 1;
 	}else{
 		$mine = 0;
