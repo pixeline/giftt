@@ -26,7 +26,14 @@
 <meta name="msapplication-TileImage" content="/_assets/images/mstile-144x144.png">
 
 <!-- OG: -->
-<meta property="og:url" content="http://giftt.me" />
+<?php
+	if(isset($me)){
+		$og_url = "http://giftt.me";
+	}else{
+		$og_url = "http://giftt.me/discover";
+	}
+?>
+<meta property="og:url" content="<?php echo $og_url; ?>" />
 <?php
 	if(isset($current_wish)){
 		$og_title = $current_wish['name'];
