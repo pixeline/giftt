@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 minimal-ui">
 <meta property="og:url" content="http://giftt.me" />
 <meta property="og:title" content="Giftt.me" />
 <meta property="og:description" content="Create and share wishlists." />
