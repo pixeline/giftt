@@ -1829,234 +1829,236 @@ a.button {
     top: 0;
     right: -10px;
     content: '|'; }
-.user.view .content .select, .wishlist.view .content .select {
-  display: none; }
-.user.view .content aside li.wishlist a, .user.view .content aside li.add, .user.view .content aside li.edit, .wishlist.view .content aside li.wishlist a, .wishlist.view .content aside li.add, .wishlist.view .content aside li.edit {
-  padding: 0 15px; }
-.user.view .content aside header a.icon, .wishlist.view .content aside header a.icon {
-  margin-right: -10px;
-  padding: 0 10px; }
-  .user.view .content aside header a.icon:hover, .wishlist.view .content aside header a.icon:hover {
-    color: #6eb004; }
-.user.view .content aside .wishlists ul, .wishlist.view .content aside .wishlists ul {
-  clear: both; }
-  .user.view .content aside .wishlists ul li, .wishlist.view .content aside .wishlists ul li {
-    margin-bottom: 2px;
-    position: relative; }
-  .user.view .content aside .wishlists ul a, .wishlist.view .content aside .wishlists ul a {
-    line-height: 38px;
-    color: #6eb004;
-    display: block; }
-    .user.view .content aside .wishlists ul a span.number, .wishlist.view .content aside .wishlists ul a span.number {
-      color: #cccccc;
-      font-size: 0.875em;
-      float: right; }
-    .user.view .content aside .wishlists ul a span.icon, .wishlist.view .content aside .wishlists ul a span.icon {
-      margin-right: 2px;
-      font-size: 0.875em; }
-  .user.view .content aside .wishlists ul li.wishlist a.icon, .wishlist.view .content aside .wishlists ul li.wishlist a.icon {
-    position: absolute;
-    top: 0;
-    right: 0px;
+.user.view .content, .wishlist.view .content {
+  padding-top: 40px; }
+  .user.view .content .select, .wishlist.view .content .select {
     display: none; }
-  .user.view .content aside .wishlists ul li.wishlist:hover a, .user.view .content aside .wishlists ul li.wishlist.active a, .wishlist.view .content aside .wishlists ul li.wishlist:hover a, .wishlist.view .content aside .wishlists ul li.wishlist.active a {
-    background: #6eb004;
-    color: white;
-    border-radius: 2px;
-    text-decoration: none !important; }
-  .user.view .content aside .wishlists ul li.wishlist:hover span.number, .user.view .content aside .wishlists ul li.wishlist.active span.number, .wishlist.view .content aside .wishlists ul li.wishlist:hover span.number, .wishlist.view .content aside .wishlists ul li.wishlist.active span.number {
-    color: white; }
-  .user.view .content aside .wishlists ul li.wishlist.mine:hover span.number, .user.view .content aside .wishlists ul li.wishlist.mine.active span.number, .wishlist.view .content aside .wishlists ul li.wishlist.mine:hover span.number, .wishlist.view .content aside .wishlists ul li.wishlist.mine.active span.number {
-    display: none; }
-  .user.view .content aside .wishlists ul li.wishlist.mine:hover a.icon, .user.view .content aside .wishlists ul li.wishlist.mine.active a.icon, .wishlist.view .content aside .wishlists ul li.wishlist.mine:hover a.icon, .wishlist.view .content aside .wishlists ul li.wishlist.mine.active a.icon {
-    display: block;
-    background: none !important;
-    color: #b6d781; }
-    .user.view .content aside .wishlists ul li.wishlist.mine:hover a.icon:hover, .user.view .content aside .wishlists ul li.wishlist.mine.active a.icon:hover, .wishlist.view .content aside .wishlists ul li.wishlist.mine:hover a.icon:hover, .wishlist.view .content aside .wishlists ul li.wishlist.mine.active a.icon:hover {
+  .user.view .content aside li.wishlist a, .user.view .content aside li.add, .user.view .content aside li.edit, .wishlist.view .content aside li.wishlist a, .wishlist.view .content aside li.add, .wishlist.view .content aside li.edit {
+    padding: 0 15px; }
+  .user.view .content aside header a.icon, .wishlist.view .content aside header a.icon {
+    margin-right: -10px;
+    padding: 0 10px; }
+    .user.view .content aside header a.icon:hover, .wishlist.view .content aside header a.icon:hover {
+      color: #6eb004; }
+  .user.view .content aside .wishlists ul, .wishlist.view .content aside .wishlists ul {
+    clear: both; }
+    .user.view .content aside .wishlists ul li, .wishlist.view .content aside .wishlists ul li {
+      margin-bottom: 2px;
+      position: relative; }
+    .user.view .content aside .wishlists ul a, .wishlist.view .content aside .wishlists ul a {
+      line-height: 38px;
+      color: #6eb004;
+      display: block; }
+      .user.view .content aside .wishlists ul a span.number, .wishlist.view .content aside .wishlists ul a span.number {
+        color: #cccccc;
+        font-size: 0.875em;
+        float: right; }
+      .user.view .content aside .wishlists ul a span.icon, .wishlist.view .content aside .wishlists ul a span.icon {
+        margin-right: 2px;
+        font-size: 0.875em; }
+    .user.view .content aside .wishlists ul li.wishlist a.icon, .wishlist.view .content aside .wishlists ul li.wishlist a.icon {
+      position: absolute;
+      top: 0;
+      right: 0px;
+      display: none; }
+    .user.view .content aside .wishlists ul li.wishlist:hover a, .user.view .content aside .wishlists ul li.wishlist.active a, .wishlist.view .content aside .wishlists ul li.wishlist:hover a, .wishlist.view .content aside .wishlists ul li.wishlist.active a {
+      background: #6eb004;
+      color: white;
+      border-radius: 2px;
+      text-decoration: none !important; }
+    .user.view .content aside .wishlists ul li.wishlist:hover span.number, .user.view .content aside .wishlists ul li.wishlist.active span.number, .wishlist.view .content aside .wishlists ul li.wishlist:hover span.number, .wishlist.view .content aside .wishlists ul li.wishlist.active span.number {
       color: white; }
-  .user.view .content aside .wishlists ul li.all a, .wishlist.view .content aside .wishlists ul li.all a {
-    color: #666666; }
-  .user.view .content aside .wishlists ul li.all a:hover, .user.view .content aside .wishlists ul li.all.active a, .wishlist.view .content aside .wishlists ul li.all a:hover, .wishlist.view .content aside .wishlists ul li.all.active a {
-    background: #f4f4f4;
-    color: #666666; }
-    .user.view .content aside .wishlists ul li.all a:hover span.number, .user.view .content aside .wishlists ul li.all.active a span.number, .wishlist.view .content aside .wishlists ul li.all a:hover span.number, .wishlist.view .content aside .wishlists ul li.all.active a span.number {
+    .user.view .content aside .wishlists ul li.wishlist.mine:hover span.number, .user.view .content aside .wishlists ul li.wishlist.mine.active span.number, .wishlist.view .content aside .wishlists ul li.wishlist.mine:hover span.number, .wishlist.view .content aside .wishlists ul li.wishlist.mine.active span.number {
+      display: none; }
+    .user.view .content aside .wishlists ul li.wishlist.mine:hover a.icon, .user.view .content aside .wishlists ul li.wishlist.mine.active a.icon, .wishlist.view .content aside .wishlists ul li.wishlist.mine:hover a.icon, .wishlist.view .content aside .wishlists ul li.wishlist.mine.active a.icon {
+      display: block;
+      background: none !important;
+      color: #b6d781; }
+      .user.view .content aside .wishlists ul li.wishlist.mine:hover a.icon:hover, .user.view .content aside .wishlists ul li.wishlist.mine.active a.icon:hover, .wishlist.view .content aside .wishlists ul li.wishlist.mine:hover a.icon:hover, .wishlist.view .content aside .wishlists ul li.wishlist.mine.active a.icon:hover {
+        color: white; }
+    .user.view .content aside .wishlists ul li.all a, .wishlist.view .content aside .wishlists ul li.all a {
       color: #666666; }
-  .user.view .content aside .wishlists ul li.add, .user.view .content aside .wishlists ul li.edit, .wishlist.view .content aside .wishlists ul li.add, .wishlist.view .content aside .wishlists ul li.edit {
-    line-height: 38px;
-    border: 1px solid #cccccc;
-    box-shadow: inset 0 0 4px 2px #f4f4f4;
-    border-radius: 2px;
-    padding-right: 0;
-    display: none; }
-    .user.view .content aside .wishlists ul li.add input, .user.view .content aside .wishlists ul li.edit input, .wishlist.view .content aside .wishlists ul li.add input, .wishlist.view .content aside .wishlists ul li.edit input {
+    .user.view .content aside .wishlists ul li.all a:hover, .user.view .content aside .wishlists ul li.all.active a, .wishlist.view .content aside .wishlists ul li.all a:hover, .wishlist.view .content aside .wishlists ul li.all.active a {
+      background: #f4f4f4;
+      color: #666666; }
+      .user.view .content aside .wishlists ul li.all a:hover span.number, .user.view .content aside .wishlists ul li.all.active a span.number, .wishlist.view .content aside .wishlists ul li.all a:hover span.number, .wishlist.view .content aside .wishlists ul li.all.active a span.number {
+        color: #666666; }
+    .user.view .content aside .wishlists ul li.add, .user.view .content aside .wishlists ul li.edit, .wishlist.view .content aside .wishlists ul li.add, .wishlist.view .content aside .wishlists ul li.edit {
+      line-height: 38px;
+      border: 1px solid #cccccc;
+      box-shadow: inset 0 0 4px 2px #f4f4f4;
+      border-radius: 2px;
+      padding-right: 0;
+      display: none; }
+      .user.view .content aside .wishlists ul li.add input, .user.view .content aside .wishlists ul li.edit input, .wishlist.view .content aside .wishlists ul li.add input, .wishlist.view .content aside .wishlists ul li.edit input {
+        border: 0;
+        background: 0;
+        margin: 0;
+        float: left;
+        width: 85%;
+        width: calc(100% - 45px);
+        font-family: "proxima-nova", sans-serif;
+        font-size: 1em;
+        padding: 9px 0; }
+        .user.view .content aside .wishlists ul li.add input.error::-webkit-input-placeholder, .user.view .content aside .wishlists ul li.edit input.error::-webkit-input-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error::-webkit-input-placeholder, .wishlist.view .content aside .wishlists ul li.edit input.error::-webkit-input-placeholder {
+          color: #ba1f01; }
+        .user.view .content aside .wishlists ul li.add input.error::-moz-placeholder, .user.view .content aside .wishlists ul li.edit input.error::-moz-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error::-moz-placeholder, .wishlist.view .content aside .wishlists ul li.edit input.error::-moz-placeholder {
+          color: #ba1f01; }
+        .user.view .content aside .wishlists ul li.add input.error:-moz-placeholder, .user.view .content aside .wishlists ul li.edit input.error:-moz-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error:-moz-placeholder, .wishlist.view .content aside .wishlists ul li.edit input.error:-moz-placeholder {
+          color: #ba1f01; }
+        .user.view .content aside .wishlists ul li.add input.error:-ms-input-placeholder, .user.view .content aside .wishlists ul li.edit input.error:-ms-input-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error:-ms-input-placeholder, .wishlist.view .content aside .wishlists ul li.edit input.error:-ms-input-placeholder {
+          color: #ba1f01; }
+      .user.view .content aside .wishlists ul li.add .private_checkbox, .user.view .content aside .wishlists ul li.edit .private_checkbox, .wishlist.view .content aside .wishlists ul li.add .private_checkbox, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox {
+        float: left;
+        width: 15%;
+        width: calc(45px);
+        text-align: right;
+        overflow: hidden; }
+        .user.view .content aside .wishlists ul li.add .private_checkbox label, .user.view .content aside .wishlists ul li.edit .private_checkbox label, .wishlist.view .content aside .wishlists ul li.add .private_checkbox label, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox label {
+          width: 100%;
+          position: relative;
+          top: 2px;
+          color: #e0e0e0;
+          padding: 9px 15px;
+          cursor: pointer;
+          -webkit-transition: color 0.2s ease-in-out;
+          -moz-transition: color 0.2s ease-in-out;
+          transition: color 0.2s ease-in-out; }
+          .user.view .content aside .wishlists ul li.add .private_checkbox label:hover, .user.view .content aside .wishlists ul li.edit .private_checkbox label:hover, .wishlist.view .content aside .wishlists ul li.add .private_checkbox label:hover, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox label:hover {
+            color: #cccccc; }
+          .user.view .content aside .wishlists ul li.add .private_checkbox label.active, .user.view .content aside .wishlists ul li.edit .private_checkbox label.active, .wishlist.view .content aside .wishlists ul li.add .private_checkbox label.active, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox label.active {
+            color: #2c2c2c; }
+        .user.view .content aside .wishlists ul li.add .private_checkbox input, .user.view .content aside .wishlists ul li.edit .private_checkbox input, .wishlist.view .content aside .wishlists ul li.add .private_checkbox input, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox input {
+          display: none; }
+    .user.view .content aside .wishlists ul li.edit input, .wishlist.view .content aside .wishlists ul li.edit input {
+      width: 75%;
+      width: calc(100% - 65px); }
+    .user.view .content aside .wishlists ul li.edit .private_checkbox, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox {
+      width: 12%;
+      width: calc(30px); }
+    .user.view .content aside .wishlists ul li.edit .remove, .wishlist.view .content aside .wishlists ul li.edit .remove {
       border: 0;
       background: 0;
-      margin: 0;
       float: left;
-      width: 85%;
-      width: calc(100% - 45px);
-      font-family: "proxima-nova", sans-serif;
-      font-size: 1em;
-      padding: 9px 0; }
-      .user.view .content aside .wishlists ul li.add input.error::-webkit-input-placeholder, .user.view .content aside .wishlists ul li.edit input.error::-webkit-input-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error::-webkit-input-placeholder, .wishlist.view .content aside .wishlists ul li.edit input.error::-webkit-input-placeholder {
+      width: 13%;
+      width: calc(30px);
+      margin: 0 5px 0 0;
+      padding: 0;
+      text-align: center;
+      line-height: 41px;
+      height: 37px;
+      color: #dc8f80;
+      font-size: 1.125em;
+      z-index: 100;
+      cursor: pointer; }
+      .user.view .content aside .wishlists ul li.edit .remove:hover, .wishlist.view .content aside .wishlists ul li.edit .remove:hover {
         color: #ba1f01; }
-      .user.view .content aside .wishlists ul li.add input.error::-moz-placeholder, .user.view .content aside .wishlists ul li.edit input.error::-moz-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error::-moz-placeholder, .wishlist.view .content aside .wishlists ul li.edit input.error::-moz-placeholder {
-        color: #ba1f01; }
-      .user.view .content aside .wishlists ul li.add input.error:-moz-placeholder, .user.view .content aside .wishlists ul li.edit input.error:-moz-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error:-moz-placeholder, .wishlist.view .content aside .wishlists ul li.edit input.error:-moz-placeholder {
-        color: #ba1f01; }
-      .user.view .content aside .wishlists ul li.add input.error:-ms-input-placeholder, .user.view .content aside .wishlists ul li.edit input.error:-ms-input-placeholder, .wishlist.view .content aside .wishlists ul li.add input.error:-ms-input-placeholder, .wishlist.view .content aside .wishlists ul li.edit input.error:-ms-input-placeholder {
-        color: #ba1f01; }
-    .user.view .content aside .wishlists ul li.add .private_checkbox, .user.view .content aside .wishlists ul li.edit .private_checkbox, .wishlist.view .content aside .wishlists ul li.add .private_checkbox, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox {
-      float: left;
-      width: 15%;
-      width: calc(45px);
-      text-align: right;
-      overflow: hidden; }
-      .user.view .content aside .wishlists ul li.add .private_checkbox label, .user.view .content aside .wishlists ul li.edit .private_checkbox label, .wishlist.view .content aside .wishlists ul li.add .private_checkbox label, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox label {
-        width: 100%;
-        position: relative;
-        top: 2px;
-        color: #e0e0e0;
-        padding: 9px 15px;
-        cursor: pointer;
-        -webkit-transition: color 0.2s ease-in-out;
-        -moz-transition: color 0.2s ease-in-out;
-        transition: color 0.2s ease-in-out; }
-        .user.view .content aside .wishlists ul li.add .private_checkbox label:hover, .user.view .content aside .wishlists ul li.edit .private_checkbox label:hover, .wishlist.view .content aside .wishlists ul li.add .private_checkbox label:hover, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox label:hover {
-          color: #cccccc; }
-        .user.view .content aside .wishlists ul li.add .private_checkbox label.active, .user.view .content aside .wishlists ul li.edit .private_checkbox label.active, .wishlist.view .content aside .wishlists ul li.add .private_checkbox label.active, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox label.active {
-          color: #2c2c2c; }
-      .user.view .content aside .wishlists ul li.add .private_checkbox input, .user.view .content aside .wishlists ul li.edit .private_checkbox input, .wishlist.view .content aside .wishlists ul li.add .private_checkbox input, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox input {
+      .user.view .content aside .wishlists ul li.edit .remove input, .wishlist.view .content aside .wishlists ul li.edit .remove input {
         display: none; }
-  .user.view .content aside .wishlists ul li.edit input, .wishlist.view .content aside .wishlists ul li.edit input {
-    width: 75%;
-    width: calc(100% - 65px); }
-  .user.view .content aside .wishlists ul li.edit .private_checkbox, .wishlist.view .content aside .wishlists ul li.edit .private_checkbox {
-    width: 12%;
-    width: calc(30px); }
-  .user.view .content aside .wishlists ul li.edit .remove, .wishlist.view .content aside .wishlists ul li.edit .remove {
-    border: 0;
-    background: 0;
-    float: left;
-    width: 13%;
-    width: calc(30px);
-    margin: 0 5px 0 0;
-    padding: 0;
-    text-align: center;
-    line-height: 41px;
-    height: 37px;
-    color: #dc8f80;
-    font-size: 1.125em;
-    z-index: 100;
-    cursor: pointer; }
-    .user.view .content aside .wishlists ul li.edit .remove:hover, .wishlist.view .content aside .wishlists ul li.edit .remove:hover {
-      color: #ba1f01; }
-    .user.view .content aside .wishlists ul li.edit .remove input, .wishlist.view .content aside .wishlists ul li.edit .remove input {
-      display: none; }
-  .user.view .content aside .wishlists ul .more a, .wishlist.view .content aside .wishlists ul .more a {
-    color: #cccccc;
-    font-size: 0.9375em; }
-    .user.view .content aside .wishlists ul .more a:hover, .wishlist.view .content aside .wishlists ul .more a:hover {
-      background: none;
-      color: #2c2c2c;
-      text-decoration: underline; }
-  .user.view .content aside .wishlists ul form, .wishlist.view .content aside .wishlists ul form {
+    .user.view .content aside .wishlists ul .more a, .wishlist.view .content aside .wishlists ul .more a {
+      color: #cccccc;
+      font-size: 0.9375em; }
+      .user.view .content aside .wishlists ul .more a:hover, .wishlist.view .content aside .wishlists ul .more a:hover {
+        background: none;
+        color: #2c2c2c;
+        text-decoration: underline; }
+    .user.view .content aside .wishlists ul form, .wishlist.view .content aside .wishlists ul form {
+      overflow: hidden; }
+  .user.view .content aside .following header, .user.view .content aside .followers header, .wishlist.view .content aside .following header, .wishlist.view .content aside .followers header {
+    cursor: pointer;
+    -webkit-transition: border 0.2s ease-in-out;
+    -moz-transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out; }
+    .user.view .content aside .following header:hover, .user.view .content aside .followers header:hover, .wishlist.view .content aside .following header:hover, .wishlist.view .content aside .followers header:hover {
+      border-color: #6eb004; }
+  .user.view .content aside .following .wrapper, .user.view .content aside .followers .wrapper, .wishlist.view .content aside .following .wrapper, .wishlist.view .content aside .followers .wrapper {
+    display: none;
     overflow: hidden; }
-.user.view .content aside .following header, .user.view .content aside .followers header, .wishlist.view .content aside .following header, .wishlist.view .content aside .followers header {
-  cursor: pointer;
-  -webkit-transition: border 0.2s ease-in-out;
-  -moz-transition: border 0.2s ease-in-out;
-  transition: border 0.2s ease-in-out; }
-  .user.view .content aside .following header:hover, .user.view .content aside .followers header:hover, .wishlist.view .content aside .following header:hover, .wishlist.view .content aside .followers header:hover {
-    border-color: #6eb004; }
-.user.view .content aside .following .wrapper, .user.view .content aside .followers .wrapper, .wishlist.view .content aside .following .wrapper, .wishlist.view .content aside .followers .wrapper {
-  display: none;
-  overflow: hidden; }
-.user.view .content aside .following ul, .user.view .content aside .followers ul, .wishlist.view .content aside .following ul, .wishlist.view .content aside .followers ul {
-  overflow: hidden;
-  padding: 0 11px;
-  margin: 22px 0 5px; }
-.user.view .content aside .following li, .user.view .content aside .followers li, .wishlist.view .content aside .following li, .wishlist.view .content aside .followers li {
-  float: left;
-  padding: 4px;
-  width: 23%;
-  margin: 1%; }
-  .user.view .content aside .following li a, .user.view .content aside .followers li a, .wishlist.view .content aside .following li a, .wishlist.view .content aside .followers li a {
+  .user.view .content aside .following ul, .user.view .content aside .followers ul, .wishlist.view .content aside .following ul, .wishlist.view .content aside .followers ul {
+    overflow: hidden;
+    padding: 0 11px;
+    margin: 22px 0 5px; }
+  .user.view .content aside .following li, .user.view .content aside .followers li, .wishlist.view .content aside .following li, .wishlist.view .content aside .followers li {
     float: left;
-    opacity: 0.8;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out; }
-    .user.view .content aside .following li a img, .user.view .content aside .followers li a img, .wishlist.view .content aside .following li a img, .wishlist.view .content aside .followers li a img {
-      width: 100%;
-      height: auto;
-      border-radius: 40px;
-      float: left; }
-    .user.view .content aside .following li a:hover, .user.view .content aside .followers li a:hover, .wishlist.view .content aside .following li a:hover, .wishlist.view .content aside .followers li a:hover {
-      opacity: 1; }
-  .user.view .content aside .following li.nobody, .user.view .content aside .followers li.nobody, .wishlist.view .content aside .following li.nobody, .wishlist.view .content aside .followers li.nobody {
-    width: 100%; }
-.user.view .content .heart, .wishlist.view .content .heart {
-  padding-left: 25px; }
-  .user.view .content .heart .icon_cont, .wishlist.view .content .heart .icon_cont {
-    padding-right: 24px; }
-    .user.view .content .heart .icon_cont span, .wishlist.view .content .heart .icon_cont span {
-      left: auto;
-      right: 0;
-      top: 22px; }
-.user.view .content .wishes li, .wishlist.view .content .wishes li {
-  margin-bottom: 30px; }
-  .user.view .content .wishes li .wish, .wishlist.view .content .wishes li .wish {
+    padding: 4px;
+    width: 23%;
+    margin: 1%; }
+    .user.view .content aside .following li a, .user.view .content aside .followers li a, .wishlist.view .content aside .following li a, .wishlist.view .content aside .followers li a {
+      float: left;
+      opacity: 0.8;
+      -webkit-transition: opacity 0.2s ease-in-out;
+      -moz-transition: opacity 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out; }
+      .user.view .content aside .following li a img, .user.view .content aside .followers li a img, .wishlist.view .content aside .following li a img, .wishlist.view .content aside .followers li a img {
+        width: 100%;
+        height: auto;
+        border-radius: 40px;
+        float: left; }
+      .user.view .content aside .following li a:hover, .user.view .content aside .followers li a:hover, .wishlist.view .content aside .following li a:hover, .wishlist.view .content aside .followers li a:hover {
+        opacity: 1; }
+    .user.view .content aside .following li.nobody, .user.view .content aside .followers li.nobody, .wishlist.view .content aside .following li.nobody, .wishlist.view .content aside .followers li.nobody {
+      width: 100%; }
+  .user.view .content .heart, .wishlist.view .content .heart {
+    padding-left: 25px; }
+    .user.view .content .heart .icon_cont, .wishlist.view .content .heart .icon_cont {
+      padding-right: 24px; }
+      .user.view .content .heart .icon_cont span, .wishlist.view .content .heart .icon_cont span {
+        left: auto;
+        right: 0;
+        top: 22px; }
+  .user.view .content .wishes li, .wishlist.view .content .wishes li {
+    margin-bottom: 30px; }
+    .user.view .content .wishes li .wish, .wishlist.view .content .wishes li .wish {
+      border: 1px solid #e0e0e0;
+      border-radius: 2px;
+      -webkit-transition: box-shadow 0.2s ease-in-out;
+      -moz-transition: box-shadow 0.2s ease-in-out;
+      transition: box-shadow 0.2s ease-in-out; }
+      .user.view .content .wishes li .wish > a, .wishlist.view .content .wishes li .wish > a {
+        width: 100%; }
+      .user.view .content .wishes li .wish img, .wishlist.view .content .wishes li .wish img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #e0e0e0; }
+      .user.view .content .wishes li .wish:hover, .wishlist.view .content .wishes li .wish:hover {
+        box-shadow: 0 0 6px 0 #e0e0e0; }
+      .user.view .content .wishes li .wish .infos, .wishlist.view .content .wishes li .wish .infos {
+        padding: 12px; }
+      .user.view .content .wishes li .wish h3, .wishlist.view .content .wishes li .wish h3 {
+        font-family: "proxima-nova", sans-serif;
+        margin: 0;
+        line-height: 22px; }
+      .user.view .content .wishes li .wish p a, .wishlist.view .content .wishes li .wish p a {
+        color: #cccccc;
+        font-size: 0.875em; }
+        .user.view .content .wishes li .wish p a:hover, .wishlist.view .content .wishes li .wish p a:hover {
+          color: #999999;
+          text-decoration: underline; }
+  .user.view .content .nothing, .wishlist.view .content .nothing {
+    text-align: center;
+    background: #f4f4f4;
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    -webkit-transition: box-shadow 0.2s ease-in-out;
-    -moz-transition: box-shadow 0.2s ease-in-out;
-    transition: box-shadow 0.2s ease-in-out; }
-    .user.view .content .wishes li .wish > a, .wishlist.view .content .wishes li .wish > a {
-      width: 100%; }
-    .user.view .content .wishes li .wish img, .wishlist.view .content .wishes li .wish img {
-      width: 100%;
-      height: auto;
-      border-bottom: 1px solid #e0e0e0; }
-    .user.view .content .wishes li .wish:hover, .wishlist.view .content .wishes li .wish:hover {
-      box-shadow: 0 0 6px 0 #e0e0e0; }
-    .user.view .content .wishes li .wish .infos, .wishlist.view .content .wishes li .wish .infos {
-      padding: 12px; }
-    .user.view .content .wishes li .wish h3, .wishlist.view .content .wishes li .wish h3 {
-      font-family: "proxima-nova", sans-serif;
-      margin: 0;
-      line-height: 22px; }
-    .user.view .content .wishes li .wish p a, .wishlist.view .content .wishes li .wish p a {
-      color: #cccccc;
-      font-size: 0.875em; }
-      .user.view .content .wishes li .wish p a:hover, .wishlist.view .content .wishes li .wish p a:hover {
-        color: #999999;
+    padding: 24px 0;
+    font-weight: 500; }
+    .user.view .content .nothing span, .wishlist.view .content .nothing span {
+      margin-top: 6px;
+      display: block;
+      color: #6eb004;
+      font-weight: 600; }
+  .user.view .content a.nothing, .wishlist.view .content a.nothing {
+    -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out; }
+    .user.view .content a.nothing span, .wishlist.view .content a.nothing span {
+      -webkit-transition: color 0.2s ease-in-out;
+      -moz-transition: color 0.2s ease-in-out;
+      transition: color 0.2s ease-in-out; }
+    .user.view .content a.nothing:hover, .wishlist.view .content a.nothing:hover {
+      background: #efefef;
+      text-decoration: none; }
+      .user.view .content a.nothing:hover span, .wishlist.view .content a.nothing:hover span {
         text-decoration: underline; }
-.user.view .content .nothing, .wishlist.view .content .nothing {
-  text-align: center;
-  background: #f4f4f4;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
-  padding: 24px 0;
-  font-weight: 500; }
-  .user.view .content .nothing span, .wishlist.view .content .nothing span {
-    margin-top: 6px;
-    display: block;
-    color: #6eb004;
-    font-weight: 600; }
-.user.view .content a.nothing, .wishlist.view .content a.nothing {
-  -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
-  -moz-transition: background 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
-  transition: background 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out; }
-  .user.view .content a.nothing span, .wishlist.view .content a.nothing span {
-    -webkit-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out; }
-  .user.view .content a.nothing:hover, .wishlist.view .content a.nothing:hover {
-    background: #efefef;
-    text-decoration: none; }
-    .user.view .content a.nothing:hover span, .wishlist.view .content a.nothing:hover span {
-      text-decoration: underline; }
 @media screen and (max-width: 767px) {
   .user.view .settings, .wishlist.view .settings {
     display: none; }
@@ -2124,12 +2126,26 @@ a.button {
     width: 100%;
     height: auto;
     border-radius: 2px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #e0e0e0; }
+  .wish.view .content .heart .current_wish .picture {
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out; }
-    .wish.view .content .heart .current_wish img:hover {
+    .wish.view .content .heart .current_wish .picture:hover {
       opacity: 0.8; }
+      .wish.view .content .heart .current_wish .picture:hover p {
+        opacity: 1; }
+      .wish.view .content .heart .current_wish .picture:hover a {
+        text-decoration: none; }
+    .wish.view .content .heart .current_wish .picture p {
+      opacity: 0;
+      margin-right: 12px;
+      font-size: 0.8125em;
+      color: #b2b2b2;
+      line-height: 14px;
+      -webkit-transition: opacity 0.2s ease-in-out;
+      -moz-transition: opacity 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out; }
   .wish.view .content .heart .current_wish .title {
     margin-bottom: 20px; }
   .wish.view .content .heart .current_wish h3 {

@@ -103,10 +103,30 @@
 					height: auto;
 					border-radius: 2px;
 					border: 1px solid $gray12;
+				}
+
+				.picture{
 					@include transition(opacity 0.2s ease-in-out);
 
 					&:hover{
 						opacity: 0.8;
+
+						p{
+							opacity: 1;
+						}
+
+						a{
+							text-decoration: none;
+						}
+					}
+
+					p{
+						opacity: 0;
+						margin-right: 12px;
+						font-size: em(13);
+						color: $gray30;
+						line-height: $lh * 0.7;
+						@include transition(opacity 0.2s ease-in-out);
 					}
 				}
 

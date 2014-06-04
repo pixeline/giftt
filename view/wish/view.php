@@ -31,6 +31,7 @@
 						<?php if(!empty($current_wish['origin'])){ ?>
 						<a href="<?php echo $current_wish['origin']; ?>" target="_blank">
 							<img src="/<?php echo $current_wish['picture']; ?>" alt="<?php echo $current_wish['name']; ?>" />
+							<p>view on <?php echo shortUrl($current_wish['origin']); ?></p>
 						</a>
 						<?php }else{ ?>
 						<img src="/<?php echo $current_wish['picture']; ?>" />

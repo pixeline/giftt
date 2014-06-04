@@ -302,6 +302,46 @@
 
 	// ADD WISH
 
+	$('.wish.add, .wish.edit').find('form').on('submit', function(){
+		formName = $(this).find('input#name');
+		formWishlist = $(this).find('select#wishlist');
+		formImage = $(this).find('input#image');
+		formImageExtension = formImage.val().split('.').pop().toLowerCase();
+
+		$('p.error').remove();
+		formName.removeClass('error');
+		formWishlist.removeClass('error');
+		$('.file_cont').removeClass('error');
+		errors = {};
+		if(formName.val() == ""){
+			errors['name'] = "You must provide a name";
+		}
+		if(formWishlist.val() == null){
+			errors['wishlist'] = "You must select a wishlist";
+		}
+		if(formImage.val() == "" && formImage.siblings('img').attr('src') == "/"){
+			errors['image'] = "You must provide a picture";
+		}else if(formImage.val() != "" && formImage[0].files[0].size > 1048576){
+			errors['image'] = "The picture is too big (limited to 1 mo)";
+		}else if(formImage.val() != "" && $.inArray(formImageExtension, ['gif','png','jpg','jpeg']) == -1){
+			errors['image'] = "The picture should be a .jpg, .png or .gif file";
+		}
+
+		if(errors['name']){
+			formName.addClass('error').after('<p class="error">' + errors['name'] + '</p>').siblings('.error').show();
+		}
+		if(errors['wishlist']){
+			formWishlist.addClass('error').after('<p class="error">' + errors['wishlist'] + '</p>').siblings('.error').show();
+		}
+		if(errors['image']){
+			$('.file_cont').addClass('error').find('input').after('<p class="error">' + errors['image'] + '</p>').siblings('.error').show();
+		}
+
+		if(errors['name'] || errors['wishlist'] || errors['image']){
+			return false;
+		}
+	})
+
 	$('.wish.add, .wish.edit').find('select[name=wishlist]').on('change', function(){
 		if($(this).val() == "setnew"){
 			new_wishlist_name = prompt("Please give this wishlist a name");
