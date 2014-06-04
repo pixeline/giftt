@@ -27,11 +27,7 @@
 
 <!-- OG: -->
 <?php
-	if(isset($me)){
-		$og_url = "http://" . $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI];
-	}else{
-		$og_url = "http://giftt.me/discover";
-	}
+	$og_url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 ?>
 <meta property="og:url" content="<?php echo $og_url; ?>" />
 <?php
@@ -59,7 +55,7 @@
 	}
 ?>
 <meta property="og:image" content="<?php echo $og_picture; ?>" />
-<meta name='og:site_name' content='Giftt'>
+<meta property='og:site_name' content='Giftt'>
 
 <!-- LINKED FILES -->
 <link rel="stylesheet" href="/_assets/css/style.css">
