@@ -4,8 +4,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Settings | <?php echo $me['firstname'] . " " . $me['lastname']; ?>
-	</title>
+	<title>Settings | Giftt</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 

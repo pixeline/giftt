@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Add a wish</title>
+	<title>Add a wish | Giftt</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 
