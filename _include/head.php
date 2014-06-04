@@ -28,7 +28,7 @@
 <!-- OG: -->
 <?php
 	if(isset($me)){
-		$og_url = "http://giftt.me";
+		$og_url = "http://" . $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI];
 	}else{
 		$og_url = "http://giftt.me/discover";
 	}
