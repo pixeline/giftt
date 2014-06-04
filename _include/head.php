@@ -32,9 +32,9 @@
 <meta property="og:url" content="<?php echo $og_url; ?>" />
 <?php
 	if(isset($current_wish)){
-		$og_title = $current_wish['name'];
+		$og_title = $current_wish['name'] . " on Giftt.me";
 	}else{
-		$og_title = "Giftt";
+		$og_title = "Giftt.me";
 	}
 ?>
 <meta property="og:title" content="<?php echo $og_title; ?>" />
