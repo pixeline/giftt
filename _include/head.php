@@ -1,9 +1,14 @@
+<!-- DEVICE OPTIMIZATION -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta property="og:url" content="http://giftt.me" />
-<meta property="og:title" content="Giftt.me" />
-<meta property="og:description" content="Create and share wishlists." />
-<meta property="og:image" content="http://giftt.me/_assets/images/logo.png" />
+<meta http-equiv="cleartype" content="on">
 <meta name="apple-mobile-web-app-title" content="Giftt">
+
+<!-- META -->
+<meta name="description" content="Create wishlists, share wishlists">
+<meta name="copyright" content="Pierre Stoffe">
+<meta name="author" content="Pierre Stoffe, bonjour@pierrestoffe.com">
+
+<!-- FAVICONS AND STUFF -->
 <link rel="apple-touch-icon" sizes="57x57" href="/_assets/images/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="114x114" href="/_assets/images/apple-touch-icon-114x114.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/_assets/images/apple-touch-icon-72x72.png">
@@ -19,6 +24,37 @@
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <meta name="msapplication-TileColor" content="#7fba42">
 <meta name="msapplication-TileImage" content="/_assets/images/mstile-144x144.png">
+
+<!-- OG: -->
+<meta property="og:url" content="http://giftt.me" />
+<?php
+	if(isset($current_wish)){
+		$og_title = $current_wish['name'];
+	}else{
+		$og_title = "Giftt";
+	}
+?>
+<meta property="og:title" content="<?php echo $og_title; ?>" />
+<?php
+	if(isset($current_wish)){
+		$og_description_raw = preg_replace( "/\r|\n/", "", $current_wish['description'] );
+		$og_description = strlen($og_description_raw) > 200 ? substr($og_description_raw, 0, 200) . "..." : $og_description_raw;
+	}else{
+		$og_description = "Create wishlists, share wishlists";
+	}
+?>
+<meta property="og:description" content="<?php echo $og_description; ?>" />
+<?php
+	if(isset($current_wish)){
+		$og_picture = "http://giftt.me/" . $current_wish['picture'];
+	}else{
+		$og_picture = "http://giftt.me/_assets/images/logo.png";
+	}
+?>
+<meta property="og:image" content="<?php echo $og_picture; ?>" />
+<meta name='og:site_name' content='Giftt'>
+
+<!-- LINKED FILES -->
 <link rel="stylesheet" href="/_assets/css/style.css">
 <script type="text/javascript" src="//use.typekit.net/jmx3imb.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
