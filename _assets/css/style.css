@@ -1813,21 +1813,11 @@ a.button {
   margin-left: 8px;
   margin-right: 8px; }
 .user.view .main > header a.settings, .wishlist.view .main > header a.settings {
-  position: relative;
-  			/* span{
-  
-  				&:hover{
-  					text-decoration: underline
-  				}
-  			}
-  
-  			&:hover{
-  				text-decoration: none;
-  			} */ }
+  position: relative; }
   .user.view .main > header a.settings:after, .wishlist.view .main > header a.settings:after {
     position: absolute;
     top: 0;
-    right: -10px;
+    right: -11px;
     content: '|'; }
 .user.view .content, .wishlist.view .content {
   padding-top: 40px; }
@@ -2093,14 +2083,15 @@ a.button {
 .wish.view .content aside .icon_cont span {
   top: 8px; }
 .wish.view .content aside .information p, .wish.view .content aside .actions p {
-  padding: 0 15px;
-  line-height: 36px;
+  padding: 7px 15px;
+  line-height: 20px;
   margin-bottom: 0; }
 .wish.view .content aside .information a {
   font-weight: 600;
   color: #6eb004; }
 .wish.view .content aside .actions p {
-  line-height: 34px; }
+  padding: 0 15px;
+  line-height: 32px; }
 .wish.view .content aside .actions a {
   color: #b2b2b2;
   font-family: "ff-tisa-sans-web-pro", sans-serif;
@@ -2126,26 +2117,26 @@ a.button {
     width: 100%;
     height: auto;
     border-radius: 2px;
-    border: 1px solid #e0e0e0; }
-  .wish.view .content .heart .current_wish .picture {
+    border: 1px solid #e0e0e0;
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out; }
-    .wish.view .content .heart .current_wish .picture:hover {
+    .wish.view .content .heart .current_wish img:hover {
       opacity: 0.8; }
-      .wish.view .content .heart .current_wish .picture:hover p {
+      .wish.view .content .heart .current_wish img:hover + p {
         opacity: 1; }
-      .wish.view .content .heart .current_wish .picture:hover a {
-        text-decoration: none; }
-    .wish.view .content .heart .current_wish .picture p {
-      opacity: 0;
-      margin-right: 12px;
-      font-size: 0.8125em;
-      color: #b2b2b2;
-      line-height: 14px;
-      -webkit-transition: opacity 0.2s ease-in-out;
-      -moz-transition: opacity 0.2s ease-in-out;
-      transition: opacity 0.2s ease-in-out; }
+  .wish.view .content .heart .current_wish .picture a:hover {
+    color: #cccccc;
+    text-decoration: none; }
+  .wish.view .content .heart .current_wish .picture p {
+    opacity: 0;
+    margin-right: 12px;
+    font-size: 0.8125em;
+    color: #cccccc;
+    line-height: 14px;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; }
   .wish.view .content .heart .current_wish .title {
     margin-bottom: 20px; }
   .wish.view .content .heart .current_wish h3 {

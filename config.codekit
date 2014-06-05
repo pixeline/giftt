@@ -800,6 +800,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/1_7_1252063455.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2701,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1252063455.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1252063455.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wishes\/1_7_1262705799.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -829,6 +840,17 @@
 		"initialSize": 54516,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1312564878.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1312564878.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_1354116301.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 65979,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1354116301.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1354116301.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -910,6 +932,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/wishes\/1_7_1991505593.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1512,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1991505593.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_1991505593.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/wishes\/1_7_2015299888.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -917,6 +950,28 @@
 		"initialSize": 54516,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_2015299888.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_2015299888.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_2079501338.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3350,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_2079501338.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_2079501338.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_2140731963.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2701,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_2140731963.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_2140731963.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -939,6 +994,17 @@
 		"initialSize": 38307,
 		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_339974855.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_339974855.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/wishes\/1_7_383607663.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1512,
+		"inputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_383607663.png",
+		"outputAbbreviatedPath": "\/_assets\/images\/wishes\/1_7_383607663.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2198,11 +2264,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/extension\/index.html": {
+	"\/extension\/index.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/extension\/index.html",
+		"inputAbbreviatedPath": "\/extension\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

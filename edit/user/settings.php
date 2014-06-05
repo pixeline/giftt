@@ -39,7 +39,7 @@
 								<div class="file_cont<?php if(isset($message['image'])){ echo ' error'; } ?>">
 									<img src="/<?php echo $me['picture']; ?>" alt="<?php if(isset($me['name'])) echo $me['name']; ?>" <?php if(empty($me['picture'])) echo "style='display: none;'"; ?> />
 									<span class="icon-picture" <?php if(!empty($me['picture'])) echo "style='display: none;'"; ?>></span>
-									<input <?php if(isset($message['image'])){ echo 'class="error"'; } ?>id="image" type="file" name="image" required />
+									<input <?php if(isset($message['image'])){ echo 'class="error"'; } ?>id="image" type="file" name="image" />
 									<p class="error"><?php if(isset($message['image'])){ echo $message['image']; } ?></p>
 								</div>
 							</div>

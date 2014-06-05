@@ -65,7 +65,7 @@
 		formOrigin.val(theOrigin);
 	}
 
-	function getWishlists(){
+	/*function getWishlists(){
 		$.ajax({
 			url: '/extension/wishlists.php',
 			type: 'POST',
@@ -78,7 +78,7 @@
 			}
 		})
 	}
-	getWishlists();
+	getWishlists();*/
 
 
 	// NEW WISHLIST

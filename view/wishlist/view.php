@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>
-		<?php 
+		<?php
 			if(isset($get_wishlist)){
 				echo $current_wishlist['name'] . " | ";
 			}
@@ -115,11 +115,11 @@
 
 						<li class="wishlist<?php if($active_wishlist){ echo " active"; } if($mine){ echo " mine"; } if($wishlist['private']){ echo " private"; } ?>">
 							<a href="/<?php echo $wishlist_url; ?>">
-								<?php 
+								<?php
 									if($wishlist['private']){
 								?>
 								<span class="icon icon-lock"></span>
-								<?php 
+								<?php
 									}
 
 									$wishlist_name = strlen($wishlist['name']) > 22 ? substr($wishlist['name'],0,22)."..." : $wishlist['name'];

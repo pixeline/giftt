@@ -166,7 +166,7 @@
 
 	serverUrl = "http://tfe.dev/";
 
-	iframeSrc = serverUrl + 'extension/index.html?name=' + encodeURIComponent(name) + '&url=' + window.location + '&price=' + encodeURIComponent(price) + '&currency=' + encodeURIComponent(currency) + '&description=' + encodeURIComponent(description) + '&image=' + encodeURIComponent(image);
+	iframeSrc = serverUrl + 'extension/index.php?name=' + encodeURIComponent(name) + '&url=' + window.location + '&price=' + encodeURIComponent(price) + '&currency=' + encodeURIComponent(currency) + '&description=' + encodeURIComponent(description) + '&image=' + encodeURIComponent(image);
 
 	iframe = document.createElement('iframe');
 	iframe.src = iframeSrc;
