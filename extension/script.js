@@ -57,6 +57,9 @@
 	function respond(e){
 		if(e.data.indexOf('drop=') > -1){
 			imageSrc = e.data.replace('drop=', '');
+			imageSrc = imageSrc.split('?')[0];
+			imageSrc = imageSrc.split('#')[0];
+			imageSrc = imageSrc.split('&')[0];
 			formPicture.val(imageSrc);
 			formImage.empty().css({'background-image': 'url(' + imageSrc + ')'}).addClass('found').removeClass('hover').removeClass('error');
 		}else if(e.data == "enter"){
@@ -118,9 +121,6 @@
 
 	function validateForm(){
 		formPictureExtension = formPicture.val().split('.').pop().toLowerCase();
-		formPictureExtension = formPictureExtension.split('?')[0];
-		formPictureExtension = formPictureExtension.split('#')[0];
-		formPictureExtension = formPictureExtension.split('&')[0];
 
 		$('.error').removeClass('error');
 		formName.removeClass('error');
