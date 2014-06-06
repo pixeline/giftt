@@ -41,7 +41,7 @@
 								}
 								$wish_count = 0;
 								foreach($wishes as $wish){
-									if(in_array($wishlist['id'], $wish)){
+									if($wishlist['id'] == $wish['wishlist']){
 										$wish_count++;
 										if($active_wishlist){
 											$current_wishes[] = $wish;
@@ -103,7 +103,7 @@
 									}
 									$wish_count = 0;
 									foreach($wishes as $wish){
-										if(in_array($wishlist['id'], $wish)){
+										if($wishlist['id'] == $wish['wishlist']){
 											$wish_count++;
 											if($active_wishlist){
 												$current_wishes[] = $wish;
