@@ -13,11 +13,34 @@ body {
 form {
   margin-bottom: 0; }
 
+.loader {
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0; }
+
 .form_wrapper {
-  -webkit-transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out; }
-  .form_wrapper.fade {
+  -webkit-transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out;
+  position: relative; }
+  .form_wrapper.fade .sep.picture, .form_wrapper.fade .form_hide {
     opacity: 0.2; }
+  .form_wrapper.fade .loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    background: url(/extension/images/preloader.gif) no-repeat center center;
+    background-size: 24px 24px;
+    opacity: 0.75; }
+    .form_wrapper.fade .loader.hide {
+      opacity: 0; }
+
+.sep.picture {
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out; }
 
 .form_hide {
   -webkit-transition: opacity 0.2s ease-in-out;

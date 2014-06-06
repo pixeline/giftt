@@ -22,13 +22,45 @@ form{
 	margin-bottom: 0;
 }
 
+.loader{
+	-webkit-transition: opacity 0.4s ease-in-out;
+	transition: opacity 0.4s ease-in-out;
+	opacity: 0;
+}
+
 .form_wrapper{
-	-webkit-transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out;
-	transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+	-webkit-transition: height 0.4s ease-in-out;
+	transition: height 0.4s ease-in-out;
+	position: relative;
 
 	&.fade{
-		opacity: 0.2;
+
+		.sep.picture, .form_hide{
+			opacity: 0.2;
+		}
+
+		.loader{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1000;
+			display: block;
+			background: url(/extension/images/preloader.gif) no-repeat center center;
+			background-size: 24px 24px;
+			opacity: 0.75;
+
+			&.hide{
+				opacity: 0;
+			}
+		}
 	}
+}
+
+.sep.picture{
+	-webkit-transition: opacity 0.4s ease-in-out;
+	transition: opacity 0.4s ease-in-out;
 }
 
 .form_hide{

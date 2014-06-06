@@ -84,6 +84,7 @@
 						<textarea id="description" name="description" noresize></textarea>
 					</div>
 				</div>
+				<span class="loader"></span>
 			</div>
 
 			<div class="sep submit">

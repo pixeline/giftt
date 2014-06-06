@@ -166,12 +166,16 @@
 		}
 
 		function success(url){
-			window.parent.postMessage('height=222px', '*');
-			formHide.addClass('fade').delay(250).hide();
+			window.parent.postMessage('finished', '*');
+			formWrapper.find('.loader').addClass('hide');
 			setTimeout(function(){
-				formWrapper.removeClass('fade').addClass('hidden');
-				formImage.wrap('<a href="'+url+'" target="_blank"></a>');
-				formSubmit.val('Added !');
+				window.parent.postMessage('height=222', '*');
+				formHide.addClass('fade').delay(250).hide();
+				setTimeout(function(){
+					formWrapper.removeClass('fade').addClass('hidden');
+					formImage.wrap('<a href="'+url+'" target="_blank"></a>');
+					formSubmit.val('Added !');
+				}, 250);
 			}, 250);
 			form.on('submit', function(){
 				window.open(url, '_blank');

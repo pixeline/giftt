@@ -1,6 +1,6 @@
 (function(){
 
-	debug = 1;
+	debug = 0;
 
 
 
@@ -154,7 +154,7 @@
 
 	// CREATE VIEW
 
-	if(debug == 0){
+	if(debug == 1){
 		serverUrl = "http://tfe.dev/";
 	}else{
 		serverUrl = "http://giftt.me/";
@@ -166,22 +166,54 @@
 	iframe.src = iframeSrc;
 	iframe.setAttribute("style","z-index: 100000;position: fixed;bottom: 10px;margin-bottom: 0px;margin-left: 0px;right: 10px;width: 220px;height: 573px;border: none;overflow: hidden;background: rgba(110, 176, 4, 1);box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);-webkit-transition: height 0.4s ease-in-out;transition: height 0.4s ease-in-out;");
 	iframe.frameborder = "0";
-	iframe.id = "iframeId";
+	iframe.id = "giftt_iframe";
 	iframe.allowtransparency = true;
 	document.body.appendChild(iframe);
 
 	dropzone = document.createElement('div');
-	dropzone.id = "dropzone";
+	dropzone.id = "giftt_dropzone";
 	dropzone.style.position = "fixed";
 	dropzone.style.right = "25px";
 	dropzone.style.width = "190px";
 	dropzone.style.bottom = "438px";
 	dropzone.style.height = "130px";
 	dropzone.style.zIndex = "1000000";
-	dropzone.style.background = "red";
+	dropzone.style.background = "none";
 	dropzone.style.opacity = "0";
 	dropzone.style.display = "none";
 	document.body.appendChild(dropzone);
+
+	closeDiv = document.createElement('div');
+	closeDiv.id = "giftt_close";
+	closeDiv.style.position = "fixed";
+	closeDiv.style.right = "10px";
+	closeDiv.style.width = "24px";
+	closeDiv.style.bottom = "583px";
+	closeDiv.style.height = "24px";
+	closeDiv.style.lineHeight = "24px";
+	closeDiv.style.borderRadius = "2px";
+	closeDiv.style.textAlign = "center";
+	closeDiv.style.cursor = "pointer";
+	closeDiv.style.zIndex = "1000000";
+	closeDiv.style.background = "rgba(201, 225, 154, 1)";
+	closeDiv.style.transition = "background 0.2s ease-in-out, bottom 0.4s ease-in-out";
+	closeDiv.style.webkitTransition = "background 0.2s ease-in-out, bottom 0.4s ease-in-out";
+	closeDiv.innerHTML = '<img src="' + serverUrl + 'extension/images/close.svg"></img>';
+	document.body.appendChild(closeDiv);
+
+	closeDiv.addEventListener('mouseover', function(){
+		closeDiv.style.background = "rgba(110, 176, 4, 1)";
+	}, false);
+
+	closeDiv.addEventListener('mouseout', function(){
+		closeDiv.style.background = "rgba(201, 225, 154, 1)";
+	}, false);
+
+	closeDiv.addEventListener('click', function(){
+		iframe.style.display = "none";
+		dropzone.style.display = "none";
+		closeDiv.style.display = "none";
+	}, false);
 
 
 
@@ -245,7 +277,8 @@
 	function respondParent(e){
 		if(e.data.indexOf('height=') > -1){
 			iframeHeight = e.data.replace('height=', '');
-			document.querySelectorAll('#iframeId')[0].style.height = iframeHeight;
+			document.querySelectorAll('#giftt_iframe')[0].style.height = iframeHeight+'px';
+			document.querySelectorAll('#giftt_close')[0].style.bottom = parseInt(iframeHeight)+10+'px';
 		}else if(e.data == "ready"){
 			dropzone.style.display = "block";
 			if(iframe.contentWindow){
@@ -256,6 +289,8 @@
 				iframe.contentWindow.postMessage('description='+description, serverUrl);
 				iframe.contentWindow.postMessage('image='+image, serverUrl);
 			}
+		}else if(e.data == "finished"){
+			dropzone.style.display = "none";
 		}
 	}
 

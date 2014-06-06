@@ -106,7 +106,7 @@ if(isset($_POST['add_wish'])){
 		$wishlist_slug = $sel_wishlist['slug'];
 
 		// GET CURRENT WiSH ID
-		$query = $db->prepare("SELECT id FROM wishes WHERE name = :name AND wishlist = :wishlist");
+		$query = $db->prepare("SELECT id FROM wishes WHERE name = :name AND wishlist = :wishlist ORDER BY id DESC");
 		$query->execute(array(
 			':name' => $wish_name,
 			':wishlist' => $wish_wishlist
