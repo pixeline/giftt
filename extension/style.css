@@ -142,5 +142,5 @@ textarea {
     color: #6eb004; }
 
 .error {
-  border-color: #ba1f01;
-  color: #ba1f01; }
+  border: 2px solid #ba1f01 !important;
+  color: #ba1f01 !important; }
