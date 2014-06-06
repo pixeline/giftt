@@ -95,7 +95,7 @@
 	</div>
 
 	<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
-	<script src="script.js"></script>
+	<script src="script.min.js"></script>
 
 	<?php }else{ ?>
 
