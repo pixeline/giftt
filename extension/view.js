@@ -160,7 +160,7 @@
 		serverUrl = "http://giftt.me/";
 	}
 
-	iframeSrc = serverUrl + 'extension/index.php';
+	iframeSrc = serverUrl + 'extension/view.php';
 
 	iframe = document.createElement('iframe');
 	iframe.src = iframeSrc;
