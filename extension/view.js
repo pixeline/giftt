@@ -1,6 +1,6 @@
 (function(){
 
-	debug = 0;
+	debug = 1;
 
 
 

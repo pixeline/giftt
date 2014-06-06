@@ -29,8 +29,8 @@
 			<div class="row">
 				<div class="col-sm-12">
 
-					<h3>Edit your profile</h3>
-					<p>These info will appear on your <strong>public</strong> profile.</p>
+					<h3>Edit your information</h3>
+					<p>These info <strong>(except your email)</strong> will appear on your profile.</p>
 
 					<form class="default" action="/settings" method="POST" enctype="multipart/form-data">
 						<div class="row">
