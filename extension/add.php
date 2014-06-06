@@ -59,7 +59,7 @@ if(!count($message)){
 
 	// INSERT NEW WISHLIST (MAYBE)
 	if(isset($new_wishlist) && $new_wishlist == 1){
-		$query = $db->prepare("INSERT INTO wishlists(author, name, slug, private) VALUES(:author, :name, :slug, :private)");
+		$query = $db->prepare("INSERT INTO wishlists(author, name, slug, private, extension) VALUES(:author, :name, :slug, :private, 1)");
 		$query->execute(array(
 			'author' => $wishlist_author,
 			'name' => $wishlist_name,
@@ -75,7 +75,7 @@ if(!count($message)){
 	}
 
 	// INSERT NEW WISH
-	$query = $db->prepare("INSERT INTO wishes(author, wishlist, name, picture, description, price, currency, origin) VALUES(:author, :wishlist, :name, :picture, :description, :price, :currency, :origin)");
+	$query = $db->prepare("INSERT INTO wishes(author, wishlist, name, picture, description, price, currency, origin, extension) VALUES(:author, :wishlist, :name, :picture, :description, :price, :currency, :origin, 1)");
 	$query->execute(array(
 		'author' => $wish_author,
 		'wishlist' => $wish_wishlist,

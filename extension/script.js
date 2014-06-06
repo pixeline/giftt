@@ -178,6 +178,9 @@
 					formWrapper.removeClass('fade').addClass('hidden');
 					formImage.wrap('<a href="'+url+'" target="_blank"></a>');
 					formSubmit.val('Added !');
+					setTimeout(function(){
+						window.parent.postMessage('close', '*');
+					}, 4000);
 				}, 250);
 			}, 250);
 			form.on('submit', function(){

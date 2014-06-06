@@ -102,8 +102,12 @@
 
 		descriptionElem = document.querySelectorAll('#productDescription')[0]
 		if(descriptionElem){
-			descriptionElem = descriptionElem.querySelectorAll('p')[0];
-
+			if(descriptionElem.querySelectorAll('p')[0]){
+				descriptionElem = descriptionElem.querySelectorAll('p')[0];
+			}else if(descriptionElem.querySelectorAll('.content')[0]){
+				descriptionElem = descriptionElem.querySelectorAll('.content')[0]
+			}
+			console.log(descriptionElem);
 			description = descriptionElem.textContent.trim();
 			description.substring(0, 300);
 		}
@@ -210,10 +214,14 @@
 	}, false);
 
 	closeDiv.addEventListener('click', function(){
+		closeFrame();
+	}, false);
+
+	function closeFrame(){
 		iframe.style.setProperty('display', 'none', 'important');
 		dropzone.style.setProperty('display', 'none', 'important');
 		closeDiv.style.setProperty('display', 'none', 'important');
-	}, false);
+	}
 
 
 
@@ -291,6 +299,8 @@
 			}
 		}else if(e.data == "finished"){
 			dropzone.style.setProperty('display', 'none', 'important');
+		}else if(e.data == "close"){
+			closeFrame();
 		}
 	}
 
