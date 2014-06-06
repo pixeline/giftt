@@ -195,7 +195,7 @@
 	closeDiv.style.setProperty('text-align', 'center', 'important');
 	closeDiv.style.setProperty('cursor', 'pointer', 'important');
 	closeDiv.style.setProperty('z-index', '1000000', 'important');
-	closeDiv.style.setProperty('background', 'rgba(201, 225, 154, 1)', 'important');
+	closeDiv.style.setProperty('background', 'rgba(186, 216, 121, 1)', 'important');
 	closeDiv.style.transition = "background 0.2s ease-in-out, bottom 0.4s ease-in-out";
 	closeDiv.style.webkitTransition = "background 0.2s ease-in-out, bottom 0.4s ease-in-out";
 	closeDiv.innerHTML = '<img src="' + serverUrl + 'extension/images/close.svg" style="margin-top: 8px;" />';
@@ -206,7 +206,7 @@
 	}, false);
 
 	closeDiv.addEventListener('mouseout', function(){
-		closeDiv.style.setProperty('background', 'rgba(201, 225, 154, 1)', 'important');
+		closeDiv.style.setProperty('background', 'rgba(186, 216, 121, 1)', 'important');
 	}, false);
 
 	closeDiv.addEventListener('click', function(){
