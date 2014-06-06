@@ -56,7 +56,6 @@
 	domain = 0;
 	function respond(e){
 		if(e.data.indexOf('drop=') > -1){
-			alert(e.data);
 			imageSrc = e.data.replace('drop=', '');
 			formPicture.val(imageSrc);
 			formImage.empty().css({'background-image': 'url(' + imageSrc + ')'}).addClass('found').removeClass('hover').removeClass('error');
@@ -122,7 +121,6 @@
 		formPictureExtension = formPictureExtension.split('?')[0];
 		formPictureExtension = formPictureExtension.split('#')[0];
 		formPictureExtension = formPictureExtension.split('&')[0];
-		alert(formPicture);
 
 		$('.error').removeClass('error');
 		formName.removeClass('error');
@@ -151,7 +149,6 @@
 		}
 
 		if(errors['name'] || errors['wishlist'] || errors['image']){
-			console.log(errors);
 			return false;
 		}else{
 			errors = 0;

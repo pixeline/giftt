@@ -141,7 +141,6 @@
 		if(imageElem){
 			imageElem = imageElem.querySelectorAll('img')[0];
 			image = imageElem.getAttribute('src');
-			console.log(image);
 		}
 	}else if(window.location.href.indexOf('pinterest.com') > -1){
 		if(getMetaContent('og:description')){
