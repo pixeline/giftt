@@ -1,17 +1,6 @@
 (function(){
 
-	debug = 0;
-
-	// SHOW OR HIDE?
-
-	var iframe = document.getElementById('iframeId');
-	var dropzone = document.getElementById('dropzone');
-	if(iframe){
-		iframe.remove(0);
-		dropzone.remove(0);
-		window.removeEventListener('message', respondParent);
-		return false;
-	}
+	debug = 1;
 
 
 
@@ -165,7 +154,7 @@
 
 	// CREATE VIEW
 
-	if(debug == 1){
+	if(debug == 0){
 		serverUrl = "http://tfe.dev/";
 	}else{
 		serverUrl = "http://giftt.me/";
