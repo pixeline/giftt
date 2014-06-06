@@ -22,63 +22,68 @@
 
 	<div class="container">
 		<form action="#" method="POST" enctype="multipart/form-data">
-			<input type="text" id="origin" name="origin" />
-			<div class="sep">
-				<span id="image">Drop a picture here...</span>
-				<input type="text" id="picture" name="image" />
-			</div>
+			
+			<div class="form_wrapper">
+				<input type="text" id="origin" name="origin" />
+				<div class="sep picture">
+					<span id="image">Drop a picture here...</span>
+					<input type="text" id="picture" name="image" />
+				</div>
 
-			<div class="sep">
-				<label for="name">Name</label>
-				<input type="text" id="name" name="name" />
-			</div>
+				<div class="form_hide">
+					<div class="sep">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" />
+					</div>
 
-			<div class="sep">
-				<label for="price">Price</label>
-				<input type="text" id="price" name="price" />
-				<input type="text" id="currency" name="currency" value="$" />
-			</div>
+					<div class="sep">
+						<label for="price">Price</label>
+						<input type="text" id="price" name="price" />
+						<input type="text" id="currency" name="currency" value="$" />
+					</div>
 
-			<div class="sep">
-				<label for="wishlist">Wishlist</label>
-				<select id="wishlist" name="wishlist">
-					<?php
+					<div class="sep">
+						<label for="wishlist">Wishlist</label>
+						<select id="wishlist" name="wishlist">
+							<?php
 
-						$query = $db->prepare("SELECT id, name FROM wishlists WHERE author = :author AND removed = 0");
-						$query->execute(array(
-							':author' => $me['id']
-						));
+								$query = $db->prepare("SELECT id, name FROM wishlists WHERE author = :author AND removed = 0");
+								$query->execute(array(
+									':author' => $me['id']
+								));
 
-						$wishlists = array();
-						while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
-							$wishlists[] = $wishlist;
-						}
-					?>
+								$wishlists = array();
+								while($wishlist = $query->fetch(PDO::FETCH_ASSOC)){
+									$wishlists[] = $wishlist;
+								}
+							?>
 
-					<option value="0" disabled>Choose a wishlist...</option>
+							<option value="0" disabled <?php if(!isset($wishlists[0])){ echo "selected"; } ?>>Choose a wishlist...</option>
 
-					<?php
+							<?php
 
-						if(isset($wishlists[0])){
+								if(isset($wishlists[0])){
 
-							foreach($wishlists as $wishlist){
-					?>
+									foreach($wishlists as $wishlist){
+							?>
 
-						<option value="<?php echo $wishlist['id']; ?>"><?php echo $wishlist['name']; ?></option>
+								<option value="<?php echo $wishlist['id']; ?>"><?php echo $wishlist['name']; ?></option>
 
-					<?php
-							}
+							<?php
+									}
 
-						}
-					?>
+								}
+							?>
 
-					<option value="setnew">New wishlist</option>
-				</select>
-			</div>
+							<option value="setnew">New wishlist</option>
+						</select>
+					</div>
 
-			<div class="sep fade">
-				<label for="description">Description</label>
-				<textarea id="description" name="description" noresize></textarea>
+					<div class="sep fade">
+						<label for="description">Description</label>
+						<textarea id="description" name="description" noresize></textarea>
+					</div>
+				</div>
 			</div>
 
 			<div class="sep submit">
@@ -88,14 +93,14 @@
 		</form>
 	</div>
 
-	<?php }else{ ?>
-
-	<p>Hello</p>
-
-	<?php } ?>
-
 	<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="script.js"></script>
+
+	<?php }else{ ?>
+
+	<p>Please <a href="http://giftt.me/login" target="_blank">log into Giftt</a>.</p>
+
+	<?php } ?>
 
 </body>
 </html>

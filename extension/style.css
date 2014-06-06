@@ -1,16 +1,29 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "proxima-nova", sans-serif; }
+  font-family: "proxima-nova", sans-serif;
+  padding: 15px;
+  position: relative; }
 
 .container {
   width: 190px;
   background: #6eb004;
-  color: white;
-  padding: 15px; }
+  color: white; }
 
 form {
   margin-bottom: 0; }
+
+.form_wrapper {
+  -webkit-transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out; }
+  .form_wrapper.fade {
+    opacity: 0.2; }
+
+.form_hide {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out; }
+  .form_hide.fade {
+    opacity: 0; }
 
 #image {
   text-align: center;
@@ -44,7 +57,7 @@ form {
   clear: both;
   overflow: hidden;
   margin-top: 15px; }
-  .sep:first-of-type {
+  .sep.picture {
     margin-top: 0; }
 
 input, label, select, textarea {
@@ -83,6 +96,13 @@ textarea {
   margin-left: 5%;
   text-align: center; }
 
+.submit, .success {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 190px;
+  z-index: 100; }
+
 #submit {
   font-family: "freight-sans-pro", sans-serif;
   font-size: 14px;
@@ -97,3 +117,7 @@ textarea {
   #submit:hover {
     background: white;
     color: #6eb004; }
+
+.error {
+  border-color: #ba1f01;
+  color: #ba1f01; }

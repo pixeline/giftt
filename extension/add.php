@@ -95,7 +95,7 @@ if(!count($message)){
 	$sel_wishlist = $query->fetch();
 	$wishlist_slug = $sel_wishlist['slug'];
 
-	// GET CURRENT WiSH ID
+	// GET CURRENT WISH ID
 	$query = $db->prepare("SELECT id FROM wishes WHERE name = :name AND wishlist = :wishlist");
 	$query->execute(array(
 		':name' => $wish_name,
@@ -103,9 +103,9 @@ if(!count($message)){
 	));
 	$wish = $query->fetch();
 
-	echo "ok";
+	echo "/" . $me['username'] . '/' . $wishlist_slug . '/' . $wish['id'];
 }else{
-	var_dump($message);
+	echo "error";
 }
 
 ?>

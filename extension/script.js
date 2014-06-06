@@ -34,52 +34,6 @@
 	formDescription = form.find('#description');
 	formSubmit = form.find('#submit');
 
-	theName = decodeURIComponent(getUrlParameter('name'));
-	if(theName){
-		formName.val(theName);
-	}
-
-	thePrice = decodeURIComponent(getUrlParameter('price'));
-	if(thePrice != "" && thePrice != "undefined"){
-		formPrice.val(thePrice);
-	}
-
-	theCurrency = decodeURIComponent(getUrlParameter('currency'));
-	if(theCurrency != "" && theCurrency != "undefined"){
-		formCurrency.val(theCurrency);
-	}
-
-	theDescription = br2rn(decodeURIComponent(getUrlParameter('description')));
-	if(theDescription != "" && theDescription != "undefined"){
-		formDescription.val(theDescription);
-	}
-
-	theImage = decodeURIComponent(getUrlParameter('image'));
-	if(theImage != "" && theImage != "undefined"){
-		formPicture.val(theImage);
-		formImage.empty().css({'background-image': 'url(' + theImage + ')'}).addClass('found').removeClass('hover');
-	}
-
-	theOrigin = decodeURIComponent(getUrlParameter('url'));
-	if(theOrigin != "" && theOrigin != "undefined"){
-		formOrigin.val(theOrigin);
-	}
-
-	/*function getWishlists(){
-		$.ajax({
-			url: '/extension/wishlists.php',
-			type: 'POST',
-			success: function(data){
-				if(data == ""){
-					formWishlist.parents('.sep').append('<input type="text" id="wishlist" name="new_wishlist" />').find('select').remove();
-				}else{
-					formWishlist.append(data);
-				}
-			}
-		})
-	}
-	getWishlists();*/
-
 
 	// NEW WISHLIST
 
@@ -99,6 +53,7 @@
 
 	// POST MESSAGE LISTENER
 
+	domain = 0;
 	function respond(e){
 		if(e.data.indexOf('drop=') > -1){
 			imageSrc = e.data.replace('drop=', '');
@@ -112,6 +67,37 @@
 			formImage.addClass('start');
 		}else if(e.data == "end"){
 			formImage.removeClass('start');
+		}else if(e.data.indexOf('name=') > -1){
+			theName = e.data.replace('name=', '');
+			if(theName){
+				formName.val(theName);
+			}
+		}else if(e.data.indexOf('price=') > -1){
+			thePrice = e.data.replace('price=', '');
+			if(thePrice != "" && thePrice != "undefined"){
+				formPrice.val(thePrice);
+			}
+		}else if(e.data.indexOf('currency=') > -1){
+			theCurrency = e.data.replace('currency=', '');
+			if(theCurrency != "" && theCurrency != "undefined"){
+				formCurrency.val(theCurrency);
+			}
+		}else if(e.data.indexOf('description=') > -1){
+			theDescription = br2rn(e.data.replace('description=', ''));
+			if(theDescription != "" && theDescription != "undefined"){
+				formDescription.val(theDescription);
+			}
+		}else if(e.data.indexOf('image=') > -1){
+			theImage = e.data.replace('image=', '');
+			if(theImage != "" && theImage != "undefined"){
+				formPicture.val(theImage);
+				formImage.empty().css({'background-image': 'url(' + theImage + ')'}).addClass('found').removeClass('hover');
+			}
+		}else if(e.data.indexOf('url=') > -1){
+			theOrigin = e.data.replace('url=', '');
+			if(theOrigin != "" && theOrigin != "undefined"){
+				formOrigin.val(theOrigin);
+			}
 		}
 	}
 
@@ -120,22 +106,94 @@
 
 	// SUBMIT
 
+	sent = 0;
+	errors = 0;
 	form.on('submit', function(){
-		submitForm();
+		validateForm();
+		if(sent == 0 && errors == 0){
+			submitForm();
+		}
 		return false;
 	})
 
+	function validateForm(){
+		formPictureExtension = formPicture.val().split('.').pop().toLowerCase();
+
+		$('.error').removeClass('error');
+		formName.removeClass('error');
+		formWishlist.removeClass('error');
+		errors = {};
+		if(formName.val() == ""){
+			errors['name'] = "You must provide a name";
+		}
+		if(formWishlist.val() == null){
+			errors['wishlist'] = "You must select a wishlist";
+		}
+		if(formPicture.val() == ""){
+			errors['image'] = "You must provide a picture";
+		}else if(formPicture.val() != "" && $.inArray(formPictureExtension, ['gif','png','jpg','jpeg']) == -1){
+			errors['image'] = "The picture should be a .jpg, .png or .gif file";
+		}
+
+		if(errors['name']){
+			formName.addClass('error');
+		}
+		if(errors['wishlist']){
+			formWishlist.addClass('error');
+		}
+		if(errors['image']){
+			$('#image').addClass('error');
+		}
+
+		if(errors['name'] || errors['wishlist'] || errors['image']){
+			return false;
+		}else{
+			errors = 0;
+		}
+	}
+
 	function submitForm(){
 		data = form.serialize();
+		formWrapper = $('.form_wrapper');
+		formHide = $('.form_hide');
+		formWrapper.addClass('fade');
+		formSubmit.val('Adding...');
+		sent = 1;
+
+		function failed(){
+			formWrapper.removeClass('fade');
+			alert('We couldn\'t add your wish.\nPlease reload the page and try again.');
+		}
+
+		function success(url){
+			window.parent.postMessage('height=222px', '*');
+			formHide.addClass('fade').delay(250).hide();
+			setTimeout(function(){
+				formWrapper.removeClass('fade').addClass('hidden');
+				formImage.wrap('<a href="'+url+'" target="_blank"></a>');
+				formSubmit.val('Added !');
+			}, 250);
+			form.on('submit', function(){
+				window.open(url, '_blank');
+			})
+		}
 
 		$.ajax({
 			url: '/extension/add.php',
 			type: 'POST',
 			data: data,
 			success: function(data){
-				alert('done');
+				if(data == "error"){
+					failed();
+				}else{
+					success(data);
+				}
+			}, error: function(data){
+				failed();
 			}
 		})
 	}
+
+	window.parent.postMessage('ready', '*');
 
 })();
