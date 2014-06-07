@@ -1721,6 +1721,7 @@ a.button {
   #register header .logo a, #login header .logo a {
     width: 100%; }
     #register header .logo a img, #login header .logo a img {
+      border-radius: 0;
       margin: 0 auto; }
 #register h2 small, #login h2 small {
   font-family: "proxima-nova", sans-serif;
