@@ -1608,18 +1608,18 @@ a.button {
       background: #6eb004;
       color: white; }
 
-#landing, #register, #login {
+#landing, .minimal {
   border-top: 3px solid #6eb004; }
-  #landing .container, #register .container, #login .container {
+  #landing .container, .minimal .container {
     max-width: 1000px; }
-  #landing header, #register header, #login header {
+  #landing header, .minimal header {
     background: #f4f4f4;
     padding: 24px 0;
     border-bottom: 1px solid #e0e0e0;
     margin-bottom: 80px; }
-    #landing header .logo a, #register header .logo a, #login header .logo a {
+    #landing header .logo a, .minimal header .logo a {
       float: left; }
-    #landing header .logo img, #register header .logo img, #login header .logo img {
+    #landing header .logo img, .minimal header .logo img {
       display: block;
       width: 75px;
       height: auto; }
@@ -1716,14 +1716,15 @@ a.button {
     #landing footer li:last-child {
       display: none; } }
 
-#register header, #login header {
-  margin-bottom: 30px; }
-  #register header .logo a, #login header .logo a {
+.minimal header {
+  margin-bottom: 30px;
+  padding: 50px 0; }
+  .minimal header .logo a {
     width: 100%; }
-    #register header .logo a img, #login header .logo a img {
+    .minimal header .logo a img {
       border-radius: 0;
       margin: 0 auto; }
-#register h2 small, #login h2 small {
+.minimal h2 small {
   font-family: "proxima-nova", sans-serif;
   font-weight: 500;
   font-size: 17px;
@@ -1731,13 +1732,13 @@ a.button {
   color: #999999;
   letter-spacing: 0;
   line-height: 20px; }
-#register .facebook, #register .sep, #register form, #login .facebook, #login .sep, #login form {
+.minimal .facebook, .minimal .sep, .minimal form {
   width: 280px;
   margin-left: auto;
   margin-right: auto; }
-#register .facebook, #register .sep, #login .facebook, #login .sep {
+.minimal .facebook, .minimal .sep {
   display: block; }
-#register .facebook, #login .facebook {
+.minimal .facebook {
   margin-top: 50px;
   margin-bottom: 50px;
   display: block;
@@ -1749,7 +1750,7 @@ a.button {
   -webkit-transition: background 0.2s ease-in-out;
   -moz-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out; }
-  #register .facebook span.text, #login .facebook span.text {
+  .minimal .facebook span.text {
     display: inline-block;
     height: 50px;
     line-height: 52px;
@@ -1760,15 +1761,15 @@ a.button {
     background-size: 12px 21px;
     font-weight: 500; }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
-      #register .facebook span.text, #login .facebook span.text {
+      .minimal .facebook span.text {
         background-image: url(../images/facebook@2x.png); } }
-    #register .facebook span.text strong, #login .facebook span.text strong {
+    .minimal .facebook span.text strong {
       font-weight: 600; }
-  #register .facebook:hover, #login .facebook:hover {
+  .minimal .facebook:hover {
     background: #30477f;
     position: relative;
     top: 1px; }
-#register p.sep, #login p.sep {
+.minimal p.sep {
   text-align: center;
   text-transform: uppercase;
   font-family: "ff-tisa-sans-web-pro", sans-serif;
@@ -1776,30 +1777,30 @@ a.button {
   border-top: 1px solid #e0e0e0;
   position: relative;
   line-height: 30px; }
-  #register p.sep span, #login p.sep span {
+  .minimal p.sep span {
     background: white;
     position: relative;
     top: -15px;
     line-height: 15px;
     padding: 0 15px; }
-#register p.change, #login p.change {
+.minimal p.change {
   text-align: center;
   margin-top: 24px;
   margin-bottom: 0; }
-  #register p.change a, #login p.change a {
+  .minimal p.change a {
     font-weight: 500;
     color: #b2b2b2; }
-#register form, #login form {
+.minimal form {
   margin-top: 14px; }
 @media screen and (max-width: 767px) {
-  #register header, #login header {
+  .minimal header {
     margin-bottom: 0; }
-  #register .content, #login .content {
+  .minimal .content {
     padding: 40px 0; }
-  #register .facebook, #login .facebook {
+  .minimal .facebook {
     margin-top: 24px;
     margin-bottom: 30px; }
-  #register form, #login form {
+  .minimal form {
     margin-top: 0; } }
 
 .user.view .main > header a.user, .wishlist.view .main > header a.user {
@@ -2294,6 +2295,19 @@ form.default p.error {
     display: inline;
     color: #ba1f01;
     text-decoration: underline; }
+form.default.mini {
+  width: 100%; }
+  form.default.mini input {
+    float: left;
+    width: 80%;
+    width: calc(100% - 100px); }
+    form.default.mini input[type=submit] {
+      float: right;
+      width: 20%;
+      width: calc(80px);
+      height: 35px;
+      line-height: 35px;
+      border-width: 1px; }
 
 p.intro {
   margin-top: 30px;
@@ -2489,3 +2503,6 @@ body.withAside #show_hide {
       width: 100%;
       padding: 0;
       text-align: center; }
+
+#p404 p {
+  margin-bottom: 16px; }

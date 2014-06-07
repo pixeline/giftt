@@ -10,7 +10,7 @@ require_once 'reset_do.php';
 	<title>Forgot your Giftt password</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body id="login" class="reset">
+<body id="login" class="reset minimal">
 
 	<header>
 		<div class="container">

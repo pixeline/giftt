@@ -10,7 +10,7 @@ require_once 'add_do.php';
 	<title>Join Giftt</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
-<body id="register">
+<body id="register" class="minimal">
 
 	<header>
 		<div class="container">

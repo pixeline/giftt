@@ -121,6 +121,25 @@ form.default{
 			text-decoration: underline;
 		}
 	}
+
+	&.mini{
+		width: 100%;
+
+		input{
+			float: left;
+			width: 80%;
+			width: calc(100% - 100px);
+
+			&[type=submit]{
+				float: right;
+				width: 20%;
+				width: calc(80px);
+				height: 35px;
+				line-height: 35px;
+				border-width: 1px;
+			}
+		}
+	}
 }
 
 p.intro{
