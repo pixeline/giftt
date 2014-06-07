@@ -160,7 +160,7 @@
 	if(debug == 1){
 		serverUrl = "http://tfe.dev/";
 	}else{
-		serverUrl = "https://giftt.me/";
+		serverUrl = "http://giftt.me/";
 	}
 
 	iframeSrc = serverUrl + 'extension/view.php';
