@@ -1,6 +1,20 @@
 <?php
 	$root = $_SERVER['DOCUMENT_ROOT'];
 	require_once $root . '/_include/functions.php';
+
+	if(isset($_POST['sendurl'])){
+		$email = "Pierre Stoffe<pierre@giftt.me>";
+		$subject ="New favourite from giftt.me"; 
+		$headers = "From: " . $me['firstname'] . " " . $me['lastname'] . "<" . $me['email'] .">\r\n";
+		$headers .= "MIME-Version: 1.0\r\n";
+		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+		$body = "<html><body>";
+		$body .= "<p>" . $me['firstname'] . " sent a new favourite online store: " . htmlspecialchars($_POST['url']) . "</p>";
+		$body .= "</body></html>";
+		mail($email, $subject, $body, $headers);
+
+		$sent = 1;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -43,8 +57,11 @@
 
 						<input type="submit" name="sendurl" value="Send" />
 					</form>
+					<?php if(isset($sent)){ ?>
+					<p>Thanks!</p>
+					<?php } ?>
 
-					<p><a href="/">Go back to the real world »</a></p>
+					<p class="home"><a href="/">Go back to the real world »</a></p>
 
 				</div>
 			</div>
