@@ -4,10 +4,15 @@ body.withAside{
 
 	.main{
 		@include transform(translateX(-240px));
+		float: left;
 	}
 
 	#show_hide{
 		color: $black;
+	}
+
+	.alter{
+		float: right;
 	}
 }
 

@@ -2374,9 +2374,12 @@ body.withAside .main {
   -moz-transform: translateX(-240px);
   -ms-transform: translateX(-240px);
   -o-transform: translateX(-240px);
-  transform: translateX(-240px); }
+  transform: translateX(-240px);
+  float: left; }
 body.withAside #show_hide {
   color: #2c2c2c; }
+body.withAside .alter {
+  float: right; }
 
 .alter {
   display: none;
