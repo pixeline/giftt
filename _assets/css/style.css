@@ -2510,6 +2510,7 @@ body.withAside #show_hide {
   margin-bottom: 16px; }
 #p404 form + p {
   margin-top: 16px;
-  color: #6eb004; }
+  color: #6eb004;
+  font-weight: 600; }
 #p404 .home {
   margin-top: 40px; }
