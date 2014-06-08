@@ -1371,6 +1371,9 @@ td.visible-print {
 .icon-edit:before {
   content: "\e60a"; }
 
+.icon-flag:before {
+  content: "\e60d"; }
+
 .icon-picture:before {
   content: "\e60b"; }
 
@@ -2111,6 +2114,10 @@ a.button {
   font-size: 1.25em; }
 .wish.view .content aside .actions p.remove:hover a {
   color: #ba1f01; }
+.wish.view .content aside .actions p.shotgun:hover a {
+  color: #6eb004; }
+.wish.view .content aside .actions p.shotgun.unshotgun:hover a {
+  color: #ba1f01; }
 .wish.view .content aside .actions p.share:hover a {
   color: #6eb004; }
 .wish.view .content .heart {
@@ -2150,7 +2157,17 @@ a.button {
   .wish.view .content .heart .current_wish p.price {
     color: #6eb004;
     font-weight: 600;
-    font-size: 1.125em; }
+    font-size: 1.125em;
+    float: left;
+    margin-right: 8px; }
+  .wish.view .content .heart .current_wish p.shotgun {
+    float: left;
+    font-weight: 600;
+    color: #b2b2b2;
+    font-size: 0.9375em;
+    vertical-align: bottom;
+    line-height: 20px;
+    margin-top: 4px; }
   .wish.view .content .heart .current_wish .picture {
     text-align: right; }
   .wish.view .content .heart .current_wish p.description {

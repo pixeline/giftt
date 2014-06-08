@@ -24,6 +24,9 @@
 						
 						<?php if(!empty($current_wish['price'])){ ?>
 						<p class="price"><?php if($current_wish['currency'] == "$"){ echo '$'; } echo $current_wish['price']; if($current_wish['currency'] != "$"){ echo $current_wish['currency']; } ?></p>
+							<?php if($is_shotgun && !$mine){ ?>
+						<p class="shotgun">(<?php if($current_shotgun_author == $me['id']){ echo "you are "; }else{ echo "someone is " ; } ?>offering <?php echo $user['firstname']; ?> this gift)</p>
+							<?php } ?>
 						<?php } ?>
 					</div>
 
@@ -80,6 +83,11 @@
 						<p class="remove"><a class="icon_cont" href="/<?php echo $user['username'] . '/' . $current_wishlist['slug'] . '/' . $current_wish['id'] ?>/remove"><span class="icon icon-close"></span>Remove wish</a></p>
 						<?php }else{ ?>
 						<p class="add"><a class="icon_cont green" href="#"><span class="icon icon-plus"></span>Wish it too</a></p>
+							<?php if(!$is_shotgun){ ?>
+						<p class="shotgun"><a class="icon_cont" href="/<?php echo $user['username'] . '/' . $current_wishlist['slug'] . '/' . $current_wish['id'] ?>/shotgun"><span class="icon icon-flag"></span>Offering it ?</a></p>
+							<?php }else if($current_shotgun_author == $me['id']){ ?>
+						<p class="shotgun unshotgun"><a class="icon_cont" href="/<?php echo $user['username'] . '/' . $current_wishlist['slug'] . '/' . $current_wish['id'] ?>/shotgun"><span class="icon icon-flag"></span>Not offering it ?</a></p>
+							<?php } ?>
 						<?php } ?>
 						<?php if(!$is_private){ ?>
 						<p class="share"><a class="icon_cont" href="#"><span class="icon icon-share"></span>Share</a></p>

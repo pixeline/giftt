@@ -81,6 +81,26 @@
 					}
 				}
 
+				p.shotgun{
+
+					&:hover{
+
+						a{
+							color: $green;
+						}
+					}
+
+					&.unshotgun{
+
+						&:hover{
+
+							a{
+								color: $red;
+							}
+						}
+					}
+				}
+
 				p.share{
 
 					&:hover{
@@ -148,6 +168,18 @@
 					color: $green;
 					font-weight: 600;
 					font-size: em(18);
+					float: left;
+					margin-right: 8px;
+				}
+
+				p.shotgun{
+					float: left;
+					font-weight: 600;
+					color: $gray30;
+					font-size: em(15);
+					vertical-align: bottom;
+					line-height: 20px;
+					margin-top: 4px;
 				}
 
 				.picture{
