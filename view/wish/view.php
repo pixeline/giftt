@@ -27,7 +27,7 @@
 						<p class="price"><?php if($current_wish['currency'] == "$"){ echo '$'; } echo $current_wish['price']; if($current_wish['currency'] != "$"){ echo $current_wish['currency']; } ?></p>
 						<?php } ?>
 						<?php if($is_shotgun && !$mine){ ?>
-						<p class="shotgun">(<?php if($current_shotgun_author == $me['id']){ echo "you are secretely "; }else{ echo "someone is already " ; } ?>offering <?php echo $user['firstname']; ?> this gift)</p>
+						<p class="shotgun">(<?php if($current_shotgun_author == $me['id']){ echo "you are secretly "; }else{ echo "someone is already " ; } ?>offering <?php echo $user['firstname']; ?> this gift)</p>
 						<?php } ?>
 					</div>
 
