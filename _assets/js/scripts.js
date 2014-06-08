@@ -145,7 +145,7 @@
 		
 		if(feedHidden == 0){
 			feed.hide();
-			results.show();
+			results.empty().show();
 			feedHidden = 1;
 		}
 
