@@ -135,6 +135,13 @@
 		alter = $('.alter');
 		feed = alter.find('.feed');
 		results = alter.find('.results');
+
+		if(input.val() == ""){
+			feed.show();
+			results.hide();
+			feedHidden = 0;
+			return false;
+		}
 		
 		if(feedHidden == 0){
 			feed.hide();
@@ -142,16 +149,11 @@
 			feedHidden = 1;
 		}
 
-		if(input.val() == ""){
-			feed.show();
-			results.hide();
-			feedHidden = 0;
-		}
-
 		if(e.which == 13){
 			window.location.href = results.find('a').first().attr('href');
 		}
 
+		$(this).siblings('img').show();
 		doSearch($(this).val());
 	})
 
@@ -399,6 +401,7 @@
 			success: function(data){
 				console.log(data);
 				$('.alter .results').empty().append(data);
+				$('.alter .search').find('img').hide();
 			}
 		});
 	}

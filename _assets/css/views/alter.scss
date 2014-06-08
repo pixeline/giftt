@@ -59,6 +59,16 @@ body.withAside{
 				color: mix($white, $black, 40%)
 			}
 		}
+
+		img{
+			position: absolute;
+			right: 34px;
+			top: 32px;
+			width: 16px;
+			height: 16px;
+			opacity: 0.6;
+			display: none;
+		}
 	}
 
 	.wrapper{

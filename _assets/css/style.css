@@ -2426,6 +2426,14 @@ body.withAside #show_hide {
         color: gray; }
       .alter .search input:-ms-input-placeholder {
         color: gray; }
+    .alter .search img {
+      position: absolute;
+      right: 34px;
+      top: 32px;
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+      display: none; }
   .alter .wrapper {
     width: 100%;
     overflow: auto;
