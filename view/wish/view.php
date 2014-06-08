@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title><?php echo $current_wish['name'] . " | " . $user_name . ' | Giftt'; ?></title>
+	<?php $current_wish_name = strlen($current_wish['name']) > 40 ? substr($current_wish['name'],0,40)."..." : $current_wish['name']; ?>
+	<title><?php echo $current_wish_name . " | " . $user_name . ' | Giftt'; ?></title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 
