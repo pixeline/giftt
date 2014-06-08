@@ -1444,7 +1444,6 @@ strong {
   width: 100%;
   background: white;
   overflow: auto;
-  float: left;
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
   -moz-transition: -moz-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out; }
@@ -2380,7 +2379,6 @@ body.withAside #show_hide {
   color: #2c2c2c; }
 
 .alter {
-  float: right;
   display: none;
   position: fixed;
   top: 0;

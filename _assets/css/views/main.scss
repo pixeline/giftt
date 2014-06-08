@@ -76,7 +76,6 @@ strong{
 	width: 100%;
 	background: $white;
 	overflow: auto;
-	float: left;
 	@include transition(transform 0.2s ease-in-out);
 }
 
