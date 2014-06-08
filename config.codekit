@@ -379,17 +379,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_assets\/images\/profile\/1_7_222815711.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 52828,
-		"inputAbbreviatedPath": "\/_assets\/images\/profile\/1_7_222815711.jpg",
-		"outputAbbreviatedPath": "\/_assets\/images\/profile\/1_7_222815711.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/_assets\/images\/profile\/adrienlabigne.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -529,17 +518,6 @@
 		"initialSize": 98235,
 		"inputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe.jpg",
 		"outputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_assets\/images\/profile\/pierrestoffe1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe1.jpg",
-		"outputAbbreviatedPath": "\/_assets\/images\/profile\/pierrestoffe1.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

@@ -49,7 +49,7 @@ if(isset($_POST['edit_profile'])){
 			$file_type_valid = array('jpg', 'jpeg', 'gif', 'png');
 
 			if(in_array($file_type, $file_type_valid)){
-				$image_rename = $me['username'] . $file_type;
+				$image_rename = $me['username'] . '.' . $file_type;
 				$me_picture = '_assets/images/profile/' . basename($image_rename);
 				move_uploaded_file($me_image['tmp_name'], $root . '/' . $me_picture);
 			}else{
