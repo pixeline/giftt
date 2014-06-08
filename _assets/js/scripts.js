@@ -430,11 +430,11 @@
 		if(is_chrome){
 			$('.download').addClass('valid').append('<a class="button" href="https://chrome.google.com/webstore/detail/giftt-extension/ejjoaofkpcegclnaknkfdbbjhcdclpdh" target="_blank">Download for Chrome</a>');
 		}else if(is_safari && !is_chrome){
-			$('.download').append('<a class="button" href="#">Soon on Safari...</a>');
+			$('.download').append('<a class="button" href="#">Soon for Safari...</a>');
 		}else if(is_firefox){
-			$('.download').append('<a class="button" href="#">Soon on Firefox...</a>');
+			$('.download').append('<a class="button" href="#">Soon for Firefox...</a>');
 		}else if(is_opera){
-			$('.download').append('<a class="button" href="#">Soon on Opera...</a>');
+			$('.download').append('<a class="button" href="#">Soon for Opera...</a>');
 		}else if(is_ie){
 			$('.download').append('<a class="button" href="#">Not available for Internet Explorer</a>');
 		}else{

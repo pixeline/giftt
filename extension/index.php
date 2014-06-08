@@ -37,9 +37,9 @@
 
 					<div class="row">
 						<div class="col-sm-6">
-							<p>Are you looking for a way to add wishes faster? Then we are 100% sure you're going to love the Giftt browser extension.</p>
-							<p>With it, you can add wishes from Amazon, Etsy, Target and every other online store without even leaving their website. Click the extension, make sure the information are correct and click ‘Add to Giftt’. That’s it.</p>
-							<p>Currently available for <a href="https://www.google.com/chrome/browser/" target="_blank">Chrome</a> only.</p>
+							<p>Are you looking for a way to add wishes faster? Then you're going to love the Giftt browser extension.</p>
+							<p>With it, you can add wishes from Amazon, Etsy, Target and every other online store without even leaving their website. Click the extension, make sure the information are correct and click ‘Add to Giftt’. And... voilà!</p>
+							<p>Currently only available for <a href="https://www.google.com/chrome/browser/" target="_blank">Chrome</a>.</p>
 
 							<div class="download">
 							</div>
