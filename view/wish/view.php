@@ -76,8 +76,8 @@
 
 					<div class="cont">
 						<?php if($mine){ ?>
-						<p class="edit"><a class="icon_cont" href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>/edit"><span class="icon icon-edit"></span>Edit wish</a></p>
-						<p class="remove"><a class="icon_cont" href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>/remove"><span class="icon icon-close"></span>Remove wish</a></p>
+						<p class="edit"><a class="icon_cont" href="/<?php echo $_SERVER['REQUEST_URI']; ?>/edit"><span class="icon icon-edit"></span>Edit wish</a></p>
+						<p class="remove"><a class="icon_cont" href="/<?php echo $_SERVER['REQUEST_URI']; ?>/remove"><span class="icon icon-close"></span>Remove wish</a></p>
 						<?php }else{ ?>
 						<p class="add"><a class="icon_cont green" href="#"><span class="icon icon-plus"></span>Wish it too</a></p>
 						<?php } ?>

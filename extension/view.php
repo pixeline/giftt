@@ -99,7 +99,7 @@
 
 	<?php }else{ ?>
 
-	<p>Please <a href="http://giftt.me/login" target="_blank">log into Giftt</a>.</p>
+	<p>Please <a href="https://giftt.me/login" target="_blank">log into Giftt</a>.</p>
 
 	<?php } ?>
 

@@ -44,6 +44,8 @@
 						<input type="submit" name="sendurl" value="Send" />
 					</form>
 
+					<p><a href="/">Go back to the real world »</a></p>
+
 				</div>
 			</div>
 

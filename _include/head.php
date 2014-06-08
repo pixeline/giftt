@@ -27,7 +27,7 @@
 
 <!-- OG: -->
 <?php
-	$og_url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	$og_url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 ?>
 <meta property="og:url" content="<?php echo $og_url; ?>" />
 <?php
@@ -49,9 +49,9 @@
 <meta property="og:description" content="<?php echo $og_description; ?>" />
 <?php
 	if(isset($current_wish)){
-		$og_picture = "http://giftt.me/" . $current_wish['picture'];
+		$og_picture = "https://giftt.me/" . $current_wish['picture'];
 	}else{
-		$og_picture = "http://giftt.me/_assets/images/logo.png";
+		$og_picture = "https://giftt.me/_assets/images/logo.png";
 	}
 ?>
 <meta property="og:image" content="<?php echo $og_picture; ?>" />
