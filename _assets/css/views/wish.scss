@@ -259,3 +259,29 @@
 		letter-spacing: 0;
 	}
 }
+
+.wish.add{
+
+	p.extension{
+
+		a{
+			text-align: center;
+			width: 100%;
+			color: $green;
+			background: rgba($green, 0.05);
+			border: 1px solid rgba($green, 0.25);
+			margin-top: 30px;
+			font-size: em(15);
+			padding: 8px 0;
+			border-radius: 2px;
+			@include transition(color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out);
+
+			&:hover{
+				background: $green;
+				color: $white;
+				border-color: $green;
+				text-decoration: none;
+			}
+		}
+	}
+}

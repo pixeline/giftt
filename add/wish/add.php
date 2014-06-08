@@ -20,6 +20,8 @@
 
 				<h2>Add a wish</h2>
 
+				<p class="extension"><a href="/extension/">There is an easier way to add wishes. See how »</a></p>
+
 				<form class="default" action="#" method="POST" enctype="multipart/form-data">
 					
 					<div class="row">

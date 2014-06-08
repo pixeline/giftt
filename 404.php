@@ -21,7 +21,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Forgot your Giftt password</title>
+	<title>404 | Giftt</title>
 	<?php require_once $root . '/_include/head.php'; ?>
 </head>
 <body id="p404" class="minimal">

@@ -2210,6 +2210,25 @@ a.button {
   line-height: 28px;
   letter-spacing: 0; }
 
+.wish.add p.extension a {
+  text-align: center;
+  width: 100%;
+  color: #6eb004;
+  background: rgba(110, 176, 4, 0.05);
+  border: 1px solid rgba(110, 176, 4, 0.25);
+  margin-top: 30px;
+  font-size: 0.9375em;
+  padding: 8px 0;
+  border-radius: 2px;
+  -webkit-transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out; }
+  .wish.add p.extension a:hover {
+    background: #6eb004;
+    color: white;
+    border-color: #6eb004;
+    text-decoration: none; }
+
 form.default {
   overflow: hidden; }
   form.default label {
@@ -2505,6 +2524,26 @@ body.withAside #show_hide {
       width: 100%;
       padding: 0;
       text-align: center; }
+
+#extension .container-fluid {
+  max-width: 1200px; }
+#extension p {
+  margin-bottom: 16px; }
+  #extension p:last-of-type {
+    margin-bottom: 0; }
+#extension .download {
+  margin-top: 24px; }
+  #extension .download.valid a {
+    cursor: pointer;
+    color: #6eb004;
+    border-color: #6eb004; }
+    #extension .download.valid a:hover {
+      background: #6eb004;
+      color: white; }
+  #extension .download a {
+    cursor: not-allowed; }
+    #extension .download a:hover {
+      color: #999999; }
 
 #p404 p {
   margin-bottom: 16px; }

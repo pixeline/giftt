@@ -403,4 +403,40 @@
 		});
 	}
 
+
+
+
+
+
+
+
+	/////////////////////////////////////
+	// OTHER STUFF //////////////////////
+	/////////////////////////////////////
+
+
+	// EXTENSION DOWNLOAD BUTTON
+
+	if(body.attr('id') == "extension"){
+
+		is_chrome = /chrome/i.test(navigator.userAgent);
+		is_safari = /safari/i.test(navigator.userAgent);
+		is_firefox = /firefox/i.test(navigator.userAgent);
+		is_opera = /presto/i.test(navigator.userAgent);
+
+		if(is_chrome){
+			$('.download').addClass('valid').append('<a class="button" href="https://chrome.google.com/webstore/detail/giftt-extension/ejjoaofkpcegclnaknkfdbbjhcdclpdh" target="_blank">Download for Chrome</a>');
+		}else if(is_safari && !is_chrome){
+			$('.download').append('<a class="button" href="#">Soon on Safari...</a>');
+		}else if(is_firefox){
+			$('.download').append('<a class="button" href="#">Soon on Firefox...</a>');
+		}else if(is_opera){
+			$('.download').append('<a class="button" href="#">Soon on Opera...</a>');
+		}else if(is_ie){
+			$('.download').append('<a class="button" href="#">Not available for Internet Explorer</a>');
+		}else{
+			$('.download').append('<a class="button" href="#">Not available for your browser</a>');
+		}
+	}
+
 })();
