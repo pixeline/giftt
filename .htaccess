@@ -1,0 +1,40 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# SESSION
+RewriteRule ^discover/?$ index.php?discover=1 [L]
+RewriteRule ^register/?$ account/register/index.php [L]
+RewriteRule ^register/facebook/?$ account/register/facebook.php [L]
+RewriteRule ^register/friends/?$ account/register/friends.php [L]
+RewriteRule ^login/?$ account/login/index.php [L]
+RewriteRule ^login/facebook/?$ account/login/facebook.php [L]
+RewriteRule ^reset/? account/login/reset/index.php [L]
+RewriteRule ^logout/?$ account/logout/index.php [L]
+RewriteRule ^extension/?$ extension/index.php [L]
+RewriteRule ^remove/?$ remove/user/index.php [L]
+
+# USERS
+RewriteRule ^settings/?$ edit/user/index.php [L]
+RewriteRule ^follow/([0-9]+)/?$ _include/follow.php?id=$1 [L]
+RewriteRule ^([a-z0-9-_]+)/?$ view/wishlist/index.php?user=$1 [L]
+
+# ADD
+RewriteRule ^wishlist/add/?$ add/wishlist/index.php [L]
+RewriteRule ^[a-z0-9-_]+/add/?$ add/wish/index.php [L]
+RewriteRule ^[a-z0-9-_]+/([a-z0-9-_]+)/add/?$ add/wish/index.php?wishlist=$1 [L]
+
+# WISHLISTS
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/edit/?$ edit/wishlist/index.php?user=$1&wishlist=$2 [L]
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/remove/?$ remove/wishlist/index.php?user=$1&wishlist=$2 [L]
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/?$ view/wishlist/index.php?user=$1&wishlist=$2 [L]
+
+# WISHES
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/([0-9]+)/edit/?$ edit/wish/index.php?user=$1&wishlist=$2&wish=$3 [L]
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/([0-9]+)/remove/?$ remove/wish/index.php?user=$1&wishlist=$2&wish=$3 [L]
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/([0-9]+)/shotgun/?$ view/wish/shotgun/index.php?user=$1&wishlist=$2&wish=$3 [L]
+RewriteRule ^([a-z0-9-_]+)/([a-z0-9-_]+)/([0-9]+)/?$ view/wish/index.php?user=$1&wishlist=$2&wish=$3 [L]

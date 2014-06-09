@@ -21,6 +21,5 @@ _assets/css/.sass-cache
 _include/conn.php
 _assets/images/wishes
 _assets/images/profile
-.htaccess
 tfe.dev.crt
 tfe.dev.key
