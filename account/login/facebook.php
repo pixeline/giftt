@@ -35,7 +35,7 @@ if($user){
 
 if($user){
 
-	$query = $db->prepare("SELECT * FROM users WHERE facebook_id = :id");
+	$query = $db->prepare("SELECT * FROM users WHERE facebook_id = :id AND removed != 1 ORDER BY id DESC LIMIT 1");
 	$query->execute(array(
 		'id' => $user
 	));

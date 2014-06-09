@@ -16,7 +16,7 @@ if(isset($_GET['id'])){
 	));
 
 	if($query->rowCount() > 0){
-		$query = $db->prepare("UPDATE follows SET follow = NOT follow, date = now() WHERE who = :who AND who2 = :who2");
+		$query = $db->prepare("UPDATE follows SET follow = NOT follow, removed = 0, date = now() WHERE who = :who AND who2 = :who2");
 		$query->execute(array(
 			'who' => $me['id'],
 			'who2' => $who2

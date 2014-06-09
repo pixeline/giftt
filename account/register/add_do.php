@@ -12,7 +12,7 @@ if(isset($_POST['register'])){
 	$lastname = ucfirst(htmlspecialchars($_POST['lastname']));
 	$email = htmlspecialchars($_POST['email']);
 
-	$query = $db->prepare("SELECT * FROM users WHERE email = :email");
+	$query = $db->prepare("SELECT * FROM users WHERE email = :email AND removed != 1 ORDER BY id DESC LIMIT 1");
 	$query->execute(array(
 		'email' => $email
 	));
@@ -109,7 +109,7 @@ if(isset($_POST['register'])){
 			));
 		}
 
-		$query = $db->prepare("SELECT * FROM users WHERE username = :username");
+		$query = $db->prepare("SELECT * FROM users WHERE username = :username AND removed != 1 ORDER BY id DESC LIMIT 1");
 		$query->execute(array(
 			'username' => $username
 		));

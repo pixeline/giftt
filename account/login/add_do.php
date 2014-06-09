@@ -10,7 +10,7 @@ if(isset($_POST['login'])){
 	$email = htmlspecialchars($_POST['email']);
 	$password = htmlspecialchars($_POST['password']);
 
-	$query = $db->prepare("SELECT * FROM users WHERE email = :email");
+	$query = $db->prepare("SELECT * FROM users WHERE email = :email AND removed != 1 ORDER BY id DESC LIMIT 1");
 	$query->execute(array(
 		'email' => $email
 	));

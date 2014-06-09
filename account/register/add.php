@@ -34,6 +34,8 @@ require_once 'add_do.php';
 
 			<div class="row">
 				<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+					
+					<p class="intro">Start saving every gift idea you have, whether for you or your friends, and see what they are wishing!</p>
 
 					<a class="facebook" href="/register/facebook"><span class="text">Register with <strong>Facebook</strong></span></a>
 

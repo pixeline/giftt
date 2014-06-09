@@ -10,7 +10,7 @@ require_once $root . '/_include/user_info.php';
 
 // GET FOLLOWS LIST
 
-$query = $db->prepare("SELECT * FROM follows WHERE who = :who AND follow = :follow");
+$query = $db->prepare("SELECT * FROM follows WHERE who = :who AND follow = :follow AND removed != 1");
 $query->execute(array(
 	':who' => $me['id'],
 	':follow' => 1
@@ -65,7 +65,7 @@ if(!empty($raw_follows)){
 
 	// GET LAST FOLLOWED BASED ON $follows
 
-	$query = $db->prepare("SELECT * FROM follows WHERE who IN ($follows) AND who2 != :id AND follow = :follow");
+	$query = $db->prepare("SELECT * FROM follows WHERE who IN ($follows) AND who2 != :id AND follow = :follow AND removed != 1");
 	$query->execute(array(
 		':id' => $me['id'],
 		':follow' => 1
@@ -86,7 +86,7 @@ if(!empty($raw_follows)){
 
 	// GET LAST PEOPLE WHO FOLLOWED ME
 
-	$query = $db->prepare("SELECT * FROM follows WHERE who2 = :id AND follow = :follow");
+	$query = $db->prepare("SELECT * FROM follows WHERE who2 = :id AND follow = :follow AND removed != 1");
 	$query->execute(array(
 		':id' => $me['id'],
 		':follow' => 1
@@ -202,11 +202,11 @@ if(!empty($raw_follows)){
 			}
 		}
 	}else{
-		echo "<a href='/" . $me['username'] . "/settings/#friends' class='item empty'><div class='user'>+</div><div class='content'>Follow your friends to see what they're wishing</div></a>";
+		echo "<div class='empty'>Search for your friends, follow them and see what they are wishing</div>";
 	}
 
 }else{
-	echo "<a href='/" . $me['username'] . "/settings/#friends' class='item empty'><div class='user'>+</div><div class='content'>Follow your friends to see what they're wishing</div></a>";
+	echo "<div class='empty'>Search for your friends, follow them and see what they are wishing</div>";
 }
 
 ?>

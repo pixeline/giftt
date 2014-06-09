@@ -85,6 +85,8 @@
 						</div>
 					</form>
 
+					<p class="deactivate"><a href="/remove">Remove your account?</a></p>
+
 				</div>
 			</div>
 

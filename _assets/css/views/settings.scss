@@ -64,4 +64,13 @@
 		}
 	}
 
+	p.deactivate{
+		margin-top: 50px;
+
+		a{
+			color: $gray30;
+			font-size: em(14);
+		}
+	}
+
 }

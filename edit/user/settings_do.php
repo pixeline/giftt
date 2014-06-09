@@ -23,7 +23,7 @@ if(isset($_POST['edit_profile'])){
 		}
 	}
 
-	$query = $db->prepare("SELECT * FROM users WHERE email = :email AND id != :id");
+	$query = $db->prepare("SELECT * FROM users WHERE email = :email AND id != :id AND removed != 1 ORDER BY id DESC LIMIT 1");
 	$query->execute(array(
 		'email' => $me_email,
 		'id' => $me['id']

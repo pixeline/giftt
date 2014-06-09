@@ -70,7 +70,7 @@
 				<p>© 2014, <a href="/">Giftt.me</a> | <a href="#">Terms</a></p>
 			</li>
 			<li class="col-sm-6">
-				<p><a href="#">Email us</a> | <a href="http://twitter.com/gifttme" target="_blank">Tweet us</a></p>
+				<p><a href="mailto:pierre@giftt.me">Email</a> | <a href="http://twitter.com/gifttme" target="_blank">Twitter</a></p>
 			</li>
 		</ul>
 	</footer>

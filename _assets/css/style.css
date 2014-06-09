@@ -2347,7 +2347,7 @@ form.default {
         border-width: 1px; }
 
 p.intro {
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 30px;
   padding: 0 6px;
   text-align: center; }
@@ -2443,6 +2443,8 @@ body.withAside .alter {
     transition: opacity 0.3s ease-in-out; }
   .alter a {
     color: white; }
+  .alter .empty {
+    padding: 12px 20px; }
   .alter .item {
     background: #2c2c2c;
     display: block;
@@ -2550,6 +2552,11 @@ body.withAside .alter {
       width: 100%;
       padding: 0;
       text-align: center; }
+.settings p.deactivate {
+  margin-top: 50px; }
+  .settings p.deactivate a {
+    color: #b2b2b2;
+    font-size: 0.875em; }
 
 #extension .container-fluid {
   max-width: 1200px; }

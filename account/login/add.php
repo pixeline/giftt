@@ -64,7 +64,7 @@ require_once 'add_do.php';
 	<?php 
 
 	if(isset($_GET['nofacebook'])){
-		echo "<script>alert('We've never heard of your Facebook account. Please register with it first.')</script>";
+		echo "<script>alert('Your Facebook account does not ring any bell. Please register with it first.');</script>";
 	}
 
 	?>
