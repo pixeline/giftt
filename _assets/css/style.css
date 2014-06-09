@@ -2557,6 +2557,9 @@ body.withAside .alter {
   margin-bottom: 16px; }
   #extension p:last-of-type {
     margin-bottom: 0; }
+#extension img {
+  border-radius: 2px;
+  border: 1px solid #e0e0e0; }
 #extension .download {
   margin-top: 24px; }
   #extension .download.valid a {
