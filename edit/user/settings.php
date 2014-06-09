@@ -85,7 +85,7 @@
 						</div>
 					</form>
 
-					<p class="deactivate"><a href="/remove">Remove your account?</a></p>
+					<p class="deactivate"><a href="/remove" onclick="if(!confirm('Are you sure you want to remove your Giftt account? There is no way back...')) return false;">Remove your account?</a></p>
 
 				</div>
 			</div>
