@@ -20,7 +20,7 @@ if($query->rowCount() == 0){
 	$current_wish_date = strtotime($current_wish['date']);
 	$current_wish_url = $user['username'] . "/" . $current_wishlist['slug'] . "/" . $current_wish['id'];
 
-	$query = $db->prepare("SELECT * FROM shotguns WHERE what = :id AND shotgun = 1");
+	$query = $db->prepare("SELECT * FROM shotguns WHERE what = :id AND shotgun = 1 AND removed != 1");
 	$query->execute(array(
 		':id' => $get_wish
 	));

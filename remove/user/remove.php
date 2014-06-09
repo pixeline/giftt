@@ -21,6 +21,11 @@ $query->execute(array(
 	':id2' => $me['id']
 ));
 
+$query = $db->prepare("UPDATE shotguns SET removed=1 WHERE who = :id");
+$query->execute(array(
+	':id' => $me['id']
+));
+
 header("Location:/logout");
 
 ?>
