@@ -105,8 +105,63 @@
 
 					&:hover{
 
-						a{
+						& > a{
 							color: $green;
+						}
+					}
+				}
+
+				.share_box{
+					border-radius: 2px;
+					line-height: 40px;
+					background: $green;
+					display: inline-block;
+					overflow: hidden;
+					height: 40px;
+					box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+					@include transform(translateY(-30px) scale(0));
+					@include transition(transform 0.2s ease-in-out);
+
+					&.show{
+						@include transform(translateY(0) scale(1));
+					}
+
+					ul{
+						margin-top: 0;
+					}
+
+					li{
+						float: left;
+
+						&.twitter{
+
+						}
+
+						&.facebook{
+
+						}
+
+						&.google{
+
+						}
+					}
+
+					a{
+						background: mix($white, $green, 20%);
+						color: white;
+						line-height: 40px;
+						width: 42px;
+						text-align: center;
+						font-size: em(18);
+						@include transition(background 0.2s ease-in-out);
+
+						span{
+							text-indent: -9999px;
+						}
+
+						&:hover{
+							background: $green;
+							text-decoration: none;
 						}
 					}
 				}

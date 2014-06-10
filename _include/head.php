@@ -49,7 +49,7 @@
 <meta property="og:description" content="<?php echo $og_description; ?>" />
 <?php
 	if(isset($current_wish)){
-		$og_picture = "https://giftt.me/" . $current_wish['picture'];
+		$og_picture = "https://" . $_SERVER['HTTP_HOST'] ."/" . $current_wish['picture'];
 	}else{
 		$og_picture = "https://giftt.me/_assets/images/logo.png";
 	}

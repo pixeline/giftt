@@ -161,28 +161,41 @@
 	// ARROWS TO NAVIGATE BETWEEN WISHES AND SHOW/HIDE SIDEBAR
 
 	$(document).keydown(function(e){
-		if(e.keyCode == 37){
-			if(body.hasClass('wish view')){
-				target = $('.wish_navigation').find('.prev').find('a').attr('href');
-				if(target != "undefined" && target != null){
-					location.href = target;
+		if(!$('.add').find('#name').is(':focus')){
+			if(e.keyCode == 37){
+				if(body.hasClass('wish view')){
+					target = $('.wish_navigation').find('.prev').find('a').attr('href');
+					if(target != "undefined" && target != null){
+						location.href = target;
+					}
+					return false;
+				}else if(body.hasClass('wishlist view')){
+					$('#show_hide').click();
 				}
-				return false;
-			}else if(body.hasClass('wishlist view')){
-				$('#show_hide').click();
-			}
-		}else if(e.keyCode == 39){
-			if(body.hasClass('wish view')){
-				target = $('.wish_navigation').find('.next').find('a').attr('href');
-				if(target != "undefined" && target != null){
-					location.href = target;
+			}else if(e.keyCode == 39){
+				if(body.hasClass('wish view')){
+					target = $('.wish_navigation').find('.next').find('a').attr('href');
+					if(target != "undefined" && target != null){
+						location.href = target;
+					}
+					return false;
+				}else if(body.hasClass('wishlist view')){
+					$('#show_hide').click();
 				}
-				return false;
-			}else if(body.hasClass('wishlist view')){
-				$('#show_hide').click();
 			}
 		}
 	});
+
+
+	// SHARE
+
+	$('p.share').on('click', function(){
+		$('.share_box').toggleClass('show');
+		$(body).one('click', function(){
+			$('.share_box').removeClass('show');
+		})
+		return false;
+	})
 
 
 

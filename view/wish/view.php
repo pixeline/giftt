@@ -79,9 +79,10 @@
 					</header>
 
 					<div class="cont">
+						<?php $current_wish_url = $user['username'] . '/' . $current_wishlist['slug'] . '/' . $current_wish['id']; ?>
 						<?php if($mine){ ?>
-						<p class="edit"><a class="icon_cont" href="/<?php echo $user['username'] . '/' . $current_wishlist['slug'] . '/' . $current_wish['id'] ?>/edit"><span class="icon icon-edit"></span>Edit wish</a></p>
-						<p class="remove"><a class="icon_cont" href="/<?php echo $user['username'] . '/' . $current_wishlist['slug'] . '/' . $current_wish['id'] ?>/remove"><span class="icon icon-close"></span>Remove wish</a></p>
+						<p class="edit"><a class="icon_cont" href="/<?php echo $current_wish_url; ?>/edit"><span class="icon icon-edit"></span>Edit wish</a></p>
+						<p class="remove"><a class="icon_cont" href="/<?php echo $current_wish_url; ?>/remove"><span class="icon icon-close"></span>Remove wish</a></p>
 						<?php }else{ ?>
 						<p class="add"><a class="icon_cont green" href="#"><span class="icon icon-plus"></span>Wish it too</a></p>
 							<?php if(!$is_shotgun){ ?>
@@ -92,6 +93,27 @@
 						<?php } ?>
 						<?php if(!$is_private){ ?>
 						<p class="share"><a class="icon_cont" href="#"><span class="icon icon-share"></span>Share</a></p>
+						<div class="share_box">
+							<ul>
+								<li class="twitter">
+									<a href="https://twitter.com/share?
+										url=https%3A%2F%2Fgiftt.me%2F<?php echo $current_wish_url; ?>
+										&text=<?php echo $current_wish_name . ' on Giftt'; ?>
+										&lang=en_US
+										&hashtags=wishes
+									" target="_blank" class="icon-twitter"><span>Twitter</span></a>
+								</li>
+								<li class="facebook">
+									<a href="#" class="icon-facebook" onclick="sharefb();"><span>Facebook</span></a>
+								</li>
+								<li class="google">
+									<a href="https://plus.google.com/share?url=<?php echo "'https://" . $_SERVER['HTTP_HOST'] . "/" . $current_wish_url . "'"; ?>" target="_blank" class="icon-google"><span>Google+</span></a>
+								</li>
+								<li class="mail">
+									<a href="<?php echo "mailto:?subject=I'm sharing a wish with you&body=Hi! %0D%0A%0D%0AI'd like you to take a look at this wish: https://" . $_SERVER['HTTP_HOST'] . "/" . $current_wish_url; ?>" class="icon-mail"><span>Email</span></a>
+								</li>
+							</ul>
+						</div>
 						<?php } ?>
 					</div>
 				</div>
@@ -143,6 +165,41 @@
 	<?php require_once $root . '/_include/feed.php'; ?>
 
 	<?php require_once $root . '/_include/foot.php'; ?>
+
+	<script>
+		window.fbAsyncInit = function(){
+			FB.init({
+				appId: '736942236328874',
+				status: true,
+				cookie: true,
+				xfbml: true,
+				version: 'v2.0'
+			});
+		};
+
+		function sharefb(){
+			FB.ui(
+				{
+					method: 'feed',
+					name: <?php echo "'" . $og_title . "'"; ?>,
+					picture: <?php echo "'" . $og_picture . "'"; ?>,
+					link: <?php echo "'https://" . $_SERVER['HTTP_HOST'] . "/" . $current_wish_url . "'"; ?>,
+					caption: <?php echo "'A wish by " . $user_name . "'"; ?>,
+					description: (<?php echo "'" . $og_description . "'"; ?>),
+					message: 'Facebook Dialogs are easy!'
+				}
+			);
+		}
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div id="fb-root"></div>
 
 </body>
 </html>

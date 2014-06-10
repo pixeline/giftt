@@ -1347,6 +1347,9 @@ td.visible-print {
 .icon-show_hide:before {
   content: "\e601"; }
 
+.icon-mail:before {
+  content: "\e60e"; }
+
 .icon-ellipsis:before {
   content: "\e603"; }
 
@@ -1379,6 +1382,15 @@ td.visible-print {
 
 .icon-logout:before {
   content: "\e60c"; }
+
+.icon-twitter:before {
+  content: "\e60f"; }
+
+.icon-facebook:before {
+  content: "\e610"; }
+
+.icon-google:before {
+  content: "\e611"; }
 
 body {
   font-family: "proxima-nova", sans-serif;
@@ -2130,8 +2142,49 @@ a.button {
   color: #6eb004; }
 .wish.view .content aside .actions p.shotgun.unshotgun:hover a {
   color: #ba1f01; }
-.wish.view .content aside .actions p.share:hover a {
+.wish.view .content aside .actions p.share:hover > a {
   color: #6eb004; }
+.wish.view .content aside .actions .share_box {
+  border-radius: 2px;
+  line-height: 40px;
+  background: #6eb004;
+  display: inline-block;
+  overflow: hidden;
+  height: 40px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-30px) scale(0);
+  -moz-transform: translateY(-30px) scale(0);
+  -ms-transform: translateY(-30px) scale(0);
+  -o-transform: translateY(-30px) scale(0);
+  transform: translateY(-30px) scale(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -moz-transition: -moz-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out; }
+  .wish.view .content aside .actions .share_box.show {
+    -webkit-transform: translateY(0) scale(1);
+    -moz-transform: translateY(0) scale(1);
+    -ms-transform: translateY(0) scale(1);
+    -o-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1); }
+  .wish.view .content aside .actions .share_box ul {
+    margin-top: 0; }
+  .wish.view .content aside .actions .share_box li {
+    float: left; }
+  .wish.view .content aside .actions .share_box a {
+    background: #8bbf36;
+    color: white;
+    line-height: 40px;
+    width: 42px;
+    text-align: center;
+    font-size: 1.125em;
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out; }
+    .wish.view .content aside .actions .share_box a span {
+      text-indent: -9999px; }
+    .wish.view .content aside .actions .share_box a:hover {
+      background: #6eb004;
+      text-decoration: none; }
 .wish.view .content .heart {
   margin-top: 16px; }
   .wish.view .content .heart .current_wish img {

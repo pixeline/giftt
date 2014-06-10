@@ -33,6 +33,10 @@
 	content: "\e601";
 }
 
+.icon-mail:before{
+	content: "\e60e";
+}
+
 .icon-ellipsis:before{
 	content: "\e603";
 }
@@ -75,4 +79,16 @@
 
 .icon-logout:before{
 	content: "\e60c";
+}
+
+.icon-twitter:before{
+	content: "\e60f";
+}
+
+.icon-facebook:before{
+	content: "\e610";
+}
+
+.icon-google:before{
+	content: "\e611";
 }

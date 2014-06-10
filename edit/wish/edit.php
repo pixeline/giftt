@@ -28,7 +28,7 @@
 							<div class="file_cont<?php if(isset($message['image'])){ echo ' error'; } ?>">
 								<img src="/<?php echo $current_wish['picture']; ?>" alt="<?php if(isset($current_wish['name'])) echo $current_wish['name']; ?>" <?php if(!isset($current_wish['picture'])) echo "style='display: none;'"; ?> />
 								<span class="icon-picture" <?php if(isset($current_wish['picture'])) echo "style='display: none;'"; ?>></span>
-								<input <?php if(isset($message['image'])){ echo 'class="error"'; } ?>id="image" type="file" name="image" required />
+								<input <?php if(isset($message['image'])){ echo 'class="error"'; } ?>id="image" type="file" name="image" />
 								<p class="error"><?php if(isset($message['image'])){ echo $message['image']; } ?></p>
 							</div>
 						</div>

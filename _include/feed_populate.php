@@ -157,7 +157,8 @@ if(!empty($raw_follows)){
 					<img src="/<?php if(!empty($author_picture)){ echo $author_picture; }else{ echo "_assets/images/profile/default.jpg"; } ?>" alt="<?php echo $author_name; ?>" />
 				</div>
 				<div class="content">
-					<p><strong><?php echo $author_name; ?></strong> added <strong><?php echo $wish_name; ?></strong></p>
+					<?php $current_wish_name = strlen($wish_name) > 40 ? substr($wish_name,0,40)."..." : $wish_name; ?>
+					<p><strong><?php echo $author_name; ?></strong> added <strong><?php echo $current_wish_name; ?></strong></p>
 					<div class="picture" style="background-image: url(/<?php echo $wish_picture; ?>);"></div>
 				</div>
 			</a>
