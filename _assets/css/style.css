@@ -1458,6 +1458,19 @@ strong {
     border-radius: 100px;
     height: 75px;
     width: auto; }
+  .main > header .user .img-crop {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    border-radius: 100px; }
+  .main > header .user img {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto; }
   .main > header p {
     max-width: 450px;
     margin: 0 auto; }
@@ -2540,10 +2553,22 @@ body.withAside .alter {
   display: inline-block;
   width: 90px;
   height: 90px; }
-  .settings .file_cont img {
+  .settings .file_cont .img-crop {
+    position: relative;
+    width: 82px;
+    height: 82px;
+    overflow: hidden;
     border-radius: 100px;
-    padding: 4px;
-    height: 100% !important; }
+    margin: 3px; }
+  .settings .file_cont img {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    height: 100% !important;
+    width: auto !important; }
   .settings .file_cont span {
     padding: 25px 0 !important; }
   .settings .file_cont.error {

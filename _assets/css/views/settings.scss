@@ -43,10 +43,24 @@
 		width: 90px;
 		height: 90px;
 
-		img{
+		.img-crop{
+			position: relative;
+			width: 82px;
+			height: 82px;
+			overflow: hidden;
 			border-radius: 100px;
-			padding: 4px;
+			margin: 3px;
+		}
+
+		img{
+			position: absolute;
+			top: -9999px;
+			bottom: -9999px;
+			left: -9999px;
+			right: -9999px;
+			margin: auto;
 			height: 100% !important;
+			width: auto !important;
 		}
 
 		span{

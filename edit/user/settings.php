@@ -37,8 +37,9 @@
 							<div class="col-sm-4 image">
 								<label for="image"><strong>Photo</strong></label>
 								<div class="file_cont<?php if(isset($message['image'])){ echo ' error'; } ?>">
-									<img src="/<?php echo $me['picture']; ?>" alt="<?php if(isset($me['name'])) echo $me['name']; ?>" <?php if(empty($me['picture'])) echo "style='display: none;'"; ?> />
-									<span class="icon-picture" <?php if(!empty($me['picture'])) echo "style='display: none;'"; ?>></span>
+									<div class="img-crop">
+										<img src="/<?php echo $me['picture']; ?>" alt="<?php echo $me['firstname'] . ' ' . $me['lastname']; ?>" />
+									</div>
 									<input <?php if(isset($message['image'])){ echo 'class="error"'; } ?>id="image" type="file" name="image" />
 									<p class="error"><?php if(isset($message['image'])){ echo $message['image']; } ?></p>
 								</div>
