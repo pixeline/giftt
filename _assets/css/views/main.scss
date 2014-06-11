@@ -77,6 +77,7 @@ strong{
 	background: $white;
 	overflow: auto;
 	@include transition(transform 0.2s ease-in-out);
+	-webkit-overflow-scrolling: touch;
 }
 
 
@@ -309,19 +310,6 @@ footer{
 		#show_hide{
 			line-height: 44px;
 			font-size: em(15);
-		}
-	}
-
-	.main{
-		overflow-y: scroll;
-		-webkit-overflow-scrolling: touch;
-	}
-
-	.alter{
-
-		.wrapper{
-			overflow-y: scroll;
-			-webkit-overflow-scrolling: touch;
 		}
 	}
 }

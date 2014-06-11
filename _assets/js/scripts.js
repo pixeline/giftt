@@ -110,11 +110,18 @@
 		return false;
 	});
 
+	countAside = 0;
 	function aside(){
 		body.toggleClass('withAside');
-		if(ww > 767){
-			$('.alter .search').find('input').focus();
+		if(ww > 600){
+			searchInput = $('.alter .search').find('input');
+			if(countAside%2 == 0){
+				searchInput.focus();
+			}else{
+				searchInput.blur();
+			}
 		}
+		countAside++;
 	}
 
 

@@ -79,6 +79,7 @@ body.withAside{
 		width: 100%;
 		overflow: auto;
 		@include transition(opacity 0.3s ease-in-out);
+		-webkit-overflow-scrolling: touch;
 	}
 
 	a{

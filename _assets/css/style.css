@@ -1458,7 +1458,8 @@ strong {
   overflow: auto;
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
   -moz-transition: -moz-transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out; }
+  transition: transform 0.2s ease-in-out;
+  -webkit-overflow-scrolling: touch; }
 
 .main > header {
   background: #f4f4f4;
@@ -1602,15 +1603,7 @@ footer {
     height: 50px; }
   nav #show_hide {
     line-height: 44px;
-    font-size: 0.9375em; }
-
-  .main {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch; }
-
-  .alter .wrapper {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch; } }
+    font-size: 0.9375em; } }
 a.button {
   font-family: "freight-sans-pro", sans-serif;
   text-transform: uppercase;
@@ -2506,7 +2499,8 @@ body.withAside .alter {
     overflow: auto;
     -webkit-transition: opacity 0.3s ease-in-out;
     -moz-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out; }
+    transition: opacity 0.3s ease-in-out;
+    -webkit-overflow-scrolling: touch; }
   .alter a {
     color: white; }
   .alter .empty {
