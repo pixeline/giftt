@@ -2523,11 +2523,22 @@ body.withAside .alter {
       float: left;
       width: 44px;
       padding-right: 12px; }
-      .alter .item .user img {
+      .alter .item .user .img-crop {
+        position: relative;
         height: 28px;
         width: 28px;
-        border-radius: 28px;
+        overflow: hidden;
+        border-radius: 100px;
         margin-top: 4px; }
+      .alter .item .user img {
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+        height: 28px;
+        width: auto; }
     .alter .item .content {
       padding: 0 !important;
       float: left;
