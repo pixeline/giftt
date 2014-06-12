@@ -88,7 +88,7 @@
 			margin-bottom: 40px;
 
 			img{
-				
+				max-height: 55px;
 			}
 
 			h4{
@@ -106,7 +106,6 @@
 				line-height: $lh * 1.2;
 
 				a{
-					color: $gray50;
 				}
 			}
 		}

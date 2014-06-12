@@ -1680,6 +1680,8 @@ a.button {
     margin-bottom: 50px; }
   #landing .features li {
     margin-bottom: 40px; }
+    #landing .features li img {
+      max-height: 55px; }
     #landing .features li h4 {
       font-family: "ff-tisa-sans-web-pro", sans-serif;
       font-weight: 600;
@@ -1691,8 +1693,6 @@ a.button {
       letter-spacing: 1px; }
     #landing .features li p {
       line-height: 24px; }
-      #landing .features li p a {
-        color: #7f7f7f; }
 #landing footer {
   overflow: hidden;
   margin: 100px auto 30px;

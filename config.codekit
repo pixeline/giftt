@@ -368,6 +368,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_assets\/images\/landing\/feature2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7240,
+		"inputAbbreviatedPath": "\/_assets\/images\/landing\/feature2.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/landing\/feature2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_assets\/images\/landing\/feature3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7389,
+		"inputAbbreviatedPath": "\/_assets\/images\/landing\/feature3.jpg",
+		"outputAbbreviatedPath": "\/_assets\/images\/landing\/feature3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_assets\/images\/logo.png": {
 		"fileType": 32768,
 		"ignore": 0,

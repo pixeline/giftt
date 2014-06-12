@@ -43,19 +43,19 @@
 					<li class="col-sm-4">
 						<img src="/_assets/images/landing/feature1.jpg" alt="Share your wishlists" />
 						<h4>Share your wishlists</h4>
-						<p>Create wishlists for you, your friends and your family, and <strong>share them instantly</strong> with everyone that matters.</p>
+						<p>Create wishlists for you, your friends and your family, and share them instantly with everyone that matters.</p>
 					</li>
 
 					<li class="col-sm-4">
-						<img src="/_assets/images/landing/feature1.jpg" alt="Keep your wishlists safe" />
+						<img src="/_assets/images/landing/feature2.jpg" alt="Keep your wishlists safe" />
 						<h4>Keep your wishlists safe</h4>
-						<p>Browse the Internet for gift ideas and keep them safe in a <strong>private wishlist</strong>. You can be sure you alone will see this wishlist.</p>
+						<p>Browse the Internet for gift ideas and keep them safe in a private wishlist. You can be sure you alone will see this wishlist.</p>
 					</li>
 
 					<li class="col-sm-4">
-						<img src="/_assets/images/landing/feature1.jpg" alt="Browser extension" />
+						<img src="/_assets/images/landing/feature3.jpg" alt="Browser extension" />
 						<h4>Browser extension</h4>
-						<p>With the <strong>Giftt browser extension</strong>, saving gift ideas into one of your Giftt wishlists only takes a second.</p>
+						<p>With the <a href="/extension">Giftt browser extension</a>, saving gift ideas into one of your Giftt wishlists only takes a second.</p>
 					</li>
 				</ul>
 			</div>
