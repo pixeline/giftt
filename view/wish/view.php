@@ -86,7 +86,7 @@
 						<?php }else{ ?>
 						<p class="add"><a class="icon_cont green" href="#"><span class="icon icon-plus"></span>Wish it too</a></p>
 							<?php if(!$is_shotgun){ ?>
-						<p class="shotgun"><a class="icon_cont" href="/<?php echo $user['username'] . '/' . $current_wishlist['slug'] . '/' . $current_wish['id'] ?>/shotgun"><span class="icon icon-flag"></span>Offering it ?</a></p>
+						<p class="shotgun"><a class="icon_cont" href="/<?php echo $user['username'] . '/' . $current_wishlist['slug'] . '/' . $current_wish['id'] ?>/shotgun" onclick="if(!confirm('People visiting this page (except <?php echo $user['firstname']; ?>) will be informed someone (no names) is already planning on offering <?php echo $user['firstname']; ?> this gift.')) return false;"><span class="icon icon-flag"></span>Offering it ?</a></p>
 							<?php }else if($current_shotgun_author == $me['id']){ ?>
 						<p class="shotgun unshotgun"><a class="icon_cont" href="/<?php echo $user['username'] . '/' . $current_wishlist['slug'] . '/' . $current_wish['id'] ?>/shotgun"><span class="icon icon-flag"></span>Not offering it ?</a></p>
 							<?php } ?>
