@@ -168,7 +168,7 @@
 	// ARROWS TO NAVIGATE BETWEEN WISHES AND SHOW/HIDE SIDEBAR
 
 	$(document).keydown(function(e){
-		if(!$('.add').find('#name').is(':focus')){
+		if(!$('.add').find('#name').is(':focus') && !$('.search').find('#search').is(':focus')){
 			if(e.keyCode == 37){
 				if(body.hasClass('wish view')){
 					target = $('.wish_navigation').find('.prev').find('a').attr('href');
