@@ -172,7 +172,13 @@
 											$following['picture'] = '_assets/images/profile/default.jpg';
 										}
 							?>
-							<li><a href="/<?php echo $following['username']; ?>"><img src="/<?php echo $following['picture']; ?>" alt="<?php echo $following_name; ?>" /></a></li>
+							<li>
+								<a href="/<?php echo $following['username']; ?>">
+									<div class="img-crop">
+										<img src="/<?php echo $following['picture']; ?>" alt="<?php echo $following_name; ?>" />
+									</div>
+								</a>
+							</li>
 							<?php
 										
 									}
@@ -200,7 +206,13 @@
 											$follower['picture'] = '_assets/images/profile/default.jpg';
 										}
 							?>
-							<li><a href="/<?php echo $follower['username']; ?>"><img src="/<?php echo $follower['picture']; ?>" alt="<?php echo $follower_name; ?>" /></a></li>
+							<li>
+								<a href="/<?php echo $follower['username']; ?>">
+									<div class="img-crop">
+										<img src="/<?php echo $follower['picture']; ?>" alt="<?php echo $follower_name; ?>" />
+									</div>
+								</a>
+							</li>
 							<?php
 										
 									}

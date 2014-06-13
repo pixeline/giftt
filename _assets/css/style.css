@@ -2001,11 +2001,20 @@ a.button {
       -webkit-transition: opacity 0.2s ease-in-out;
       -moz-transition: opacity 0.2s ease-in-out;
       transition: opacity 0.2s ease-in-out; }
+      .user.view .content aside .following li a .img-crop, .user.view .content aside .followers li a .img-crop, .wishlist.view .content aside .following li a .img-crop, .wishlist.view .content aside .followers li a .img-crop {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        border-radius: 100px; }
       .user.view .content aside .following li a img, .user.view .content aside .followers li a img, .wishlist.view .content aside .following li a img, .wishlist.view .content aside .followers li a img {
-        width: 100%;
-        height: auto;
-        border-radius: 40px;
-        float: left; }
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+        height: 44px; }
       .user.view .content aside .following li a:hover, .user.view .content aside .followers li a:hover, .wishlist.view .content aside .following li a:hover, .wishlist.view .content aside .followers li a:hover {
         opacity: 1; }
     .user.view .content aside .following li.nobody, .user.view .content aside .followers li.nobody, .wishlist.view .content aside .following li.nobody, .wishlist.view .content aside .followers li.nobody {
