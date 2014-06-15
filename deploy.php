@@ -9,10 +9,10 @@ $branch = 'master';
 
 // FTP Credentials
 
-$ftp_host = 'pierrestoffe.com';
-$ftp_username = 'pierr359';
-$ftp_password = 'V6yGc2aHhV';
-$ftp_path = '/public_html/school/giftt/';
+$ftp_host = 'xxxxx.com';
+$ftp_username = 'xxxx';
+$ftp_password = 'xxxx';
+$ftp_path = '/xxxx/xxxx/giftt/';
 
 // Grab the data from BB's POST service and decode
 $json = stripslashes($_POST['payload']);
